@@ -5,7 +5,7 @@ import { GeistMono } from "geist/font/mono"
 import { Playfair_Display } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
-import "./globals.css"
+
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
