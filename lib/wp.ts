@@ -49,6 +49,7 @@ export async function getPageBySlug(slug: string) {
   const url = buildWpUrl("pages", { slug, _embed: 1 });
   const pages = await fetchJSON<any[]>(url, 300);
   return pages?.[0] ?? null;
+  console.log("getPageBySlug", { slug, url, pages });
 }
 
 export async function getPosts(query: Record<string, string | number | boolean> = {}) {
