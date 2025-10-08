@@ -16,14 +16,14 @@ export function Hero({ title, subtitle, backgroundImage, className = "" }: HeroP
         <div className="h-300 grid items-center relative overflow-hidden bg-[url('https://peanuttyxx.wordpress.com/wp-content/uploads/2025/10/img_4131.jpeg')] bg-cover bg-top from-primary/10 via-secondary/5 to-accent/10 border-2 border-primary/20 backdrop-blur-sm">
           <div className="absolute rounded-lg inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-50" />
           <div className="relative p-8 md:p-12 text-center">
-            <h1 
-              className="text-4xl md:text-6xl font-extrabold text-foreground mb-4 leading-tight font-brand"
+            {/* <h1 
+              className="text-4xl md:text-8xl font-extrabold text-white mb-4 leading-tight font-brand"
             >
               {title}
-            </h1>
+            </h1> */}
             
             {subtitle && (
-              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto --ecclection-teal-light">
+              <p className="text-6xl md:text-8xl text-white max-w-2xl mx-auto font-brand">
                 {subtitle}
                 {backgroundImage && (
                   <img src={backgroundImage} alt={title} className="w-full h-full object-cover" />

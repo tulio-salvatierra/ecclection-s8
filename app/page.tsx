@@ -11,10 +11,17 @@ export default async function HomePage() {
   const page = await getPageBySlug("home"); // create/edit this page in WP
   if (!page) {
     return <div>Page not found</div>;
+    console.log(page, "page");
+  return (
+    <pre style={{ whiteSpace: "pre-wrap", wordBreak: "break-all", padding: "2rem", background: "#222", color: "#fff", borderRadius: "8px" }}>
+      {JSON.stringify(page, null, 2)}
+    </pre>
+  );
   }
 
   // Extract content blocks from WordPress content
-  const contentBlocks = extractContentBlocks(page.content.rendered);
+  const contentBlocks = extractContentBlocks(page.html);
+  
   
   // Separate the first few blocks for featured display
   const featuredBlocks = contentBlocks.slice(0, 3);
@@ -23,7 +30,7 @@ export default async function HomePage() {
     <>
       {/* Hero Section */}
       <Hero 
-        title={page.title.rendered}
+        title={page.title}
         subtitle="Welcome to Ecclection - Where Art Meets Community"
       />
 
@@ -45,7 +52,7 @@ export default async function HomePage() {
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Latest News & Updates
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-white max-w-2xl mx-auto">
               Stay updated with the latest from our community
             </p>
           </div>

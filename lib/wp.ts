@@ -1,88 +1,59 @@
-// lib/wp.ts
-/**
- * Provider notes:
- * - "wpcom" (WordPress.com): uses public-api.wordpress.com and your wp.com site domain
- *   e.g. peanuttyxx.wordpress.com (mapped custom domains can work but the wp.com subdomain is safest)
- * - "self": for classic/self-hosted WP; uses /wp-json/wp/v2
- */
-const WP_PROVIDER = (process.env.NEXT_PUBLIC_WP_PROVIDER || "wpcom").trim(); // "wpcom" | "self"
+// lib/wp.ts (or wp-peanutty.ts)
+const WP = process.env.NEXT_PUBLIC_WP_URL ?? "https://public-api.wordpress.com/wp/v2/sites/peanuttyxx.wordpress.com";
 
-// IMPORTANT: for wp.com set this to the *.wordpress.com canonical domain, not your mapped custom domain.
-const RAW_DOMAIN = process.env.NEXT_PUBLIC_WP_DOMAIN || "peanuttyxx.wordpress.com";
-const WP_DOMAIN = RAW_DOMAIN.replace(/https?:\/\//, "").replace(/\/+$/, "");
+type RawWPPage = {
+  id: number;
+  slug: string;
+  title: { rendered: string };
+  excerpt?: { rendered: string };
+  content: { rendered: string };
+  _embedded?: {
+    ["wp:featuredmedia"]?: Array<{ source_url?: string; alt_text?: string }>;
+  };
+};
 
-// Origin (only used for self-hosted)
-const RAW_ORIGIN = process.env.NEXT_PUBLIC_WP_ORIGIN || `https://${WP_DOMAIN}`;
-const WP_ORIGIN = RAW_ORIGIN.replace(/\/+$/, "");
+export type PageDTO = {
+  id: number;
+  slug: string;
+  title: string;
+  excerpt?: string;
+  html: string;
+  featuredImage?: { url: string; alt?: string };
+};
 
-function buildWpUrl(path: string, params: Record<string, string | number | boolean> = {}) {
-  const cleanPath = String(path).replace(/^\//, "");
-  let url: string;
-
-  if (WP_PROVIDER === "wpcom") {
-    // WordPress.com public API
-    url = `https://public-api.wordpress.com/wp/v2/sites/${WP_DOMAIN}/${cleanPath}`;
-  } else {
-    // Self-hosted: canonical /wp-json/wp/v2/... path
-    url = `${WP_ORIGIN.replace(/\/$/, "")}/wp-json/wp/v2/${cleanPath}`;
-  }
-
-  const u = new URL(url);
-  for (const [k, v] of Object.entries(params)) {
-    if (v === undefined || v === null) continue;
-    u.searchParams.append(k, String(v));
-  }
-  return u.toString();
-}
-
-async function fetchJSON<T>(url: string, revalidate = 300): Promise<T> {
-  const res = await fetch(url, { headers: { Accept: "application/json" }, next: { revalidate } });
+async function fetchJSON<T>(endpoint: string, revalidate = 300): Promise<T> {
+  const url = `${WP}/${endpoint}`;
+  const res = await fetch(url, { next: { revalidate } });
   const ctype = res.headers.get("content-type") || "";
 
-  if (!res.ok) {
-    const text = await res.text();
-    throw new Error(`WP: HTTP ${res.status} for ${url}\n${text.slice(0, 300)}`);
-  }
-  if (!ctype.includes("application/json")) {
-    const bodyPreview = await res.text();
+  if (!res.ok || !ctype.includes("application/json")) {
+    const body = await res.text();
     throw new Error(
       `WP: expected JSON (${res.status}). URL: ${url}\n` +
       `Content-Type: ${ctype}\n` +
-      `Body preview: ${bodyPreview.slice(0, 300)}`
+      `Body preview: ${body.slice(0, 300)}`
     );
   }
-
-  const json = await res.json() as T;
-  // Debug line (visible in server logs)
-  console.log("[wp.fetchJSON]", { url, provider: WP_PROVIDER, domain: WP_DOMAIN, ok: res.ok });
-  return json;
+  return res.json() as Promise<T>;
 }
 
-export async function getPageBySlug(slug: string) {
-  if (!slug) return null;
-  const url = buildWpUrl("pages", { slug, _embed: 1 });
-  console.log("[wp.getPageBySlug] url", url);
-  const pages = await fetchJSON<any[]>(url, 300);
-  return pages?.[0] ?? null;
+function mapPage(p: RawWPPage): PageDTO {
+  const fm = p._embedded?.["wp:featuredmedia"]?.[0];
+  return {
+    id: p.id,
+    slug: p.slug,
+    title: p.title?.rendered ?? "",
+    excerpt: p.excerpt?.rendered,
+    html: p.content?.rendered ?? "",
+    featuredImage: fm?.source_url ? { url: fm.source_url, alt: fm.alt_text } : undefined,
+  };
 }
 
-export async function getPosts(query: Record<string, string | number | boolean> = {}) {
-  const url = buildWpUrl("posts", query);
-  return fetchJSON<any[]>(url, 300);
-  console.log("[wp.getPosts] url", url);
-}
-
-export function wpDebugUrl(path: string, params: Record<string, any> = {}) {
-  return buildWpUrl(path, params);
-}
-
-export async function wpHealth() {
-  // Try a tiny endpoint that always exists
-  const url = buildWpUrl("types", {});
-  try {
-    const data = await fetchJSON<any>(url, 60);
-    return { ok: true, url, provider: WP_PROVIDER, domain: WP_DOMAIN, keys: Object.keys(data) };
-  } catch (e: any) {
-    return { ok: false, url, provider: WP_PROVIDER, domain: WP_DOMAIN, error: String(e?.message || e) };
-  }
+export async function getPageBySlug(slug: string): Promise<PageDTO | null> {
+  // use _fields to make the payload smaller & _embed for media
+  const endpoint =
+    `pages?slug=${encodeURIComponent(slug)}&_embed=1` +
+    `&_fields=id,slug,title,excerpt,content,_embedded`;
+  const pages = await fetchJSON<RawWPPage[]>(endpoint, 300);
+  return pages.length ? mapPage(pages[0]) : null;
 }

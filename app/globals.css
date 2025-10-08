@@ -146,7 +146,7 @@
   
   /* Global heading colors */
   h1, h2, h3, h4, h5, h6 {
-    color: var(--ecclection-teal);
+    color: white;
   }
   
   /* Global accent colors for buttons and interactive elements */

@@ -54,7 +54,7 @@ export function ContentCard({ content, variant = 'default', className = "" }: Co
               dangerouslySetInnerHTML={{ __html: content.content }}
             />
             {content.metadata?.caption && (
-              <p className="text-sm text-muted-foreground italic">
+              <p className="text-sm text-white italic">
                 {content.metadata.caption}
               </p>
             )}

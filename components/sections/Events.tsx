@@ -73,7 +73,7 @@ export function Events({
         <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
           {title}
         </h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+        <p className="text-lg text-white max-w-2xl mx-auto">
           Join us for exciting art events, workshops, and exhibitions throughout the year.
         </p>
       </div>
@@ -103,7 +103,7 @@ export function Events({
                 {event.title}
               </h3>
 
-              <div className="space-y-2 mb-4 text-sm text-muted-foreground">
+              <div className="space-y-2 mb-4 text-sm text-white">
                 <div className="flex items-center">
                   <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -125,7 +125,7 @@ export function Events({
                 </div>
               </div>
 
-              <p className="text-muted-foreground mb-4 line-clamp-3">
+              <p className="text-white mb-4 line-clamp-3">
                 {event.description}
               </p>
 

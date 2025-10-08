@@ -42,7 +42,7 @@ export function About({
           {title}
         </h2>
         {content && (
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg text-white max-w-3xl mx-auto">
             {content}
           </p>
         )}
@@ -55,7 +55,7 @@ export function About({
             <h3 className="text-xl font-semibold text-foreground mb-3">
               {feature.title}
             </h3>
-            <p className="text-muted-foreground">
+            <p className="text-white">
               {feature.description}
             </p>
           </Card>

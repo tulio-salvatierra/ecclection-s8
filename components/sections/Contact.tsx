@@ -29,7 +29,7 @@ export function Contact({
         <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
           {title}
         </h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+        <p className="text-lg text-white max-w-2xl mx-auto">
           Ready to explore art, join our community, or showcase your work? We'd love to hear from you.
         </p>
       </div>
@@ -81,7 +81,7 @@ export function Contact({
                 </div>
                 <div>
                   <p className="font-medium text-foreground">Address</p>
-                  <p className="text-muted-foreground">{contactInfo.address}</p>
+                  <p className="text-white">{contactInfo.address}</p>
                 </div>
               </div>
             )}
@@ -95,7 +95,7 @@ export function Contact({
                 </div>
                 <div>
                   <p className="font-medium text-foreground">Hours</p>
-                  <p className="text-muted-foreground">{contactInfo.hours}</p>
+                  <p className="text-white">{contactInfo.hours}</p>
                 </div>
               </div>
             )}

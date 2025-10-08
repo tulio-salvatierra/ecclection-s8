@@ -128,9 +128,9 @@
     @apply bg-background text-foreground;
   }
   
-  /* Global heading colors - apply teal to all heading tags */
+  /* Global heading colors - apply white to all heading tags */
   h1, h2, h3, h4, h5, h6 {
-    color: var(--ecclection-teal);
+    color: white;
   }
   
   /* Global accent colors for buttons and interactive elements */
