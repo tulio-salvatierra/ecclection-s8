@@ -10,6 +10,11 @@
 .wp-content img { max-width: 100%; height: auto; display: block; }
 
 :root {
+  /* Custom brand colors */
+  --ecclection-teal: #0E9AA1;
+  --ecclection-teal-dark: #0a7a7f;
+  --ecclection-teal-light: #14b8c0;
+  
   /* Updated color palette for Ecclection's artsy, community-focused vibe */
   --background: oklch(0.98 0.02 85); /* warm cream background */
   --foreground: oklch(0.25 0.01 240); /* dark gray text */
@@ -17,20 +22,20 @@
   --card-foreground: oklch(0.25 0.01 240);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.25 0.01 240);
-  --primary: oklch(0.65 0.15 45); /* warm amber primary */
+  --primary: var(--ecclection-teal); /* teal primary */
   --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.75 0.12 120); /* lime green accent */
-  --secondary-foreground: oklch(0.25 0.01 240);
+  --secondary: var(--ecclection-teal); /* teal secondary */
+  --secondary-foreground: oklch(1 0 0);
   --muted: oklch(0.96 0.01 120); /* light green muted */
   --muted-foreground: oklch(0.25 0.01 240);
-  --accent: oklch(0.65 0.15 45); /* amber accent */
+  --accent: var(--ecclection-teal); /* teal accent */
   --accent-foreground: oklch(1 0 0);
   --destructive: oklch(0.55 0.25 15); /* warm red for alerts */
   --destructive-foreground: oklch(1 0 0);
   --border: oklch(0.85 0.01 240); /* light gray borders */
   --input: oklch(1 0 0);
-  --ring: oklch(0.65 0.15 45 / 0.5); /* amber focus ring */
-  --chart-1: oklch(0.65 0.15 45);
+  --ring: var(--ecclection-teal); /* teal focus ring */
+  --chart-1: var(--ecclection-teal);
   --chart-2: oklch(0.75 0.12 120);
   --chart-3: oklch(0.55 0.25 15);
   --chart-4: oklch(0.96 0.01 120);
@@ -38,12 +43,12 @@
   --radius: 0.5rem;
   --sidebar: oklch(0.98 0.02 85);
   --sidebar-foreground: oklch(0.25 0.01 240);
-  --sidebar-primary: oklch(0.65 0.15 45);
+  --sidebar-primary: var(--ecclection-teal);
   --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.75 0.12 120);
-  --sidebar-accent-foreground: oklch(0.25 0.01 240);
+  --sidebar-accent: var(--ecclection-teal);
+  --sidebar-accent-foreground: oklch(1 0 0);
   --sidebar-border: oklch(0.85 0.01 240);
-  --sidebar-ring: oklch(0.65 0.15 45 / 0.5);
+  --sidebar-ring: var(--ecclection-teal);
 }
 
 .dark {
@@ -53,36 +58,39 @@
   --card-foreground: oklch(0.95 0.01 85);
   --popover: oklch(0.15 0.01 240);
   --popover-foreground: oklch(0.95 0.01 85);
-  --primary: oklch(0.75 0.15 45);
+  --primary: var(--ecclection-teal);
   --primary-foreground: oklch(0.15 0.01 240);
-  --secondary: oklch(0.35 0.01 240);
-  --secondary-foreground: oklch(0.95 0.01 85);
+  --secondary: var(--ecclection-teal);
+  --secondary-foreground: oklch(0.15 0.01 240);
   --muted: oklch(0.35 0.01 240);
   --muted-foreground: oklch(0.65 0.01 85);
-  --accent: oklch(0.35 0.01 240);
-  --accent-foreground: oklch(0.95 0.01 85);
+  --accent: var(--ecclection-teal);
+  --accent-foreground: oklch(0.15 0.01 240);
   --destructive: oklch(0.45 0.2 15);
   --destructive-foreground: oklch(0.95 0.01 85);
   --border: oklch(0.35 0.01 240);
   --input: oklch(0.35 0.01 240);
-  --ring: oklch(0.55 0.01 85);
-  --chart-1: oklch(0.55 0.25 264);
+  --ring: var(--ecclection-teal);
+  --chart-1: var(--ecclection-teal);
   --chart-2: oklch(0.7 0.17 162);
   --chart-3: oklch(0.77 0.19 70);
   --chart-4: oklch(0.63 0.27 304);
   --chart-5: oklch(0.65 0.25 16);
   --sidebar: oklch(0.25 0.01 240);
   --sidebar-foreground: oklch(0.95 0.01 85);
-  --sidebar-primary: oklch(0.55 0.25 264);
-  --sidebar-primary-foreground: oklch(0.95 0.01 85);
-  --sidebar-accent: oklch(0.35 0.01 240);
-  --sidebar-accent-foreground: oklch(0.95 0.01 85);
+  --sidebar-primary: var(--ecclection-teal);
+  --sidebar-primary-foreground: oklch(0.15 0.01 240);
+  --sidebar-accent: var(--ecclection-teal);
+  --sidebar-accent-foreground: oklch(0.15 0.01 240);
   --sidebar-border: oklch(0.35 0.01 240);
-  --sidebar-ring: oklch(0.55 0.01 85);
+  --sidebar-ring: var(--ecclection-teal);
 }
 
 @theme inline {
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+  --font-display: var(--font-poppins);
+  --font-brand: var(--font-righteous);
   --font-mono: var(--font-geist-mono);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -127,6 +135,124 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    background-image: url('/ecclection-bg.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
   }
+  
+  /* Global heading colors */
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--ecclection-teal);
+  }
+  
+  /* Global accent colors for buttons and interactive elements */
+  .btn, button, [role="button"] {
+    --tw-bg-opacity: 1;
+    background-color: var(--ecclection-teal);
+    color: white;
+  }
+  
+  .btn:hover, button:hover, [role="button"]:hover {
+    background-color: var(--ecclection-teal-dark);
+  }
+  
+  /* Links and interactive text */
+  a {
+    color: var(--ecclection-teal);
+  }
+  
+  a:hover {
+    color: var(--ecclection-teal-dark);
+  }
+  
+  /* Overlay to ensure content readability */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(var(--background), 0.85) 0%,
+      rgba(var(--background), 0.75) 50%,
+      rgba(var(--background), 0.9) 100%
+    );
+    z-index: -1;
+    pointer-events: none;
+  }
+}
+
+/* Layout utilities */
+.container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.section-pad {
+  @apply py-8 md:py-12 lg:py-16;
+}
+
+/* Site header styles */
+.site-header {
+  @apply bg-card/90 backdrop-blur-sm border-b border-border;
+}
+
+.site-header .nav {
+  @apply flex items-center justify-between py-4;
+}
+
+.brand {
+  @apply flex items-center space-x-2;
+}
+
+.brand-mark {
+  @apply w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg;
+}
+
+.nav-links {
+  @apply hidden md:flex space-x-6;
+}
+
+.nav-links a {
+  @apply text-foreground hover:text-primary transition-colors;
+}
+
+.contact-mini .btn {
+  @apply bg-primary text-primary-foreground px-4 py-2 rounded-md hover:bg-primary/90 transition-colors;
+}
+
+/* Site footer */
+.site-footer {
+  @apply bg-muted text-muted-foreground text-center py-6 mt-12;
+}
+
+/* App-wide background styles */
+.app-bg {
+  background-image: url('/ecclection-bg.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Font utility classes */
+.font-display {
+  font-family: var(--font-poppins);
+}
+
+.font-serif {
+  font-family: var(--font-playfair);
+}
+
+.font-sans {
+  font-family: var(--font-inter);
+}
+
+.font-brand {
+  font-family: var(--font-righteous);
 }

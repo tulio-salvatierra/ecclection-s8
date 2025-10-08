@@ -1,22 +1,70 @@
 import { getPageBySlug } from "@/lib/wp";
+import { extractContentBlocks } from "@/lib/content-parser";
+import { Hero } from "@/components/sections/Hero";
+import { About } from "@/components/sections/About";
+import { Events } from "@/components/sections/Events";
+import { Artists } from "@/components/sections/Artists";
+import { Contact } from "@/components/sections/Contact";
+import { ContentCard } from "@/components/layouts/ContentCard";
 
 export default async function HomePage() {
   const page = await getPageBySlug("home"); // create/edit this page in WP
   if (!page) {
-    return (
-      <main className="container">
-        <h1>Home page not found</h1>
-        <p>Create a WordPress page with the slug <code>home</code>.</p>
-      </main>
-    );
+    return <div>Page not found</div>;
   }
+
+  // Extract content blocks from WordPress content
+  const contentBlocks = extractContentBlocks(page.content.rendered);
+  
+  // Separate the first few blocks for featured display
+  const featuredBlocks = contentBlocks.slice(0, 3);
+  const remainingBlocks = contentBlocks.slice(3);
+
   return (
-    <main className="container section-pad">
-      <h1 dangerouslySetInnerHTML={{ __html: page.title.rendered }} />
-      <article
-        className="wp-content"
-        dangerouslySetInnerHTML={{ __html: page.content.rendered }}
+    <>
+      {/* Hero Section */}
+      <Hero 
+        title={page.title.rendered}
+        subtitle="Welcome to Ecclection - Where Art Meets Community"
       />
-    </main>
+
+      {/* About Section */}
+      <About 
+        content="Ecclection is more than just an art space – it's a vibrant community where creativity flourishes, artists connect, and art lovers discover new perspectives."
+      />
+
+      {/* Featured Artists Section */}
+      <Artists />
+
+      {/* Events Section */}
+      <Events />
+
+      {/* WordPress Content Section */}
+      {contentBlocks.length > 0 && (
+        <section className="container section-pad">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Latest News & Updates
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Stay updated with the latest from our community
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {contentBlocks.map((block, index) => (
+              <ContentCard
+                key={block.id}
+                content={block}
+                variant={block.type === 'image' ? 'image' : block.type === 'quote' ? 'quote' : 'default'}
+              />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Contact Section */}
+      <Contact />
+    </>
   );
 }
