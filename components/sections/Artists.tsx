@@ -2,7 +2,6 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { getPosts } from "@/lib/wp";
 
 interface Artist {
   id: string;
@@ -25,122 +24,60 @@ interface ArtistsProps {
   className?: string;
 }
 
-// Helper function to extract social media links from content
-function extractSocialLinks(content: string) {
-  const social: { instagram?: string; website?: string; email?: string } = {};
-  
-  // Extract Instagram
-  const instagramMatch = content.match(/instagram[:\s]*@?([a-zA-Z0-9_.]+)/i);
-  if (instagramMatch) {
-    social.instagram = `@${instagramMatch[1]}`;
-  }
-  
-  // Extract website
-  const websiteMatch = content.match(/website[:\s]*(https?:\/\/[^\s]+|[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/i);
-  if (websiteMatch) {
-    social.website = websiteMatch[1];
-  }
-  
-  // Extract email
-  const emailMatch = content.match(/email[:\s]*([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/i);
-  if (emailMatch) {
-    social.email = emailMatch[1];
-  }
-  
-  return social;
-}
 
-// Helper function to extract featured image
-function extractFeaturedImage(post: any): string | undefined {
-  if (post._embedded?.['wp:featuredmedia']?.[0]?.source_url) {
-    return post._embedded['wp:featuredmedia'][0].source_url;
-  }
-  return undefined;
-}
-
-// Helper function to check if artist is featured (sticky post or has featured tag)
-function isFeatured(post: any): boolean {
-  return post.sticky || 
-         post.tags?.some((tag: any) => tag.name?.toLowerCase().includes('featured')) ||
-         false;
-}
-
-export async function Artists({ 
+export function Artists({ 
   title = "Featured Artists",
   description = "Meet the talented artists who make our community vibrant and inspiring.",
   image,
   className = "" 
 }: ArtistsProps) {
-  // Fetch artists from WordPress
-  let artists: Artist[] = [];
-  
-  try {
-    // Fetch posts with category "artists" or tag "artist"
-    const posts = await getPosts({ 
-      categories: 'artists', // You'll need to create this category in WordPress
-      per_page: 8,
-      _embed: 1 // Include featured media
-    });
-    
-    artists = posts.map((post: any) => ({
-      id: post.id.toString(),
-      name: post.title.rendered,
-      specialty: post.excerpt?.rendered?.replace(/<[^>]*>/g, '').trim() || 'Artist',
-      bio: post.content?.rendered?.replace(/<[^>]*>/g, '').trim() || '',
-      image: extractFeaturedImage(post),
-      social: extractSocialLinks(post.content?.rendered || ''),
-      featured: isFeatured(post)
-    }));
-  } catch (error) {
-    console.error('Error fetching artists:', error);
-    // Fallback to default artists if WordPress fetch fails
-    artists = [
-      {
-        id: "1",
-        name: "Sarah Chen",
-        specialty: "Abstract Painting",
-        bio: "Sarah creates vibrant abstract works that explore the intersection of color and emotion. Her pieces have been featured in galleries across the city.",
-        featured: true,
-        social: {
-          instagram: "@sarahchenart",
-          website: "sarahchen.com"
-        }
-      },
-      {
-        id: "2",
-        name: "Marcus Rodriguez",
-        specialty: "Sculpture & Mixed Media",
-        bio: "Marcus combines traditional sculpting techniques with modern materials to create thought-provoking installations that challenge our perceptions.",
-        featured: true,
-        social: {
-          instagram: "@marcussculpts",
-          website: "marcusrodriguez.art"
-        }
-      },
-      {
-        id: "3",
-        name: "Elena Kowalski",
-        specialty: "Digital Art & Photography",
-        bio: "Elena blends digital technology with traditional artistic principles, creating stunning visual narratives that bridge the gap between reality and imagination.",
-        featured: false,
-        social: {
-          instagram: "@elenakowalski",
-          website: "elenakowalski.com"
-        }
-      },
-      {
-        id: "4",
-        name: "David Park",
-        specialty: "Ceramics & Pottery",
-        bio: "David's ceramic works celebrate the beauty of imperfection and the natural flow of clay. Each piece tells a story of transformation and growth.",
-        featured: false,
-        social: {
-          instagram: "@davidparkceramics",
-          website: "davidparkpottery.com"
-        }
+  // Static artists data
+  const artists: Artist[] = [
+    {
+      id: "1",
+      name: "Sarah Chen",
+      specialty: "Abstract Painting",
+      bio: "Sarah creates vibrant abstract works that explore the intersection of color and emotion. Her pieces have been featured in galleries across the city.",
+      featured: true,
+      social: {
+        instagram: "@sarahchenart",
+        website: "sarahchen.com"
       }
-    ];
-  }
+    },
+    {
+      id: "2",
+      name: "Marcus Rodriguez",
+      specialty: "Sculpture & Mixed Media",
+      bio: "Marcus combines traditional sculpting techniques with modern materials to create thought-provoking installations that challenge our perceptions.",
+      featured: true,
+      social: {
+        instagram: "@marcussculpts",
+        website: "marcusrodriguez.art"
+      }
+    },
+    {
+      id: "3",
+      name: "Elena Kowalski",
+      specialty: "Digital Art & Photography",
+      bio: "Elena blends digital technology with traditional artistic principles, creating stunning visual narratives that bridge the gap between reality and imagination.",
+      featured: false,
+      social: {
+        instagram: "@elenakowalski",
+        website: "elenakowalski.com"
+      }
+    },
+    {
+      id: "4",
+      name: "David Park",
+      specialty: "Ceramics & Pottery",
+      bio: "David's ceramic works celebrate the beauty of imperfection and the natural flow of clay. Each piece tells a story of transformation and growth.",
+      featured: false,
+      social: {
+        instagram: "@davidparkceramics",
+        website: "davidparkpottery.com"
+      }
+    }
+  ];
   return (
     <section className={`container section-pad ${className}`}>
       <div className="text-center mb-12">
@@ -161,21 +98,6 @@ export async function Artists({
         </p>
       </div>
 
-      {artists.length === 0 ? (
-        <div className="text-center py-12">
-          <div className="max-w-md mx-auto">
-            <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-              </svg>
-            </div>
-            <h3 className="text-xl font-semibold text-foreground mb-2">Artists Coming Soon</h3>
-            <p className="text-muted-foreground">
-              Add artist posts to your WordPress site with the "artists" category to see them displayed here.
-            </p>
-          </div>
-        </div>
-      ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {artists.map((artist) => (
           <Card key={artist.id} className="overflow-hidden hover:shadow-lg transition-shadow">
@@ -230,10 +152,9 @@ export async function Artists({
             </div>
           </Card>
           ))}
-        </div>
-      )}
+            </div>
 
-      <div className="text-center mt-12">
+          <div className="text-center mt-12">
         <Button size="lg" variant="outline">
           View All Artists
         </Button>

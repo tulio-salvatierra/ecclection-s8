@@ -6,9 +6,7 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
-    "start": "next start",
-    "fetch-artists": "node scripts/fetch-artists.js",
-    "fetch-artists:ts": "tsx scripts/fetch-artists.ts"
+    "start": "next start"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

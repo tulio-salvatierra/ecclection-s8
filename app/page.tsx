@@ -19,7 +19,6 @@ export default async function HomePage() {
   // Separate the first few blocks for featured display
   const featuredBlocks = contentBlocks.slice(0, 3);
   const remainingBlocks = contentBlocks.slice(3);
-
   return (
     <>
       {/* Hero Section */}
