@@ -1,6 +1,4 @@
-// lib/content-parser.ts
-import { parseDocument } from 'htmlparser2';
-import { Element, Text } from 'domhandler';
+// lib/content-parser.ts - Simplified version without external dependencies
 
 export interface ContentBlock {
   id: string;
@@ -15,151 +13,168 @@ export interface ContentBlock {
   };
 }
 
-function getTextContent(element: Element): string {
-  return element.children
-    .filter((child): child is Text => child.type === 'text')
-    .map(child => child.data)
-    .join('')
-    .trim();
-}
-
-function getOuterHTML(element: Element): string {
-  // Simple HTML serialization for our use case
-  const tagName = element.name;
-  const attributes = Object.entries(element.attribs || {})
-    .map(([key, value]) => `${key}="${value}"`)
-    .join(' ');
-  const attrs = attributes ? ` ${attributes}` : '';
+// Simple regex-based HTML parsing without external dependencies
+function extractImages(html: string): Array<{src: string; alt: string; caption?: string}> {
+  const imgRegex = /<img[^>]+src="([^"]*)"[^>]*(?:alt="([^"]*)")?[^>]*>/gi;
+  const images: Array<{src: string; alt: string; caption?: string}> = [];
+  let match;
   
-  if (element.children.length === 0) {
-    return `<${tagName}${attrs} />`;
+  while ((match = imgRegex.exec(html)) !== null) {
+    images.push({
+      src: match[1] || '',
+      alt: match[2] || '',
+      caption: ''
+    });
   }
   
-  const innerHTML = element.children
-    .map(child => {
-      if (child.type === 'text') {
-        return child.data;
-      } else if (child.type === 'tag') {
-        return getOuterHTML(child as Element);
-      }
-      return '';
-    })
-    .join('');
-  
-  return `<${tagName}${attrs}>${innerHTML}</${tagName}>`;
+  return images;
 }
 
-function findElements(doc: Element, selector: string): Element[] {
-  const results: Element[] = [];
-  const [tagName] = selector.split(',');
+function extractHeadings(html: string): Array<{level: number; content: string}> {
+  const headingRegex = /<(h[1-6])[^>]*>(.*?)<\/h[1-6]>/gi;
+  const headings: Array<{level: number; content: string}> = [];
+  let match;
   
-  function traverse(node: Element) {
-    if (node.type === 'tag') {
-      if (tagName.includes(node.name)) {
-        results.push(node);
-      }
-      node.children.forEach(child => {
-        if (child.type === 'tag') {
-          traverse(child as Element);
-        }
-      });
+  while ((match = headingRegex.exec(html)) !== null) {
+    const level = parseInt(match[1].charAt(1));
+    const content = match[2].replace(/<[^>]*>/g, '').trim();
+    if (content) {
+      headings.push({ level, content });
     }
   }
   
-  traverse(doc);
-  return results;
+  return headings;
+}
+
+function extractParagraphs(html: string): string[] {
+  const pRegex = /<p[^>]*>(.*?)<\/p>/gi;
+  const paragraphs: string[] = [];
+  let match;
+  
+  while ((match = pRegex.exec(html)) !== null) {
+    const content = match[1].trim();
+    if (content) {
+      paragraphs.push(content);
+    }
+  }
+  
+  return paragraphs;
+}
+
+function extractLists(html: string): Array<{items: string[]; type: 'ul' | 'ol'}> {
+  const listRegex = /<(ul|ol)[^>]*>(.*?)<\/(ul|ol)>/gi;
+  const lists: Array<{items: string[]; type: 'ul' | 'ol'}> = [];
+  let match;
+  
+  while ((match = listRegex.exec(html)) !== null) {
+    const listType = match[1] as 'ul' | 'ol';
+    const listContent = match[2];
+    const liRegex = /<li[^>]*>(.*?)<\/li>/gi;
+    const items: string[] = [];
+    let liMatch;
+    
+    while ((liMatch = liRegex.exec(listContent)) !== null) {
+      const itemContent = liMatch[1].replace(/<[^>]*>/g, '').trim();
+      if (itemContent) {
+        items.push(itemContent);
+      }
+    }
+    
+    if (items.length > 0) {
+      lists.push({ items, type: listType });
+    }
+  }
+  
+  return lists;
+}
+
+function extractQuotes(html: string): string[] {
+  const quoteRegex = /<blockquote[^>]*>(.*?)<\/blockquote>/gi;
+  const quotes: string[] = [];
+  let match;
+  
+  while ((match = quoteRegex.exec(html)) !== null) {
+    const content = match[1].replace(/<[^>]*>/g, '').trim();
+    if (content) {
+      quotes.push(content);
+    }
+  }
+  
+  return quotes;
 }
 
 export function extractContentBlocks(htmlContent: string): ContentBlock[] {
   if (!htmlContent) return [];
   
   const blocks: ContentBlock[] = [];
-  const doc = parseDocument(htmlContent);
+  let blockIndex = 0;
   
   // Extract headings
-  const headings = findElements(doc, 'h1,h2,h3,h4,h5,h6');
-  headings.forEach((heading, index) => {
+  const headings = extractHeadings(htmlContent);
+  headings.forEach(heading => {
     blocks.push({
-      id: `heading-${index}`,
+      id: `heading-${blockIndex++}`,
       type: 'heading',
-      content: getTextContent(heading),
+      content: heading.content,
       metadata: {
-        level: parseInt(heading.name.charAt(1))
+        level: heading.level
       }
     });
   });
   
   // Extract images
-  const images = findElements(doc, 'img');
-  images.forEach((img, index) => {
+  const images = extractImages(htmlContent);
+  images.forEach(image => {
     blocks.push({
-      id: `image-${index}`,
+      id: `image-${blockIndex++}`,
       type: 'image',
-      content: getOuterHTML(img),
+      content: `<img src="${image.src}" alt="${image.alt}" />`,
       metadata: {
-        src: img.attribs?.src || '',
-        alt: img.attribs?.alt || '',
-        caption: img.attribs?.['data-caption'] || ''
+        src: image.src,
+        alt: image.alt,
+        caption: image.caption
       }
     });
   });
   
-  // Extract paragraphs and other text content
-  const paragraphs = findElements(doc, 'p');
-  paragraphs.forEach((p, index) => {
-    const textContent = getTextContent(p);
-    if (textContent) {
-      blocks.push({
-        id: `text-${index}`,
-        type: 'text',
-        content: getOuterHTML(p)
-      });
-    }
+  // Extract paragraphs
+  const paragraphs = extractParagraphs(htmlContent);
+  paragraphs.forEach(paragraph => {
+    blocks.push({
+      id: `text-${blockIndex++}`,
+      type: 'text',
+      content: `<p>${paragraph}</p>`
+    });
   });
   
   // Extract lists
-  const lists = findElements(doc, 'ul,ol');
-  lists.forEach((list, index) => {
-    const listItems = findElements(list, 'li');
-    const items = listItems.map(li => getTextContent(li));
+  const lists = extractLists(htmlContent);
+  lists.forEach(list => {
+    const listItems = list.items.map(item => `<li>${item}</li>`).join('');
     blocks.push({
-      id: `list-${index}`,
+      id: `list-${blockIndex++}`,
       type: 'list',
-      content: getOuterHTML(list),
+      content: `<${list.type}>${listItems}</${list.type}>`,
       metadata: {
-        items
+        items: list.items
       }
     });
   });
   
-  // Extract blockquotes
-  const quotes = findElements(doc, 'blockquote');
-  quotes.forEach((quote, index) => {
+  // Extract quotes
+  const quotes = extractQuotes(htmlContent);
+  quotes.forEach(quote => {
     blocks.push({
-      id: `quote-${index}`,
+      id: `quote-${blockIndex++}`,
       type: 'quote',
-      content: getOuterHTML(quote)
+      content: `<blockquote>${quote}</blockquote>`
     });
   });
   
   return blocks;
 }
 
-export function extractImages(htmlContent: string): Array<{src: string; alt: string; caption?: string}> {
-  if (!htmlContent) return [];
-  
-  const doc = parseDocument(htmlContent);
-  const images = findElements(doc, 'img');
-  
-  return images.map(img => ({
-    src: img.attribs?.src || '',
-    alt: img.attribs?.alt || '',
-    caption: img.attribs?.['data-caption'] || ''
-  }));
-}
-
 export function stripHtml(html: string): string {
   if (!html) return '';
-  const doc = parseDocument(html);
-  return getTextContent(doc);
+  return html.replace(/<[^>]*>/g, '').trim();
 }
