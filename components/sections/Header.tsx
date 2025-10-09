@@ -6,8 +6,8 @@ export function Header() {
     <header className="site-header">
       <div className="container nav">
         <div className="brand">
-          <span className="brand-mark">E</span>
-          <h1 className="font-brand">Ecclection</h1>
+          <span className="brand-mark"><img src="/logo.png" alt="Ecclection" className="w-8 h-8" /></span>
+          <h1 className="font-brand font-bold text-black font-xl-cyan-600">Ecclection</h1>
         </div>
         <nav className="nav-links">
           <Link href="/">Home</Link>

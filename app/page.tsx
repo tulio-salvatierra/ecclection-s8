@@ -21,7 +21,7 @@ export default async function HomePage() {
 
   // Extract content blocks from WordPress content
   const contentBlocks = extractContentBlocks(page.html);
-  
+  console.log(contentBlocks, "contentBlocks");
   
   // Separate the first few blocks for featured display
   const featuredBlocks = contentBlocks.slice(0, 3);
