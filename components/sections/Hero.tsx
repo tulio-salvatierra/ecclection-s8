@@ -13,15 +13,14 @@ export function Hero({ title, subtitle, backgroundImage, className = "" }: HeroP
   return (
     <section className={`min-h-screen flex items-center ${className}`}>
       <div className="container section-pad mx-auto h-screen">
-        <div className="bg-white/20 w-[100%] h-[100%] grid grid-cols-10 overflow-hidden bg-[url('https://peanuttyxx.wordpress.com/wp-content/uploads/2025/10/img_4131.jpeg')] bg-cover bg-top from-primary/10 via-secondary/5 to-accent/10 border-2 border-primary/20 backdrop-blur-sm">
+        <div className="bg-white/20 w-[100%] h-[100%] grid grid-cols-9 overflow-hidden bg-[url('https://peanuttyxx.wordpress.com/wp-content/uploads/2025/10/img_4131.jpeg')] bg-cover bg-top from-primary/10 via-secondary/5 to-accent/10 border-2 border-primary/20 backdrop-blur-sm">
           
-          <div className="h-50 col-span-9 flex justify-between items-center p-8 w-full mt-20">
+          <div className="h-50 flex justify-between items-center p-8 w-full mt-20">
             
             
-              <h1 className="col-span-4 w-full justify-start text-orange-400 md:text-8xl text-4xl font-normal leading-tight font-['Righteous']">WELCOME TO ECCLECTION</h1>
-              <p className="p-8 rounded-md col-span-3 text-end bg-white/50 p-4 w-50 self-stretch justify-start text-black-700 text-xl md:text-2xl">Where art meets community</p>
-              <div className="col-span-1" />
-              <a className="p-4 col-span-3 mx-auto origin-top-left bg-cyan-600 text-white text-2xl rounded-md hover:bg-cyan-600/80" href="tel:+17739517992">Come visit us!</a></div>
+              <h1 className="col-span-7 w-full justify-start text-orange-400 md:text-8xl text-4xl font-normal leading-tight font-['Righteous']">WELCOME TO ECCLECTION</h1>
+              <p className="text-end bg-white/30 p-4 w-50 self-stretch justify-start text-black-700 text-xl md:text-4xl">Where art meets community</p>
+              <a className="p-4 col-span-2 mx-auto origin-top-left bg-cyan-600 text-white text-2xl rounded-md hover:bg-cyan-600/80" href="tel:+17739517992">Come visit us!</a></div>
               
              
             
