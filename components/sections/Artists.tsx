@@ -90,10 +90,10 @@ export function Artists({
             />
           </div>
         )}
-        <h2 className="text-3xl md:text-4xl font-bold font-brand color--ecclection-teal text-foreground mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold font-brand font-cyan-600 text-foreground mb-4">
           {title}
         </h2>
-        <p className="text-lg text-white max-w-2xl mx-auto">
+        <p className="text-lg text-cyan-500 max-w-2xl mx-auto">
           {description}
         </p>
       </div>
@@ -112,14 +112,14 @@ export function Artists({
                 <div className="text-6xl opacity-50">🎨</div>
               )}
               {artist.featured && (
-                <Badge className="absolute top-3 right-3 bg-primary text-primary-foreground">
+                <Badge className="absolute top-3 right-3 bg-primary text-primary-foreground font-brand font-cyan-600">
                   Featured
                 </Badge>
               )}
             </div>
             
             <div className="p-6">
-              <h3 className="text-xl font-semibold text-foreground mb-1">
+              <h3 className="text-xl font-semibold font-brand font-cyan-600 text-foreground mb-1">
                 {artist.name}
               </h3>
               
@@ -127,7 +127,7 @@ export function Artists({
                 {artist.specialty}
               </Badge>
 
-              <p className="text-white text-sm mb-4 line-clamp-3">
+              <p className="text-cyan-500 text-sm mb-4 line-clamp-3">
                 {artist.bio}
               </p>
 
@@ -141,7 +141,7 @@ export function Artists({
                   </Button>
                 )}
                 {artist.social?.website && (
-                  <Button size="sm" variant="outline" className="flex-1">
+                  <Button size="sm" variant="outline" className="flex-1 font-brand font-cyan-600">
                     <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>

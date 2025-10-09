@@ -38,7 +38,7 @@ export function About({
   return (
     <section className={`container section-pad ${className}`}>
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-cyan-600 font-brand mb-4">
           {title}
         </h2>
         {content && (
@@ -52,10 +52,10 @@ export function About({
         {features.map((feature, index) => (
           <Card key={index} className="p-6 text-center hover:shadow-lg transition-shadow">
             <div className="text-4xl mb-4">{feature.icon}</div>
-            <h3 className="text-xl font-semibold text-foreground mb-3">
+            <h3 className="text-xl font-semibold text-cyan-600 mb-3">
               {feature.title}
             </h3>
-            <p className="text-white">
+            <p className="text-cyan-500">
               {feature.description}
             </p>
           </Card>

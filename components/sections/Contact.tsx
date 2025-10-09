@@ -18,7 +18,7 @@ export function Contact({
   contactInfo = {
     phone: "+1 (773) 951-7992",
     email: "hello@ecclection.com",
-    address: "123 Art Street, Creative District, City, State 12345",
+    address: "6059 W Irving Park Rd, Chicago, IL 60634",
     hours: "Mon-Fri: 10AM-6PM, Sat-Sun: 12PM-5PM"
   },
   className = "" 
@@ -26,7 +26,7 @@ export function Contact({
   return (
     <section className={`container section-pad ${className}`}>
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-cyan-600 font-brand mb-4">
           {title}
         </h2>
         <p className="text-lg text-white max-w-2xl mx-auto">
@@ -37,7 +37,7 @@ export function Contact({
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Contact Information */}
         <Card className="p-8">
-          <h3 className="text-2xl font-semibold text-foreground mb-6">Contact Information</h3>
+          <h3 className="text-2xl font-semibold text-cyan-600 font-brand mb-6">Contact Information</h3>
           <div className="space-y-4">
             {contactInfo.phone && (
               <div className="flex items-center space-x-3">
@@ -47,7 +47,7 @@ export function Contact({
                   </svg>
                 </div>
                 <div>
-                  <p className="font-medium text-foreground">Phone</p>
+                  <p className="font-medium text-cyan-600 font-brand">Phone</p>
                   <a href={`tel:${contactInfo.phone}`} className="text-primary hover:underline">
                     {contactInfo.phone}
                   </a>
@@ -63,7 +63,7 @@ export function Contact({
                   </svg>
                 </div>
                 <div>
-                  <p className="font-medium text-foreground">Email</p>
+                  <p className="font-medium text-cyan-600 font-brand">Email</p>
                   <a href={`mailto:${contactInfo.email}`} className="text-primary hover:underline">
                     {contactInfo.email}
                   </a>
@@ -80,7 +80,7 @@ export function Contact({
                   </svg>
                 </div>
                 <div>
-                  <p className="font-medium text-foreground">Address</p>
+                  <p className="font-medium text-cyan-600 font-brand">Address</p>
                   <p className="text-white">{contactInfo.address}</p>
                 </div>
               </div>
@@ -94,7 +94,7 @@ export function Contact({
                   </svg>
                 </div>
                 <div>
-                  <p className="font-medium text-foreground">Hours</p>
+                  <p className="font-medium text-cyan-600 font-brand">Hours</p>
                   <p className="text-white">{contactInfo.hours}</p>
                 </div>
               </div>
@@ -104,7 +104,7 @@ export function Contact({
 
         {/* Quick Actions */}
         <Card className="p-8">
-          <h3 className="text-2xl font-semibold text-foreground mb-6">Quick Actions</h3>
+          <h3 className="text-2xl font-semibold text-cyan-600 font-brand mb-6">Quick Actions</h3>
           <div className="space-y-4">
             <Button className="w-full justify-start" variant="outline">
               <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">

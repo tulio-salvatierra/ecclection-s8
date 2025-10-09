@@ -23,9 +23,9 @@ export default async function HomePage() {
   const contentBlocks = extractContentBlocks(page.html);
   console.log(contentBlocks, "contentBlocks");
   
-  // Separate the first few blocks for featured display
-  const featuredBlocks = contentBlocks.slice(0, 3);
-  const remainingBlocks = contentBlocks.slice(3);
+  // // Separate the first few blocks for featured display
+  // const featuredBlocks = contentBlocks.slice(0, 3);
+  // const remainingBlocks = contentBlocks.slice(3);
   return (
     <>
       {/* Hero Section */}
@@ -49,7 +49,7 @@ export default async function HomePage() {
       {contentBlocks.length > 0 && (
         <section className="container section-pad">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-cyan-600 font-brand mb-4">
               Latest News & Updates
             </h2>
             <p className="text-lg text-white max-w-2xl mx-auto">

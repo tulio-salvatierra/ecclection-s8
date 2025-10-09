@@ -70,7 +70,7 @@ export function Events({
   return (
     <section className={`container section-pad ${className}`}>
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-cyan-600 font-brand mb-4">
           {title}
         </h2>
         <p className="text-lg text-white max-w-2xl mx-auto">
@@ -89,21 +89,21 @@ export function Events({
             
             <div className="p-6">
               <div className="flex items-start justify-between mb-3">
-                <Badge variant="secondary" className="text-xs">
+                <Badge variant="secondary" className="text-xs font-brand font-cyan-600">
                   {event.category}
                 </Badge>
                 {event.price && (
-                  <span className="text-sm font-semibold text-primary">
+                  <span className="text-sm font-semibold font-brand font-cyan-600 text-cyan-600">
                     {event.price}
                   </span>
                 )}
               </div>
 
-              <h3 className="text-xl font-semibold text-foreground mb-2">
+              <h3 className="text-xl font-semibold font-brand font-cyan-600 text-cyan-600 mb-2">
                 {event.title}
               </h3>
 
-              <div className="space-y-2 mb-4 text-sm text-white">
+              <div className="space-y-2 mb-4 text-sm text-cyan-500">
                 <div className="flex items-center">
                   <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -125,11 +125,11 @@ export function Events({
                 </div>
               </div>
 
-              <p className="text-white mb-4 line-clamp-3">
+              <p className="text-cyan-500 mb-4 line-clamp-3">
                 {event.description}
               </p>
 
-              <Button className="w-full" variant="outline">
+              <Button className="w-full font-brand font-cyan-600" variant="outline">
                 Learn More
               </Button>
             </div>
@@ -138,7 +138,7 @@ export function Events({
       </div>
 
       <div className="text-center mt-12">
-        <Button size="lg" className="bg-primary hover:bg-primary/90">
+        <Button size="lg" className="bg-primary hover:bg-primary/90 font-brand font-cyan-600">
           View All Events
         </Button>
       </div>
