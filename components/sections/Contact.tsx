@@ -17,7 +17,7 @@ export function Contact({
   title = "Get In Touch",
   contactInfo = {
     phone: "+1 (773) 951-7992",
-    email: "hello@ecclection.com",
+    email: "EcclectionChicago@gmail.com",
     address: "6059 W Irving Park Rd, Chicago, IL 60634",
     hours: "Mon-Fri: 10AM-6PM, Sat-Sun: 12PM-5PM"
   },

@@ -90,10 +90,10 @@ export function Artists({
             />
           </div>
         )}
-        <h2 className="text-3xl md:text-4xl font-bold font-brand font-cyan-600 text-foreground mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold font-brand font-cyan-600 text-cyan-600 mb-4">
           {title}
         </h2>
-        <p className="text-lg text-cyan-500 max-w-2xl mx-auto">
+        <p className="text-lg text-white max-w-2xl mx-auto">
           {description}
         </p>
       </div>
