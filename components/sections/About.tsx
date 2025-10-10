@@ -5,6 +5,10 @@ import { Badge } from "@/components/ui/badge";
 interface AboutProps {
   title?: string;
   content?: string;
+  image?: {
+    src: string;
+    alt: string;
+  };
   features?: Array<{
     title: string;
     description: string;
@@ -14,27 +18,13 @@ interface AboutProps {
 }
 
 export function About({ 
-  title = "About Ecclection", 
-  content, 
-  features = [
-    {
-      title: "Local Art Community",
-      description: "Supporting local artists and fostering creative connections in our community.",
-      icon: "🎨"
-    },
-    {
-      title: "Creative Events",
-      description: "Hosting workshops, exhibitions, and art shows throughout the year.",
-      icon: "🎭"
-    },
-    {
-      title: "Artistic Collaboration",
-      description: "Bringing together artists, collectors, and art enthusiasts.",
-      icon: "🤝"
-    }
-  ],
+  title,
+  content,
+  image,
+  features = [],
   className = "" 
 }: AboutProps) {
+  console.log(features);
   return (
     <section className={`container section-pad ${className}`}>
       <div className="text-center mb-12">
@@ -45,6 +35,15 @@ export function About({
           <p className="text-lg text-white max-w-3xl mx-auto">
             {content}
           </p>
+        )}
+        {image && (
+          <div className="mt-8">
+            <img 
+              src={image.src} 
+              alt={image.alt} 
+              className="mx-auto rounded-lg shadow-lg max-w-md"
+            />
+          </div>
         )}
       </div>
 

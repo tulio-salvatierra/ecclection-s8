@@ -176,6 +176,7 @@ export default async function HomePage() {
   const about = mapAbout(aboutBlocks);
   const contact = mapContact(contactBlocks);
 
+  console.log(blocks);
   return (
     <>
       <Hero
@@ -195,10 +196,13 @@ export default async function HomePage() {
       />
 
       <About
-        heading={about?.heading}
-        paragraphs={about?.paragraphs}
-        image={about?.image}
-        gallery={about?.gallery}
+        title="About us"
+        content="bio text from about section"
+        image={{
+          src: "https://peanuttyxx.wordpress.com/wp-content/uploads/2023/11/img_9263.jpg?w=768",
+          alt: "julie"
+        }}
+        features={about?.features}
       />
 
       <Contact
