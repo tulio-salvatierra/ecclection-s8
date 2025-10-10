@@ -66,6 +66,7 @@ export function Events({
       day: 'numeric' 
     });
   };
+  console.log(events);
 
   return (
     <section className={`container section-pad ${className}`}>

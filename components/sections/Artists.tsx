@@ -3,162 +3,221 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
-interface Artist {
-  id: string;
-  name: string;
-  specialty: string;
-  bio: string;
+export interface ArtistCard {
+  id?: string | number;
+  /** Either use `name` (preferred) or `title` (for generic cards) */
+  name?: string;
+  title?: string;
+  specialty?: string;
+  /** Artist bio or generic text/description */
+  bio?: string;
+  description?: string;
+  text?: string;
+  /** Absolute image URL */
   image?: string;
+  featured?: boolean;
   social?: {
     instagram?: string;
     website?: string;
     email?: string;
   };
-  featured?: boolean;
 }
 
-interface ArtistsProps {
-  title?: string;
+export interface ArtistsProps {
+  /** Section heading (e.g. "Featured Artists") */
+  heading?: string;
+  /** Section blurb under heading */
   description?: string;
-  image?: string;
+  /** Tailwind utility overrides */
   className?: string;
+  /**
+   * Canonical array of artist cards.
+   * Prefer passing this shape.
+   */
+  items?: ArtistCard[];
+  /**
+   * Alternate, simpler input shape from your page.tsx mapping:
+   * { title, text, image }[]
+   */
+  cards?: { title?: string; text?: string; image?: string }[];
 }
 
+function normalizeUrl(url?: string): string | undefined {
+  if (!url) return undefined;
+  const trimmed = url.trim();
+  if (
+    trimmed.startsWith("http://") ||
+    trimmed.startsWith("https://") ||
+    trimmed.startsWith("mailto:")
+  ) {
+    return trimmed;
+  }
+  if (trimmed.startsWith("@")) {
+    const handle = trimmed.replace(/^@+/, "");
+    return `https://instagram.com/${handle}`;
+  }
+  // plain domain -> https
+  return `https://${trimmed}`;
+}
 
-export function Artists({ 
-  title = "Featured Artists",
+/**
+ * Artists grid section
+ * - Accepts either `items` (rich artist objects) or `cards` (simple title/text/image)
+ * - Renders a responsive 1/2/4 grid of artist cards
+ */
+export function Artists({
+  heading = "Featured Artists",
   description = "Meet the talented artists who make our community vibrant and inspiring.",
-  image,
-  className = "" 
+  className = "",
+  items,
+  cards,
 }: ArtistsProps) {
-  // Static artists data
-  const artists: Artist[] = [
-    {
-      id: "1",
-      name: "Sarah Chen",
-      specialty: "Abstract Painting",
-      bio: "Sarah creates vibrant abstract works that explore the intersection of color and emotion. Her pieces have been featured in galleries across the city.",
-      featured: true,
-      social: {
-        instagram: "@sarahchenart",
-        website: "sarahchen.com"
-      }
-    },
-    {
-      id: "2",
-      name: "Marcus Rodriguez",
-      specialty: "Sculpture & Mixed Media",
-      bio: "Marcus combines traditional sculpting techniques with modern materials to create thought-provoking installations that challenge our perceptions.",
-      featured: true,
-      social: {
-        instagram: "@marcussculpts",
-        website: "marcusrodriguez.art"
-      }
-    },
-    {
-      id: "3",
-      name: "Elena Kowalski",
-      specialty: "Digital Art & Photography",
-      bio: "Elena blends digital technology with traditional artistic principles, creating stunning visual narratives that bridge the gap between reality and imagination.",
-      featured: false,
-      social: {
-        instagram: "@elenakowalski",
-        website: "elenakowalski.com"
-      }
-    },
-    {
-      id: "4",
-      name: "David Park",
-      specialty: "Ceramics & Pottery",
-      bio: "David's ceramic works celebrate the beauty of imperfection and the natural flow of clay. Each piece tells a story of transformation and growth.",
-      featured: false,
-      social: {
-        instagram: "@davidparkceramics",
-        website: "davidparkpottery.com"
-      }
-    }
-  ];
+  // Normalize inputs into one array and limit to first 3
+  const list: ArtistCard[] =
+    (items && items.length > 0
+      ? items.slice(0, 3)
+      : (cards?.map((c, i) => ({
+          id: i,
+          title: c.title,
+          text: c.text,
+          image: c.image,
+        })) ?? []).slice(0, 3)) || [];
+  console.log(list);
+
   return (
     <section className={`container section-pad ${className}`}>
       <div className="text-center mb-12">
-        {image && (
-          <div className="mb-6">
-            <img 
-              src={image} 
-              alt={title}
-              className="w-32 h-32 mx-auto rounded-full object-cover border-4 border-primary/20"
-            />
-          </div>
-        )}
-        <h2 className="text-3xl md:text-4xl font-bold font-brand font-cyan-600 text-cyan-600 mb-4">
-          {title}
+        <h2 className="text-3xl md:text-4xl font-bold text-cyan-400 font-brand mb-4">
+          {heading}
         </h2>
-        <p className="text-lg text-white max-w-2xl mx-auto">
-          {description}
-        </p>
+        {description && (
+          <p className="text-lg text-white max-w-2xl mx-auto">
+            {description}
+          </p>
+        )}
       </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {artists.map((artist) => (
-          <Card key={artist.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-            <div className="h-64 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center relative">
-              {artist.image ? (
-                <img 
-                  src={artist.image} 
-                  alt={artist.name}
-                  className="w-full h-full object-cover"
-                />
-              ) : (
-                <div className="text-6xl opacity-50">🎨</div>
-              )}
-              {artist.featured && (
-                <Badge className="absolute top-3 right-3 bg-primary text-primary-foreground font-brand font-cyan-600">
-                  Featured
-                </Badge>
-              )}
-            </div>
-            
-            <div className="p-6">
-              <h3 className="text-xl font-semibold font-brand font-cyan-600 text-foreground mb-1">
-                {artist.name}
-              </h3>
-              
-              <Badge variant="outline" className="mb-3 text-xs">
-                {artist.specialty}
-              </Badge>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {list.map((artist, idx) => {
+          const key = artist.id ?? idx;
+          const displayName = artist.name ?? artist.title ?? "Untitled";
+          const blurb = artist.bio ?? artist.description ?? artist.text ?? "";
+          const img = artist.image;
+          const ig = normalizeUrl(artist.social?.instagram);
+          const web = normalizeUrl(artist.social?.website);
 
-              <p className="text-cyan-500 text-sm mb-4 line-clamp-3">
-                {artist.bio}
-              </p>
-
-              <div className="flex space-x-2">
-                {artist.social?.instagram && (
-                  <Button size="sm" variant="outline" className="flex-1">
-                    <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987 6.62 0 11.987-5.367 11.987-11.987C24.014 5.367 18.637.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.323-1.297C4.198 14.895 3.708 13.744 3.708 12.447s.49-2.448 1.297-3.323c.875-.807 2.026-1.297 3.323-1.297s2.448.49 3.323 1.297c.807.875 1.297 2.026 1.297 3.323s-.49 2.448-1.297 3.323c-.875.807-2.026 1.297-3.323 1.297zm7.718-1.297c-.875.807-2.026 1.297-3.323 1.297s-2.448-.49-3.323-1.297c-.807-.875-1.297-2.026-1.297-3.323s.49-2.448 1.297-3.323c.875-.807 2.026-1.297 3.323-1.297s2.448.49 3.323 1.297c.807.875 1.297 2.026 1.297 3.323s-.49 2.448-1.297 3.323z"/>
-                    </svg>
-                    IG
-                  </Button>
+          return (
+            <Card
+              key={key}
+              className="overflow-hidden hover:shadow-lg transition-shadow"
+            >
+              <div className="h-64 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center relative">
+                {img ? (
+                  <img
+                    src={img}
+                    alt={displayName}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="text-6xl opacity-50">🎨</div>
                 )}
-                {artist.social?.website && (
-                  <Button size="sm" variant="outline" className="flex-1 font-brand font-cyan-600">
-                    <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                    Web
-                  </Button>
+                {artist.featured && (
+                  <Badge className="absolute top-3 right-3 bg-primary text-primary-foreground">
+                    Featured
+                  </Badge>
                 )}
               </div>
-            </div>
-          </Card>
-          ))}
-            </div>
 
-          <div className="text-center mt-12">
-        <Button size="lg" variant="outline">
-          View All Artists
-        </Button>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-cyan-600 font-brand mb-1">
+                  {displayName}
+                </h3>
+
+                {artist.specialty && (
+                  <Badge variant="outline" className="mb-3 text-xs text-cyan-600 font-brand">
+                    {artist.specialty}
+                  </Badge>
+                )}
+
+                {blurb && (
+                  <p className="text-black text-sm mb-4 line-clamp-3">
+                    {blurb}
+                  </p>
+                )}
+
+                <div className="flex flex-wrap gap-2">
+                  {ig && (
+                    <Button size="sm" variant="outline" asChild>
+                      <a
+                        href={ig}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${displayName} on Instagram`}
+                      >
+                        <svg
+                          className="w-4 h-4 mr-1"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987 6.62 0 11.987-5.367 11.987-11.987C24.014 5.367 18.637.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.323-1.297C4.198 14.895 3.708 13.744 3.708 12.447s.49-2.448 1.297-3.323c.875-.807 2.026-1.297 3.323-1.297s2.448.49 3.323 1.297c.807.875 1.297 2.026 1.297 3.323s-.49 2.448-1.297 3.323c-.875.807-2.026 1.297-3.323 1.297zm7.718-1.297c-.875.807-2.026 1.297-3.323 1.297s-2.448-.49-3.323-1.297c-.807-.875-1.297-2.026-1.297-3.323s.49-2.448 1.297-3.323c.875-.807 2.026-1.297 3.323-1.297s2.448.49 3.323 1.297c.807.875 1.297 2.026 1.297 3.323s-.49 2.448-1.297 3.323z" />
+                        </svg>
+                        IG
+                      </a>
+                    </Button>
+                  )}
+                  {web && (
+                    <Button size="sm" variant="outline" asChild>
+                      <a
+                        href={web}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${displayName} website`}
+                      >
+                        <svg
+                          className="w-4 h-4 mr-1"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                          />
+                        </svg>
+                        Web
+                      </a>
+                    </Button>
+                  )}
+                  {artist.social?.email && (
+                    <Button size="sm" variant="outline" asChild>
+                      <a
+                        href={`mailto:${artist.social.email}`}
+                        aria-label={`Email ${displayName}`}
+                      >
+                        Email
+                      </a>
+                    </Button>
+                  )}
+                </div>
+              </div>
+            </Card>
+          );
+        })}
       </div>
+
+      {list.length > 4 && (
+        <div className="text-center mt-12">
+          <Button size="lg" variant="outline">
+            View All Artists
+          </Button>
+        </div>
+      )}
     </section>
   );
 }
+
+export default Artists;
