@@ -72,8 +72,14 @@ function mapArtists(blocks: ContentBlock[]) {
       let image: Maybe<string>;
       while (j < blocks.length && !isHeading(blocks[j])) {
         if (!text && isText(blocks[j])) text = stripTags(blocks[j].content);
-        if (!image && isImage(blocks[j]))
-          image = blocks[j].metadata?.src as Maybe<string>;
+        if (
+          !image &&
+          isImage(blocks[j]) &&
+          typeof (blocks[j] as any).metadata === 'object' &&
+          (blocks[j] as any).metadata?.src
+        ) {
+          image = (blocks[j] as any).metadata.src as Maybe<string>;
+        }
         j++;
       }
       // Avoid adding the section label itself as a card if it slips in
