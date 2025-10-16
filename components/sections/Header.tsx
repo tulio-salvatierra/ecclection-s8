@@ -17,7 +17,7 @@ export function Header() {
           <Link href="/contact">Contact</Link>
         </nav>
         <div className="contact-mini">
-          <a className="btn" href="tel:+17739517992">Visit Us</a>
+          <a className="btn" href="https://maps.app.goo.gl/ZMgVyGzAmNvomLMcA">Visit Us</a>
         </div>
       </div>
     </header>

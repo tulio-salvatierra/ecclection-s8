@@ -1,5 +1,4 @@
-// Hero media
-import background from "public/Ecclection_hero.mp4";
+
 
 // components/sections/Hero.tsx
 type HeroProps = {
@@ -64,8 +63,8 @@ export function Hero({
               <>
          
               <a
-                className="p-8 mt-28 hover:rotate-[-5deg] transition-all duration-300 col-span-2 mx-auto origin-top-left text-white font-brand text-2xl rounded-md hover:bg-cyan-600/80"
-                href="tel:+17739517992"
+                className="p-8 mt-28 hover:rotate-[5deg] transition-all duration-300 col-span-2 mx-auto origin-top-left text-white font-brand text-2xl rounded-md bg-cyan-600/80"
+                href="https://maps.app.goo.gl/ZMgVyGzAmNvomLMcA"
               >
                 Come visit us!
               </a>

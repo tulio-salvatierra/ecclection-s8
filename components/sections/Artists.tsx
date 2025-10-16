@@ -87,7 +87,7 @@ export function Artists({
   return (
     <section className={`container section-pad ${className}`}>
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-cyan-400 font-brand mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-white font-brand mb-4">
           {heading}
         </h2>
         {description && (
@@ -109,7 +109,7 @@ export function Artists({
           return (
             <Card
               key={key}
-              className="overflow-hidden hover:shadow-lg transition-shadow"
+              className="overflow-hidden hover:shadow-lg transition-shadow bg-cyan-600 text-black"
             >
               <div className="h-64 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center relative">
                 {img ? (
@@ -122,19 +122,19 @@ export function Artists({
                   <div className="text-6xl opacity-50">🎨</div>
                 )}
                 {artist.featured && (
-                  <Badge className="absolute top-3 right-3 bg-primary text-primary-foreground">
+                  <Badge className="absolute top-3 right-3 bg-cyan-100 text-black">
                     Featured
                   </Badge>
                 )}
               </div>
 
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-cyan-600 font-brand mb-1">
+                <h3 className="text-xl font-semibold text-black font-brand mb-1">
                   {displayName}
                 </h3>
 
                 {artist.specialty && (
-                  <Badge variant="outline" className="mb-3 text-xs text-cyan-600 font-brand">
+                  <Badge variant="outline" className="mb-3 text-xs bg-cyan-100 text-black font-brand">
                     {artist.specialty}
                   </Badge>
                 )}
@@ -147,7 +147,7 @@ export function Artists({
 
                 <div className="flex flex-wrap gap-2">
                   {ig && (
-                    <Button size="sm" variant="outline" asChild>
+                    <Button size="sm" variant="outline" className="bg-cyan-100 text-black hover:bg-cyan-200" asChild>
                       <a
                         href={ig}
                         target="_blank"
@@ -167,7 +167,7 @@ export function Artists({
                     </Button>
                   )}
                   {web && (
-                    <Button size="sm" variant="outline" asChild>
+                    <Button size="sm" variant="outline" className="bg-cyan-100 text-black hover:bg-cyan-200" asChild>
                       <a
                         href={web}
                         target="_blank"
@@ -175,7 +175,7 @@ export function Artists({
                         aria-label={`${displayName} website`}
                       >
                         <svg
-                          className="w-4 h-4 mr-1"
+                          className="w-4 h-4 mr-1 text-black"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -193,7 +193,7 @@ export function Artists({
                     </Button>
                   )}
                   {artist.social?.email && (
-                    <Button size="sm" variant="outline" asChild>
+                    <Button size="sm" variant="outline" className="bg-cyan-100 text-black hover:bg-cyan-200" asChild>
                       <a
                         href={`mailto:${artist.social.email}`}
                         aria-label={`Email ${displayName}`}
@@ -211,7 +211,7 @@ export function Artists({
 
       {list.length > 4 && (
         <div className="text-center mt-12">
-          <Button size="lg" variant="outline">
+          <Button size="lg" className="bg-cyan-100 text-black hover:bg-cyan-200 font-brand" variant="outline">
             View All Artists
           </Button>
         </div>
