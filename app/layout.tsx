@@ -2,32 +2,33 @@
 import "./globals.css"; // tailwind or your global CSS
 import type { Metadata } from "next";
 import { Header } from "@/components/sections/Header";
-import { Inter, Playfair_Display, Poppins, Righteous } from 'next/font/google';
+import { Inter, Quintessential, Raleway, Pirata_One } from 'next/font/google';
 
 // Configure your fonts
-const inter = Inter({ 
+const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',
 });
 
-const playfair = Playfair_Display({ 
-  subsets: ['latin'],
-  variable: '--font-playfair',
-  display: 'swap',
-});
-
-const poppins = Poppins({ 
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-poppins',
-  display: 'swap',
-});
-
-const righteous = Righteous({ 
+const quintessential = Quintessential({
   subsets: ['latin'],
   weight: ['400'],
-  variable: '--font-righteous',
+  variable: '--font-brand',
+  display: 'swap',
+});
+
+const raleway = Raleway({
+  subsets: ['latin'],
+  variable: '--font-normal',
+  display: 'swap',
+});
+
+// Alternate brand font for testing/toggling
+const pirataOne = Pirata_One({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-brand-alt',
   display: 'swap',
 });
 
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable} ${poppins.variable} ${righteous.variable}`}>
+    <html lang="en" className={`${inter.variable} ${quintessential.variable} ${raleway.variable} ${pirataOne.variable}`}>
       <body>
         <Header />
 

@@ -87,10 +87,11 @@
 }
 
 @theme inline {
-  --font-sans: var(--font-inter);
+  --font-sans: var(--font-normal);
   --font-serif: var(--font-playfair);
   --font-display: var(--font-poppins);
-  --font-brand: var(--font-righteous);
+  --font-brand: var(--font-brand);
+  --font-brand-alt: var(--font-brand-alt);
   --font-mono: var(--font-geist-mono);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -135,7 +136,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply text-foreground;
+    @apply text-foreground font-sans;
     background-image: url('/ecclection-bg.svg');
     background-size: cover;
     background-position: center;
@@ -245,14 +246,28 @@
   font-family: var(--font-poppins);
 }
 
+.pirata-one-regular {
+  font-family: "Pirata One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 .font-serif {
   font-family: var(--font-playfair);
 }
 
 .font-sans {
-  font-family: var(--font-inter);
+  font-family: var(--font-normal);
 }
 
 .font-brand {
-  font-family: var(--font-righteous);
+  font-family: var(--font-brand-alt);
+}
+
+/* Optional: toggling helper
+   Add class 'use-brand-alt' on <html> to switch to Pirata One
+*/
+.use-brand-alt .font-brand {
+  font-family: var(--font-brand-alt);
 }
