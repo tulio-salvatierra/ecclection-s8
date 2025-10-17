@@ -213,10 +213,7 @@ export default async function HomePage() {
       <About
         title="About us"
         content="bio text from about section"
-        image={{
-          src: "https://peanuttyxx.wordpress.com/wp-content/uploads/2023/11/img_9263.jpg?w=768",
-          alt: "julie"
-        }}
+        image={about?.image}
         features={about?.features}
       />
 
