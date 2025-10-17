@@ -14,7 +14,7 @@ export function Header() {
           <Link href="/artists">Artists</Link>
           <Link href="/events">Events</Link>
           <Link href="/about">About</Link>
-          <Link href="/contact">Contact</Link>
+          <Link href="/resources">Resources</Link>
         </nav>
         <div className="contact-mini">
           <a className="btn" href="https://maps.app.goo.gl/ZMgVyGzAmNvomLMcA">Visit Us</a>

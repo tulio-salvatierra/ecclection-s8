@@ -82,7 +82,7 @@ export function Artists({
           text: c.text,
           image: c.image,
         })) ?? []).slice(0, 3)) || [];
-  console.log(list);
+  
 
   return (
     <section className={`container section-pad ${className}`}>

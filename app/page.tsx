@@ -3,6 +3,7 @@ import { Artists } from "@/components/sections/Artists";
 import { Events } from "@/components/sections/Events";
 import { About } from "@/components/sections/About";
 import { Contact } from "@/components/sections/Contact";
+import { UnderConstruction } from "@/components/sections/UnderConstruction";
 
 
 
@@ -183,6 +184,14 @@ export default async function HomePage() {
   const contact = mapContact(contactBlocks);
 
   console.log(blocks);
+  
+  // Toggle this to show/hide under construction
+  const showUnderConstruction = true;
+
+  if (showUnderConstruction) {
+    return <UnderConstruction />;
+  }
+
   return (
     <>
       <Hero
@@ -191,14 +200,14 @@ export default async function HomePage() {
         backgroundImage={hero.backgroundImage}
       />
       <Artists
-        title={artists.heading}
+        heading={artists.heading}
         description="Meet the talented artists who make our community vibrant."
         items={artists.cards}
       />
 
       <Events
-        heading={events?.heading}
-        items={events?.items}
+        title={events.heading}
+        events={events.items}
       />
 
       <About
