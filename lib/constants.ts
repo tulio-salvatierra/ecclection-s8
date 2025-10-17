@@ -11,8 +11,8 @@ export type SocialKey =
 
 export const SOCIAL_URLS: Record<SocialKey, string> = {
   instagram: "https://instagram.com/Ecclectionchicago",
-  facebook: "https://facebook.com/ecclection",
-  tiktok: "https://tiktok.com/ecclection",
+  facebook: "https://www.facebook.com/profile.php?id=61553781430144",
+  tiktok: "https://tiktok.com/@ecclection",
   email: "EcclectionChicago@gmail.com",
   phone: "tel:+1 (773) 951-7992",
   website: "https://ecclection.com",
