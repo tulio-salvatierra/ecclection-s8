@@ -46,7 +46,7 @@ export function UnderConstruction() {
                 </svg>
                 <div>
                   <p className="font-bold text-black font-brand">Address</p>
-                  <p className="text-black">6049 W. Irving Park Road</p>
+                  <p className="text-black">6059 W. Irving Park Road</p>
                   <p className="text-black">Chicago, IL 60634</p>
                   <p className="text-black text-sm">(West end of Portage Park)</p>
                 </div>
