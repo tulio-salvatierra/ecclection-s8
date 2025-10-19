@@ -50,7 +50,7 @@ export function Contact({
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Contact Information */}
-        <Card className="p-8 bg-cyan-600">
+        <Card className="p-8 bg-cyan-600 border-2 border-black shadow-[6px_6px_0_0_#000]">
           <h3 className="text-2xl font-semibold text-black font-brand mb-6">Contact Information</h3>
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
@@ -100,7 +100,7 @@ export function Contact({
         <div className="space-y-4">
           {cards.length > 0 ? (
             cards.map((card, index) => (
-              <Card key={index} className="p-6 bg-cyan-600">
+              <Card key={index} className="p-6 bg-cyan-600 border-2 border-black shadow-[6px_6px_0_0_#000]">
                 <h4 className="text-xl font-semibold text-black font-brand mb-3">
                   {card.title}
                 </h4>
@@ -110,7 +110,7 @@ export function Contact({
               </Card>
             ))
           ) : (
-            <Card className="p-8 bg-cyan-600">
+            <Card className="p-8 bg-cyan-600 border-2 border-black shadow-[6px_6px_0_0_#000]">
               <img src="/footer-logo.jpg" alt="Ecclection Store" className="w-full h-64 object-cover rounded-lg" />
             </Card>
           )}

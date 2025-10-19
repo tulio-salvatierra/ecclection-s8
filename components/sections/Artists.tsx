@@ -109,7 +109,7 @@ export function Artists({
           return (
             <Card
               key={key}
-              className="overflow-hidden hover:shadow-lg transition-shadow bg-cyan-600 text-black"
+              className="overflow-hidden bg-cyan-600 text-black border-2 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
             >
               <div className="h-64 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center relative">
                 {img ? (

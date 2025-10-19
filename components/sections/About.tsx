@@ -49,12 +49,12 @@ export function About({
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {features.map((feature, index) => (
-          <Card key={index} className="p-6 text-center hover:shadow-lg transition-shadow">
+          <Card key={index} className="p-6 text-center bg-cyan-600 border-2 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all">
             <div className="text-4xl mb-4">{feature.icon}</div>
-            <h3 className="text-xl font-semibold text-cyan-600 mb-3">
+            <h3 className="text-xl font-semibold text-black font-brand mb-3">
               {feature.title}
             </h3>
-            <p className="text-cyan-500">
+            <p className="text-black">
               {feature.description}
             </p>
           </Card>

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export function Header() {
   return (
-    <header className="site-header">
+    <header className="site-header sticky top-0 z-50 backdrop-blur-md bg-card/90">
       <div className="container nav">
         <div className="brand">
           <span className="brand-mark"><img src="/logo.png" alt="Ecclection" className="w-8 h-8" /></span>

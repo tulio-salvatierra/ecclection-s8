@@ -81,7 +81,7 @@ export function Events({
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {events.map((event) => (
-          <Card key={event.id} className="overflow-hidden hover:shadow-lg transition-shadow bg-cyan-600 text-black">
+          <Card key={event.id} className="overflow-hidden bg-cyan-600 text-black border-2 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all">
             {event.image && (
               <div className="h-48 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
                 <div className="text-6xl opacity-50">🎨</div>

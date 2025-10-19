@@ -120,7 +120,7 @@ export default function CommunityResourcesPage() {
             {resources.map((resource, index) => (
               <article
                 key={index}
-                className="p-6 rounded-lg bg-cyan-600 border border-black hover:border-cyan-400 transition-colors group"
+                className="p-6 rounded-lg bg-cyan-600 border-2 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all group"
               >
                 <div className="flex items-start justify-between mb-4">
                   <span className="text-xs tracking-wide uppercase text-black font-brand">{resource.category}</span>
