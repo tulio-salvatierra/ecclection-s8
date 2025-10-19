@@ -17,12 +17,12 @@ interface AboutProps {
   className?: string;
 }
 
-export function About({ 
+export function About({
   title,
   content,
   image,
   features = [],
-  className = "" 
+  className = ""
 }: AboutProps) {
   console.log(features);
   return (
@@ -33,14 +33,14 @@ export function About({
         </h2>
         {content && (
           <p className="text-lg text-white max-w-3xl mx-auto">
-            {content}
+            We also support our community of local artists and makers by featuring rotating displays and art events that connect creativity with customers. From handcrafted candles and soaps to one-of-a-kind accessories and collectibles, Ecclection continues to grow as a neighborhood hub for imagination and collaboration.
           </p>
         )}
         {image && (
           <div className="mt-8">
-            <img 
-              src={image.src} 
-              alt={image.alt} 
+            <img
+              src={image.src}
+              alt={image.alt}
               className="mx-auto rounded-lg shadow-lg max-w-md"
             />
           </div>

@@ -72,77 +72,41 @@ export function Events({
     <section className={`container section-pad ${className}`}>
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-white font-brand mb-4">
-          {title}
+        Bi‑Monthly Artist &amp; Community Appreciation Night
         </h2>
         <p className="text-lg text-white max-w-2xl mx-auto">
-          Join us for exciting art events, workshops, and exhibitions throughout the year.
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {events.map((event) => (
-          <Card key={event.id} className="overflow-hidden bg-cyan-600 text-black border-2 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all">
-            {event.image && (
-              <div className="h-48 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                <div className="text-6xl opacity-50">🎨</div>
-              </div>
-            )}
-            
-            <div className="p-6">
-              <div className="flex items-start justify-between mb-3">
-                <Badge variant="secondary" className="text-xs font-brand bg-cyan-100 text-black">
-                  {event.category}
-                </Badge>
-                {event.price && (
-                  <span className="text-sm font-semibold font-brand text-black">
-                    {event.price}
-                  </span>
-                )}
-              </div>
-
-              <h3 className="text-xl font-semibold font-brand text-black mb-2">
-                {event.title}
-              </h3>
-
-              <div className="space-y-2 mb-4 text-sm text-black">
-                <div className="flex items-center">
-                  <svg className="w-4 h-4 mr-2 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  {formatDate(event.date)}
-                </div>
-                <div className="flex items-center">
-                  <svg className="w-4 h-4 mr-2 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  {event.time}
-                </div>
-                <div className="flex items-center">
-                  <svg className="w-4 h-4 mr-2 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                  {event.location}
-                </div>
-              </div>
-
-              <p className="text-black mb-4 line-clamp-3">
-                {event.description}
-              </p>
-
-              <Button className="w-full font-brand bg-cyan-100 text-black hover:bg-cyan-200" variant="outline">
-                Learn More
-              </Button>
-            </div>
-          </Card>
-        ))}
-      </div>
-
-      <div className="text-center mt-12">
-        <Button size="lg" className="bg-cyan-100 text-black hover:bg-cyan-200 font-brand">
-          View All Events
-        </Button>
-      </div>
+        Every other month, <strong>Ecclection</strong> in <strong>Portage Park, Chicago</strong> hosts an evening celebrating 
+          <strong> local artists</strong>, creativity, and neighborhood connection. Meet featured makers, enjoy demos, and connect with 
+          neighbors in a welcoming space that supports diversity and inclusion.
+            </p>
+            <p className="text-white text-center mt-8 max-w-3xl mx-auto">
+            Stay connected with <strong>Ecclection</strong>! Follow us on social media for event updates, featured artists, and behind‑the‑scenes moments from our <strong>Portage Park</strong> community.  
+            <br />
+            <a href="https://www.instagram.com/ecclectionchicago" target="_blank" rel="noopener noreferrer" className="underline hover:text-cyan-300">
+              Instagram
+            </a>{" "}
+            |{" "}
+            <a href="https://www.facebook.com/ecclectionchicago" target="_blank" rel="noopener noreferrer" className="underline hover:text-cyan-300">
+              Facebook
+            </a>{" "}
+            |{" "}
+            <a href="https://www.tiktok.com/@ecclectionchicago" target="_blank" rel="noopener noreferrer" className="underline hover:text-cyan-300">
+              TikTok
+            </a>
+          </p>
+          <ul className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <li className="bg-cyan-600 border-2 border-black shadow-[6px_6px_0_0_#000] p-4 text-center text-black font-brand">
+              Celebrate Local Artists
+            </li>
+            <li className="bg-cyan-600 border-2 border-black shadow-[6px_6px_0_0_#000] p-4 text-center text-black font-brand">
+              Build Community Connections
+            </li>
+            <li className="bg-cyan-600 border-2 border-black shadow-[6px_6px_0_0_#000] p-4 text-center text-black font-brand">
+              Visit Us: 6059 W. Irving Park Rd, Chicago
+            </li>
+          </ul>
+         
+      </div>      
     </section>
   );
 }
