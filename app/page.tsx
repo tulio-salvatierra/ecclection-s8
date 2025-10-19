@@ -186,7 +186,7 @@ export default async function HomePage() {
   console.log(blocks);
   
   // Toggle this to show/hide under construction
-  const showUnderConstruction = false;
+  const showUnderConstruction = true;
 
 
   return (
