@@ -13,10 +13,10 @@ interface ContactProps {
   className?: string;
 }
 
-export function Contact({ 
+export function Contact({
   heading = "Come Find Us!",
   cards = [],
-  className = "" 
+  className = ""
 }: ContactProps) {
   function renderPunkHeading(text: string, size: string = "text-3xl md:text-4xl") {
     const words = text.trim().split(/\s+/);
@@ -93,28 +93,10 @@ export function Contact({
                 <p className="text-black">6049 W. Irving Park Road, Chicago, IL 60634</p>
               </div>
             </div>
+            
           </div>
         </Card>
-
-        {/* Contact Cards from Props */}
-        <div className="space-y-4">
-          {cards.length > 0 ? (
-            cards.map((card, index) => (
-              <Card key={index} className="p-6 bg-cyan-600 border-2 border-black shadow-[6px_6px_0_0_#000]">
-                <h4 className="text-xl font-semibold text-black font-brand mb-3">
-                  {card.title}
-                </h4>
-                <p className="text-black leading-relaxed">
-                  {card.text}
-                </p>
-              </Card>
-            ))
-          ) : (
-            <Card className="p-8 bg-cyan-600 border-2 border-black shadow-[6px_6px_0_0_#000]">
-              <img src="/footer-logo.jpg" alt="Ecclection Store" className="w-full h-64 object-cover rounded-lg" />
-            </Card>
-          )}
-        </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4041.277172725385!2d-87.78129698744421!3d41.95284047111365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fcbaefc6b5d6f%3A0xb8883b1b82dc506e!2sEcclection!5e1!3m2!1ses!2sus!4v1760900284271!5m2!1ses!2sus" width="600" height="450" style={{border:0, width: '100%', height: '100%', borderRadius: '10px', boxShadow: '6px 6px 0 0 #000'}}  loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </section>
   );

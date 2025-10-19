@@ -186,11 +186,8 @@ export default async function HomePage() {
   console.log(blocks);
   
   // Toggle this to show/hide under construction
-  const showUnderConstruction = true;
+  const showUnderConstruction = false;
 
-  if (showUnderConstruction) {
-    return <UnderConstruction />;
-  }
 
   return (
     <>
