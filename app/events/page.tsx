@@ -158,25 +158,37 @@ export default function EventsPage() {
           {/* Introduction */}
 
           {/* Community Events Card */}
-          <div className="bg-cyan-600 border-2 border-black shadow-[6px_6px_0_0_#000] rounded-lg p-8">
-            <h2 className="text-2xl md:text-3xl text-black font-brand">
-              Bi-Monthly Artist & Community Nights
-            </h2>
-            <p className="text-black leading-relaxed">
-              Every event we host is designed to foster connection and purpose.
-              From our{" "}
-              <strong>Bi‑Monthly Artist & Community Appreciation Nights</strong>
-              to seasonal collaborations, Ecclection creates opportunities for
-              neighbors, makers, and visitors to come together in a spirit of
-              inclusion and creativity. Each gathering supports our mission to
-              strengthen community bonds and remind everyone that art and
-              kindness can change lives. Enjoy complimentary snacks & drinks,
-              and ask us about our affordable vendor spaces for local artists
-              and makers. Our items are thoughtfully curated and affordable for
-              our neighborhood. We support the artists who are displaying their
-              work with us — not a constant rotation — each selection is
-              intentional, well thought-out, and carefully reviewed.
-            </p>
+          <div className="relative border-2 h-[900px] border-black shadow-[6px_6px_0_0_#000] rounded-lg p-8 overflow-hidden">
+            <video 
+              autoPlay 
+              loop 
+              muted 
+              playsInline
+              preload="auto"
+              className="absolute inset-0 w-auto h-full object-cover rounded-md"
+            >
+              <source src="/Artists_spot.mp4" type="video/mp4" />
+            </video>
+            <div className="relative z-10 rounded-md p-6 backdrop-blur-3xl">
+              <h2 className="text-2xl md:text-3xl text-white font-brand">
+                Bi-Monthly Artist & Community Nights
+              </h2>
+              <p className="text-white leading-relaxed">
+                Every event we host is designed to foster connection and purpose.
+                From our{" "}
+                <strong>Bi‑Monthly Artist & Community Appreciation Nights</strong>
+                to seasonal collaborations, Ecclection creates opportunities for
+                neighbors, makers, and visitors to come together in a spirit of
+                inclusion and creativity. Each gathering supports our mission to
+                strengthen community bonds and remind everyone that art and
+                kindness can change lives. Enjoy complimentary snacks & drinks,
+                and ask us about our affordable vendor spaces for local artists
+                and makers. Our items are thoughtfully curated and affordable for
+                our neighborhood. We support the artists who are displaying their
+                work with us — not a constant rotation — each selection is
+                intentional, well thought-out, and carefully reviewed.
+              </p>
+            </div>
           </div>
 
           {/* Big Elves Section */}
