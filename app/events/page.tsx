@@ -1,3 +1,5 @@
+import { SOCIAL_URLS } from "@/lib/constants";
+
 export const metadata = {
   title: "Chicago Art Events (Bi‑Monthly) — Artist & Community Appreciation | Ecclection",
   description:
@@ -80,9 +82,9 @@ export default function EventsPage() {
         <div className="max-w-4xl mx-auto space-y-8">
           {/* Upcoming Event (concrete date for SEO + visitors) */}
           <div className="bg-cyan-600 border-2 border-black rounded-lg p-6 shadow-[6px_6px_0_0_#000]">
-            {renderPunkHeading("Artist & Community Appreciation Night — Dates announced on social media", "text-2xl md:text-3xl")}
             <div className="text-black leading-relaxed">
-              <p className="mb-2"><strong>Location:</strong> Ecclection — 6049 W Irving Park Rd, Chicago, IL 60634 (Portage Park)</p>
+              <h2 className="font-brand text-black text-2xl md:text-3xl ">Artist & Community Appreciation Night — Dates announced on social media</h2>
+              <p className="mb-2"><strong>Location:</strong> Ecclection — 6059 W Irving Park Rd, Chicago, IL 60634 (Portage Park)</p>
               <ul className="list-disc ml-5 space-y-1">
                 <li>Complimentary snacks & drinks</li>
                 <li>Affordable vendor spaces for local artists & makers</li>
@@ -91,7 +93,7 @@ export default function EventsPage() {
             </div>
             <div className="mt-4 flex flex-wrap gap-3">
               <a
-                href="https://maps.google.com/?q=6049+W+Irving+Park+Rd,+Chicago,+IL+60634"
+                href="https://maps.google.com/?q=6059+W+Irving+Park+Rd,+Chicago,+IL+60634"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block px-4 py-2 bg-cyan-600 text-black font-brand rounded-lg border-2 border-black shadow-[3px_3px_0_0_#000] hover:translate-x-[1px] hover:translate-y-[1px] transition-all"
@@ -99,26 +101,28 @@ export default function EventsPage() {
                 Get Directions
               </a>
               <a
-                href="mailto:hello@ecclection.com?subject=Ecclection%20Vendor%20Space%20Inquiry"
+                href={`mailto:${SOCIAL_URLS.email}`}
                 className="inline-block px-4 py-2 bg-cyan-600 text-black font-brand rounded-lg border-2 border-black shadow-[3px_3px_0_0_#000] hover:translate-x-[1px] hover:translate-y-[1px] transition-all"
               >
                 Vendor Space Inquiry
               </a>
             </div>
-          </div>
-
-          {/* Introduction */}
-          <div className="text-center">
-            <p className="text-lg text-white leading-relaxed">
+            <div className="text-center">
+            <p className="text-lg text-white leading-relaxed mt-8">
               At <strong>Ecclection</strong>, we believe art has the power to connect, heal, and inspire. Beyond being a local shop in 
               <strong> Portage Park, Chicago</strong>, we are a community hub where creativity and compassion meet. Our philosophy is simple — 
               to celebrate diversity, uplift local artists, and give back to those in need through meaningful initiatives and events.
             </p>
           </div>
+          </div>
+
+          {/* Introduction */}
+         
 
           {/* Community Events Card */}
           <div className="bg-cyan-600 border-2 border-black shadow-[6px_6px_0_0_#000] rounded-lg p-8">
-            {renderPunkHeading("Bi-Monthly Artist & Community Nights", "text-2xl md:text-3xl")}
+            
+            <h2 className="text-2xl md:text-3xl text-black font-brand">Bi-Monthly Artist & Community Nights</h2>
             <p className="text-black leading-relaxed">
               Every event we host is designed to foster connection and purpose. From our <strong>Bi‑Monthly Artist & Community Appreciation Nights</strong> 
               to seasonal collaborations, Ecclection creates opportunities for neighbors, makers, and visitors to come together in a spirit of inclusion 

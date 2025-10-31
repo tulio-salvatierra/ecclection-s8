@@ -60,7 +60,7 @@ export default function AboutPage() {
               <img
                 src="https://peanuttyxx.wordpress.com/wp-content/uploads/2023/11/img_9263.jpg"
                 alt="Professional portrait"
-                className="w-full h-[400px] object-cover"
+                className="w-full h-[400px] object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
             </div>
@@ -87,7 +87,7 @@ export default function AboutPage() {
                 <img
                   src="https://peanuttyxx.wordpress.com/wp-content/uploads/2025/10/img_4973.jpeg"
                   alt="Woman standing in front of Ecclection storefront"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object top"
                 />
               </div>
             </div>
