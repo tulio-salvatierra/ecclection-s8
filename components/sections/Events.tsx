@@ -70,14 +70,14 @@ export function Events({
 
   return (
     <section className={`container section-pad ${className}`}>
-      <div className="text-center mb-12">
+      <div className="text-center mb-12 bg-card/30 backdrop-blur-sm rounded-lg border-2 border-cyan-600 p-8">
         <h2 className="text-3xl md:text-4xl font-bold text-white font-brand mb-4">
         Bi‑Monthly Artist &amp; Community Appreciation Night
         </h2>
-        <p className="text-lg text-white max-w-2xl mx-auto">
+        <p className="text-lg text-white max-w-2xl mx-auto text-left">
         Every other month, <strong>Ecclection</strong> in <strong>Portage Park, Chicago</strong> hosts an evening celebrating 
-          <strong> local artists</strong>, creativity, and neighborhood connection. Meet featured makers, enjoy demos, and connect with 
-          neighbors in a welcoming space that supports diversity and inclusion.
+          <strong> local artists</strong>, creativity, and neighborhood connection. Meet featured and carefully curated local makers, enjoy demos, and connect with 
+          neighbors in a welcoming space that supports diversity and inclusion. We are all about community which is why all our finds are <strong>affordable</strong> and there is something for everyone!
             </p>
             <p className="text-white text-center mt-8 max-w-3xl mx-auto">
             Stay connected with <strong>Ecclection</strong>! Follow us on social media for event updates, featured artists, and behind‑the‑scenes moments from our <strong>Portage Park</strong> community.  
