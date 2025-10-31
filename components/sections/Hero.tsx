@@ -19,7 +19,7 @@ export function Hero({
     // Deterministic jitter angles to avoid SSR/CSR mismatch
     const angles = [-6, -3, 0, 3, 6, -4, 2, -2, 4];
     return (
-      <h1 className="text-cyan-400 font-brand text-[5.5rem] md:text-[16rem] leading-none text-center font-extrabold tracking-tight">
+      <h1 className="text-cyan-400 font-brand text-[5.5rem] md:text-[14rem] leading-none text-center font-extrabold tracking-tight">
         {words.map((word, idx) => {
           const angle = angles[idx % angles.length];
           return (
@@ -38,10 +38,10 @@ export function Hero({
   return (
     <section className={`relative mt-12 ${className  ?? ""}`}>
       {renderPunkTitle(title)}
-            <p className="mt-4 text-center font-brand font-cyan-600  text-xl md:text-2xl text-white">
+            <p className="mt-4 mb-4 text-center font-brand font-cyan-600  text-xl md:text-2xl text-white">
                 {subtitle}
               </p>
-      <div className="relative h-[62vh] min-h-[380px] w-[95%] mx-auto rounded-[14px] overflow-hidden">
+      <div className="relative h-[50vh] min-h-[380px] w-[95%] mx-auto rounded-[14px] overflow-hidden">
         <video
           className="absolute inset-0 h-full w-full object-cover object-top"
           src="/Ecclection_hero.mp4"

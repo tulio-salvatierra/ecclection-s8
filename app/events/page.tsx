@@ -1,3 +1,27 @@
+export const metadata = {
+  title: "Chicago Art Events (Bi‑Monthly) — Artist & Community Appreciation | Ecclection",
+  description:
+    "Join our bi‑monthly Artist & Community Appreciation nights in Portage Park, Chicago. Complimentary snacks & drinks and affordable vendor spaces for local artists.",
+  alternates: {
+    canonical: "https://ecclection.com/events",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://ecclection.com/events",
+    title: "Bi‑Monthly Artist & Community Appreciation — Ecclection",
+    description:
+      "Community art events in Portage Park, Chicago with complimentary snacks & drinks and affordable vendor spaces.",
+    images: [{ url: "https://ecclection.com/og/events.png" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Bi‑Monthly Artist & Community Appreciation — Ecclection",
+    description:
+      "Community art events in Portage Park, Chicago with complimentary snacks & drinks and affordable vendor spaces.",
+    images: ["https://ecclection.com/og/events.png"],
+  },
+};
+
 export default function EventsPage() {
   function renderPunkTitle(text: string, size: string = "text-3xl md:text-4xl") {
     const words = text.trim().split(/\s+/);
@@ -54,6 +78,35 @@ export default function EventsPage() {
       {/* Main Content Section */}
       <section className="container section-pad">
         <div className="max-w-4xl mx-auto space-y-8">
+          {/* Upcoming Event (concrete date for SEO + visitors) */}
+          <div className="bg-cyan-600 border-2 border-black rounded-lg p-6 shadow-[6px_6px_0_0_#000]">
+            {renderPunkHeading("Artist & Community Appreciation Night — Dates announced on social media", "text-2xl md:text-3xl")}
+            <div className="text-black leading-relaxed">
+              <p className="mb-2"><strong>Location:</strong> Ecclection — 6049 W Irving Park Rd, Chicago, IL 60634 (Portage Park)</p>
+              <ul className="list-disc ml-5 space-y-1">
+                <li>Complimentary snacks & drinks</li>
+                <li>Affordable vendor spaces for local artists & makers</li>
+                <li>Inclusive, community‑first atmosphere — in‑store only</li>
+              </ul>
+            </div>
+            <div className="mt-4 flex flex-wrap gap-3">
+              <a
+                href="https://maps.google.com/?q=6049+W+Irving+Park+Rd,+Chicago,+IL+60634"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-4 py-2 bg-cyan-600 text-black font-brand rounded-lg border-2 border-black shadow-[3px_3px_0_0_#000] hover:translate-x-[1px] hover:translate-y-[1px] transition-all"
+              >
+                Get Directions
+              </a>
+              <a
+                href="mailto:hello@ecclection.com?subject=Ecclection%20Vendor%20Space%20Inquiry"
+                className="inline-block px-4 py-2 bg-cyan-600 text-black font-brand rounded-lg border-2 border-black shadow-[3px_3px_0_0_#000] hover:translate-x-[1px] hover:translate-y-[1px] transition-all"
+              >
+                Vendor Space Inquiry
+              </a>
+            </div>
+          </div>
+
           {/* Introduction */}
           <div className="text-center">
             <p className="text-lg text-white leading-relaxed">
@@ -69,7 +122,9 @@ export default function EventsPage() {
             <p className="text-black leading-relaxed">
               Every event we host is designed to foster connection and purpose. From our <strong>Bi‑Monthly Artist & Community Appreciation Nights</strong> 
               to seasonal collaborations, Ecclection creates opportunities for neighbors, makers, and visitors to come together in a spirit of inclusion 
-              and creativity. Each gathering supports our mission to strengthen community bonds and remind everyone that art and kindness can change lives.
+              and creativity. Each gathering supports our mission to strengthen community bonds and remind everyone that art and kindness can change lives.{" "}
+              Enjoy complimentary snacks & drinks, and ask us about our affordable vendor spaces for local artists and makers.{" "}
+              Our items are thoughtfully curated and affordable for our neighborhood. We support the artists who are displaying their work with us — not a constant rotation — each selection is intentional, well thought-out, and carefully reviewed.
             </p>
           </div>
 
@@ -85,7 +140,8 @@ export default function EventsPage() {
               <p className="text-black leading-relaxed">
                 <strong>Big Elves</strong> is a volunteer‑driven charity initiative founded by Julie and the Ecclection family. 
                 Big Elves collects donations year‑round to bring comfort and hope to those who need it most — including veterans, children's hospitals, 
-                and foster care centers across Chicago.
+                and foster care centers across Chicago.{" "}
+                We prioritize non‑monetary donations and maintain wishlists so we can deliver specific supplies directly to people in need.
               </p>
             </div>
 
@@ -118,8 +174,52 @@ export default function EventsPage() {
             </p>
           </div>
         </div>
+
+        {/* Structured Data (JSON-LD) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ecclection.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Events", "item": "https://ecclection.com/events" }
+              ]
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Event",
+              "name": "Bi‑Monthly Artist & Community Appreciation Event",
+              "description": "Meet local artists, enjoy complimentary snacks & drinks, and discover affordable vendor spaces. In‑store only at Ecclection in Portage Park, Chicago.",
+              "eventSchedule": {
+                "@type": "Schedule",
+                "repeatFrequency": "P2M",
+                "byDay": "https://schema.org/Saturday",
+                "scheduleTimezone": "America/Chicago"
+              },
+              "location": {
+                "@type": "Place",
+                "name": "Ecclection",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "6049 W Irving Park Rd",
+                  "addressLocality": "Chicago",
+                  "addressRegion": "IL",
+                  "postalCode": "60634",
+                  "addressCountry": "US"
+                }
+              },
+              "organizer": { "@type": "Organization", "name": "Ecclection", "url": "https://ecclection.com" }
+            })
+          }}
+        />
       </section>
     </div>
   );
 }
-

@@ -183,7 +183,7 @@ export default async function HomePage() {
   const about = mapAbout(aboutBlocks);
   const contact = mapContact(contactBlocks);
 
-  console.log(blocks);
+  
   
   // Toggle this to show/hide under construction
   const showUnderConstruction = true;
