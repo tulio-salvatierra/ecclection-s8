@@ -94,8 +94,8 @@ export function Artists({
         {description && (
           <p className="text-lg text-white text-left max-w-2xl mx-auto">
             Meet the talented artists who make our community vibrant and
-            inspiring. A carefully curated selection of creatives from our local
-            scene. Discover their stories, styles, and unique contributions to
+            inspiring. A carefully curated number of creatives from our local
+            scene and others with unique and interesting stories. Discover their stories, styles, and unique contributions to
             our artistic community.
           </p>
         )}
@@ -189,13 +189,14 @@ export function Artists({
 
       
         <div className="text-center mt-12">
+          <a href="/artists">
           <Button
             size="lg"
-            className="bg-cyan-500 text-black hover:bg-cyan-200 font-brand"
+            className="bg-cyan-500 text-lg p-8 shadow-lg border-2 border-black text-black hover:bg-cyan-200 font-brand"
             variant="outline"
           >
             View All Artists
-          </Button>
+          </Button></a>
         </div>
       
     </section>

@@ -198,7 +198,6 @@ export default async function HomePage() {
       />
       <Artists
         heading={artists.heading}
-        description="Meet the talented artists who make our community vibrant."
         items={artists.cards}
       />
 
