@@ -76,6 +76,7 @@ export default function Stack({
   return (
     <div
       className="stack-container mx-auto relative mb-6 h-[400px] w-[300px]"
+      preload="auto"
       style={{
         width: cardDimensions.width,
         height: cardDimensions.height,
@@ -89,7 +90,7 @@ export default function Stack({
         return (
           <CardRotate key={card.id} onSendToBack={() => sendToBack(card.id)} sensitivity={sensitivity}>
             <motion.div
-              className=" border-2 border-black shadow-xl bg-black absolute top-0 left-0 cursor-pointer select-none"
+              className="border-2 border-black shadow-xl bg-black absolute top-0 left-0 cursor-pointer select-none"
               onClick={() => sendToBackOnClick && sendToBack(card.id)}
               animate={{
                 rotateZ: (cards.length - index - 1) * 4 + randomRotate,

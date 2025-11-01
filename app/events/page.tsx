@@ -1,5 +1,6 @@
 
 
+import { Contact } from "@/components/sections/Contact";
 import { SOCIAL_URLS } from "@/lib/constants";
 import dynamic from 'next/dynamic';
 
@@ -190,68 +191,9 @@ export default function EventsPage() {
               </p>
             </div>
           </div>
-
-          {/* Big Elves Section */}
-          <div className="text-center mt-12">
-            {renderPunkHeading(
-              "Big Elves — Spreading Joy Through Giving",
-              "text-2xl md:text-3xl"
-            )}
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-cyan-600 border-2 border-black shadow-[6px_6px_0_0_#000] rounded-lg p-6">
-              <div className="text-4xl mb-4 text-center">🎁</div>
-              <h3 className="text-xl font-bold font-brand text-black mb-3 text-center">
-                Our Mission
-              </h3>
-              <p className="text-black leading-relaxed">
-                <strong>Big Elves</strong> is a volunteer‑driven charity
-                initiative founded by Julie and the Ecclection family. Big Elves
-                collects donations year‑round to bring comfort and hope to those
-                who need it most — including veterans, children's hospitals, and
-                foster care centers across Chicago. We prioritize non‑monetary
-                donations and maintain wishlists so we can deliver specific
-                supplies directly to people in need.
-              </p>
-            </div>
-
-            <div className="bg-cyan-600 border-2 border-black shadow-[6px_6px_0_0_#000] rounded-lg p-6">
-              <div className="text-4xl mb-4 text-center">❤️</div>
-              <h3 className="text-xl font-bold font-brand text-black mb-3 text-center">
-                Community Impact
-              </h3>
-              <p className="text-black leading-relaxed">
-                What makes Big Elves truly special is the way it unites people
-                through kindness. Whether it's a customer dropping off a
-                donation, an artist contributing a handmade piece, or a
-                volunteer organizing a drive, every act of generosity ripples
-                outward.
-              </p>
-            </div>
-          </div>
-
-          {/* Call to Action */}
-          <div className="text-center mt-12 p-8 bg-card/30 backdrop-blur-sm rounded-lg border-2 border-cyan-600">
-            <p className="text-lg text-white leading-relaxed mb-4">
-              Learn more about Big Elves and how you can get involved by
-              visiting our official Facebook page:
-            </p>
-            <a
-              href="https://www.facebook.com/profile.php?id=61563313948330"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-8 py-4 bg-cyan-600 text-black font-brand text-lg rounded-lg border-2 border-black shadow-[4px_4px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
-            >
-              Visit Big Elves on Facebook
-            </a>
-            <p className="text-white mt-6 leading-relaxed">
-              Follow <strong>Ecclection</strong> for upcoming charity events,
-              art collaborations, and community initiatives that bring people
-              together through creativity and compassion.
-            </p>
-          </div>
         </div>
+
+          
 
         {/* Structured Data (JSON-LD) */}
         <script
@@ -309,6 +251,24 @@ export default function EventsPage() {
                 name: "Ecclection",
                 url: "https://ecclection.com",
               },
+            }),
+          }}
+        />
+        <Contact />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Ecclection",
+              url: "https://ecclection.com",
+              logo: "https://ecclection.com/logo.png",
+              sameAs: [
+                SOCIAL_URLS.facebook,
+                SOCIAL_URLS.instagram,
+                
+              ],
             }),
           }}
         />
