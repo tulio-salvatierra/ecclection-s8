@@ -91,7 +91,7 @@ export function Contact({
               </div>
               <div>
                 <p className="font-medium text-black font-brand">Address</p>
-                <p className="text-black">6049 W. Irving Park Road, Chicago, IL 60634</p>
+                <p className="text-black">6059 W. Irving Park Road, Chicago, IL 60634</p>
               </div>
             </div>
             
