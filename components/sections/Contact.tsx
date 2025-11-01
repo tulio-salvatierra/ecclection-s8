@@ -52,6 +52,7 @@ export function Contact({
         {/* Contact Information */}
         <Card className="p-8 bg-cyan-600 border-2 border-black shadow-[6px_6px_0_0_#000]">
           <h3 className="text-2xl font-semibold text-black font-brand mb-6">Contact Information</h3>
+          <p className="mb-6 text-black">Feel free to reach out to us through any of the following methods. We're here to assist you with any inquiries, collaborations, or opportunities to showcase your art at Ecclection. Text and email us, it is our preferred method of communication.</p>
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center">
@@ -61,7 +62,7 @@ export function Contact({
               </div>
               <div>
                 <p className="font-medium text-black font-brand">Phone</p>
-                <a href="tel:+17739517992" className="text-black hover:text-gray-700 transition-colors">
+                <a href="sms:+1773951799" className="text-black hover:text-gray-700 transition-colors">
                   +1 (773) 951-7992
                 </a>
               </div>
