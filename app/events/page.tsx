@@ -297,7 +297,7 @@ export default function EventsPage() {
                 name: "Ecclection",
                 address: {
                   "@type": "PostalAddress",
-                  streetAddress: "6049 W Irving Park Rd",
+                  streetAddress: "6059 W Irving Park Rd",
                   addressLocality: "Chicago",
                   addressRegion: "IL",
                   postalCode: "60634",

@@ -59,7 +59,7 @@ export default function AboutPage() {
             <div className="relative rounded-lg overflow-hidden shadow-lg">
               <img
                 src="https://peanuttyxx.wordpress.com/wp-content/uploads/2023/11/img_9263.jpg"
-                alt="Professional portrait"
+                alt="Professional portrait of shop owner inside of Ecclection store"
                 className="w-full h-[400px] object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
@@ -69,10 +69,10 @@ export default function AboutPage() {
             <div className="space-y-6">
               {renderPunkHeading("Welcome to Ecclection", "text-2xl md:text-3xl")}
               <p className="text-white leading-relaxed">
-                Ecclection is a vibrant local shop located at 6049 West Irving Park Road in Chicago's Portage Park neighborhood. We specialize in vintage treasures, handmade art, and locally crafted finds that celebrate creativity and community.
+                Ecclection is a vibrant local shop located at 6059 West Irving Park Road in Chicago's Portage Park neighborhood. We specialize in vintage treasures, handmade art, and locally crafted finds that celebrate creativity and community while keeping it affordable for everyone. So come by! don't be shy, and explore the eclectic mix that makes Ecclection truly <strong>one-of-a-kind!</strong>
               </p>
               <p className="text-white leading-relaxed">
-                Step inside and you'll discover an ever-changing collection of curated, recycled, and up-cycled pieces — from art and jewelry to home décor, crystals, and wellness items. Every corner of our shop tells a story, and every piece has been chosen to inspire.
+                Step inside and you'll discover an ever-changing collection of carefully curated, recycled, and up-cycled pieces — from art and jewelry to home décor, crystals, and wellness items. Every corner of our shop tells a story, and every piece has been chosen to inspire.
               </p>
             </div>
           </div>
@@ -87,7 +87,7 @@ export default function AboutPage() {
                 <img
                   src="https://peanuttyxx.wordpress.com/wp-content/uploads/2025/10/img_4973.jpeg"
                   alt="Woman standing in front of Ecclection storefront"
-                  className="w-full h-full object-cover object top"
+                  className="w-72 h-full object-cover object-top"
                 />
               </div>
             </div>
@@ -106,11 +106,11 @@ export default function AboutPage() {
   
             {/* Right: Hand Image */}
             <div className="md:col-span-3 flex justify-center">
-              <div className="w-40 h-56 rounded-lg overflow-hidden shadow-lg">
+              <div className="w-100 h-auto rounded-lg overflow-hidden shadow-lg">
                 <img
                   src="https://peanuttyxx.wordpress.com/wp-content/uploads/2025/10/img_4131.jpeg"
                   alt="Woman standing in front of Ecclection storefront"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-top"
                 />
               </div>
             </div>
@@ -141,7 +141,7 @@ export default function AboutPage() {
               <div className="text-4xl mb-4">📍</div>
               {renderPunkHeading("Visit Us", "text-lg")}
               <p className="text-white">
-                Located at 6049 W. Irving Park Road, Chicago, IL 60634 — on the west end of Portage Park.
+                Located at 6059 W. Irving Park Road, Chicago, IL 60634 — on the west end of Portage Park.
               </p>
             </div>
           </div>
