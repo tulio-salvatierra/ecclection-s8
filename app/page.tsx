@@ -1,19 +1,25 @@
 import { Hero } from "@/components/sections/Hero";
 import { Artists } from "@/components/sections/Artists";
-import { Events } from "@/components/sections/Events";
+
 import { About } from "@/components/sections/About";
 import { Contact } from "@/components/sections/Contact";
-import { UnderConstruction } from "@/components/sections/UnderConstruction";
+import { Intro } from "@/components/sections/Intro";
 
-
-
-import { getPageBySlug, getContentBlocksBySlug, type ContentBlock } from "@/lib/wp";
+import {
+  getPageBySlug,
+  getContentBlocksBySlug,
+  type ContentBlock,
+} from "@/lib/wp";
 
 // ---------- helpers for parsing WP blocks ----------
 type Maybe<T> = T | undefined;
 
 const decode = (s = "") => s.replace(/&amp;/g, "&").trim();
-const stripTags = (html = "") => html.replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim();
+const stripTags = (html = "") =>
+  html
+    .replace(/<[^>]*>/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
 
 function isHeading(b: ContentBlock) {
   return b.type === "heading";
@@ -51,8 +57,7 @@ function sliceSection(
 
 function mapHero(blocks: ContentBlock[]) {
   const title =
-    decode(blocks.find(isHeading)?.content || "") ||
-    "Welcome to Ecclection";
+    decode(blocks.find(isHeading)?.content || "") || "Welcome to Ecclection";
   const subtitle = stripTags(blocks.find(isText)?.content || "");
   const backgroundImage = blocks.find(isImage)?.metadata?.src as Maybe<string>;
   return { title, subtitle, backgroundImage };
@@ -76,7 +81,7 @@ function mapArtists(blocks: ContentBlock[]) {
         if (
           !image &&
           isImage(blocks[j]) &&
-          typeof (blocks[j] as any).metadata === 'object' &&
+          typeof (blocks[j] as any).metadata === "object" &&
           (blocks[j] as any).metadata?.src
         ) {
           image = (blocks[j] as any).metadata.src as Maybe<string>;
@@ -167,10 +172,26 @@ export default async function HomePage() {
   const blocks: ContentBlock[] = await getContentBlocksBySlug("home");
 
   // (C) Split the flat block list into logical sections by H2 titles you set in WP
-  const heroBlocks = sliceSection(blocks, "Welcome to Ecclection", "Featured Artists");
-  const artistsBlocks = sliceSection(blocks, "Featured Artists", "Community Happenings");
-  const eventsBlocks = sliceSection(blocks, "Community Happenings", "Welcome to Ecclection"); // your second "Welcome…" under About
-  const aboutBlocks = sliceSection(blocks, "Welcome to Ecclection", "Come Find Us!");
+  const heroBlocks = sliceSection(
+    blocks,
+    "Welcome to Ecclection",
+    "Featured Artists"
+  );
+  const artistsBlocks = sliceSection(
+    blocks,
+    "Featured Artists",
+    "Community Happenings"
+  );
+  const eventsBlocks = sliceSection(
+    blocks,
+    "Community Happenings",
+    "Welcome to Ecclection"
+  ); // your second "Welcome…" under About
+  const aboutBlocks = sliceSection(
+    blocks,
+    "Welcome to Ecclection",
+    "Come Find Us!"
+  );
   const contactBlocks = sliceSection(blocks, "Come Find Us!");
 
   // (D) Map section blocks → props
@@ -183,11 +204,8 @@ export default async function HomePage() {
   const about = mapAbout(aboutBlocks);
   const contact = mapContact(contactBlocks);
 
-  
-  
   // Toggle this to show/hide under construction
   const showUnderConstruction = true;
-
 
   return (
     <>
@@ -196,27 +214,16 @@ export default async function HomePage() {
         subtitle={hero.subtitle}
         backgroundImage={hero.backgroundImage}
       />
-      <Artists
-        heading={artists.heading}
-        items={artists.cards}
-      />
-
-      <Events
-        title={events.heading}
-        events={events.items}
-      />
+      <Intro />
+      <Artists heading={artists.heading} items={artists.cards} />
 
       <About
         title="About us"
         content="bio text from about section"
         image={about?.image}
-        features={about?.features}
       />
 
-      <Contact
-        heading={contact?.heading}
-        cards={contact?.cards}
-      />
+      <Contact heading={contact?.heading} cards={contact?.cards} />
     </>
   );
 }
