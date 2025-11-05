@@ -138,7 +138,7 @@ export default function EventsPage() {
               </div>
               <div className="mt-4 flex flex-wrap gap-3">
                 <a
-                  href="https://maps.google.com/?q=6059+W+Irving+Park+Rd,+Chicago,+IL+60634"
+                  href="https://maps.app.goo.gl/jN7CMN5aPdA8yMBi8"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block px-4 py-2 bg-cyan-600 text-black font-brand rounded-lg border-2 border-black shadow-[3px_3px_0_0_#000] hover:translate-x-[1px] hover:translate-y-[1px] transition-all"
@@ -146,7 +146,9 @@ export default function EventsPage() {
                   Get Directions
                 </a>
                 <a
-                  href={`mailto:${SOCIAL_URLS.email}`}
+                  href="mailto:EcclectionChicago@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-block px-4 py-2 bg-cyan-600 text-black font-brand rounded-lg border-2 border-black shadow-[3px_3px_0_0_#000] hover:translate-x-[1px] hover:translate-y-[1px] transition-all"
                 >
                   Vendor Space Inquiry

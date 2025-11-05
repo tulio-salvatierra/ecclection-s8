@@ -42,7 +42,7 @@ export function About({
             <img
               src={image.src}
               alt={image.alt}
-              className="mx-auto rounded-lg shadow-lg max-w-md"
+              className="mx-auto rounded-lg shadow-lg w-full max-w-md border-2 border-black"
             />
           </div>
           
@@ -72,7 +72,7 @@ export function About({
       </div>
 
       <div className="mt-12 text-center">
-        <Badge variant="secondary" className="text-4xl px-4 py-2 bg-cyan-600 border-2 border-black shadow-[4px_4px_0_0_#000] font-brand">
+        <Badge variant="secondary" className="text-4xl sm:text-2xl px-4 py-2 bg-cyan-600 border-2 border-black shadow-[4px_4px_0_0_#000] font-brand">
           Community • Art • Creativity
         </Badge>
       </div>

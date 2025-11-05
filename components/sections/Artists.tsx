@@ -88,7 +88,7 @@ export function Artists({
   return (
     <section className={`container section-pad ${className}`}>
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-white font-brand mb-4">
+        <h2 className="text-5xl md:text-5xl font-bold text-cyan-500 font-brand mb-4">
           {heading}
         </h2>
         {description && (

@@ -1,5 +1,5 @@
 import { Contact } from "@/components/sections/Contact";
-import { BentoGrid, BentoCard } from "@/components/ui/bento-grid";
+
 
 export default function AboutPage() {
   function renderPunkTitle(
@@ -64,9 +64,9 @@ export default function AboutPage() {
           {/* Left: Portrait Image */}
           <div className="relative rounded-lg overflow-hidden shadow-lg">
             <img
-              src="https://peanuttyxx.wordpress.com/wp-content/uploads/2023/11/img_9263.jpg"
+              src="/portrait.jpeg"
               alt="Professional portrait of shop owner inside of Ecclection store"
-              className="w-full h-[400px] object-cover object-top"
+              className="w-full h-[400px] object-cover object-center"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
           </div>

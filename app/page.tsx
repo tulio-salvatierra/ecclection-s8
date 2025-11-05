@@ -1,6 +1,6 @@
 import { Hero } from "@/components/sections/Hero";
 import { Artists } from "@/components/sections/Artists";
-
+import { StoreActivities } from "@/components/sections/Activities";
 import { About } from "@/components/sections/About";
 import { Contact } from "@/components/sections/Contact";
 import { Intro } from "@/components/sections/Intro";
@@ -10,6 +10,8 @@ import {
   getContentBlocksBySlug,
   type ContentBlock,
 } from "@/lib/wp";
+import { Store } from "lucide-react";
+import { ProductsShowcase } from "@/components/sections/Products";
 
 // ---------- helpers for parsing WP blocks ----------
 type Maybe<T> = T | undefined;
@@ -216,13 +218,13 @@ export default async function HomePage() {
       />
       <Intro />
       <Artists heading={artists.heading} items={artists.cards} />
-
+      <StoreActivities />
+      <ProductsShowcase />
       <About
         title="About us"
         content="bio text from about section"
         image={about?.image}
       />
-
       <Contact heading={contact?.heading} cards={contact?.cards} />
     </>
   );
