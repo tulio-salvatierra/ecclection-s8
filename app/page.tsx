@@ -4,6 +4,7 @@ import { StoreActivities } from "@/components/sections/Activities";
 import { About } from "@/components/sections/About";
 import { Contact } from "@/components/sections/Contact";
 import { Intro } from "@/components/sections/Intro";
+import { Review } from "@/components/sections/Review";
 
 import {
   getPageBySlug,
@@ -184,11 +185,7 @@ export default async function HomePage() {
     "Featured Artists",
     "Community Happenings"
   );
-  const eventsBlocks = sliceSection(
-    blocks,
-    "Community Happenings",
-    "Welcome to Ecclection"
-  ); // your second "Welcome…" under About
+  
   const aboutBlocks = sliceSection(
     blocks,
     "Welcome to Ecclection",
@@ -202,7 +199,7 @@ export default async function HomePage() {
   hero.backgroundImage = hero.backgroundImage ?? page?.featuredImage?.url;
 
   const artists = mapArtists(artistsBlocks);
-  const events = mapEvents(eventsBlocks);
+  
   const about = mapAbout(aboutBlocks);
   const contact = mapContact(contactBlocks);
 
@@ -225,6 +222,7 @@ export default async function HomePage() {
         content="bio text from about section"
         image={about?.image}
       />
+      <Review />
       <Contact heading={contact?.heading} cards={contact?.cards} />
     </>
   );
