@@ -4,9 +4,13 @@ import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface Artist {
-  title: string;
-  text: string;
+  id: number;
+  name: string;
+  specialty?: string;
+  bio?: string;
   image?: string;
+  featured?: boolean;
+  social?: { instagram?: string; website?: string };
 }
 
 interface ArtistCarouselProps {
@@ -96,7 +100,7 @@ export function ArtistCarousel({ artists }: ArtistCarouselProps) {
                   <img
                     key={currentIndex}
                     src={currentArtist.image}
-                    alt={currentArtist.title}
+                    alt={currentArtist.name}
                     className="w-full h-full object-cover animate-in fade-in duration-500"
                   />
                 ) : (
@@ -120,11 +124,11 @@ export function ArtistCarousel({ artists }: ArtistCarouselProps) {
             className="animate-in fade-in slide-in-from-right-4 duration-500"
           >
             <h2 className="font-brand text-4xl md:text-5xl lg:text-6xl text-white leading-tight text-balance mb-6">
-              {currentArtist.title}
+              {currentArtist.name}
             </h2>
 
             <p className="text-base text-white leading-relaxed max-w-lg mb-8">
-              {currentArtist.text}
+              {currentArtist.bio}
             </p>
           </div>
 

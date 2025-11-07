@@ -26,9 +26,11 @@ export interface ArtistCard {
 export interface ArtistsProps {
   /** Tailwind utility overrides */
   className?: string;
+  /** Optional array of artist data in the same form as the static data (id, name, specialty, bio, image, featured, social{instagram,website}) */
+  data?: ArtistCard[];
 }
 
-const STATIC_ARTISTS: ArtistCard[] = [
+export const ARTISTS_DATA: ArtistCard[] = [
   {
     id: 1,
     name: "Smelly Melly",
@@ -98,10 +100,11 @@ function normalizeUrl(url?: string): string | undefined {
 /**
  * Artists grid section
  * - Renders a responsive 1/2/4 grid of artist cards from static data
+ * - Accepts optional `data` prop with the exact object shape shown in the form (id, name, specialty, bio, image, featured, social{instagram,website})
  */
-export function Artists({ className = "" }: ArtistsProps) {
-  // Use static list of artists
-  const list: ArtistCard[] = STATIC_ARTISTS;
+export function Artists({ className = "", data }: ArtistsProps) {
+  // Use passed in data or fallback to static list of artists
+  const list: ArtistCard[] = data ?? ARTISTS_DATA;
 
   return (
     <section className={`container section-pad ${className}`}>

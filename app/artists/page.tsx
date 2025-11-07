@@ -1,6 +1,20 @@
 import { Contact } from "@/components/sections/Contact"
 import { getContentBlocksBySlug, type ContentBlock } from "@/lib/wp"
 import { ArtistCarousel } from "@/components/ArtistCarousel"
+import { ARTISTS_DATA } from "@/components/sections/Artists";
+
+const artistsForCarousel = ARTISTS_DATA.map((a, idx) => ({
+  id: typeof a.id === "number" ? a.id : idx,
+  name: a.name ?? a.title ?? "Untitled",
+  specialty: a.specialty,
+  bio: a.bio ?? a.description ?? a.text ?? "",
+  image: a.image,
+  featured: !!a.featured,
+  social: {
+    instagram: a.social?.instagram,
+    website: a.social?.website
+  }
+}));
 
 // Helper functions from page.tsx
 type Maybe<T> = T | undefined;
@@ -82,7 +96,7 @@ export default async function ArtistsPage() {
 
   return (
     <>
-      <ArtistCarousel artists={artists.cards.slice(0, 3)} />
+      <ArtistCarousel artists={artistsForCarousel} />
       <Contact heading="Come Find Us!" cards={[]} />
     </>
   )
