@@ -24,23 +24,58 @@ export interface ArtistCard {
 }
 
 export interface ArtistsProps {
-  /** Section heading (e.g. "Featured Artists") */
-  heading?: string;
-  /** Section blurb under heading */
-  description?: string;
   /** Tailwind utility overrides */
   className?: string;
-  /**
-   * Canonical array of artist cards.
-   * Prefer passing this shape.
-   */
-  items?: ArtistCard[];
-  /**
-   * Alternate, simpler input shape from your page.tsx mapping:
-   * { title, text, image }[]
-   */
-  cards?: { title?: string; text?: string; image?: string }[];
 }
+
+const STATIC_ARTISTS: ArtistCard[] = [
+  {
+    id: 1,
+    name: "Smelly Melly",
+    specialty: "Candle & Soap Maker",
+    bio: "Melissa Berardi creates artisanal candles and soaps focused on Health/beauty\nMy soaps and candles are 100% organic and hand made. I use the best products to get the best results.",
+    image: "/smelly.png",
+    featured: true,
+    social: {
+      instagram: "@smellymellysoapsandcandles",
+      website: "www.smellymellycandle.com"
+    }
+  },
+  {
+    id: 2,
+    name: "Roth n Roll Stitch",
+    specialty: "Stitcher",
+    bio: "I hand stitch decorative hoops, jewelry, banners, patches, etc. Inspired by nature, spirituality and music",
+    image: "/stitch.png",
+    social: {
+      instagram: "@rothnrollstitch",
+      website: "rothnrollstitch.com"
+    }
+  },
+  {
+    id: 3,
+    name: "Barbara Ezell",
+    specialty: "Unique Jewelry Designer",
+    bio: "Stories inspire me! I am inspired by dreams from known and unknown realms. Meet my mystic muses and other creations.",
+    image: "https://i.etsystatic.com/13508651/r/il/60d066/6703081534/il_1588xN.6703081534_dpum.jpg",
+    featured: true,
+    social: {
+      instagram: "@alicebrownphotobarbezell",
+      website: "https://www.etsy.com/shop/Barbezell?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnv20TytU9A6_kZQAC6c-TlaI-w7S0lh-srIdA4A_SP7u9A_6BlMOyydmQS8I_aem_XYVNiYhVZ-4rqdBZf4TWiQ&dd_referrer=https%3A%2F%2Fl.instagram.com%2F#items"
+    }
+  },
+  {
+    id: 4,
+    name: "Englewood Essentials",
+    specialty: "Soaps & Body Care",
+    bio: "Handmade soaps and body care products made with natural ingredients by Kevin Bartlett.",
+    image: "https://peanuttyxx.wordpress.com/wp-content/uploads/2024/02/374657104_17981156780452146_300428832772262792_n.jpg",
+    social: {
+      instagram: "@aenglewoodessentials",
+      website: ""
+    }
+  }
+];
 
 function normalizeUrl(url?: string): string | undefined {
   if (!url) return undefined;
@@ -62,43 +97,19 @@ function normalizeUrl(url?: string): string | undefined {
 
 /**
  * Artists grid section
- * - Accepts either `items` (rich artist objects) or `cards` (simple title/text/image)
- * - Renders a responsive 1/2/4 grid of artist cards
+ * - Renders a responsive 1/2/4 grid of artist cards from static data
  */
-export function Artists({
-  heading = "Featured Artists",
-  description = "Meet the talented artists who make our community vibrant and inspiring. A carefully curated selection of creatives from our local scene. Discover their stories, styles, and unique contributions to our artistic community.",
-  className = "",
-  items,
-  cards,
-}: ArtistsProps) {
-  // Normalize inputs into one array and limit to first 3
-  const list: ArtistCard[] =
-    (items && items.length > 0
-      ? items.slice(0, 3)
-      : (
-          cards?.map((c, i) => ({
-            id: i,
-            title: c.title,
-            text: c.text,
-            image: c.image,
-          })) ?? []
-        ).slice(0, 3)) || [];
+export function Artists({ className = "" }: ArtistsProps) {
+  // Use static list of artists
+  const list: ArtistCard[] = STATIC_ARTISTS;
 
   return (
     <section className={`container section-pad ${className}`}>
       <div className="text-center mb-12">
         <h2 className="text-5xl md:text-5xl font-bold text-cyan-500 font-brand mb-4">
-          {heading}
+          Featured Artists
         </h2>
-        {description && (
-          <p className="text-lg text-white text-left max-w-2xl mx-auto">
-            Meet the talented artists who make our community vibrant and
-            inspiring. A carefully curated number of creatives from our local
-            scene and others with unique and interesting stories. Discover their stories, styles, and unique contributions to
-            our artistic community.
-          </p>
-        )}
+        {/* Section description removed; can add static description here if desired */}
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -111,9 +122,8 @@ export function Artists({
           const web = normalizeUrl(artist.social?.website);
 
           return (
-            <a href="/artists">
+            <a href="/artists" key={key}>
               <Card
-                key={key}
                 className="overflow-hidden bg-cyan-600 text-black border-2 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
               >
                 <div className="h-64 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center relative">
@@ -127,7 +137,7 @@ export function Artists({
                     <div className="text-6xl opacity-50">🎨</div>
                   )}
                   {artist.featured && (
-                    <Badge className="absolute top-3 right-3 bg-cyan-100 text-black">
+                    <Badge className="absolute top-3 right-3 bg-white text-black">
                       Featured
                     </Badge>
                   )}
@@ -141,14 +151,14 @@ export function Artists({
                   {artist.specialty && (
                     <Badge
                       variant="outline"
-                      className="mb-3 text-xs bg-cyan-100 text-black font-brand"
+                      className="mb-3 text-lg bg-cyan-100 text-black font-brand"
                     >
                       {artist.specialty}
                     </Badge>
                   )}
 
                   {blurb && (
-                    <p className="text-black text-sm mb-4 line-clamp-3">
+                    <p className="text-black text-lg mb-4 line-clamp-3">
                       {blurb}
                     </p>
                   )}

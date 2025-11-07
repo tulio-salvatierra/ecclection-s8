@@ -203,9 +203,6 @@ export default async function HomePage() {
   const about = mapAbout(aboutBlocks);
   const contact = mapContact(contactBlocks);
 
-  // Toggle this to show/hide under construction
-  const showUnderConstruction = true;
-
   return (
     <>
       <Hero
@@ -214,7 +211,7 @@ export default async function HomePage() {
         backgroundImage={hero.backgroundImage}
       />
       <Intro />
-      <Artists heading={artists.heading} items={artists.cards} />
+      <Artists />
       <StoreActivities />
       <ProductsShowcase />
       <About
