@@ -1,5 +1,7 @@
 import Link from "next/link"
 import { ArrowRight, ExternalLink } from "lucide-react"
+import { FlyersBento } from "@/components/sections/BentoFlyers"
+import PantriesSection from "@/components/sections/Pantries";
 
 const resources = [
   {
@@ -105,7 +107,7 @@ export default function CommunityResourcesPage() {
   return (
     <main className="min-h-screen">
       {/* Header Section */}
-      <section className="container section-pad text-center">
+      <section className="container section-pad text-left">
         <p className="text-sm tracking-wide uppercase text-cyan-400 mb-4">Support & Resources</p>
         {renderPunkTitle("Community Resources", "text-4xl md:text-5xl")}
         <p className="text-lg text-white max-w-3xl mx-auto leading-relaxed">
@@ -114,13 +116,29 @@ export default function CommunityResourcesPage() {
         </p>
       </section>
 
+      <section>
+        <div className="container">
+          <FlyersBento /> 
+        </div>
+      </section>
+
+      <section>
+        <div className="container section-pad text-center">
+          {renderPunkHeading("Helpful Resources", "text-2xl md:text-3xl")}
+          <p className="text-lg text-white max-w-3xl mx-auto text-left leading-relaxed mb-8">
+            Explore the following organizations that provide vital services in mental health, food security, housing, and crisis support.
+          </p>
+          <PantriesSection />
+        </div>
+      </section>
+
       {/* Resources Grid */}
       <section className="container section-pad">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {resources.map((resource, index) => (
               <article
                 key={index}
-                className="p-6 rounded-lg bg-cyan-600 border-2 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all group"
+                className="p-6 rounded-lg bg-cyan-500 border-2 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all group"
               >
                 <div className="flex items-start justify-between mb-4">
                   <span className="text-xs tracking-wide uppercase text-black font-brand">{resource.category}</span>
@@ -129,13 +147,13 @@ export default function CommunityResourcesPage() {
 
                 <h2 className="text-xl font-semibold text-black font-brand mb-4">{resource.title}</h2>
 
-                <p className="text-black leading-relaxed mb-6">{resource.description}</p>
+                <p className="text-black text-lg leading-relaxed mb-6">{resource.description}</p>
 
                 <a
                   href={resource.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-brand text-black hover:text-gray-700 transition-colors group/link"
+                  className="inline-flex items-center gap-2 text-lg font-brand text-black hover:text-gray-700 transition-colors group/link"
                 >
                   Visit Resource
                   <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
