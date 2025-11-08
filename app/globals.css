@@ -164,6 +164,7 @@
   /* Links and interactive text */
   a {
     color: var(--ecclection-teal);
+    text-decoration: none;
   }
   
   a:hover {
@@ -204,7 +205,7 @@
 }
 
 .site-header .nav {
-  @apply flex items-center justify-between py-4;
+  @apply flex items-center justify-between py-4 relative;
 }
 
 .brand {
@@ -221,10 +222,69 @@
 
 .nav-links a {
   @apply text-foreground hover:text-primary transition-colors;
+  text-decoration: none;
 }
 
 .contact-mini .btn {
   @apply bg-primary text-primary-foreground px-4 py-2 rounded-md hover:bg-primary/90 transition-colors;
+}
+
+/* Mobile menu styles */
+.mobile-menu-button {
+  @apply flex items-center justify-center p-4 rounded-md text-foreground/70 hover:text-foreground hover:bg-accent/50 transition-all focus:outline-none focus:ring-1 focus:ring-ring focus:ring-offset-1;
+  @apply absolute top-2 right-4 md:hidden;
+  min-width: 32px;
+  min-height: 32px;
+}
+
+.mobile-menu-overlay {
+  @apply bg-black/50 backdrop-blur-sm;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.mobile-menu {
+  @apply md:hidden;
+}
+
+.mobile-menu-content {
+  @apply w-full;
+  animation: slideDown 0.3s ease-out;
+}
+
+.mobile-nav-links {
+  @apply flex flex-col space-y-4;
+}
+
+.mobile-nav-link {
+  @apply text-foreground text-lg font-medium py-2 px-4 rounded-md hover:bg-accent hover:text-accent-foreground transition-all duration-200;
+  @apply border-l-4 border-transparent hover:border-primary;
+  text-decoration: none;
+}
+
+.mobile-visit-btn {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Site footer */

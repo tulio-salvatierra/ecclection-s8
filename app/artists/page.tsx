@@ -2,6 +2,28 @@ import { Contact } from "@/components/sections/Contact"
 import { getContentBlocksBySlug, type ContentBlock } from "@/lib/wp"
 import { ArtistCarousel } from "@/components/ArtistCarousel"
 import { ARTISTS_DATA } from "@/components/sections/Artists";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Featured Artists",
+  description: "Discover talented local artists featured at Ecclection in Portage Park, Chicago. Explore unique handmade art, vintage pieces, and locally crafted finds from our community of creators.",
+  openGraph: {
+    title: "Featured Artists | Ecclection",
+    description: "Discover talented local artists and their unique creations at Ecclection in Portage Park, Chicago.",
+    url: "/artists",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Featured Artists at Ecclection",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "/artists",
+  },
+};
 
 const artistsForCarousel = ARTISTS_DATA.map((a, idx) => ({
   id: typeof a.id === "number" ? a.id : idx,

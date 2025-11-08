@@ -1,25 +1,135 @@
+"use client";
+
 // components/sections/Header.tsx
 import Link from "next/link";
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
 
 export function Header() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isMobileMenuOpen]);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   return (
-    <header className="site-header sticky top-0 z-50 backdrop-blur-md bg-card/90">
-      <div className="container nav">
-        <div className="brand">
-          <span className="brand-mark"><img src="/logo.png" alt="Ecclection" className="w-8 h-8" /></span>
-          <h1 className="font-brand font-bold text-black font-xl-cyan-600">Ecclection</h1>
+    <>
+      <header className="site-header sticky top-0 z-50 backdrop-blur-md bg-card/90">
+        <div className="container nav">
+          <div className="brand">
+            <span className="brand-mark"><img src="/logo.png" alt="Ecclection" className="w-8 h-8" /></span>
+            <h1 className="font-brand font-bold text-black font-xl-cyan-600">Ecclection</h1>
+          </div>
+          <nav className="nav-links">
+            <Link href="/">Home</Link>
+            <Link href="/artists">Artists</Link>
+            <Link href="/events">Events</Link>
+            <Link href="/about">About</Link>
+            <Link href="/resources">Resources</Link>
+          </nav>
+          <div className="contact-mini hidden md:block">
+            <a className="btn" href="https://maps.app.goo.gl/ZMgVyGzAmNvomLMcA">Visit Us</a>
+          </div>
+          <button
+            className="mobile-menu-button md:hidden"
+            onClick={toggleMobileMenu}
+            aria-label="Toggle mobile menu"
+            aria-expanded={isMobileMenuOpen}
+          >
+            {isMobileMenuOpen ? (
+              <X className="w-4 h-4" />
+            ) : (
+              <Menu className="w-4 h-4" />
+            )}
+          </button>
         </div>
-        <nav className="nav-links">
-          <Link href="/">Home</Link>
-          <Link href="/artists">Artists</Link>
-          <Link href="/events">Events</Link>
-          <Link href="/about">About</Link>
-          <Link href="/resources">Resources</Link>
-        </nav>
-        <div className="contact-mini">
-          <a className="btn" href="https://maps.app.goo.gl/ZMgVyGzAmNvomLMcA">Visit Us</a>
+      </header>
+
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div
+          className="mobile-menu-overlay fixed inset-0 z-40 md:hidden"
+          onClick={closeMobileMenu}
+        />
+      )}
+
+      {/* Mobile Menu */}
+      <div
+        className={`mobile-menu fixed top-0 left-0 right-0 z-50 md:hidden transition-all duration-300 ease-out ${
+          isMobileMenuOpen
+            ? "translate-y-0 opacity-100"
+            : "-translate-y-full opacity-0 pointer-events-none"
+        }`}
+      >
+        <div className="mobile-menu-content backdrop-blur-xl bg-card/95 border-b border-border shadow-lg">
+          <div className="container py-6">
+          <div className="brand">
+            <span className="brand-mark"><img src="/logo.png" alt="Ecclection" className="w-8 h-8" /></span>
+            <h1 className="font-brand font-bold text-black font-xl-cyan-600">Ecclection</h1>
+          </div>
+            <nav className="mobile-nav-links flex flex-col space-y-4">
+              <Link
+                href="/"
+                onClick={closeMobileMenu}
+                className="mobile-nav-link font-brand"
+              >
+                Home
+              </Link>
+              <Link
+                href="/artists"
+                onClick={closeMobileMenu}
+                className="mobile-nav-link font-brand"
+              >
+                Artists
+              </Link>
+              <Link
+                href="/events"
+                onClick={closeMobileMenu}
+                className="mobile-nav-link font-brand"
+              >
+                Events
+              </Link>
+              <Link
+                href="/about"
+                onClick={closeMobileMenu}
+                className="mobile-nav-link font-brand"
+              >
+                About
+              </Link>
+              <Link
+                href="/resources"
+                onClick={closeMobileMenu}
+                className="mobile-nav-link font-brand"
+              >
+                Resources
+              </Link>
+              <a
+                className="btn mobile-visit-btn mt-4 font-brand rounded-md p-4"
+                href="https://maps.app.goo.gl/ZMgVyGzAmNvomLMcA"
+                onClick={closeMobileMenu}
+              >
+                Visit Us
+              </a>
+            </nav>
+          </div>
         </div>
       </div>
-    </header>
+    </>
   );
 }

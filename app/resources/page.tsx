@@ -2,6 +2,28 @@ import Link from "next/link"
 import { ArrowRight, ExternalLink } from "lucide-react"
 import { FlyersBento } from "@/components/sections/BentoFlyers"
 import PantriesSection from "@/components/sections/Pantries";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Community Resources",
+  description: "Access essential community resources including mental health support, food security, housing assistance, crisis support, and more. Ecclection is committed to supporting our community in Portage Park, Chicago.",
+  openGraph: {
+    title: "Community Resources | Ecclection",
+    description: "Essential community resources for mental health, food security, housing, crisis support, and more in Chicago.",
+    url: "/resources",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Community Resources at Ecclection",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "/resources",
+  },
+};
 
 const resources = [
   {

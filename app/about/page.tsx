@@ -1,5 +1,26 @@
 import { Contact } from "@/components/sections/Contact";
+import type { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "About Us",
+  description: "Learn about Ecclection - a vibrant local shop in Portage Park, Chicago. Discover our mission to support local artists, build community connections, and offer unique vintage treasures, handmade art, and locally crafted finds.",
+  openGraph: {
+    title: "About Ecclection | Local Art & Community Shop in Chicago",
+    description: "Learn about Ecclection's mission to support local artists and build community connections in Portage Park, Chicago.",
+    url: "/about",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "About Ecclection",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "/about",
+  },
+};
 
 export default function AboutPage() {
   function renderPunkTitle(

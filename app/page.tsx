@@ -13,6 +13,28 @@ import {
 } from "@/lib/wp";
 import { Store } from "lucide-react";
 import { ProductsShowcase } from "@/components/sections/Products";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Home",
+  description: "Welcome to Ecclection - A vibrant local shop in Portage Park, Chicago featuring vintage treasures, handmade art, locally crafted finds, and community events. Supporting local artists and building community connections.",
+  openGraph: {
+    title: "Ecclection | Local Art & Community Vibe in Portage Park, Chicago",
+    description: "A vibrant local shop featuring vintage treasures, handmade art, locally crafted finds, and community events in Portage Park, Chicago.",
+    url: "/",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Ecclection - Local Art & Community Vibe",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "/",
+  },
+};
 
 // ---------- helpers for parsing WP blocks ----------
 type Maybe<T> = T | undefined;
