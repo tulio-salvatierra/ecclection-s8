@@ -23,7 +23,7 @@ export default function PantriesSection({
               {neighborhood}
             </h3>
 
-            <ul className="space-y-4">
+            <ul className="space-y-4 overflow-hidden">
               {pantries.map((p, idx) => (
                 <li
                   key={neighborhood + idx}

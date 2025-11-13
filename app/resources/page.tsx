@@ -88,7 +88,7 @@ export default function CommunityResourcesPage() {
     const words = text.trim().split(/\s+/);
     const angles = [-6, -3, 0, 3, 6, -4, 2, -2, 4];
     return (
-      <h1 className={`${size} font-bold font-brand mb-4 text-center`}>
+      <h1 className={`${size} font-bold font-brand mb-8 text-center`}>
         {words.map((word, idx) => {
           const angle = angles[idx % angles.length];
           return (
@@ -109,7 +109,7 @@ export default function CommunityResourcesPage() {
     const words = text.trim().split(/\s+/);
     const angles = [-4, -2, 0, 2, 4, -3, 1, -1, 3];
     return (
-      <h2 className={`${size} font-semibold font-brand mb-3`}>
+      <h2 className={`${size} font-semibold font-brand mb-8`}>
         {words.map((word, idx) => {
           const angle = angles[idx % angles.length];
           return (
@@ -136,6 +136,12 @@ export default function CommunityResourcesPage() {
           We believe in supporting our community. Below you'll find a curated list of trusted organizations and
           resources dedicated to helping individuals and families navigate challenging times.
         </p>
+        <br />
+        <p className="text-lg text-center text-white max-w-3xl mx-auto leading-relaxed">
+          We are giving away whistles for free! <br />
+          Just stop by and pick one up! <br />
+          While supplies last.
+        </p>
       </section>
 
       <section>
@@ -148,7 +154,7 @@ export default function CommunityResourcesPage() {
         <div className="container section-pad text-center">
           {renderPunkHeading("Helpful Resources", "text-2xl md:text-3xl")}
           <p className="text-lg text-white max-w-3xl mx-auto text-left leading-relaxed mb-8">
-            Explore the following organizations that provide vital services in mental health, food security, housing, and crisis support.
+            Explore the following organizations that provide vital services in mental health, food security, housing, and crisis support organized by neighborhood.
           </p>
           <PantriesSection />
         </div>
@@ -156,6 +162,7 @@ export default function CommunityResourcesPage() {
 
       {/* Resources Grid */}
       <section className="container section-pad">
+        {renderPunkHeading("Mental Health Resources, Housing & Crisis Support", "text-center mb-8 text-2xl md:text-3xl")}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {resources.map((resource, index) => (
               <article

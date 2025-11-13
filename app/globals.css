@@ -138,11 +138,17 @@
   body {
     @apply text-foreground font-sans;
     background-image: url('/ecclection-bg.svg');
-    background-size: cover;
+    background-size: 140%;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     min-height: 100vh;
+  }
+
+  @media (max-width: 768px) {
+    body {
+      background-size: cover;
+    }
   }
   
   /* Global heading colors */

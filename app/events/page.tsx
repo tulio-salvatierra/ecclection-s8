@@ -1,25 +1,26 @@
 import { Contact } from "@/components/sections/Contact";
 import { SOCIAL_URLS } from "@/lib/constants";
+import Masonry from "@/components/Masonry";
 import dynamic from "next/dynamic";
 
 const Stack = dynamic(() => import("@/components/Stack"), { ssr: false });
 
-const images = [
-  { id: 1, img: "/carousel/6E39C97E-70C8-47C9-AD07-62A7632FB4F9.jpeg.jpg" },
-  { id: 2, img: "/carousel/367A8900-99C2-45B4-9447-5565867A8AB9.jpeg.jpg" },
-  { id: 3, img: "/carousel/A0A31AA0-7A51-4E6D-8314-ADE3148ADA0F.jpeg.jpg" },
-  { id: 4, img: "/carousel/C10538C7-C6AF-442D-A9F7-F41C9351FA91.jpeg.jpg" },
-  { id: 5, img: "/carousel/IMG_1688.jpeg.jpg" },
-  { id: 6, img: "/carousel/IMG_2337.jpeg.jpg" },
-  { id: 7, img: "/carousel/IMG_2986.jpeg.jpg" },
-  { id: 8, img: "/carousel/IMG_2987.jpeg.jpg" },
-  { id: 9, img: "/carousel/IMG_3323.jpeg.jpg" },
-  { id: 10, img: "/carousel/IMG_3326.jpeg.jpg" },
-  { id: 11, img: "/carousel/IMG_3558.jpeg.jpg" },
-  { id: 12, img: "/carousel/IMG_4032.jpeg.jpg" },
-  { id: 13, img: "/carousel/IMG_4060.jpeg.jpg" },
-  { id: 14, img: "/carousel/IMG_4390.jpeg.jpg" },
-  { id: 15, img: "/carousel/IMG_4394.jpeg.jpg" },
+const items = [
+  { id: 1, img: "/carousel/6E39C97E-70C8-47C9-AD07-62A7632FB4F9.jpeg.jpg", height: "auto" },
+  { id: 2, img: "/carousel/367A8900-99C2-45B4-9447-5565867A8AB9.jpeg.jpg", height: "auto" },
+  { id: 3, img: "/carousel/A0A31AA0-7A51-4E6D-8314-ADE3148ADA0F.jpeg.jpg", height: "auto" },
+  { id: 4, img: "/carousel/C10538C7-C6AF-442D-A9F7-F41C9351FA91.jpeg.jpg", height: "auto" },
+  { id: 5, img: "/carousel/IMG_1688.jpeg.jpg", height: "auto" },
+  { id: 6, img: "/carousel/IMG_2337.jpeg.jpg", height: "auto" },
+  { id: 7, img: "/carousel/IMG_2986.jpeg.jpg", height: "auto" },
+  { id: 8, img: "/carousel/IMG_2987.jpeg.jpg", height: "auto" },
+  { id: 9, img: "/carousel/IMG_3323.jpeg.jpg", height: "auto" },
+  { id: 10, img: "/carousel/IMG_3326.jpeg.jpg", height: "auto" },
+  { id: 11, img: "/carousel/IMG_3558.jpeg.jpg", height: "auto" },
+  { id: 12, img: "/carousel/IMG_4032.jpeg.jpg", height: "auto" },
+  { id: 13, img: "/carousel/IMG_4060.jpeg.jpg", height: "auto" },
+  { id: 14, img: "/carousel/IMG_4390.jpeg.jpg", height: "auto" },
+  { id: 15, img: "/carousel/IMG_4394.jpeg.jpg", height: "auto" },
 ];
 
 export const metadata = {
@@ -100,7 +101,7 @@ export default function EventsPage() {
         <header className="container section-pad text-center">
           {renderPunkTitle("Events & Community Impact")}
           <p className="text-lg text-white max-w-2xl mx-auto">
-            Where Creativity Meets Compassion
+            Where Creativity Meets Compassion, Art & Sustainability
           </p>
         </header>
 
@@ -117,22 +118,32 @@ export default function EventsPage() {
                 <p className="text-lg text-white leading-relaxed my-8">
                   At <strong>Ecclection</strong>, we believe art has the power
                   to connect, heal, and inspire. Beyond being a local shop in
-                  <strong> Portage Park, Chicago</strong>, we are a community
+                  <strong> Portage Park, Chicago</strong>, we are a variety shop
                   hub where creativity and compassion meet. Our philosophy is
                   simple — to celebrate diversity, uplift local artists, and
                   give back to those in need through meaningful initiatives and
-                  events.
+                  events that promote human connection, creativity and sustainability.
                 </p>
-                <Stack />
+                <Masonry
+                  items={items}
+                  ease="power3.out"
+                  duration={0.6}
+                  stagger={0.05}
+                  animateFrom="bottom"
+                  scaleOnHover={true}
+                  hoverScale={0.95}
+                  blurToFocus={true}
+                  colorShiftOnHover={false}
+                />
                 <p className="mb-2">
                   <strong>Location:</strong> Ecclection — 6059 W Irving Park Rd,
                   Chicago, IL 60634 (Portage Park)
                 </p>
-                <ul className="list-disc ml-5 space-y-1">
-                  <li>Complimentary snacks & drinks</li>
+                <ul className="list-disc ml-5 space-y-1 text-lg">
+                  <li>Complimentary snacks & drinks on <strong>Every Event</strong> ONLY! - NO EXCEPTIONS</li>
                   <li>Affordable vendor spaces for local artists & makers</li>
-                  <li>Inclusive, community‑first atmosphere — in‑store only</li>
-                  <li>Unique and affordable finds for the kids</li>
+                  <li>Inclusive, community‑driven human atmosphere — <strong>in‑store only</strong></li>
+                  <li>Unique and affordable finds for kids, babies & pets</li>
                   <li>We like to keep it welcoming fun and silly!</li>
                 </ul>
               </div>
@@ -175,18 +186,18 @@ export default function EventsPage() {
                 <h2 className="text-2xl md:text-3xl text-white font-brand">
                   Bi-Monthly Artist & Community Nights
                 </h2>
-                <p className="text-white leading-relaxed">
+                <p className="text-white leading-relaxed text-lg">
                   Every event we host is designed to foster connection and
                   purpose. From our{" "}
                   <strong>
-                    Bi‑Monthly Artist & Community Appreciation Nights
+                    Bi‑Monthly Artist & Community Appreciation Nights 
                   </strong>
-                  to seasonal collaborations, Ecclection creates opportunities
+                  {" "}to seasonal collaborations, Ecclection creates opportunities
                   for neighbors, makers, and visitors to come together in a
-                  spirit of inclusion and creativity. Each gathering supports
-                  our mission to strengthen community bonds and remind everyone
+                  spirit of inclusion, sustainability and creativity. Each gathering supports
+                  our mission to strengthen human bonds and remind everyone
                   that art and kindness can change lives. Enjoy complimentary
-                  snacks & drinks, and ask us about our affordable vendor spaces
+                  snacks & drinks on <strong>ONLY ON EVENTS NIGHT ONLY!</strong> and ask us about our affordable vendor spaces
                   for local artists and makers. Our items are thoughtfully
                   curated and affordable for our neighborhood. We support the
                   artists who are displaying their work with us — not a constant

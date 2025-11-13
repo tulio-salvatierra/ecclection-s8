@@ -33,7 +33,7 @@ export function About({
         </h2>
         {content && (
           <p className="text-lg text-white text-left max-w-3xl mx-auto">
-            We also support our community of local artists and makers by featuring <strong>rotating displays</strong> and art events that connect creativity with customers. From handcrafted candles and soaps to one-of-a-kind accessories and collectibles, Ecclection continues to grow as a neighborhood hub for imagination and collaboration bringing people together through art and unique <strong>affordable finds.</strong>
+            We also support our community of local artists and makers by featuring <strong>rotating displays</strong> and art events that connect creativity with customers. From handcrafted candles, jewelry, wellness items, home décor and mix media to one-of-a-kind accessories and collectibles, Ecclection continues to grow as a neighborhood hub for imagination and collaboration bringing people together through art and unique <strong>affordable finds</strong>to keep your wardrobe and home looking fresh and funky, connect with other humans or simply to have a conversation.
           </p>
           
         )}
@@ -73,7 +73,7 @@ export function About({
 
       <div className="mt-12 text-center">
         <Badge variant="secondary" className="w-auto text-4xl sm:text-4xl md:text-4xl lg:text-6xl px-4 py-2 bg-cyan-600 border-2 border-black shadow-[4px_4px_0_0_#000] font-brand">
-          Community • Art • Creativity
+          Community • Art • Creativity • Sustainability
         </Badge>
       </div>
     </section>

@@ -1,5 +1,6 @@
 import { Contact } from "@/components/sections/Contact";
 import type { Metadata } from "next";
+import { renderPunkTitle, renderPunkHeading } from "@/lib/punk-typography";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -23,51 +24,6 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
-  function renderPunkTitle(
-    text: string,
-    size: string = "text-3xl md:text-4xl"
-  ) {
-    const words = text.trim().split(/\s+/);
-    // Deterministic jitter angles to avoid SSR/CSR mismatch
-    const angles = [-6, -3, 0, 3, 6, -4, 2, -2, 4];
-    return (
-      <h1 className={`${size} font-bold font-brand mb-4 text-center`}>
-        {words.map((word, idx) => {
-          const angle = angles[idx % angles.length];
-          return (
-            <span
-              key={`w-${idx}`}
-              className="inline-block mr-2 md:mr-3 px-2 md:px-3 py-1 md:py-2 bg-cyan-600 text-black rounded-[3px] border-2 border-black shadow-[3px_3px_0_0_#000]"
-              style={{ transform: `rotate(${angle}deg)` }}
-            >
-              {word}
-            </span>
-          );
-        })}
-      </h1>
-    );
-  }
-
-  function renderPunkHeading(text: string, size: string = "text-xl") {
-    const words = text.trim().split(/\s+/);
-    const angles = [-4, -2, 0, 2, 4, -3, 1, -1, 3];
-    return (
-      <h2 className={`${size} font-semibold font-brand mb-3`}>
-        {words.map((word, idx) => {
-          const angle = angles[idx % angles.length];
-          return (
-            <span
-              key={`h-${idx}`}
-              className="inline-block mr-1 md:mr-2 px-1 md:px-2 py-1 bg-cyan-600 text-black rounded-[2px] border border-black shadow-[2px_2px_0_0_#000]"
-              style={{ transform: `rotate(${angle}deg)` }}
-            >
-              {word}
-            </span>
-          );
-        })}
-      </h2>
-    );
-  }
 
   return (
     <div className="min-h-screen">
@@ -75,7 +31,7 @@ export default function AboutPage() {
       <header className="container section-pad text-center">
         {renderPunkTitle("About Ecclection")}
         <p className="text-lg text-white max-w-2xl mx-auto">
-          Where Art Meets Community
+          Where Creativity Meets Compassion, Art & Sustainability
         </p>
       </header>
 
@@ -95,17 +51,17 @@ export default function AboutPage() {
           {/* Right: Text Content */}
           <div className="space-y-6">
             {renderPunkHeading("Welcome to Ecclection", "text-2xl md:text-3xl")}
-            <p className="text-white leading-relaxed">
-              Ecclection is a vibrant local shop located at 6059 West Irving
+            <p className="text-white text-lg leading-relaxed">
+              Ecclection is a vibrant local variety shop located at 6059 West Irving
               Park Road in Chicago's Portage Park neighborhood. We specialize in
               vintage treasures, handmade art, and locally crafted finds that
               celebrate creativity and community while keeping it affordable for
-              everyone. So come by! don't be shy, and explore the eclectic mix
+              everyone. We want to keep it welcoming fun and silly, dont only think that we are here to fullfill need but rather have fun, find crazy and silly stuff in a whimsical way  <br /><br />So come by! don't be shy, and explore the eclectic mix
               that makes Ecclection truly <strong>one-of-a-kind!</strong>
             </p>
             <p className="text-white leading-relaxed">
               Step inside and you'll discover an ever-changing collection of
-              carefully curated, recycled, and up-cycled pieces — from art and
+              carefully curated, recycled, and up-cycled pieces <strong className="text-cyan-500">(starts at $1)</strong> — from art and
               jewelry to home décor, crystals, and wellness items. Every corner
               of our shop tells a story, and every piece has been chosen to
               inspire.
@@ -129,7 +85,7 @@ export default function AboutPage() {
           </div>
 
           {/* Center: Body Text */}
-          <div className="md:col-span-6 space-y-6">
+          <div className="md:col-span-6 space-y-6 text-lg">
             {renderPunkHeading("Our Philosophy", "text-xl")}
             <p className="text-white leading-relaxed">
               At Ecclection, we believe in keeping the shopping experience
@@ -173,8 +129,8 @@ export default function AboutPage() {
             </h3>
             <p className="text-black leading-relaxed">
               <strong>Big Elves</strong> is a volunteer‑driven charity
-              initiative founded by Julie and the Ecclection family. Big Elves
-              collects donations year‑round to bring comfort and hope to those
+              initiative founded two long time friends with a big heart <strong>Julie & Elise.</strong><br /><br /> Big Elves
+              collects donations mostly during the holidays to bring comfort and hope to those
               who need it most — including low income adults, low income
               facilities, nursing homes, children's hospitals, and foster care
               centers across Chicago. We prioritize non‑monetary donations and
@@ -254,43 +210,43 @@ export default function AboutPage() {
         </div>
         <div className="grid grid-cols-1 h-100 md:grid-cols-3 gap-6">
           <div className="text-center p-6 rounded-lg bg-card/100 relative overflow-hidden flex flex-col justify-end">
-        <div
-          className="absolute inset-0 bg-cover bg-center "
-          style={{ backgroundImage: "url(/3pics/DSC02203.jpeg.jpg)" }}
-        />
-        <div className="relative z-10 ">
-          {renderPunkHeading("Vintage Treasures", "text-lg")}
-          <p className="text-white bg-black/50 p-3 rounded">
-          Curated collection of vintage finds, recycled and up-cycled
-          pieces that tell unique stories.
-          </p>
-        </div>
+            <div
+              className="absolute inset-0 bg-cover bg-center "
+              style={{ backgroundImage: "url(/3pics/find.jpg)" }}
+            />
+            <div className="relative z-10 ">
+              {renderPunkHeading("Vintage Treasures", "text-lg")}
+              <p className="text-white bg-black/50 p-3 rounded">
+                Curated collection of vintage finds, recycled and up-cycled
+                pieces that tell unique stories.
+              </p>
+            </div>
           </div>
           <div className="text-center p-6 rounded-lg bg-card/100 relative overflow-hidden flex flex-col justify-end">
-        <div
-          className="absolute inset-0 bg-cover bg-top"
-          style={{ backgroundImage: "url(/3pics/DSC02204.jpeg.jpg)" }}
-        />
-        <div className="relative z-10">
-          {renderPunkHeading("Local Art", "text-lg")}
-          <p className="text-white bg-black/50 p-3 rounded">
-          Handmade art, jewelry, home décor, crystals, and wellness items
-          from local makers.
-          </p>
-        </div>
+            <div
+              className="absolute inset-0 bg-cover bg-top"
+              style={{ backgroundImage: "url(/3pics/DSC02214.jpeg.jpg)" }}
+            />
+            <div className="relative z-10">
+              {renderPunkHeading("Local Art", "text-lg")}
+              <p className="text-white bg-black/50 p-3 rounded">
+                Handmade art, jewelry, home décor, crystals, and wellness items
+                from local makers.
+              </p>
+            </div>
           </div>
           <div className="text-center p-6 rounded-lg bg-card/100 relative overflow-hidden flex flex-col justify-end">
-        <div
-          className="absolute inset-0 bg-cover bg-top"
-          style={{ backgroundImage: "url(/3pics/DSC02214.jpeg.jpg)" }}
-        />
-        <div className="relative z-10">
-          {renderPunkHeading("Visit Us", "text-lg")}
-          <p className="text-white bg-black/50 p-3 rounded">
-          Located at 6059 W. Irving Park Road, Chicago, IL 60634 — on the
-          west end of Portage Park.
-          </p>
-        </div>
+            <div
+              className="absolute inset-0 bg-cover bg-top"
+              style={{ backgroundImage: "url(/3pics/DSC02204.jpeg.jpg)" }}
+            />
+            <div className="relative z-10">
+              {renderPunkHeading("Visit Us", "text-lg")}
+              <p className="text-white bg-black/50 p-3 rounded">
+                Located at 6059 W. Irving Park Road, Chicago, IL 60634 — on the
+                west end of Portage Park.
+              </p>
+            </div>
           </div>
         </div>
       </section>

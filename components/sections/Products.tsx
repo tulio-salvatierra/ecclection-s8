@@ -3,9 +3,9 @@ import Image from "next/image";
 export function ProductsShowcase() {
   const categories = [
     {
-      title: "Leather, Lace & Lucky Finds",
+      title: "Featured local artist spots & Lucky Finds",
       description:
-        "Vintage jackets, wild textures, and bold accessories rescued from the style underworld and revived with love",
+        "We showcase a number of well curated pieces and collections, most of them are with us for a long time, only a few rotate which keeps things interesting and exciting for us.",
       image: "/products/odd.jpeg",
       video: "",
     },
@@ -43,7 +43,7 @@ export function ProductsShowcase() {
             Every piece has a past — and now it’s ready for its next adventure.{" "}
             <br />
             Step into a closet full of character: re-loved fashion, indie
-            makers, vintage misfits, and unexpected gems. Sustainable, quirky,
+            makers, vintage misfits, jewelry, mixed media art, crystals, wellness items, home décor, and unexpected gems. Sustainable, quirky,
             inclusive, and always one-of-a-kind — just like the people who shop
             here.
           </p>

@@ -25,9 +25,9 @@ export function Intro() {
             {/* Description */}
             <div className="max-w-2xl mb-12 md:mb-16">
               <p className="text-lg md:text-2xl leading-relaxed text-primary-foreground/90">
-                Curated vintage finds for the <strong>EVERYONE!</strong>, kids
+                Curated variety finds for the <strong>EVERYONE!</strong>, kids
                 to adults, embracing community, sustainability, and
-                self-expression through fashion, activities, clothing and arts and activities in a welcoming space.
+                self-expression through fashion, activities, clothing, arts and activities in a welcoming space.
               </p>
             </div>
 

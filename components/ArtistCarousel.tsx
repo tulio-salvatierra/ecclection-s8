@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { renderPunkTitle } from "@/lib/punk-typography";
 
 interface Artist {
   id: number;
@@ -19,30 +20,6 @@ interface ArtistCarouselProps {
 
 export function ArtistCarousel({ artists }: ArtistCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  function renderPunkTitle(
-    text: string,
-    size: string = "text-3xl md:text-4xl"
-  ) {
-    const words = text.trim().split(/\s+/);
-    const angles = [-6, -3, 0, 3, 6, -4, 2, -2, 4];
-    return (
-      <h1 className={`${size} font-bold font-brand mb-6 text-white text-center justify-center`}>
-        {words.map((word, idx) => {
-          const angle = angles[idx % angles.length];
-          return (
-            <span
-              key={`w-${idx}`}
-              className="inline-block mt-10 mr-2 md:mr-3 px-2 md:px-3 py-1 md:py-2 bg-cyan-600 text-black rounded-[3px] border-2 border-black shadow-[3px_3px_0_0_#000]"
-              style={{ transform: `rotate(${angle}deg)` }}
-            >
-              {word}
-            </span>
-          );
-        })}
-      </h1>
-    );
-  }
 
   const nextArtist = () => {
     setCurrentIndex((prev) => (prev + 1) % artists.length);
@@ -67,18 +44,18 @@ export function ArtistCarousel({ artists }: ArtistCarouselProps) {
   return (
     <>
       <div className="mt-16 grid grid-cols-1 items-center container section-pad">
-        {renderPunkTitle("Meet the Artists")}
+        {renderPunkTitle("Meet the Artists", "text-3xl md:text-4xl", "mb-6", "text-white")}
         <p className="mt-4 text-white w-full sm:w-1/2 mx-auto text-left">
-          Here we introduce the talented artists featured at Ecclection. We
-          showcase a number of well curated pieces and collections, most of them
+          Here we introduce just a few talented artists featured at Ecclection. We
+          showcase a number of well curated pieces and collections from our local artists, most of them
           are with us for a long time, only a few rotate which keeps things
-          interesting and exciting for us.
+          interesting and exciting for us and our customers.
         </p>
         <p className="text-white w-full sm:w-1/2 mt-4 mx-auto text-left">
           Our featured artists come from diverse backgrounds and styles. If you
           are an artist interested in being featured, please reach out to us
-          through our contact page. We offer affordable spaces (starts at
-          $20/month) for artists to showcase their work in our store and join
+          through our contact page. We offer affordable spaces <strong className="text-cyan-500">(starts at
+          $20/month)</strong> for artists to showcase their work in our store and join
           our community.
         </p>
       </div>
@@ -123,7 +100,7 @@ export function ArtistCarousel({ artists }: ArtistCarouselProps) {
             key={`content-${currentIndex}`}
             className="animate-in fade-in slide-in-from-right-4 duration-500"
           >
-            <h2 className="font-brand text-4xl md:text-5xl lg:text-6xl text-white leading-tight text-balance mb-6">
+            <h2 className="font-brand text-4xl md:text-5xl lg:text-6xl text-cyan-500 leading-tight text-balance mb-6">
               {currentArtist.name}
             </h2>
 
