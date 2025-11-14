@@ -33,8 +33,10 @@ export function Header() {
       <header className="site-header sticky top-0 z-50 backdrop-blur-md bg-card/90">
         <div className="container nav">
           <div className="brand">
-            <span className="brand-mark"><img src="/logo.png" alt="Ecclection" className="w-8 h-8" /></span>
-            <h1 className="font-brand font-bold text-black font-xl-cyan-600">Ecclection</h1>
+            <Link href="/" className="flex items-center space-x-2">
+              <span className="brand-mark"><img src="/logo.png" alt="Ecclection" className="w-8 h-8" /></span>
+              <h1 className="font-brand font-bold text-black font-xl-cyan-600">Ecclection</h1>
+            </Link>
           </div>
           <nav className="nav-links">
             <Link href="/">Home</Link>
@@ -71,19 +73,20 @@ export function Header() {
 
       {/* Mobile Menu */}
       <div
-        className={`mobile-menu fixed top-0 left-0 right-0 z-50 md:hidden transition-all duration-300 ease-out ${
-          isMobileMenuOpen
-            ? "translate-y-0 opacity-100"
-            : "-translate-y-full opacity-0 pointer-events-none"
-        }`}
+        className={`mobile-menu fixed top-0 left-0 right-0 z-50 md:hidden transition-all duration-300 ease-out ${isMobileMenuOpen
+          ? "translate-y-0 opacity-100"
+          : "-translate-y-full opacity-0 pointer-events-none"
+          }`}
       >
-        <div className="mobile-menu-content backdrop-blur-xl bg-card/95 border-b border-border shadow-lg">
-          <div className="container py-6">
-          <div className="brand">
-            <span className="brand-mark"><img src="/logo.png" alt="Ecclection" className="w-8 h-8" /></span>
-            <h1 className="font-brand font-bold text-black font-xl-cyan-600">Ecclection</h1>
-          </div>
-            <nav className="mobile-nav-links flex flex-col space-y-4">
+        <div className="mobile-menu-content backdrop-blur-lg bg-card/95 border-b border-border shadow-lg">
+          <div className="container py-6 bg">
+            <div className="brand">
+              <Link href="/" className="flex items-center space-x-2">
+                <span className="brand-mark"><img src="/logo.png" alt="Ecclection" className="w-8 h-8" /></span>
+                <h1 className="font-brand font-bold text-black font-xl-cyan-600">Ecclection</h1>
+              </Link>
+            </div>
+            <nav className="mobile-nav-links flex flex-col space-y-4 mt-16">
               <Link
                 href="/"
                 onClick={closeMobileMenu}

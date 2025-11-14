@@ -188,7 +188,7 @@ export default function EventsPage() {
                 <h2 className="text-2xl md:text-3xl text-white font-brand">
                   Bi-Monthly Artist & Community Nights
                 </h2>
-                <p className="text-white leading-relaxed text-lg">
+                <p className="text-white leading-relaxed sm:text-lg text-xs">
                   Every event we host is designed to foster connection and
                   purpose. From our{" "}
                   <strong>
