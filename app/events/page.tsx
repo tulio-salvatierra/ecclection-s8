@@ -2,6 +2,7 @@ import { Contact } from "@/components/sections/Contact";
 import { SOCIAL_URLS } from "@/lib/constants";
 import Masonry from "@/components/Masonry";
 import dynamic from "next/dynamic";
+import { LenisProvider } from "@/components/LenisProvider";
 
 const Stack = dynamic(() => import("@/components/Stack"), { ssr: false });
 
@@ -104,6 +105,7 @@ export default function EventsPage() {
             Where Creativity Meets Compassion, Art & Sustainability
           </p>
         </header>
+        <LenisProvider />
 
         {/* Main Content Section */}
         <section className="container section-pad">

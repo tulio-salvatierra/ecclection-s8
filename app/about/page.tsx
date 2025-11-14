@@ -1,6 +1,7 @@
 import { Contact } from "@/components/sections/Contact";
 import type { Metadata } from "next";
 import { renderPunkTitle, renderPunkHeading } from "@/lib/punk-typography";
+import { LenisProvider } from "@/components/LenisProvider";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -26,6 +27,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
 
   return (
+    
     <div className="min-h-screen">
       {/* Header Section */}
       <header className="container section-pad text-center">
@@ -34,6 +36,7 @@ export default function AboutPage() {
           Where Creativity Meets Compassion, Art & Sustainability
         </p>
       </header>
+      <LenisProvider />
 
       {/* Hero Section */}
       <section className="container section-pad">

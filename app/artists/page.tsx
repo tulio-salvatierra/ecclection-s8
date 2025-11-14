@@ -3,6 +3,7 @@ import { getContentBlocksBySlug, type ContentBlock } from "@/lib/wp"
 import { ArtistCarousel } from "@/components/ArtistCarousel"
 import { ARTISTS_DATA } from "@/components/sections/Artists";
 import type { Metadata } from "next";
+import { LenisProvider } from "@/components/LenisProvider";
 
 export const metadata: Metadata = {
   title: "Featured Artists",
@@ -118,6 +119,7 @@ export default async function ArtistsPage() {
 
   return (
     <>
+      <LenisProvider />
       <ArtistCarousel artists={artistsForCarousel} />
       <Contact heading="Come Find Us!" cards={[]} />
     </>

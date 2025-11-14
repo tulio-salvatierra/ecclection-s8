@@ -5,13 +5,13 @@ import { About } from "@/components/sections/About";
 import { Contact } from "@/components/sections/Contact";
 import { Intro } from "@/components/sections/Intro";
 import { Review } from "@/components/sections/Review";
+import { LenisProvider } from "@/components/LenisProvider";
 
 import {
   getPageBySlug,
   getContentBlocksBySlug,
   type ContentBlock,
 } from "@/lib/wp";
-import { Store } from "lucide-react";
 import { ProductsShowcase } from "@/components/sections/Products";
 import type { Metadata } from "next";
 
@@ -227,6 +227,7 @@ export default async function HomePage() {
 
   return (
     <>
+      <LenisProvider />
       <Hero
         title={hero.title}
         subtitle={hero.subtitle}
