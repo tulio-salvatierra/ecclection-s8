@@ -32,37 +32,37 @@ export default function PantriesSection({
                   <p className="font-brand text-lg">{p.organization}</p>
 
                   {p.address && (
-                    <p className="text-lg text-gray-700">📍 {p.address}</p>
+                    <p className="sm:text-lg text-xs text-gray-700">📍 {p.address}</p>
                   )}
 
                   {p.hours && (
-                    <p className="text-lg text-gray-700">⏰ Hours: {p.hours}</p>
+                    <p className="sm:text-lg text-xs text-gray-700">⏰ Hours: {p.hours}</p>
                   )}
 
                   {p.type && (
-                    <p className="text-lg text-gray-700">🏷️ Type: {p.type}</p>
+                    <p className="sm:text-lg text-xs text-gray-700">🏷️ Type: {p.type}</p>
                   )}
 
                   {p.website && (
-                    <p className="text-lg text-blue-600 underline">
-                      <a
-                        href={p.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                    <p className="sm:text-lg text-xs text-blue-600 underline">
+                      <button
+                        onClick={() => window.open(p.website, '_blank')}
+                        className="inline-block my-4 px-4 py-2 bg-cyan-600 text-black font-brand text-lg rounded-lg border-2 border-black shadow-[4px_4px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
+
                       >
                         Visit website
-                      </a>
+                      </button>
                     </p>
                   )}
 
                   {p.volunteer && (
-                    <p className="text-lg text-gray-700">
+                    <p className="sm:text-lg text-xs text-gray-700">
                       🤝 Volunteer: {p.volunteer}
                     </p>
                   )}
 
                   {p.notes && (
-                    <p className="text-lg text-gray-700">📝 {p.notes}</p>
+                    <p className="sm:text-lg text-xs text-gray-700">📝 {p.notes}</p>
                   )}
                 </li>
               ))}

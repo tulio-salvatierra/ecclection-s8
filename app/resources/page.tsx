@@ -132,7 +132,7 @@ export default function CommunityResourcesPage() {
       <LenisProvider />
       {/* Header Section */}
       <section className="container section-pad text-left">
-
+        
         {renderPunkTitle("Community Resources", "text-4xl md:text-5xl")}
         <p className="text-lg text-white max-w-3xl mx-auto leading-relaxed">
           We believe in supporting our community. Below you'll find a curated list of trusted organizations and
@@ -148,7 +148,7 @@ export default function CommunityResourcesPage() {
 
       <section>
         <div className="container">
-          <FlyersBento />
+          <FlyersBento /> 
         </div>
       </section>
 
@@ -166,31 +166,31 @@ export default function CommunityResourcesPage() {
       <section className="container section-pad">
         {renderPunkHeading("Mental Health Resources, Housing & Crisis Support", "text-center mb-8 text-2xl md:text-3xl")}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {resources.map((resource, index) => (
-            <article
-              key={index}
-              className="p-6 rounded-lg bg-cyan-500 border-2 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all group"
-            >
-              <div className="flex items-start justify-between mb-4">
-                <span className="text-xs tracking-wide uppercase text-black font-brand">{resource.category}</span>
-                <ExternalLink className="w-4 h-4 text-black opacity-0 group-hover:opacity-100 transition-opacity" />
-              </div>
-
-              <h2 className="text-xl font-semibold text-black font-brand mb-4">{resource.title}</h2>
-
-              <p className="text-black text-lg leading-relaxed mb-6">{resource.description}</p>
-
-              <a
-                href={resource.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-lg font-brand text-black hover:text-gray-700 transition-colors group/link"
+            {resources.map((resource, index) => (
+              <article
+                key={index}
+                className="p-6 rounded-lg bg-cyan-500 border-2 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all group"
               >
-                Visit Resource
-                <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
-              </a>
-            </article>
-          ))}
+                <div className="flex items-start justify-between mb-4">
+                  <span className="text-xs tracking-wide uppercase text-black font-brand">{resource.category}</span>
+                  <ExternalLink className="w-4 h-4 text-black opacity-0 group-hover:opacity-100 transition-opacity" />
+                </div>
+
+                <h2 className="text-xl font-semibold text-black font-brand mb-4">{resource.title}</h2>
+
+                <p className="text-black text-lg leading-relaxed mb-6">{resource.description}</p>
+
+                <a
+                  href={resource.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-lg font-brand text-black hover:text-gray-700 transition-colors group/link"
+                >
+                  Visit Resource
+                  <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+                </a>
+              </article>
+            ))}
         </div>
       </section>
 

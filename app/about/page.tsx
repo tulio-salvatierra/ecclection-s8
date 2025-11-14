@@ -211,7 +211,7 @@ export default function AboutPage() {
         <div className="text-center mb-12">
           {renderPunkTitle("What We Offer", "text-3xl md:text-4xl")}
         </div>
-        <div className="grid grid-cols-1 h-100 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:h-100 h-auto md:grid-cols-3 gap-6">
           <div className="text-center p-6 rounded-lg bg-card/100 relative overflow-hidden flex flex-col justify-end">
             <div
               className="absolute inset-0 bg-cover bg-center "
