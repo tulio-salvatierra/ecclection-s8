@@ -5,6 +5,7 @@ import { Header } from "@/components/sections/Header";
 import  GlobalScrollSound  from "@/components/SoundOnScroll/SoundOnScroll";
 import { Inter, Quintessential, Raleway, Pirata_One } from 'next/font/google';
 import { SOCIAL_URLS, BUSINESS_INFO } from "@/lib/constants";
+import { PreloadBackground } from "@/components/PreloadBackground";
 
 // Configure your fonts
 const inter = Inter({

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const MIN_INTERVAL_MS = 600; // play at most ~3 times per second
+const MIN_INTERVAL_MS = 600; // 
 
 export default function GlobalScrollSound() {
   const [enabled, setEnabled] = useState(false);
@@ -49,14 +49,14 @@ export default function GlobalScrollSound() {
       {!enabled ? (
         <button
           onClick={() => setEnabled(true)}
-          className="rounded-full bg-black/80 text-white px-4 py-2 text-sm shadow-lg backdrop-blur"
+          className="rounded-full bg-cyan-500/80 text-white px-4 py-2 text-sm shadow-lg backdrop-blur font-brand-alt border border-white/30"
         >
           🔊 Enable scroll sound
         </button>
       ) : (
         <button
           onClick={() => setEnabled(false)}
-          className="rounded-full bg-white/90 text-black px-4 py-2 text-sm shadow border"
+          className="rounded-full bg-white/90 text-black px-4 py-2 text-sm shadow font-brand-alt border border-white/30"
         >
           🔇 Mute scroll sound
         </button>
