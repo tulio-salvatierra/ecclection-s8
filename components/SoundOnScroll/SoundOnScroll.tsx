@@ -2,8 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const THROTTLE_MS = 200;               // how often sound triggers
-const FADE_MS = 0.015;                 // fade edges (seconds)
+const THROTTLE_MS = 600;               // how often sound triggers
+const FADE_MS = 0.05;                 // fade edges (seconds)
 const STORAGE_KEY = "cws-scroll-sound"; // remember user preference
 
 export default function GlobalScrollSound() {
