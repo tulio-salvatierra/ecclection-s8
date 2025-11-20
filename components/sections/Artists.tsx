@@ -2,6 +2,7 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export interface ArtistCard {
   id?: string | number;
@@ -125,7 +126,7 @@ export function Artists({ className = "", data }: ArtistsProps) {
           const web = normalizeUrl(artist.social?.website);
 
           return (
-            <a href="/artists" key={key}>
+            <Link href="/artists" key={key}>
               <Card
                 className="overflow-hidden bg-cyan-600 text-black border-2 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
               >
@@ -174,28 +175,13 @@ export function Artists({ className = "", data }: ArtistsProps) {
                         className="bg-cyan-100 text-black hover:bg-cyan-200"
                         asChild
                       >
-                        <a
-                          href={ig}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={`${displayName} on Instagram`}
-                        >
-                          <svg
-                            className="w-4 h-4 mr-1"
-                            fill="currentColor"
-                            viewBox="0 0 24 24"
-                            aria-hidden="true"
-                          >
-                            <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987 6.62 0 11.987-5.367 11.987-11.987C24.014 5.367 18.637.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.323-1.297C4.198 14.895 3.708 13.744 3.708 12.447s.49-2.448 1.297-3.323c.875-.807 2.026-1.297 3.323-1.297s2.448.49 3.323 1.297c.807.875 1.297 2.026 1.297 3.323s-.49 2.448-1.297 3.323c-.875.807-2.026 1.297-3.323 1.297zm7.718-1.297c-.875.807-2.026 1.297-3.323 1.297s-2.448-.49-3.323-1.297c-.807-.875-1.297-2.026-1.297-3.323s.49-2.448 1.297-3.323c.875-.807 2.026-1.297 3.323-1.297s2.448.49 3.323 1.297c.807.875 1.297 2.026 1.297 3.323s-.49 2.448-1.297 3.323z" />
-                          </svg>
-                          IG
-                        </a>
+                       Know More!
                       </Button>
                     )}
                   </div>
                 </div>
               </Card>
-            </a>
+            </Link>
           );
         })}
       </div>

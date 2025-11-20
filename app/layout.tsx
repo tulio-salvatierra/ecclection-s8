@@ -2,7 +2,7 @@
 import "./globals.css"; // tailwind or your global CSS
 import type { Metadata } from "next";
 import { Header } from "@/components/sections/Header";
-import { PreloadBackground } from "@/components/PreloadBackground";
+import  GlobalScrollSound  from "@/components/SoundOnScroll/SoundOnScroll";
 import { Inter, Quintessential, Raleway, Pirata_One } from 'next/font/google';
 import { SOCIAL_URLS, BUSINESS_INFO } from "@/lib/constants";
 
@@ -193,7 +193,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
         <Header />
-
+        <GlobalScrollSound />
         {/* Main content area */}
         <main>{children}</main>
 
