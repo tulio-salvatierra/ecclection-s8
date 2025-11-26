@@ -43,9 +43,10 @@ export function ProductsShowcase() {
             Every piece has a past — and now it’s ready for its next adventure.{" "}
             <br />
             Step into a closet full of character: re-loved fashion, indie
-            makers, vintage misfits, jewelry, mixed media art, crystals, wellness items, home décor, and unexpected gems. Sustainable, quirky,
-            inclusive, and always one-of-a-kind — just like the people who shop
-            here.
+            makers, vintage misfits, jewelry, mixed media art, crystals,
+            wellness items, home décor, and unexpected gems. Sustainable,
+            quirky, inclusive, and always one-of-a-kind — just like the people
+            who shop here.
           </p>
         </div>
 
@@ -62,7 +63,6 @@ export function ProductsShowcase() {
                     className="absolute inset-0 w-full h-full object-cover "
                     autoPlay
                     loop
-                    
                   />
                 ) : (
                   <Image
@@ -72,25 +72,15 @@ export function ProductsShowcase() {
                     className="object-cover group-hover:scale-105 transition-transform"
                   />
                 )}
-                
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-6 bg-black bg-opacity-70">
                 <h3 className="font-brand text-cyan-500 text-2xl font-bold mb-2">
                   {category.title}
                 </h3>
-                <p className="text-white text-lg">
-                  {category.description}
-                </p>
+                <p className="text-white text-lg">{category.description}</p>
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="mt-8 text-center">
-          <p className="text-cyan-500 italic">
-            Psst… new treasures arrive all the time — and disappear fast. Come
-            browse, come play, come find your next favorite thing.
-          </p>
         </div>
       </div>
     </section>
