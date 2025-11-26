@@ -5,7 +5,7 @@ export function ProductsShowcase() {
     {
       title: "Featured local artist spots & Lucky Finds",
       description:
-        "We showcase a number of well curated pieces and collections, most of them are with us for a long time, only a few rotate which keeps things interesting and exciting for us.",
+        "Well curated pieces and collections, most of them are with us for a long time, only a few rotate which keeps things exciting for us.",
       image: "/products/odd.jpeg",
       video: "",
     },
@@ -17,10 +17,10 @@ export function ProductsShowcase() {
       video: "/products/shirts.mp4",
     },
     {
-      title: "Goth, Glitter & Glam Oddities",
+      title: "Vintage items from the yesteryears",
       description:
-        "Dark romance meets playful weird energy — lace, velvet, metal, and magical thrift-world creatures in between",
-      image: "/products/goth.jpeg",
+        "Retro dresses, denim, accessories, mixed media art, crystals, wellness items, home décor, and unexpected gems.",
+      image: "/3pics/vintage2.jpg",
       video: "",
     },
     {

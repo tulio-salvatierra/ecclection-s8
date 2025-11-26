@@ -2,6 +2,7 @@
 // Centralized site-wide constants
 
 export type SocialKey =
+  | 'googleMaps'
   | 'instagram'
   | 'facebook'
   | 'tiktok'
@@ -10,6 +11,7 @@ export type SocialKey =
   | 'website';
 
 export const SOCIAL_URLS: Record<SocialKey, string> = {
+  googleMaps: "https://maps.app.goo.gl/js5sUj7cUN34N1dy9",
   instagram: "https://instagram.com/Ecclectionchicago",
   facebook: "https://www.facebook.com/profile.php?id=61553781430144",
   tiktok: "https://tiktok.com/@ecclection",

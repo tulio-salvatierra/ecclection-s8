@@ -1,4 +1,6 @@
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { SOCIAL_URLS } from "@/lib/constants";
 
 export function Intro() {
   return (
@@ -33,19 +35,14 @@ export function Intro() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
+              <a href={`${SOCIAL_URLS.googleMaps.toString()}`} target="_blank" rel="noopener noreferrer">
               <Button
                 size="lg"
-                className="bg-accent hover:bg-accent/90 text-accent-foreground text-base md:text-lg px-8 py-6 font-brand tracking-wide"
+                className="bg-cyan-500 hover:bg-accent/90 text-accent-foreground text-base md:text-lg px-8 py-6 font-brand tracking-wide"
               >
-                COME VISIT TODAY!
+                JUST COME IN ALREADY!
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="font-brand border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary text-base md:text-lg px-8 py-6 font-bold tracking-wide bg-transparent"
-              >
-                LEARN MORE
-              </Button>
+              </a>
             </div>
 
             <div className="mt-20 md:mt-32 pt-8 border-t border-primary-foreground/20">
