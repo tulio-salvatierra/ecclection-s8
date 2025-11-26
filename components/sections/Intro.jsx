@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 export function Intro() {
   return (
-    <section className="relative min-h-auto  text-primary-foreground overflow-hidden">
+    <section className="relative min-h-auto bg-black/40  text-primary-foreground overflow-hidden">
       {/* Background texture overlay */}
 
       {/* Main content */}
@@ -12,8 +12,8 @@ export function Intro() {
           <div className="flex-1">
             {/* Eyebrow text */}
             <div className="mb-8 md:mb-12">
-              <span className="inline-block border border-primary-foreground px-4 py-2 text-sm md:text-base font-brand rounded-sm tracking-wider">
-                SINCE 2021
+              <span className="inline-block border border-primary-foreground px-4 py-2 text-base md:text-lg font-brand rounded-sm tracking-wider">
+                SINCE 2023
               </span>
             </div>
 
@@ -58,7 +58,7 @@ export function Intro() {
           <div className="flex-1 lg:max-w-md">
             <div className="grid grid-cols-2 gap-4 h-full">
               {/* Top left - Image placeholder */}
-              <div className="rounded-md relative aspect-square bg-primary-foreground/10 border-2 border-primary-foreground/20 overflow-hidden group hover:border-accent transition-colors">
+              <div className="rounded-md shadow-lg relative aspect-square bg-primary-foreground/10 border-2 border-primary-foreground/20 overflow-hidden group hover:border-accent transition-colors">
                 <video
                   className="w-full h-full object-cover group-hover:opacity-100 transition-opacity"
                   autoPlay
@@ -71,16 +71,16 @@ export function Intro() {
               </div>
 
               {/* Top right - Image placeholder */}
-              <div className="rounded-md relative aspect-square bg-primary-foreground/10 border-2 border-primary-foreground/20 overflow-hidden group hover:border-accent transition-colors">
+              <div className="rounded-md shadow-lg relative aspect-square bg-primary-foreground/10 border-2 border-primary-foreground/20 overflow-hidden group hover:border-accent transition-colors">
                 <img
-                  src="/3pics/art.jpeg"
+                  src="/3pics/vintage.jpeg"
                   alt="Vintage band tees"
                   className="w-full h-full object-cover group-hover:opacity-100 transition-opacity"
                 />
               </div>
 
               {/* Bottom left - Video placeholder */}
-              <div className="rounded-md relative aspect-square bg-primary-foreground/10 border-2 border-primary-foreground/20 overflow-hidden group hover:border-accent transition-colors">
+              <div className="rounded-md shadow-lg relative aspect-square bg-primary-foreground/10 border-2 border-primary-foreground/20 overflow-hidden group hover:border-accent transition-colors">
                 <img
                   src="/3pics/shelf.jpeg"
                   alt="Gothic accessories"
@@ -94,7 +94,7 @@ export function Intro() {
               </div>
 
               {/* Bottom right - Image placeholder */}
-              <div className="rounded-md relative aspect-square bg-primary-foreground/10 border-2 border-primary-foreground/20 overflow-hidden group hover:border-accent transition-colors">
+              <div className="rounded-md relative shadow-lg aspect-square bg-primary-foreground/10 border-2 border-primary-foreground/20 overflow-hidden group hover:border-accent transition-colors">
                 <video
                   className="w-full h-full object-cover group-hover:opacity-100 transition-opacity"
                   autoPlay
