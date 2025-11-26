@@ -116,7 +116,7 @@ export default function CommunityResourcesPage() {
           return (
             <span
               key={`h-${idx}`}
-              className="inline-block mr-1 md:mr-2 px-1 md:px-2 py-1 bg-cyan-600 text-black rounded-[2px] border border-black shadow-[2px_2px_0_0_#000]"
+              className="inline-block mr-1 md:mr-2 px-1 md:px-2 py-1 bg-cyan-500 text-white rounded-[2px] border border-black shadow-[2px_2px_0_0_#000]"
               style={{ transform: `rotate(${angle}deg)` }}
             >
               {word}
@@ -164,7 +164,7 @@ export default function CommunityResourcesPage() {
 
       {/* Resources Grid */}
       <section className="container section-pad">
-        {renderPunkHeading("Mental Health Resources, Housing & Crisis Support", "text-center mb-8 text-2xl md:text-3xl")}
+        {renderPunkHeading("Food, Housing & More", "text-center text-white mb-8 text-2xl md:text-3xl")}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {resources.map((resource, index) => (
               <article

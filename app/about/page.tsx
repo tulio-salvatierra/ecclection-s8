@@ -215,7 +215,7 @@ export default function AboutPage() {
           <div className="text-center p-6 rounded-lg bg-card/100 relative overflow-hidden flex flex-col justify-end">
             <div
               className="absolute inset-0 bg-cover bg-center "
-              style={{ backgroundImage: "url(/3pics/find.jpg)" }}
+              style={{ backgroundImage: "url(/3pics/vintage.jpeg)" }}
             />
             <div className="relative z-10 ">
               {renderPunkHeading("Vintage Treasures", "text-lg")}

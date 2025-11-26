@@ -6,6 +6,7 @@ import { Contact } from "@/components/sections/Contact";
 import { Intro } from "@/components/sections/Intro";
 import { Review } from "@/components/sections/Review";
 import { LenisProvider } from "@/components/LenisProvider";
+import  Influencers  from "@/components/sections/Influencers";
 
 import {
   getPageBySlug,
@@ -243,6 +244,7 @@ export default async function HomePage() {
         image={about?.image}
       />
       <Review />
+      <Influencers />
       <Contact heading={contact?.heading} cards={contact?.cards} />
     </>
   );

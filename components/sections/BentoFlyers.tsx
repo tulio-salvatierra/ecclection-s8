@@ -15,13 +15,7 @@ export function FlyersBento() {
 
         <div className="grid grid-cols-6 grid-rows-3 gap-4 h-[600px] sm:h-[700px] lg:h-[800px]">
           {/* Large flyer - spans 2 columns and 2 rows */}
-          <div className="col-span-2 row-span-2 border-2 border-foreground hover:border-accent transition-colors overflow-hidden group">
-            <img
-              src="/flyers/IMG_6126.jpeg"
-              alt="ICE in your area flyer"
-              className="w-full h-full object-fit group-hover:scale-105 transition-transform duration-300"
-            />
-          </div>
+          
 
           {/* Tall flyer - right side, spans 3 rows */}
           <div className="col-span-2 row-span-2 border-2 border-foreground hover:border-accent transition-colors overflow-hidden group">
@@ -33,7 +27,7 @@ export function FlyersBento() {
           </div>
 
           {/* Small flyer - bottom left */}
-          <div className="col-span-1 row-span-1 border-2 border-foreground hover:border-accent transition-colors overflow-hidden group">
+          <div className="col-span-2 row-span-1 border-2 border-foreground hover:border-accent transition-colors overflow-hidden group">
             <img
               src="/flyers/IMG_6197.jpeg"
               alt="Free store flyer"
@@ -42,7 +36,7 @@ export function FlyersBento() {
           </div>
 
           {/* Medium flyer - bottom middle-left */}
-          <div className="col-span-1 row-span-1 border-2 border-foreground hover:border-accent transition-colors overflow-hidden group">
+          <div className="col-span-2 row-span-2 border-2 border-foreground hover:border-accent transition-colors overflow-hidden group">
             <img
               src="/flyers/IMG_6369.png"
               alt="ICE abduction flyer"
