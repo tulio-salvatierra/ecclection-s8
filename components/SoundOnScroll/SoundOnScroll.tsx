@@ -2,67 +2,32 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const THROTTLE_MS = 600;               // how often sound triggers
-const FADE_MS = 0.05;                 // fade edges (seconds)
-const STORAGE_KEY = "cws-scroll-sound"; // remember user preference
+const FADE_MS = 0.05; // fade edges (seconds)
 
 export default function GlobalScrollSound() {
-  const [enabled, setEnabled] = useState(false);
-  const [ready, setReady] = useState(false); // prevents SSR mismatch
+  const [hasPlayed, setHasPlayed] = useState(false);
   const audioCtxRef = useRef<AudioContext | null>(null);
-  const soundBufferRef = useRef<AudioBuffer | null>(null);
-  const lastPlayRef = useRef<number>(0);
 
-  // Load saved preference
   useEffect(() => {
-    if (typeof window === "undefined") return;
+    if (hasPlayed) return;
 
-    const saved = window.localStorage.getItem(STORAGE_KEY);
+    const playOnce = async () => {
+      audioCtxRef.current = new (window.AudioContext ||
+        (window as any).webkitAudioContext)();
 
-    // Default behavior:
-    // ❗ If you want FIRST-TIME visitors to start with sound ON,
-    // replace the next line with: setEnabled(saved !== "off");
-    setEnabled(saved === "on"); 
-
-    setReady(true);
-  }, []);
-
-  // Load sound file once after enabling
-  useEffect(() => {
-    if (!enabled) return;
-
-    audioCtxRef.current = new (window.AudioContext ||
-      (window as any).webkitAudioContext)();
-
-    const loadSound = async () => {
-      const res = await fetch("/sound/chime.mp3");
+      const res = await fetch("/sound/circus.mp3");
       const arrayBuffer = await res.arrayBuffer();
       const ctx = audioCtxRef.current;
       if (!ctx) return;
-      soundBufferRef.current = await ctx.decodeAudioData(arrayBuffer);
-    };
 
-    loadSound();
-  }, [enabled]);
+      const buffer = await ctx.decodeAudioData(arrayBuffer);
 
-  // Scroll listener
-  useEffect(() => {
-    if (!enabled) return;
-
-    const handler = async () => {
-      const ctx = audioCtxRef.current;
-      const buffer = soundBufferRef.current;
-      if (!ctx || !buffer) return;
-
-      const now = Date.now();
-      if (now - lastPlayRef.current < THROTTLE_MS) return;
-      lastPlayRef.current = now;
-
-      // Resume audio context after user interaction (scroll counts)
       if (ctx.state === "suspended") {
         try {
           await ctx.resume();
-        } catch (e) {}
+        } catch (_) {
+          return; // autoplay blocked
+        }
       }
 
       const source = ctx.createBufferSource();
@@ -73,7 +38,7 @@ export default function GlobalScrollSound() {
       const duration = buffer.duration;
       const endTime = startTime + duration;
 
-      // Smooth fade edges to blend sounds naturally
+      // Smooth fade edges for a clean one-shot playback.
       gain.gain.setValueAtTime(0, startTime);
       gain.gain.linearRampToValueAtTime(1, startTime + FADE_MS);
       gain.gain.setValueAtTime(1, endTime - FADE_MS);
@@ -81,40 +46,17 @@ export default function GlobalScrollSound() {
 
       source.connect(gain).connect(ctx.destination);
       source.start();
+      setHasPlayed(true);
     };
 
-    window.addEventListener("scroll", handler, { passive: true });
-    window.addEventListener("wheel", handler, { passive: true });
-    window.addEventListener("touchmove", handler, { passive: true });
+    playOnce();
 
     return () => {
-      window.removeEventListener("scroll", handler);
-      window.removeEventListener("wheel", handler);
-      window.removeEventListener("touchmove", handler);
-    };
-  }, [enabled]);
-
-  // Toggle + save preference
-  const toggle = () => {
-    setEnabled((prev) => {
-      const next = !prev;
-      if (typeof window !== "undefined") {
-        window.localStorage.setItem(STORAGE_KEY, next ? "on" : "off");
+      if (audioCtxRef.current) {
+        audioCtxRef.current.close();
       }
-      return next;
-    });
-  };
+    };
+  }, [hasPlayed]);
 
-  if (!ready) return null; // prevents hydration mismatch
-
-  return (
-    <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50">
-      <button
-        onClick={toggle}
-        className="rounded-full bg-black/80 text-white px-4 py-2 text-sm shadow-lg backdrop-blur"
-      >
-        {enabled ? "🔇 Disable scroll sound" : "🔊 Enable scroll sound"}
-      </button>
-    </div>
-  );
+  return null;
 }
