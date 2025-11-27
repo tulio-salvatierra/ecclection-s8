@@ -2,46 +2,49 @@
 import "./globals.css"; // tailwind or your global CSS
 import type { Metadata } from "next";
 import { Header } from "@/components/sections/Header";
-import  GlobalScrollSound  from "@/components/SoundOnScroll/SoundOnScroll";
-import { Inter, Quintessential, Raleway, Pirata_One } from 'next/font/google';
+import { ClientEffects } from "@/components/SoundOnScroll/ClientFX";
+import { Inter, Quintessential, Raleway, Pirata_One } from "next/font/google";
 import { SOCIAL_URLS, BUSINESS_INFO } from "@/lib/constants";
 import { PreloadBackground } from "@/components/PreloadBackground";
 
 // Configure your fonts
 const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
 });
 
 const quintessential = Quintessential({
-  subsets: ['latin'],
-  weight: ['400'],
-  variable: '--font-brand',
-  display: 'swap',
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-brand",
+  display: "swap",
 });
 
 const raleway = Raleway({
-  subsets: ['latin'],
-  variable: '--font-normal',
-  display: 'swap',
+  subsets: ["latin"],
+  variable: "--font-normal",
+  display: "swap",
 });
 
 // Alternate brand font for testing/toggling
 const pirataOne = Pirata_One({
-  weight: '400',
-  subsets: ['latin'],
-  variable: '--font-brand-alt',
-  display: 'swap',
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-brand-alt",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://ecclection.com'),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "https://ecclection.com"
+  ),
   title: {
     default: "Ecclection | Local Art & Community Vibe in Portage Park, Chicago",
-    template: "%s | Ecclection"
+    template: "%s | Ecclection",
   },
-  description: "Ecclection is a vibrant local shop in Portage Park, Chicago featuring vintage treasures, handmade art, locally crafted finds, and community events. Supporting local artists and building community connections.",
+  description:
+    "Ecclection is a vibrant local shop in Portage Park, Chicago featuring vintage treasures, handmade art, locally crafted finds, and community events. Supporting local artists and building community connections.",
   keywords: [
     "Ecclection",
     "Chicago art shop",
@@ -54,7 +57,7 @@ export const metadata: Metadata = {
     "Chicago vintage",
     "art gallery Chicago",
     "community space",
-    "local business Chicago"
+    "local business Chicago",
   ],
   authors: [{ name: "Ecclection" }],
   creator: "Ecclection",
@@ -70,7 +73,8 @@ export const metadata: Metadata = {
     url: "/",
     siteName: "Ecclection",
     title: "Ecclection | Local Art & Community Vibe in Portage Park, Chicago",
-    description: "A vibrant local shop featuring vintage treasures, handmade art, locally crafted finds, and community events in Portage Park, Chicago.",
+    description:
+      "A vibrant local shop featuring vintage treasures, handmade art, locally crafted finds, and community events in Portage Park, Chicago.",
     images: [
       {
         url: "/og-image.jpg",
@@ -83,7 +87,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Ecclection | Local Art & Community Vibe",
-    description: "A vibrant local shop featuring vintage treasures, handmade art, and community events in Portage Park, Chicago.",
+    description:
+      "A vibrant local shop featuring vintage treasures, handmade art, and community events in Portage Park, Chicago.",
     images: ["/og-image.jpg"],
     creator: "@ecclection",
   },
@@ -114,9 +119,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ecclection.com';
-  
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ecclection.com";
+
   // Build opening hours specification from constants
   const openingHoursSpecification = Object.entries(BUSINESS_INFO.openingHours)
     .filter(([_, hours]) => hours !== null)
@@ -132,7 +141,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     "@type": "LocalBusiness",
     "@id": `${siteUrl}#organization`,
     name: BUSINESS_INFO.name,
-    description: "A vibrant local shop in Portage Park, Chicago featuring vintage treasures, handmade art, locally crafted finds, and community events.",
+    description:
+      "A vibrant local shop in Portage Park, Chicago featuring vintage treasures, handmade art, locally crafted finds, and community events.",
     url: siteUrl,
     logo: `${siteUrl}/logo.png`,
     image: `${siteUrl}/og-image.jpg`,
@@ -182,23 +192,33 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   };
 
   return (
-    <html lang="en" className={`${inter.variable} ${quintessential.variable} ${raleway.variable} ${pirataOne.variable}`}>
+    <html
+      lang="en"
+      className={`${inter.variable} ${quintessential.variable} ${raleway.variable} ${pirataOne.variable}`}
+    >
       <body>
         <PreloadBackground />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
         />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
         <Header />
-        <GlobalScrollSound />
-        {/* Main content area */}
-        <main>{children}</main>
 
-        <footer className="site-footer">© {new Date().getFullYear()} Ecclection</footer>
+        {/* Main content area */}
+        <main>
+          <ClientEffects />
+          {children}
+        </main>
+
+        <footer className="site-footer">
+          © {new Date().getFullYear()} Ecclection
+        </footer>
       </body>
     </html>
   );

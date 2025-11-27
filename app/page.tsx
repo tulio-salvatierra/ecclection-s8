@@ -7,6 +7,7 @@ import { Intro } from "@/components/sections/Intro";
 import { Review } from "@/components/sections/Review";
 import { LenisProvider } from "@/components/LenisProvider";
 import  Influencers  from "@/components/sections/Influencers";
+import  SoundOnScroll  from "@/components/SoundOnScroll/SoundOnScroll";
 
 import {
   getPageBySlug,
@@ -229,6 +230,7 @@ export default async function HomePage() {
   return (
     <>
       <LenisProvider />
+      <SoundOnScroll />
       <Hero
         title={hero.title}
         subtitle={hero.subtitle}
