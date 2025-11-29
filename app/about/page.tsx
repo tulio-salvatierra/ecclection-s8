@@ -90,7 +90,7 @@ export default function AboutPage() {
           {/* Center: Body Text */}
           <div className="md:col-span-6 space-y-6 text-lg">
             {renderPunkHeading("Our Philosophy", "text-xl")}
-            <p className="text-white leading-relaxed">
+            <p className="text-white leading-relaxed text-lg">
               At Ecclection, we believe in keeping the shopping experience
               personal and meaningful. We're proudly brick-and-mortar only — no
               online carts, no algorithms — just real people, real conversation,
@@ -99,12 +99,8 @@ export default function AboutPage() {
               every time you stop by.
             </p>
 
-            <p className="text-white leading-relaxed">
-              We also support our community of local artists and makers by
-              featuring rotating displays and art events that connect creativity
-              with customers. From handcrafted candles and soaps to
-              one-of-a-kind accessories and collectibles, Ecclection continues
-              to grow as a neighborhood hub for imagination and collaboration.
+            <p className="text-white leading-relaxed text-lg">
+              We also support engage with our community by featuring kids craft events throughout the year & working with local schools for fundraisers. Fidn Waldo discounts <strong>(he's hidden there somewhere)</strong> and Occasional Sip & Shop events, Plus size Pop up weekened (3rd week of every month), fun Eastern egg hunts, providing goodie bags during the holidays for sll thye kiddos. We have SOOOOOoo many <strong> GREAT</strong> things at Ecclection - we're GIVING IT AWAY FOR FREE! - that's right, FREE! Each purchase earns a free gift from our "GGODIE BASKET" 🧺 & our FAMOUS "Wheel of "GOOD FORTUNE" where you spin to win with any purchase over $25 🏆
             </p>
           </div>
 
@@ -120,17 +116,24 @@ export default function AboutPage() {
           </div>
         </div>
         {/* Big Elves Section */}
-        <h2 className="mb-8 text-2xl md:text-3xl font-brand text-center mt-12">
+       
+
+ 
+
+        {/* Call to Action */}
+        <div className="text-left mt-12 p-8 bg-card/30 backdrop-blur-sm rounded-lg border-2 border-cyan-600">
+         <h2 className="mb-8 text-2xl md:text-3xl font-brand text-center mt-12">
           Big Elves — Spreading Joy Through Giving
         </h2>
-
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="bg-cyan-600 border-2 border-black shadow-[6px_6px_0_0_#000] rounded-lg p-6">
-            <div className="text-4xl mb-4 text-center">🎁</div>
-            <h3 className="text-xl font-bold font-brand text-black mb-3 text-center">
+          <img
+            className="rounded-lg shadow-2xlw-full h-auto mx-auto mb-6"
+            src="/bigelves.jpeg"
+            alt="Volunteer handing out gifts to children at a charity event organized by Big Elves"
+          />
+          <h3 className="text-xl font-bold font-brand  mb-3 text-center">
               Our Mission
             </h3>
-            <p className="text-black leading-relaxed">
+           <p className="text-white leading-relaxed">
               <strong>Big Elves</strong> is a volunteer‑driven charity
               initiative founded two long time friends with a big heart <strong>Julie & Elise.</strong><br /><br /> Big Elves
               collects donations mostly during the holidays to bring comfort and hope to those
@@ -140,47 +143,6 @@ export default function AboutPage() {
               maintain wishlists so we can deliver specific supplies directly to
               people in need.
             </p>
-          </div>
-
-          <div className="bg-cyan-600 border-2 border-black shadow-[6px_6px_0_0_#000] rounded-lg p-6">
-            <div className="text-4xl mb-4 text-center">❤️</div>
-            <h3 className="text-xl font-bold font-brand text-black mb-3 text-center">
-              Community Impact
-            </h3>
-            <p className="text-black leading-relaxed">
-              What makes Big Elves truly special is the way it unites people
-              through kindness. Whether it's a customer dropping off a donation,
-              an artist contributing a handmade piece, or a volunteer organizing
-              a drive, every act of generosity ripples outward.
-            </p>
-            <h3 className="text-xl font-bold font-brand text-black mb-3 text-center">
-              How You Can Help?
-            </h3>
-            <p className="text-black leading-relaxed">
-              You can support Big Elves by donating new or gently used items,
-              volunteering your time, or spreading the word about our mission.
-              Every contribution, big or small, makes a difference in the lives
-              of those we serve. Together, we can create a community where
-              everyone feels valued and cared for.
-            </p>
-            <div className="grid items-center text-center">
-              <a
-                href="mailto:BigElvesChicago@gmail.com"
-                className="inline-block mt-8 px-8 py-4 bg-cyan-600 text-black font-brand text-lg rounded-lg border-2 border-black shadow-[4px_4px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
-              >
-                Send Us An Email!
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Call to Action */}
-        <div className="text-center mt-12 p-8 bg-card/30 backdrop-blur-sm rounded-lg border-2 border-cyan-600">
-          <img
-            className="rounded-lg shadow-2xl"
-            src="https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/473620815_122137366148443798_3709210874448085260_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_ohc=o-12TdXkO40Q7kNvwErEI3j&_nc_oc=AdnZK1C8Ua677nAFt1UH6Ng9fVJvAL9ufj2X6t4Z98aZMjkV2agYtQsxJdjFStaK4UFGppp_7RaEB5FjOyIDbnS4&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&_nc_gid=iVEZZc0kmdda8S58CvuJAw&oh=00_Afio6mPPK-UNYuBZSy42FFQaKcG6zoz7izXRVYq3gFDYnQ&oe=690C45E5"
-            alt="Volunteer handing out gifts to children at a charity event organized by Big Elves"
-          />
           <p className="text-lg text-white leading-relaxed my-4">
             Learn more about Big Elves and how you can get involved by visiting
             our official Facebook page:
@@ -195,14 +157,42 @@ export default function AboutPage() {
               most.
             </strong>
           </p>{" "}
-          <a
+           <h3 className="text-xl font-bold font-brand text-white mb-3 text-center">
+              Community Impact
+            </h3>
+            <p className="text-white leading-relaxed">
+              What makes Big Elves truly special is the way it unites people
+              through kindness. Whether it's a customer dropping off a donation,
+              an artist contributing a handmade piece, or a volunteer organizing
+              a drive, every act of generosity ripples outward.
+            </p>
+            <h3 className="text-xl mt-4 font-bold font-brand text-white mb-3 text-center">
+              How You Can Help?
+            </h3>
+            <p className="text-white leading-relaxed">
+              You can support Big Elves by donating new or gently used items,
+              volunteering your time, or spreading the word about our mission.
+              Every contribution, big or small, makes a difference in the lives
+              of those we serve. Together, we can create a community where
+              everyone feels valued and cared for.
+            </p>
+            <div className="grid items-center text-center">
+              <a
+                href="mailto:BigElvesChicago@gmail.com"
+                className="mx-auto self-centerinline-block mt-8 px-8 py-4 bg-cyan-600 text-black font-brand text-lg rounded-lg border-2 border-black shadow-[4px_4px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
+              >
+                Send Us An Email!
+              </a>
+                <a
             href="https://www.facebook.com/profile.php?id=61563313948330"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block mt-8 px-8 py-4 bg-cyan-600 text-black font-brand text-lg rounded-lg border-2 border-black shadow-[4px_4px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
+            className="mx-auto self-centerinline-block mt-8 px-8 py-4 bg-cyan-600 text-black font-brand text-lg rounded-lg border-2 border-black shadow-[4px_4px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
           >
             Visit Big Elves on Facebook
           </a>
+            </div>
+        
         </div>
       </section>
 
