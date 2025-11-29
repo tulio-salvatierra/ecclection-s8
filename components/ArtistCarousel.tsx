@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { renderPunkTitle } from "@/lib/punk-typography";
 
@@ -40,6 +40,14 @@ export function ArtistCarousel({ artists }: ArtistCarouselProps) {
   }
 
   const currentArtist = artists[currentIndex];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextArtist();
+    }, 3000); // Auto-advance every 8 seconds
+    
+    return () => clearInterval(interval);
+  }, [artists.length]);
 
   return (
     <>
@@ -107,6 +115,22 @@ export function ArtistCarousel({ artists }: ArtistCarouselProps) {
             <p className="text-base text-white leading-relaxed max-w-lg mb-8">
               {currentArtist.bio}
             </p>
+            <p className="text-base text-white leading-relaxed max-w-lg mb-8">
+              {currentArtist.specialty && (
+                <strong className="text-cyan-500">
+                  Specialty: {currentArtist.specialty}
+                </strong>
+              )}
+            </p>
+            <button
+              onClick={() => {
+                window.location.href = "https://www.instagram.com/" + (currentArtist.social?.instagram || "");
+              }}
+              className="inline-block rounded-md bg-cyan-600 text-black font-bold px-6 py-3 border-2 border-black shadow-[4px_4px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
+            >
+              Instagram
+            </button>
+
           </div>
 
           <div className="flex items-center gap-6">

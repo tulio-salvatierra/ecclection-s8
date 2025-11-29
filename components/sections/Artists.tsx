@@ -37,12 +37,12 @@ export const ARTISTS_DATA: ArtistCard[] = [
     name: "Smelly Melly",
     specialty: "Candle & Soap Maker",
     bio: "Melissa Berardi creates artisanal candles and soaps focused on Health/beauty\nMy soaps and candles are 100% organic and hand made. I use the best products to get the best results.",
-    image: "/smelly.png",
+    image: "/smelly.jpg",
     featured: true,
     social: {
-      instagram: "@smellymellysoapsandcandles",
-      website: "www.smellymellycandle.com"
-    }
+      instagram: "smellymellysoapsandcandles",
+      website: "www.smellymellycandle.com",
+    },
   },
   {
     id: 2,
@@ -51,33 +51,36 @@ export const ARTISTS_DATA: ArtistCard[] = [
     bio: "I hand stitch decorative hoops, jewelry, banners, patches, etc. Inspired by nature, spirituality and music",
     image: "/stitch.png",
     social: {
-      instagram: "@rothnrollstitch",
-      website: "rothnrollstitch.com"
-    }
+      instagram: "rothnrollstitch",
+      website: "rothnrollstitch.com",
+    },
   },
   {
     id: 3,
     name: "Barbara Ezell",
     specialty: "Unique Jewelry Designer",
     bio: "Stories inspire me! I am inspired by dreams from known and unknown realms. Meet my mystic muses and other creations.",
-    image: "https://i.etsystatic.com/13508651/r/il/60d066/6703081534/il_1588xN.6703081534_dpum.jpg",
+    image:
+      "https://i.etsystatic.com/13508651/r/il/60d066/6703081534/il_1588xN.6703081534_dpum.jpg",
     featured: true,
     social: {
-      instagram: "@alicebrownphotobarbezell",
-      website: "https://www.etsy.com/shop/Barbezell?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnv20TytU9A6_kZQAC6c-TlaI-w7S0lh-srIdA4A_SP7u9A_6BlMOyydmQS8I_aem_XYVNiYhVZ-4rqdBZf4TWiQ&dd_referrer=https%3A%2F%2Fl.instagram.com%2F#items"
-    }
+      instagram: "barbezell",
+      website:
+        "https://www.etsy.com/shop/Barbezell?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnv20TytU9A6_kZQAC6c-TlaI-w7S0lh-srIdA4A_SP7u9A_6BlMOyydmQS8I_aem_XYVNiYhVZ-4rqdBZf4TWiQ&dd_referrer=https%3A%2F%2Fl.instagram.com%2F#items",
+    },
   },
   {
     id: 4,
     name: "Englewood Essentials",
     specialty: "Soaps & Body Care",
-    bio: "Handmade soaps and body care products made with natural ingredients by Kevin Bartlett.",
-    image: "https://peanuttyxx.wordpress.com/wp-content/uploads/2024/02/374657104_17981156780452146_300428832772262792_n.jpg",
+    bio: "Oh Hey, My name is Kevin With my sons Thelonius and Biafra we set out to make self care products that celebrate ingredients you can feel good putting on your body. Handmade by us, in my neighborhood, Englewood on the Southside of Chicago. Black owned and operated Englewood Essentials is my way of creating a legacy with my Sons while building something together.",
+    image:
+      "https://peanuttyxx.wordpress.com/wp-content/uploads/2024/02/374657104_17981156780452146_300428832772262792_n.jpg",
     social: {
-      instagram: "@aenglewoodessentials",
-      website: ""
-    }
-  }
+      instagram: "englewoodessentials",
+      website: "ENGLEWOODESSENTIAL.COM",
+    },
+  },
 ];
 
 function normalizeUrl(url?: string): string | undefined {
@@ -127,9 +130,7 @@ export function Artists({ className = "", data }: ArtistsProps) {
 
           return (
             <Link href="/artists" key={key}>
-              <Card
-                className="overflow-hidden bg-cyan-600 text-black border-2 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
-              >
+              <Card className="overflow-hidden bg-cyan-600 text-black border-2 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all">
                 <div className="h-64 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center relative">
                   {img ? (
                     <img
@@ -175,7 +176,7 @@ export function Artists({ className = "", data }: ArtistsProps) {
                         className="bg-cyan-100 text-black hover:bg-cyan-200"
                         asChild
                       >
-                       Know More!
+                        Know More!
                       </Button>
                     )}
                   </div>
@@ -186,18 +187,17 @@ export function Artists({ className = "", data }: ArtistsProps) {
         })}
       </div>
 
-      
-        <div className="text-center mt-12">
-          <a href="/artists">
+      <div className="text-center mt-12">
+        <a href="/artists">
           <Button
             size="lg"
             className="bg-cyan-500 text-lg p-8 shadow-lg border-2 border-black text-black hover:bg-cyan-200 font-brand"
             variant="outline"
           >
             View All Artists
-          </Button></a>
-        </div>
-      
+          </Button>
+        </a>
+      </div>
     </section>
   );
 }

@@ -8,6 +8,8 @@ import { Review } from "@/components/sections/Review";
 import { LenisProvider } from "@/components/LenisProvider";
 import  Influencers  from "@/components/sections/Influencers";
 import  SoundOnScroll  from "@/components/SoundOnScroll/SoundOnScroll";
+import { ARTISTS_DATA } from "@/components/sections/Artists";
+import { ArtistCarousel } from "@/components/ArtistCarousel";
 
 import {
   getPageBySlug,
@@ -227,6 +229,19 @@ export default async function HomePage() {
   const about = mapAbout(aboutBlocks);
   const contact = mapContact(contactBlocks);
 
+  const artistsForCarousel = ARTISTS_DATA.map((a, idx) => ({
+    id: typeof a.id === "number" ? a.id : idx,
+    name: a.name ?? a.title ?? "Untitled",
+    specialty: a.specialty,
+    bio: a.bio ?? a.description ?? a.text ?? "",
+    image: a.image,
+    featured: !!a.featured,
+    social: {
+      instagram: a.social?.instagram,
+      website: a.social?.website
+    }
+  }));
+
   return (
     <>
       <LenisProvider />
@@ -237,7 +252,7 @@ export default async function HomePage() {
         backgroundImage={hero.backgroundImage}
       />
       <Intro />
-      <Artists />
+      <ArtistCarousel artists={artistsForCarousel} />
       <StoreActivities />
       <ProductsShowcase />
       <About
