@@ -126,17 +126,7 @@ export default function EventsPage() {
                   give back to those in need through meaningful initiatives and
                   events that promote human connection, creativity and sustainability.
                 </p>
-                <Masonry
-                  items={items}
-                  ease="power3.out"
-                  duration={0.6}
-                  stagger={0.05}
-                  animateFrom="bottom"
-                  scaleOnHover={true}
-                  hoverScale={0.95}
-                  blurToFocus={true}
-                  colorShiftOnHover={false}
-                />
+                <img src="/child.jpeg" alt="Artists Spot" className="my-4 w-full rounded-md" />
                 <p className="mb-2">
                   <strong>Location:</strong> Ecclection — 6059 W Irving Park Rd,
                   Chicago, IL 60634 (Portage Park)

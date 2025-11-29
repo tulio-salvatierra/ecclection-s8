@@ -85,7 +85,7 @@ export const ARTISTS_DATA: ArtistCard[] = [
     id: 5,
     name: "Glitz",
     specialty: "Custom Jewelry & Accessories",
-    bio: "Headed by Vera, long time artisan who cycles up vintage and discarded jewelry reimagined into new, one of a kind pieces. Each piece is handmade with love and care into a stunning new piece, with various styles and afforables prices.",
+    bio: "Headed by Vera, or how I known her my whole life \"Kuma Vera\" long time artisan who cycles up vintage and discarded jewelry reimagined into new, one of a kind pieces. Each piece is handmade with love and care into a stunning new piece, with various styles and afforables prices.",
     image: "/glitz.jpeg",
     social: {
       instagram: "glitzbyvera",
