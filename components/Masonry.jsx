@@ -1,320 +1,165 @@
-"use client";
+'use client'
 
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
-import { gsap } from 'gsap';
+// components/Masonry.jsx
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import "./Masonry.css";
 
-import './Masonry.css';
+gsap.registerPlugin(useGSAP);
 
-const useMedia = (queries, values, defaultValue) => {
-  const get = () => {
-    if (typeof window === 'undefined' || !window.matchMedia) {
-      return defaultValue;
-    }
-    const index = queries.findIndex(q => window.matchMedia(q).matches);
-    return values[index] ?? defaultValue;
-  };
+const items = [
+  { id: 1, img: "/carousel/6E39C97E-70C8-47C9-AD07-62A7632FB4F9.jpeg.jpg" },
+  { id: 2, img: "/carousel/367A8900-99C2-45B4-9447-5565867A8AB9.jpeg.jpg" },
+  { id: 3, img: "/carousel/A0A31AA0-7A51-4E6D-8314-ADE3148ADA0F.jpeg.jpg" },
+  { id: 4, img: "/carousel/C10538C7-C6AF-442D-A9F7-F41C9351FA91.jpeg.jpg" },
+  { id: 5, img: "/carousel/IMG_1688.jpeg.jpg" },
+  { id: 6, img: "/carousel/IMG_2337.jpeg.jpg" },
+  { id: 7, img: "/carousel/IMG_2986.jpeg.jpg" },
+  { id: 8, img: "/carousel/IMG_2987.jpeg.jpg" },
+  { id: 9, img: "/carousel/IMG_3323.jpeg.jpg" },
+  { id: 10, img: "/carousel/IMG_3326.jpeg.jpg" },
+  { id: 11, img: "/carousel/IMG_3558.jpeg.jpg" },
+  { id: 12, img: "/carousel/IMG_4032.jpeg.jpg" },
+  { id: 13, img: "/carousel/IMG_4060.jpeg.jpg" },
+  { id: 14, img: "/carousel/IMG_4390.jpeg.jpg" },
+  { id: 15, img: "/carousel/IMG_4394.jpeg.jpg" },
+];
 
-  const [value, setValue] = useState(get);
+function Masonry() {
+  const rootRef = useRef(null);
 
-  useEffect(() => {
-    if (typeof window === 'undefined' || !window.matchMedia) {
-      return;
-    }
-    const handler = () => setValue(get);
-    const mediaQueries = queries.map(q => window.matchMedia(q));
-    mediaQueries.forEach(mq => mq.addEventListener('change', handler));
-    return () => mediaQueries.forEach(mq => mq.removeEventListener('change', handler));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [queries]);
+  useGSAP(
+    () => {
+      const root = rootRef.current;
+      if (!root) return;
 
-  return value;
-};
+      // use the items array instead of querying the DOM
+      const images = items.map((i) => i.img);
 
-const useMeasure = () => {
-  const ref = useRef(null);
-  const [size, setSize] = useState({ width: 0, height: 0 });
+      let incr = 0;
+      let oldIncrX = 0;
+      let oldIncrY = 0;
+      let indexImg = 0;
+      const resetDist = window.innerWidth / 8;
 
-  useLayoutEffect(() => {
-    if (!ref.current) return;
-    const ro = new ResizeObserver(([entry]) => {
-      const { width, height } = entry.contentRect;
-      setSize({ width, height });
-    });
-    ro.observe(ref.current);
-    return () => ro.disconnect();
-  }, []);
+      const createMedia = (x, y, deltaX, deltaY) => {
+        const image = document.createElement("img");
+        image.setAttribute("src", images[indexImg]);
 
-  return [ref, size];
-};
+        // add to DOM as child of the root section
+        root.appendChild(image);
 
-const preloadImages = async urls => {
-  await Promise.all(
-    urls.map(
-      src =>
-        new Promise(resolve => {
-          const img = new Image();
-          img.src = src;
-          img.onload = img.onerror = () => resolve();
-        })
-    )
-  );
-};
+        const tl = gsap.timeline({
+          onComplete: () => {
+            root.removeChild(image);
+            tl.kill();
+          },
+        });
 
-const Masonry = ({
-  items,
-  ease = 'power3.out',
-  duration = 0.6,
-  stagger = 0.05,
-  animateFrom = 'bottom',
-  scaleOnHover = true,
-  hoverScale = 0.95,
-  blurToFocus = true,
-  colorShiftOnHover = false
-}) => {
-  const columns = useMedia(
-    ['(min-width:1500px)', '(min-width:1000px)', '(min-width:600px)', '(min-width:400px)'],
-    [5, 4, 3, 2],
-    1
-  );
+        tl.fromTo(
+          image,
+          {
+            xPercent: -50 + (Math.random() - 0.5) * 80,
+            yPercent: -50 + (Math.random() - 0.5) * 10,
+            scaleX: 1.3,
+            scaleY: 1.3,
+          },
+          {
+            scaleX: 1,
+            scaleY: 1,
+            ease: "elastic.out(2, 0.6)",
+            duration: 0.6,
+          }
+        );
 
-  const [containerRef, { width }] = useMeasure();
-  const [imagesReady, setImagesReady] = useState(false);
-  const [imageDimensions, setImageDimensions] = useState({});
+        tl.fromTo(
+          image,
+          {
+            x,
+            y,
+            rotation: (Math.random() - 0.5) * 20,
+          },
+          {
+            x: "+=" + deltaX * 4,
+            y: "+=" + deltaY * 4,
+            rotation: (Math.random() - 0.5) * 20,
+            ease: "power4.out",
+            duration: 1.5,
+          },
+          "<"
+        );
 
-  useEffect(() => {
-    const loadImageDimensions = async () => {
-      const dimensions = {};
-      await Promise.all(
-        items.map(
-          item =>
-            new Promise(resolve => {
-              const img = new Image();
-              img.src = item.img;
-              img.onload = () => {
-                dimensions[item.id] = {
-                  width: img.naturalWidth,
-                  height: img.naturalHeight
-                };
-                resolve();
-              };
-              img.onerror = () => {
-                dimensions[item.id] = { width: 400, height: 400 }; // fallback
-                resolve();
-              };
-            })
-        )
-      );
-      setImageDimensions(dimensions);
-    };
-    loadImageDimensions();
-  }, [items]);
+        tl.to(image, {
+          duration: 0.3,
+          scale: 0.5,
+          delay: 0.1,
+          ease: "back.in(1.5)",
+        });
 
-  const getInitialPosition = item => {
-    const containerRect = containerRef.current?.getBoundingClientRect();
-    if (!containerRect) return { x: item.x, y: item.y };
-
-    let direction = animateFrom;
-
-    if (animateFrom === 'random') {
-      const directions = ['top', 'bottom', 'left', 'right'];
-      direction = directions[Math.floor(Math.random() * directions.length)];
-    }
-
-    switch (direction) {
-      case 'top':
-        return { x: item.x, y: -200 };
-      case 'bottom':
-        return { x: item.x, y: window.innerHeight + 200 };
-      case 'left':
-        return { x: -200, y: item.y };
-      case 'right':
-        return { x: window.innerWidth + 200, y: item.y };
-      case 'center':
-        return {
-          x: containerRect.width / 2 - item.w / 2,
-          y: containerRect.height / 2 - item.h / 2
-        };
-      default:
-        return { x: item.x, y: item.y + 100 };
-    }
-  };
-
-  useEffect(() => {
-    if (Object.keys(imageDimensions).length > 0) {
-      preloadImages(items.map(i => i.img)).then(() => setImagesReady(true));
-    }
-  }, [items, imageDimensions]);
-
-  const grid = useMemo(() => {
-    if (!width || Object.keys(imageDimensions).length === 0) return { items: [], containerHeight: 0 };
-
-    const colHeights = new Array(columns).fill(0);
-    const columnWidth = width / columns;
-
-    const gridItems = items.map(child => {
-      const col = colHeights.indexOf(Math.min(...colHeights));
-      const x = columnWidth * col;
-      
-      // Use actual image dimensions if available, otherwise use provided height or fallback
-      const dims = imageDimensions[child.id];
-      let height;
-      if (dims) {
-        // Calculate height based on aspect ratio
-        const aspectRatio = dims.height / dims.width;
-        height = columnWidth * aspectRatio;
-      } else if (typeof child.height === 'number') {
-        height = child.height;
-      } else {
-        height = columnWidth * 1.2; // fallback aspect ratio
-      }
-      
-      const y = colHeights[col];
-      colHeights[col] += height;
-
-      return { ...child, x, y, w: columnWidth, h: height };
-    });
-
-    // Calculate container height based on tallest column
-    const containerHeight = Math.max(...colHeights);
-
-    return { items: gridItems, containerHeight };
-  }, [columns, items, width, imageDimensions]);
-
-  const hasMounted = useRef(false);
-
-  useLayoutEffect(() => {
-    if (!imagesReady || !grid.items.length) return;
-
-    grid.items.forEach((item, index) => {
-      const selector = `[data-key="${item.id}"]`;
-      const animationProps = {
-        x: item.x,
-        y: item.y,
-        width: item.w,
-        height: item.h
+        indexImg = (indexImg + 1) % images.length;
       };
 
-      if (!hasMounted.current) {
-        const initialPos = getInitialPosition(item, index);
-        const initialState = {
-          opacity: 0,
-          x: initialPos.x,
-          y: initialPos.y,
-          width: item.w,
-          height: item.h,
-          ...(blurToFocus && { filter: 'blur(10px)' })
-        };
+      const firstMove = (e) => {
+        oldIncrX = e.clientX;
+        oldIncrY = e.clientY;
+        root.removeEventListener("mousemove", firstMove);
+      };
 
-        gsap.fromTo(selector, initialState, {
-          opacity: 1,
-          ...animationProps,
-          ...(blurToFocus && { filter: 'blur(0px)' }),
-          duration: 0.8,
-          ease: 'power3.out',
-          delay: index * stagger
-        });
-      } else {
-        gsap.to(selector, {
-          ...animationProps,
-          duration: duration,
-          ease: ease,
-          overwrite: 'auto'
-        });
-      }
-    });
+      const handleMove = (e) => {
+        const valX = e.clientX;
+        const valY = e.clientY;
 
-    hasMounted.current = true;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [grid.items, imagesReady, stagger, animateFrom, blurToFocus, duration, ease]);
+        incr += Math.abs(valX - oldIncrX) + Math.abs(valY - oldIncrY);
 
-  const handleMouseEnter = (e, item) => {
-    const element = e.currentTarget;
-    const selector = `[data-key="${item.id}"]`;
+        if (incr > resetDist) {
+          incr = 0;
+          const rect = root.getBoundingClientRect();
+          const localY = valY - rect.top;
 
-    if (scaleOnHover) {
-      gsap.to(selector, {
-        scale: hoverScale,
-        duration: 0.3,
-        ease: 'power2.out'
-      });
-    }
+          createMedia(valX, localY, valX - oldIncrX, valY - oldIncrY);
+        }
 
-    if (colorShiftOnHover) {
-      const overlay = element.querySelector('.color-overlay');
-      if (overlay) {
-        gsap.to(overlay, {
-          opacity: 0.3,
-          duration: 0.3
-        });
-      }
-    }
-  };
+        oldIncrX = valX;
+        oldIncrY = valY;
+      };
 
-  const handleMouseLeave = (e, item) => {
-    const element = e.currentTarget;
-    const selector = `[data-key="${item.id}"]`;
+      // listeners on the section
+      root.addEventListener("mousemove", firstMove, { once: true });
+      root.addEventListener("mousemove", handleMove);
 
-    if (scaleOnHover) {
-      gsap.to(selector, {
-        scale: 1,
-        duration: 0.3,
-        ease: 'power2.out'
-      });
-    }
-
-    if (colorShiftOnHover) {
-      const overlay = element.querySelector('.color-overlay');
-      if (overlay) {
-        gsap.to(overlay, {
-          opacity: 0,
-          duration: 0.3
-        });
-      }
-    }
-  };
+      // cleanup on unmount
+      return () => {
+        root.removeEventListener("mousemove", firstMove);
+        root.removeEventListener("mousemove", handleMove);
+      };
+    },
+    { scope: rootRef } // tells useGSAP what DOM subtree to scope to
+  );
 
   return (
-    <div 
-      ref={containerRef} 
-      className="list"
-      style={{ 
-        height: grid.containerHeight > 0 ? `${grid.containerHeight}px` : 'auto',
-        minHeight: grid.containerHeight > 0 ? `${grid.containerHeight}px` : '200px'
-      }}
-    >
-      {grid.items.map(item => {
-        return (
-          <div
-            key={item.id}
-            data-key={item.id}
-            className="item-wrapper"
-            onClick={() => window.open(item.url, '_blank', 'noopener')}
-            onMouseEnter={e => handleMouseEnter(e, item)}
-            onMouseLeave={e => handleMouseLeave(e, item)}
-          >
-            <div className="item-img" style={{ backgroundImage: `url(${item.img})` }}>
-              {colorShiftOnHover && (
-                <div
-                  className="color-overlay"
-                  style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '100%',
-                    background: 'linear-gradient(45deg, rgba(255,0,150,0.5), rgba(0,150,255,0.5))',
-                    opacity: 0,
-                    pointerEvents: 'none',
-                    borderRadius: '8px'
-                  }}
-                />
-              )}
-            </div>
-          </div>
-        );
-      })}
-    </div>
+    <section ref={rootRef} className="mwg_effect020">
+      <div className="container">
+        <div className="header font-brand flex justify-between mb-8">
+          <p className="text-4xl">DIVERSITY</p>
+          <p className="text-4xl">INCLUSION</p>
+          <p className="text-4xl">HUMAN</p>
+          <p className="text-4xl">ART</p>
+        </div>
+        <p className="font-brand text-9xl text-center text-cyan-500">Empowering human creativity, connection inclusion and sustainability</p>
+        <p className="text-secondary text-center mt-8 max-w-3xl mx-auto">
+          We also have. few more tricks under our sleeve & like to mix things up a bit.
+        </p>
+      </div>
+
+      {/* hidden “source” images, like the original demo */}
+      <div className="medias">
+        {items.map((item) => (
+          <img key={item.id} src={item.img} alt="" />
+        ))}
+      </div>
+    </section>
   );
-};
+}
 
 export default Masonry;

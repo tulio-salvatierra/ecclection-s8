@@ -1,28 +1,11 @@
 import { Contact } from "@/components/sections/Contact";
 import { SOCIAL_URLS } from "@/lib/constants";
-import Masonry from "@/components/Masonry";
-import dynamic from "next/dynamic";
+  import dynamic from "next/dynamic";
 import { LenisProvider } from "@/components/LenisProvider";
+import Masonry from "@/components/Masonry";
 
 const Stack = dynamic(() => import("@/components/Stack"), { ssr: false });
 
-const items = [
-  { id: 1, img: "/carousel/6E39C97E-70C8-47C9-AD07-62A7632FB4F9.jpeg.jpg", height: "auto" },
-  { id: 2, img: "/carousel/367A8900-99C2-45B4-9447-5565867A8AB9.jpeg.jpg", height: "auto" },
-  { id: 3, img: "/carousel/A0A31AA0-7A51-4E6D-8314-ADE3148ADA0F.jpeg.jpg", height: "auto" },
-  { id: 4, img: "/carousel/C10538C7-C6AF-442D-A9F7-F41C9351FA91.jpeg.jpg", height: "auto" },
-  { id: 5, img: "/carousel/IMG_1688.jpeg.jpg", height: "auto" },
-  { id: 6, img: "/carousel/IMG_2337.jpeg.jpg", height: "auto" },
-  { id: 7, img: "/carousel/IMG_2986.jpeg.jpg", height: "auto" },
-  { id: 8, img: "/carousel/IMG_2987.jpeg.jpg", height: "auto" },
-  { id: 9, img: "/carousel/IMG_3323.jpeg.jpg", height: "auto" },
-  { id: 10, img: "/carousel/IMG_3326.jpeg.jpg", height: "auto" },
-  { id: 11, img: "/carousel/IMG_3558.jpeg.jpg", height: "auto" },
-  { id: 12, img: "/carousel/IMG_4032.jpeg.jpg", height: "auto" },
-  { id: 13, img: "/carousel/IMG_4060.jpeg.jpg", height: "auto" },
-  { id: 14, img: "/carousel/IMG_4390.jpeg.jpg", height: "auto" },
-  { id: 15, img: "/carousel/IMG_4394.jpeg.jpg", height: "auto" },
-];
 
 export const metadata = {
   title:
@@ -159,6 +142,8 @@ export default function EventsPage() {
               </div>
               <div className="text-center"></div>
             </div>
+
+            <Masonry />
 
             {/* Introduction */}
 
