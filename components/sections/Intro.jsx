@@ -27,35 +27,44 @@ export function Intro() {
             {/* Description */}
             <div className="max-w-2xl mb-12 md:mb-16">
               <p className="text-lg md:text-2xl leading-relaxed text-primary-foreground/90">
-                Curated variety finds for the <strong>EVERYONE!</strong>, kids
-                to adults, embracing community, sustainability, and
-                self-expression through fashion, activities, clothing, arts and activities in a welcoming space.
+                A true variety store that has finds for{" "}
+                , kids to adults,{" "}
+                <strong>EVERYONE</strong> is welcomed! All burdgets are
+                supported with items starting at just <strong>.95 CENTS</strong>{" "}
+                that are best & cheaper than the darn dollar store, plus no
+                tariff drama here! <br /><br /> 
+                We embrace & support self expression, human engagement, sustainability, and
+                self-expression and true wonderment!
               </p>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href={`${SOCIAL_URLS.googleMaps.toString()}`} target="_blank" rel="noopener noreferrer">
-              <Button
-                size="lg"
-                className="bg-cyan-500 hover:bg-accent/90 text-accent-foreground text-base md:text-lg px-8 py-6 font-brand tracking-wide"
+            <div className="flex flex-col sm:flex-row">
+              <a
+                href={`${SOCIAL_URLS.googleMaps.toString()}`}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                JUST COME IN ALREADY!
-              </Button>
+                <Button
+                  size="lg"
+                  className="bg-cyan-500 hover:bg-accent/90 text-accent-foreground text-base md:text-lg px-8 py-6 font-brand tracking-wide"
+                >
+                  JUST COME IN ALREADY!
+                </Button>
               </a>
             </div>
 
-            <div className="mt-20 md:mt-32 pt-8 border-t border-primary-foreground/20">
-              <p className="text-xl md:text-base font-brand tracking-widest uppercase">
+            <div className="mt-20 md:mt-32">
+              <p className="text-xl font-brand tracking-widest uppercase">
                 where community meets art
               </p>
             </div>
           </div>
 
-          <div className="flex-1 lg:max-w-md">
-            <div className="grid grid-cols-2 gap-4 h-full">
+          <div className="flex-1">
+            <div className="grid grid-cols-2 h-full">
               {/* Top left - Image placeholder */}
-              <div className="rounded-md shadow-lg relative aspect-square bg-primary-foreground/10 border-2 border-primary-foreground/20 overflow-hidden group hover:border-accent transition-colors">
+              <div className="rounded-md justify-end shadow-lg relative aspect-square bg-primary-foreground/10 border-2 border-primary-foreground/20 overflow-hidden group hover:border-accent transition-colors">
                 <video
                   className="w-full h-full object-cover group-hover:opacity-100 transition-opacity"
                   autoPlay
