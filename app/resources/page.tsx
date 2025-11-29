@@ -1,16 +1,18 @@
-import Link from "next/link"
-import { ArrowRight, ExternalLink } from "lucide-react"
-import { FlyersBento } from "@/components/sections/BentoFlyers"
+import Link from "next/link";
+import { ArrowRight, ExternalLink } from "lucide-react";
+import { FlyersBento } from "@/components/sections/BentoFlyers";
 import PantriesSection from "@/components/sections/Pantries";
 import type { Metadata } from "next";
 import { LenisProvider } from "@/components/LenisProvider";
 
 export const metadata: Metadata = {
   title: "Community Resources",
-  description: "Access essential community resources including mental health support, food security, housing assistance, crisis support, and more. Ecclection is committed to supporting our community in Portage Park, Chicago.",
+  description:
+    "Access essential community resources including mental health support, food security, housing assistance, crisis support, and more. Ecclection is committed to supporting our community in Portage Park, Chicago.",
   openGraph: {
     title: "Community Resources | Ecclection",
-    description: "Essential community resources for mental health, food security, housing, crisis support, and more in Chicago.",
+    description:
+      "Essential community resources for mental health, food security, housing, crisis support, and more in Chicago.",
     url: "/resources",
     images: [
       {
@@ -25,6 +27,25 @@ export const metadata: Metadata = {
     canonical: "/resources",
   },
 };
+
+const localOrganizations = [
+  {
+    id: 1,
+    title: "Portage Cragin Counseling center",
+    category: "Mental Health",
+    description:
+      "Provides affordable mental health services including individual, famAt the Portage Cragin Counseling Center, you will find addiction treatment and mental health services under one roof. We offer crisis services and adolescent services as well as support groups. Our goal is to get you into treatment quickly to start your healing journey.",
+    link: "https://www.lssi.org/locations/portage-cragin-counseling-center/",
+  },
+  {
+    id: 2,
+    title: "Portage Park Food Pantry",
+    category: "Food Security",
+    description:
+      "Our team is reimagining mental health care to be more accessible, proactive, and reflective of the real experiences of young people and families. Whether you’re dealing with a crisis or simply need someone to talk to, we offer same-day, in-person support in a setting that’s intentionally designed to feel comfortable and relaxed.",
+    link: "https://www.shftbh.com/",
+  },
+];
 
 const resources = [
   {
@@ -79,13 +100,17 @@ const resources = [
   {
     title: "United Way",
     category: "Community Services",
-    description: "Mobilizing communities to improve lives through education, income stability, and health initiatives.",
+    description:
+      "Mobilizing communities to improve lives through education, income stability, and health initiatives.",
     link: "https://www.unitedway.org",
   },
-]
+];
 
 export default function CommunityResourcesPage() {
-  function renderPunkTitle(text: string, size: string = "text-3xl md:text-4xl") {
+  function renderPunkTitle(
+    text: string,
+    size: string = "text-3xl md:text-4xl"
+  ) {
     const words = text.trim().split(/\s+/);
     const angles = [-6, -3, 0, 3, 6, -4, 2, -2, 4];
     return (
@@ -132,11 +157,11 @@ export default function CommunityResourcesPage() {
       <LenisProvider />
       {/* Header Section */}
       <section className="container section-pad text-left">
-        
         {renderPunkTitle("Community Resources", "text-4xl md:text-5xl")}
         <p className="text-lg text-white max-w-3xl mx-auto leading-relaxed">
-          We believe in supporting our community. Below you'll find a curated list of trusted organizations and
-          resources dedicated to helping individuals and families navigate challenging times.
+          We believe in supporting our community. Below you'll find a curated
+          list of trusted organizations and resources dedicated to helping
+          individuals and families navigate challenging times.
         </p>
         <br />
         <p className="text-lg text-center text-white max-w-3xl mx-auto leading-relaxed">
@@ -148,7 +173,49 @@ export default function CommunityResourcesPage() {
 
       <section>
         <div className="container">
-          <FlyersBento /> 
+          <FlyersBento />
+        </div>
+      </section>
+      {/* Local Organizations Section */}
+      <section className="container section-pad text-center">
+        {renderPunkHeading(
+          "Local Support Organizations",
+          "text-2xl md:text-3xl"
+        )}
+        <p className="text-lg text-white max-w-3xl mx-auto text-left leading-relaxed mb-8">
+          In addition to national resources, here are some local organizations
+          in Portage Park that provide essential services to our community.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {localOrganizations.map((org) => (
+            <article
+              key={org.id}
+              className="p-6 rounded-lg bg-cyan-500 border-2 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all group"
+            >
+              <div className="flex items-start justify-between mb-4">
+                <span className="text-xs tracking-wide uppercase text-black font-brand">
+                  {org.category}
+                </span>
+                <ExternalLink className="w-4 h-4 text-black opacity-0 group-hover:opacity-100 transition-opacity" />
+              </div>
+              
+              <h2 className="text-xl font-semibold text-black font-brand mb-4">
+                {org.title}
+              </h2>
+              <p className="text-black text-lg leading-relaxed mb-6">
+                {org.description}
+              </p>
+              <a
+                href={org.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-lg font-brand text-black hover:text-gray-700 transition-colors group/link"
+              >
+                Visit Organization
+                <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+              </a>
+            </article>
+          ))}
         </div>
       </section>
 
@@ -156,7 +223,9 @@ export default function CommunityResourcesPage() {
         <div className="container section-pad text-center">
           {renderPunkHeading("Helpful Resources", "text-2xl md:text-3xl")}
           <p className="text-lg text-white max-w-3xl mx-auto text-left leading-relaxed mb-8">
-            Explore the following organizations that provide vital services in mental health, food security, housing, and crisis support organized by neighborhood.
+            Explore the following organizations that provide vital services in
+            mental health, food security, housing, and crisis support organized
+            by neighborhood.
           </p>
           <PantriesSection />
         </div>
@@ -164,33 +233,42 @@ export default function CommunityResourcesPage() {
 
       {/* Resources Grid */}
       <section className="container section-pad">
-        {renderPunkHeading("Food, Housing & More", "text-center text-white mb-8 text-2xl md:text-3xl")}
+        {renderPunkHeading(
+          "Food, Housing & More",
+          "text-center text-white mb-8 text-2xl md:text-3xl"
+        )}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {resources.map((resource, index) => (
-              <article
-                key={index}
-                className="p-6 rounded-lg bg-cyan-500 border-2 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all group"
+          {resources.map((resource, index) => (
+            <article
+              key={index}
+              className="p-6 rounded-lg bg-cyan-500 border-2 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all group"
+            >
+              <div className="flex items-start justify-between mb-4">
+                <span className="text-xs tracking-wide uppercase text-black font-brand">
+                  {resource.category}
+                </span>
+                <ExternalLink className="w-4 h-4 text-black opacity-0 group-hover:opacity-100 transition-opacity" />
+              </div>
+
+              <h2 className="text-xl font-semibold text-black font-brand mb-4">
+                {resource.title}
+              </h2>
+
+              <p className="text-black text-lg leading-relaxed mb-6">
+                {resource.description}
+              </p>
+
+              <a
+                href={resource.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-lg font-brand text-black hover:text-gray-700 transition-colors group/link"
               >
-                <div className="flex items-start justify-between mb-4">
-                  <span className="text-xs tracking-wide uppercase text-black font-brand">{resource.category}</span>
-                  <ExternalLink className="w-4 h-4 text-black opacity-0 group-hover:opacity-100 transition-opacity" />
-                </div>
-
-                <h2 className="text-xl font-semibold text-black font-brand mb-4">{resource.title}</h2>
-
-                <p className="text-black text-lg leading-relaxed mb-6">{resource.description}</p>
-
-                <a
-                  href={resource.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-lg font-brand text-black hover:text-gray-700 transition-colors group/link"
-                >
-                  Visit Resource
-                  <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
-                </a>
-              </article>
-            ))}
+                Visit Resource
+                <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+              </a>
+            </article>
+          ))}
         </div>
       </section>
 
@@ -199,7 +277,8 @@ export default function CommunityResourcesPage() {
         <div className="max-w-4xl mx-auto">
           {renderPunkHeading("Need Immediate Help?", "text-2xl md:text-3xl")}
           <p className="text-lg text-white mb-8 leading-relaxed">
-            If you or someone you know is in crisis, please reach out for help immediately. You are not alone.
+            If you or someone you know is in crisis, please reach out for help
+            immediately. You are not alone.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -231,5 +310,5 @@ export default function CommunityResourcesPage() {
         </div>
       </section>
     </main>
-  )
+  );
 }
