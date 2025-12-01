@@ -6,6 +6,7 @@ import { ClientEffects } from "@/components/SoundOnScroll/ClientFX";
 import { Inter, Quintessential, Raleway, Pirata_One } from "next/font/google";
 import { SOCIAL_URLS, BUSINESS_INFO } from "@/lib/constants";
 import { PreloadBackground } from "@/components/PreloadBackground";
+import Disclaimer from "@/components/sections/Disclaimer";
 
 // Configure your fonts
 const inter = Inter({
@@ -213,6 +214,7 @@ export default function RootLayout({
         {/* Main content area */}
         <main>
           <ClientEffects />
+          <Disclaimer />
           {children}
         </main>
 
