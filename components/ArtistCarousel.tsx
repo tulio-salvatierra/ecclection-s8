@@ -81,7 +81,7 @@ export function ArtistCarousel({ artists }: ArtistCarouselProps) {
           </div>
 
           {/* Tilted Frame with Transition */}
-          <div className="relative w-full max-w-sm ml-12 fade-in">
+          <div className="relative w-80 max-w-sm sm:ml-12 fade-in">
             <div className="relative rotate-2 bg-cyan-600 p-3 border-2 border-black shadow-[8px_8px_0_0_#000]">
               <div className="aspect-[3/4] bg-black overflow-hidden">
                 {currentArtist.image ? (
@@ -89,7 +89,7 @@ export function ArtistCarousel({ artists }: ArtistCarouselProps) {
                     key={currentIndex}
                     src={currentArtist.image}
                     alt={currentArtist.name}
-                    className="w-full h-full object-cover animate-in fade-in duration-500"
+                    className="w-80 h-full object-cover animate-in fade-in duration-500"
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center text-6xl">
