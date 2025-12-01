@@ -143,10 +143,20 @@ export default function AboutPage() {
               maintain wishlists so we can deliver specific supplies directly to
               people in need.
             </p>
-          <p className="text-lg text-white leading-relaxed my-4">
+          <p className="text-xl text-center text-white font-brand leading-relaxed my-4">
             Learn more about Big Elves and how you can get involved by visiting
             our official Facebook page:
           </p>
+          <div className="text-center">
+          <a
+            href="https://www.facebook.com/profile.php?id=61563313948330"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-center inline-block mx-auto mt-8 px-8 py-4 bg-cyan-600 text-black font-brand text-lg rounded-lg border-2 border-black shadow-[4px_4px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
+          >
+            Visit Big Elves on Facebook
+          </a>
+          </div>
           <p className="text-white my-6 leading-relaxed text-left">
             Follow <strong>Ecclection</strong> social media channels for
             upcoming charity events, art collaborations, kids workshops and
@@ -183,14 +193,7 @@ export default function AboutPage() {
               >
                 Send Us An Email!
               </a>
-                <a
-            href="https://www.facebook.com/profile.php?id=61563313948330"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mx-auto self-centerinline-block mt-8 px-8 py-4 bg-cyan-600 text-black font-brand text-lg rounded-lg border-2 border-black shadow-[4px_4px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
-          >
-            Visit Big Elves on Facebook
-          </a>
+                
             </div>
         
         </div>
