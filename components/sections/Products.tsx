@@ -1,6 +1,11 @@
+'use client';
 import Image from "next/image";
+import { useFadeAnimation } from "@/app/hooks/useFadeAnimtion";
+import React, { useRef } from "react";
 
 export function ProductsShowcase() {
+  const ref = useRef<HTMLDivElement>(null);
+  useFadeAnimation(ref);
   const categories = [
     {
       title: "Featured local artist spots & Lucky Finds",
@@ -33,13 +38,13 @@ export function ProductsShowcase() {
   ];
 
   return (
-    <section className="py-16 px-4 md:px-8">
+    <section ref={ref} className="py-16 px-4 md:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12 text-center">
-          <h2 className="font-brand text-cyan-500 text-4xl md:text-5xl mb-4">
+          <h2 className="fade-in font-brand text-cyan-500 text-4xl md:text-5xl mb-4">
             Curated Treasures & Curious Finds
           </h2>
-          <p className="text-white text-lg max-w-2xl text-left mx-auto">
+          <p className="fade-in text-white text-lg max-w-2xl text-left mx-auto">
             Every piece has a past — and now it’s ready for its next adventure.{" "}
             <br />
             Step into a closet full of character: re-loved fashion, indie
@@ -54,7 +59,7 @@ export function ProductsShowcase() {
           {categories.map((category, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden border-2 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
+              className="fade-in group relative overflow-hidden border-2 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
             >
               <div className="aspect-[4/3] relative rounded-sm overflow-hidden">
                 {category.video ? (

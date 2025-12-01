@@ -1,6 +1,9 @@
+'use client';
 // components/sections/About.tsx
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import React from "react";
+import { useFadeAnimation } from "@/app/hooks/useFadeAnimtion";
 
 interface AboutProps {
   title?: string;
@@ -24,25 +27,27 @@ export function About({
   features = [],
   className = ""
 }: AboutProps) {
-  console.log(features);
+  const ref = React.useRef<HTMLElement>(null);
+  useFadeAnimation(ref);
+
   return (
-    <section className={`container section-pad ${className}`}>
+    <section ref={ref} className={`container section-pad ${className}`}>
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-cyan-600 font-brand mb-4">
+        <h2 className="fade-in text-3xl md:text-4xl font-bold text-cyan-600 font-brand mb-4">
           {title}
         </h2>
         {content && (
-          <p className="text-lg text-white text-left max-w-3xl mx-auto">
+          <p className="fade-in text-lg text-white text-left max-w-3xl mx-auto">
             We also support our community of local artists and makers by featuring <strong>rotating displays</strong> and art events that connect creativity with customers. From handcrafted candles, jewelry, wellness items, home décor and mix media to one-of-a-kind accessories and collectibles, Ecclection continues to grow as a neighborhood hub for imagination and collaboration bringing people together through art and unique <strong>affordable finds</strong>to keep your wardrobe and home looking fresh and funky, connect with other humans or simply to have a conversation.
           </p>
           
         )}
         {image && (
-          <div className="mt-8">
+          <div className="mt-8 fade-up">
             <img
               src={image.src}
               alt={image.alt}
-              className="mx-auto rounded-lg shadow-lg w-full max-w-md border-2 border-black"
+              className="fade-in mx-auto rounded-lg shadow-lg w-full max-w-md border-2 border-black"
             />
           </div>
           
@@ -51,7 +56,7 @@ export function About({
               href="/about"
               
               rel="_self"
-              className="inline-block mt-4 px-8 py-4 bg-cyan-600 text-black font-brand text-lg rounded-lg border-2 border-black shadow-[4px_4px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
+              className="fade-up inline-block mt-4 px-8 py-4 bg-cyan-600 text-black font-brand text-lg rounded-lg border-2 border-black shadow-[4px_4px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
             >
               Read more about us!
             </a>
@@ -71,7 +76,7 @@ export function About({
         ))}
       </div>
 
-      <div className="mt-12 text-center">
+      <div className="mt-12 text-center zoom-out">
         <Badge variant="secondary" className="w-auto text-2xl sm:text-4xl md:text-4xl lg:text-6xl px-4 py-2 bg-cyan-600 border-2 border-black shadow-[4px_4px_0_0_#000] font-brand">
           Community • Art • Creativity • Sustainability
         </Badge>

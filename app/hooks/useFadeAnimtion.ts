@@ -15,6 +15,7 @@ export function useFadeAnimation(ref: React.RefObject<HTMLElement>) {
     const zoomOutElements = ref.current?.querySelectorAll(".zoom-out");
     const scaleElements = ref.current?.querySelectorAll(".scale-in");
     const splitElements = ref.current?.querySelectorAll(".split-fade-in");
+    const fadeUpElements = ref.current?.querySelectorAll(".fade-up");
 
     
     if (elements && elements.length > 0) {
@@ -25,9 +26,9 @@ export function useFadeAnimation(ref: React.RefObject<HTMLElement>) {
         {
           opacity: 1,
           y: 0,
-          duration: 2,
+          duration: 1.7,
           stagger: 0.8,
-          ease: "elastic.out(1,0.3)",
+          ease: "elastic.out(1,0.8)",
           scrollTrigger: {
             trigger: element,
             start: "top 80%",
@@ -39,12 +40,12 @@ export function useFadeAnimation(ref: React.RefObject<HTMLElement>) {
     zoomOutElements?.forEach((element) => {
         gsap.fromTo(
             element,
-            { opacity: 0, scale: 1.3 },
+            {  scale: 10 },
             {
-              opacity: 1,
+        
                 scale: 1,
-                duration: 1.2,
-                ease: "power4.inOut",
+                duration: 1.5,
+                ease: "expoScale(0.5,7,none)",
                 scrollTrigger: {
                     trigger: element,
                     start: "top 80%",
@@ -92,9 +93,25 @@ export function useFadeAnimation(ref: React.RefObject<HTMLElement>) {
       );
     });
 
+    fadeUpElements?.forEach((element) => {
+        gsap.fromTo(
+            element,
+            { opacity: 0, },
+            {
+              opacity: 1,
+                
+            duration: 2.5,
+            ease: "power4.inOut",
+            scrollTrigger: {
+                trigger: element,
+                start: "top 80%",
+                toggleActions: "play none none none",
+            },
+        }
+    );
+    });
     }
-
-  }, [ref]);
+    }, [ref]);
 
 }
 
