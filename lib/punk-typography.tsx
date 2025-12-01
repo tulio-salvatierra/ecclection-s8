@@ -10,7 +10,7 @@ import React from "react";
 export function renderPunkTitle(
   text: string,
   size: string = "text-3xl md:text-4xl",
-  className: string = "",
+  className: string = "fade-in",
   textColor: string = "text-black"
 ): React.ReactElement {
   const words = text.trim().split(/\s+/);

@@ -91,7 +91,7 @@ export default function EventsPage() {
         <LenisProvider />
 
         {/* Main Content Section */}
-        <section className="container section-pad">
+        <section className="">
           <div className="max-w-4xl mx-auto space-y-8">
             {/* Upcoming Event (concrete date for SEO + visitors) */}
             <div className="bg-cyan-600 border-2 border-black rounded-lg p-6 shadow-[6px_6px_0_0_#000]">
@@ -142,12 +142,19 @@ export default function EventsPage() {
               </div>
               <div className="text-center"></div>
             </div>
-
+            </div>
+            </section>
+    
+        {/* Masonry Section and Introduction */}
+        <section className="section-pad">
+          
             <Masonry />
+            </section>
 
             {/* Introduction */}
 
             {/* Community Events Card */}
+        <section className="container section-pad">
             <div className="relative border-2 h-[900px] border-black shadow-[6px_6px_0_0_#000] rounded-lg p-8 overflow-hidden">
               <video
                 autoPlay
@@ -183,7 +190,7 @@ export default function EventsPage() {
                 </p>
               </div>
             </div>
-          </div>
+        </section>
 
           {/* Structured Data (JSON-LD) */}
 
@@ -222,7 +229,8 @@ export default function EventsPage() {
               }),
             }}
           />
-        </section>
+        
+
       </div>
 
       <Contact />

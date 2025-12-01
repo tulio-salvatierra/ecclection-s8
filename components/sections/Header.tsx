@@ -34,19 +34,24 @@ export function Header() {
         <div className="container nav">
           <div className="brand">
             <Link href="/" className="flex items-center space-x-2">
-              <span className="brand-mark"><img src="/logo.png" alt="Ecclection" className="w-8 h-8" /></span>
-              <h1 className="font-brand font-bold text-black font-xl-cyan-600">Ecclection</h1>
+              <span className="brand-mark">
+                <img src="/logo.png" alt="Ecclection" className="w-8 h-8" />
+              </span>
+              <h1 className="font-brand font-bold text-black font-xl-cyan-600">
+                Ecclection
+              </h1>
             </Link>
           </div>
           <nav className="nav-links">
             <Link href="/">Home</Link>
-            <Link href="/artists">Artists</Link>
             <Link href="/events">Events</Link>
             <Link href="/about">About</Link>
             <Link href="/resources">Resources</Link>
           </nav>
           <div className="contact-mini hidden md:block">
-            <a className="btn" href="https://maps.app.goo.gl/ZMgVyGzAmNvomLMcA">Visit Us</a>
+            <a className="btn" href="https://maps.app.goo.gl/ZMgVyGzAmNvomLMcA">
+              Visit Us
+            </a>
           </div>
           <button
             className="mobile-menu-button md:hidden"
@@ -73,17 +78,22 @@ export function Header() {
 
       {/* Mobile Menu */}
       <div
-        className={`mobile-menu fixed top-0 left-0 right-0 z-50 md:hidden transition-all duration-300 ease-out ${isMobileMenuOpen
-          ? "translate-y-0 opacity-100"
-          : "-translate-y-full opacity-0 pointer-events-none"
-          }`}
+        className={`mobile-menu fixed top-0 left-0 right-0 z-50 md:hidden transition-all duration-300 ease-out ${
+          isMobileMenuOpen
+            ? "translate-y-0 opacity-100"
+            : "-translate-y-full opacity-0 pointer-events-none"
+        }`}
       >
         <div className="mobile-menu-content backdrop-blur-lg bg-card/95 border-b border-border shadow-lg">
           <div className="container py-6 bg">
             <div className="brand">
               <Link href="/" className="flex items-center space-x-2">
-                <span className="brand-mark"><img src="/logo.png" alt="Ecclection" className="w-8 h-8" /></span>
-                <h1 className="font-brand font-bold text-black font-xl-cyan-600">Ecclection</h1>
+                <span className="brand-mark">
+                  <img src="/logo.png" alt="Ecclection" className="w-8 h-8" />
+                </span>
+                <h1 className="font-brand font-bold text-black font-xl-cyan-600">
+                  Ecclection
+                </h1>
               </Link>
             </div>
             <nav className="mobile-nav-links flex flex-col space-y-4 mt-16">

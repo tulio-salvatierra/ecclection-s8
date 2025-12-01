@@ -138,8 +138,8 @@ function Masonry() {
   );
 
   return (
-    <section ref={rootRef} className="mwg_effect020">
-      <div className="container">
+    <section ref={rootRef} className="mwg_effect020" style={{ backgroundImage: 'url("/texture.jpg")' }}>
+      <div className="container mx-auto py-20 px-4 relative z-10 w-screen">
         <div className="header font-brand flex justify-between mb-8">
           <p className="text-4xl">DIVERSITY</p>
           <p className="text-4xl">INCLUSION</p>

@@ -1,8 +1,9 @@
 "use client";
-
+import { useFadeAnimation } from "@/app/hooks/useFadeAnimtion";
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { renderPunkTitle } from "@/lib/punk-typography";
+import React from "react";
 
 interface Artist {
   id: number;
@@ -20,6 +21,8 @@ interface ArtistCarouselProps {
 
 export function ArtistCarousel({ artists }: ArtistCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
+    const ref = React.useRef(null);
+    useFadeAnimation(ref);
 
   const nextArtist = () => {
     setCurrentIndex((prev) => (prev + 1) % artists.length);
@@ -51,15 +54,15 @@ export function ArtistCarousel({ artists }: ArtistCarouselProps) {
 
   return (
     <>
-      <div className="mt-16 grid grid-cols-1 items-center container section-pad">
-        {renderPunkTitle("Meet the Artists", "text-3xl md:text-4xl", "mb-6", "text-white")}
-        <p className="mt-4 text-white w-full sm:w-1/2 mx-auto text-left">
-          Here we introduce just a few talented artists featured at Ecclection. We
+      <div ref={ref} className="fade-in mt-16 grid grid-cols-1 items-center container section-pad">
+        {renderPunkTitle("Meet the Artists", "text-3xl md:text-4xl fade-in", "mb-6", "text-white")}
+        <p className="fade-in mt-4 text-white w-full sm:w-1/2 mx-auto text-left">
+          Look at sample of the talented artists featured at Ecclection. We
           showcase a number of well curated pieces and collections from our local artists, most of them
           are with us for a long time, only a few rotate which keeps things
           interesting and exciting for us and our customers.
         </p>
-        <p className="text-white w-full sm:w-1/2 mt-4 mx-auto text-left">
+        <p className="fade-in text-white w-full sm:w-1/2 mt-4 mx-auto text-left">
           Our featured artists come from diverse backgrounds and styles. If you
           are an artist interested in being featured, please reach out to us
           through our contact page. We offer affordable spaces <strong className="text-cyan-500">(starts at
@@ -71,14 +74,14 @@ export function ArtistCarousel({ artists }: ArtistCarouselProps) {
         {/* Left: Tilted Frame with Portrait */}
         <div className="relative flex items-center justify-center">
           {/* Vertical Text */}
-          <div className="absolute left-0 top-1/2 -translate-y-1/2 -rotate-90 origin-center">
+          <div className="fade-in absolute left-0 top-1/2 -translate-y-1/2 -rotate-90 origin-center">
             <p className="font-brand text-lg tracking-wide text-white uppercase ml-4 whitespace-nowrap">
               Meet the Artists
             </p>
           </div>
 
           {/* Tilted Frame with Transition */}
-          <div className="relative w-full max-w-sm ml-12">
+          <div className="relative w-full max-w-sm ml-12 fade-in">
             <div className="relative rotate-2 bg-cyan-600 p-3 border-2 border-black shadow-[8px_8px_0_0_#000]">
               <div className="aspect-[3/4] bg-black overflow-hidden">
                 {currentArtist.image ? (
@@ -99,7 +102,7 @@ export function ArtistCarousel({ artists }: ArtistCarouselProps) {
         </div>
 
         {/* Right: Text Content with Transition */}
-        <div className="flex flex-col justify-center space-y-6">
+        <div className="flex flex-col justify-center space-y-6 fade-in">
           <p className="font-brand text-sm tracking-wide text-cyan-400 uppercase">
             Featured Artists
           </p>

@@ -1,10 +1,17 @@
+"use client";
+
 import Link from "next/link";
+import React from "react";
+import { useFadeAnimation } from "@/app/hooks/useFadeAnimtion"; 
 import { Button } from "@/components/ui/button";
 import { SOCIAL_URLS } from "@/lib/constants";
 
 export function Intro() {
+  const ref = React.useRef(null);
+  useFadeAnimation(ref);
+
   return (
-    <section className="relative min-h-auto bg-black/40  text-primary-foreground overflow-hidden">
+    <section ref={ref} className="relative min-h-auto bg-black/40  text-primary-foreground overflow-hidden">
       {/* Background texture overlay */}
 
       {/* Main content */}
@@ -14,19 +21,19 @@ export function Intro() {
           <div className="flex-1">
             {/* Eyebrow text */}
             <div className="mb-8 md:mb-12">
-              <span className="inline-block border border-primary-foreground px-4 py-2 text-base md:text-lg font-brand rounded-sm tracking-wider">
+              <span className="scale-in inline-block border border-primary-foreground px-4 py-2 text-base md:text-lg font-brand rounded-sm tracking-wider">
                 SINCE 2023
               </span>
             </div>
 
             {/* Main headline */}
-            <h2 className="text-5xl font-brand md:text-7xl lg:text-8xl font-black text-cyan-500 leading-normal mb-8 md:mb-12 text-balance">
+            <h2 className="fade-in text-5xl font-brand md:text-7xl lg:text-8xl font-black text-cyan-500 leading-normal mb-8 md:mb-12 text-balance">
               WE ARE ECCLECTION
             </h2>
 
             {/* Description */}
             <div className="max-w-2xl mb-12 md:mb-16">
-              <p className="text-lg md:text-2xl leading-relaxed text-primary-foreground/90">
+              <p className="text-lg fade-in md:text-2xl leading-relaxed text-primary-foreground/90">
                 A true variety store that has finds unique &fun finds for{" "}
                 all, from kids to adults - {" "}
                 <strong>EVERYONE</strong> is welcome! All budgets are
@@ -39,7 +46,7 @@ export function Intro() {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row">
+            <div className="flex flex-col fade-in sm:flex-row">
               <a
                 href={`${SOCIAL_URLS.googleMaps.toString()}`}
                 target="_blank"
@@ -54,7 +61,7 @@ export function Intro() {
               </a>
             </div>
 
-            <div className="mt-20 md:mt-32">
+            <div className="mt-20 md:mt-32 fade-in ">
               <p className="text-xl font-brand tracking-widest uppercase">
                 where community meets art
               </p>
@@ -64,7 +71,7 @@ export function Intro() {
           <div className="flex-1">
             <div className="grid grid-cols-2 h-full">
               {/* Top left - Image placeholder */}
-              <div className="rounded-md justify-end shadow-lg relative aspect-square bg-primary-foreground/10 border-2 border-primary-foreground/20 overflow-hidden group hover:border-accent transition-colors">
+              <div className="fade-in rounded-md justify-end shadow-lg relative aspect-square bg-primary-foreground/10 border-2 border-primary-foreground/20 overflow-hidden group hover:border-accent transition-colors">
                 <video
                   className="w-full h-full object-cover group-hover:opacity-100 transition-opacity"
                   autoPlay
@@ -77,7 +84,7 @@ export function Intro() {
               </div>
 
               {/* Top right - Image placeholder */}
-              <div className="rounded-md shadow-lg relative aspect-square bg-primary-foreground/10 border-2 border-primary-foreground/20 overflow-hidden group hover:border-accent transition-colors">
+              <div className="fade-in rounded-md shadow-lg relative aspect-square bg-primary-foreground/10 border-2 border-primary-foreground/20 overflow-hidden group hover:border-accent transition-colors">
                 <img
                   src="/3pics/vintage.jpeg"
                   alt="Vintage band tees"
@@ -86,7 +93,7 @@ export function Intro() {
               </div>
 
               {/* Bottom left - Video placeholder */}
-              <div className="rounded-md shadow-lg relative aspect-square bg-primary-foreground/10 border-2 border-primary-foreground/20 overflow-hidden group hover:border-accent transition-colors">
+              <div className="fade-in rounded-md shadow-lg relative aspect-square bg-primary-foreground/10 border-2 border-primary-foreground/20 overflow-hidden group hover:border-accent transition-colors">
                 <img
                   src="/3pics/shelf.jpeg"
                   alt="Gothic accessories"
@@ -100,7 +107,7 @@ export function Intro() {
               </div>
 
               {/* Bottom right - Image placeholder */}
-              <div className="rounded-md relative shadow-lg aspect-square bg-primary-foreground/10 border-2 border-primary-foreground/20 overflow-hidden group hover:border-accent transition-colors">
+              <div className="fade-in rounded-md relative shadow-lg aspect-square bg-primary-foreground/10 border-2 border-primary-foreground/20 overflow-hidden group hover:border-accent transition-colors">
                 <video
                   className="w-full h-full object-cover group-hover:opacity-100 transition-opacity"
                   autoPlay
