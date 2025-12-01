@@ -23,7 +23,7 @@ export function renderPunkTitle(
         return (
           <span
             key={`w-${idx}`}
-            className="inline-block mr-2 md:mr-3 px-2 md:px-3 py-1 md:py-2 bg-cyan-600 text-black rounded-[3px] border-2 border-black shadow-[3px_3px_0_0_#000]"
+            className="fade-in inline-block mr-2 md:mr-3 px-2 md:px-3 py-1 md:py-2 bg-cyan-600 text-black rounded-[3px] border-2 border-black shadow-[3px_3px_0_0_#000]"
             style={{ transform: `rotate(${angle}deg)` }}
           >
             {word}

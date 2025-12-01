@@ -9,7 +9,7 @@ export default function Influencers() {
   return (
     <section
       ref={ref}
-      style={{ backgroundImage: 'url("/texture.jpg")' }}
+      style={{ backgroundImage: 'url("/texture.jpg")', backgroundPosition: 'center', backgroundSize: 'cover' }}
       className="min-h-screen h-auto min-w-screen flex items-between justify-between section-pad"
     >
       <div className=" text-[#111111] fade-in h-screen w-full px-4">
