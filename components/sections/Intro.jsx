@@ -27,9 +27,9 @@ export function Intro() {
             {/* Description */}
             <div className="max-w-2xl mb-12 md:mb-16">
               <p className="text-lg md:text-2xl leading-relaxed text-primary-foreground/90">
-                A true variety store that has finds for{" "}
-                , kids to adults,{" "}
-                <strong>EVERYONE</strong> is welcomed! All burdgets are
+                A true variety store that has finds unique &fun finds for{" "}
+                all, from kids to adults - {" "}
+                <strong>EVERYONE</strong> is welcome! All budgets are
                 supported with items starting at just <strong>.95 CENTS</strong>{" "}
                 that are best & cheaper than the darn dollar store, plus no
                 tariff drama here! <br /><br /> 
