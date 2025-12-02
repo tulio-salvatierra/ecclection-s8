@@ -9,12 +9,6 @@ import  Influencers  from "@/components/sections/Influencers";
 import  SoundOnScroll  from "@/components/SoundOnScroll/SoundOnScroll";
 import { ARTISTS_DATA } from "@/components/sections/Artists";
 import { ArtistCarousel } from "@/components/ArtistCarousel";
-
-import {
-  getPageBySlug,
-  getContentBlocksBySlug,
-  type ContentBlock,
-} from "@/lib/wp";
 import { ProductsShowcase } from "@/components/sections/Products";
 import type { Metadata } from "next";
 
@@ -23,7 +17,7 @@ export const metadata: Metadata = {
   description: "Welcome to Ecclection - A vibrant local shop in Portage Park, Chicago featuring vintage treasures, handmade art, locally crafted finds, and community events. Supporting local artists and building community connections.",
   openGraph: {
     title: "Ecclection | Local Art & Community Vibe in Portage Park, Chicago",
-    description: "A vibrant local shop featuring vintage treasures, handmade art, locally crafted finds, and community events in Portage Park, Chicago.",
+    description: "A true variety store in Portage Park – packed with local art, rescued treasures, gag gifts, funky tees & SO much more… where EVERYONE is welcome & all budgets are loved.",
     url: "/",
     images: [
       {
@@ -39,195 +33,7 @@ export const metadata: Metadata = {
   },
 };
 
-// ---------- helpers for parsing WP blocks ----------
-type Maybe<T> = T | undefined;
-
-const decode = (s = "") => s.replace(/&amp;/g, "&").trim();
-const stripTags = (html = "") =>
-  html
-    .replace(/<[^>]*>/g, "")
-    .replace(/\s+/g, " ")
-    .trim();
-
-function isHeading(b: ContentBlock) {
-  return b.type === "heading";
-}
-function isText(b: ContentBlock) {
-  return b.type === "text";
-}
-function isImage(b: ContentBlock) {
-  return b.type === "image";
-}
-function findHeadingIndex(blocks: ContentBlock[], title: string): number {
-  const needle = title.trim().toLowerCase();
-  return blocks.findIndex(
-    (b) => isHeading(b) && decode(b.content).toLowerCase() === needle
-  );
-}
-
-/** Returns blocks between two H2 headings (exclusive of the start heading). */
-function sliceSection(
-  blocks: ContentBlock[],
-  startHeading: string,
-  endHeading?: string
-): ContentBlock[] {
-  const start = findHeadingIndex(blocks, startHeading);
-  if (start === -1) return [];
-  let end = blocks.length;
-  if (endHeading) {
-    const e = findHeadingIndex(blocks, endHeading);
-    if (e !== -1 && e > start) end = e;
-  }
-  return blocks.slice(start + 1, end);
-}
-
-// ---------- mappers from flat blocks -> component props ----------
-
-function mapHero(blocks: ContentBlock[]) {
-  const title =
-    decode(blocks.find(isHeading)?.content || "") || "Welcome to Ecclection";
-  const subtitle = stripTags(blocks.find(isText)?.content || "");
-  const backgroundImage = blocks.find(isImage)?.metadata?.src as Maybe<string>;
-  return { title, subtitle, backgroundImage };
-}
-
-function mapArtists(blocks: ContentBlock[]) {
-  const heading = "Featured Artists";
-  const cards: { title: string; text: string; image?: string }[] = [];
-
-  let i = 0;
-  while (i < blocks.length) {
-    const b = blocks[i];
-    if (isHeading(b)) {
-      const title = decode(b.content);
-      // collect text + image until next heading
-      let j = i + 1;
-      let text = "";
-      let image: Maybe<string>;
-      while (j < blocks.length && !isHeading(blocks[j])) {
-        if (!text && isText(blocks[j])) text = stripTags(blocks[j].content);
-        if (
-          !image &&
-          isImage(blocks[j]) &&
-          typeof (blocks[j] as any).metadata === "object" &&
-          (blocks[j] as any).metadata?.src
-        ) {
-          image = (blocks[j] as any).metadata.src as Maybe<string>;
-        }
-        j++;
-      }
-      // Avoid adding the section label itself as a card if it slips in
-      if (title && title.toLowerCase() !== heading.toLowerCase()) {
-        cards.push({ title, text, image });
-      }
-      i = j;
-    } else {
-      i++;
-    }
-  }
-
-  return { heading, cards };
-}
-
-function mapEvents(blocks: ContentBlock[]) {
-  const heading = "Community Happenings";
-  const items: { title: string; text: string }[] = [];
-
-  let i = 0;
-  while (i < blocks.length) {
-    const b = blocks[i];
-    if (isHeading(b)) {
-      const title = decode(b.content);
-      let text = "";
-      // take first paragraph after the heading
-      let j = i + 1;
-      while (j < blocks.length && !isHeading(blocks[j])) {
-        if (!text && isText(blocks[j])) {
-          text = stripTags(blocks[j].content);
-          break;
-        }
-        j++;
-      }
-      items.push({ title, text });
-      i = j;
-    } else {
-      i++;
-    }
-  }
-
-  return { heading, items };
-}
-
-function mapAbout(blocks: ContentBlock[]) {
-  const heading = "Welcome to Ecclection";
-  const paragraphs = blocks.filter(isText).map((b) => stripTags(b.content));
-  const images = blocks.filter(isImage).map((b) => b.metadata?.src as string);
-  const image = images[0] ? { src: images[0], alt: "" } : undefined;
-  const gallery = images.slice(1, 3); // up to two more
-  return { heading, paragraphs, image, gallery };
-}
-
-function mapContact(blocks: ContentBlock[]) {
-  const heading = "Come Find Us!";
-  const cards: { title: string; text: string }[] = [];
-
-  let i = 0;
-  while (i < blocks.length) {
-    const b = blocks[i];
-    if (isHeading(b)) {
-      const title = decode(b.content);
-      let text = "";
-      let j = i + 1;
-      while (j < blocks.length && !isHeading(blocks[j])) {
-        if (!text && isText(blocks[j])) {
-          text = stripTags(blocks[j].content);
-          break;
-        }
-        j++;
-      }
-      cards.push({ title, text });
-      i = j;
-    } else {
-      i++;
-    }
-  }
-
-  return { heading, cards };
-}
-
 export default async function HomePage() {
-  const page = await getPageBySlug("home");
-  const blocks: ContentBlock[] = await getContentBlocksBySlug("home");
-
-  // (C) Split the flat block list into logical sections by H2 titles you set in WP
-  const heroBlocks = sliceSection(
-    blocks,
-    "Welcome to Ecclection",
-    "Featured Artists"
-  );
-  const artistsBlocks = sliceSection(
-    blocks,
-    "Featured Artists",
-    "Community Happenings"
-  );
-  
-  const aboutBlocks = sliceSection(
-    blocks,
-    "Welcome to Ecclection",
-    "Come Find Us!"
-  );
-  const contactBlocks = sliceSection(blocks, "Come Find Us!");
-
-  // (D) Map section blocks → props
-  const hero = mapHero(heroBlocks.length ? heroBlocks : blocks);
-  // If featured image exists on the page itself, prefer it.
-  hero.backgroundImage = hero.backgroundImage ?? page?.featuredImage?.url;
-
-  const artists = mapArtists(artistsBlocks);
-  
-  const about = mapAbout(aboutBlocks);
-  const contact = mapContact(contactBlocks);
-
   const artistsForCarousel = ARTISTS_DATA.map((a, idx) => ({
     id: typeof a.id === "number" ? a.id : idx,
     name: a.name ?? a.title ?? "Untitled",
@@ -245,23 +51,15 @@ export default async function HomePage() {
     <>
       <LenisProvider />
       <SoundOnScroll />
-      <Hero
-        title={hero.title}
-        subtitle={hero.subtitle}
-        backgroundImage={hero.backgroundImage}
-      />
+      <Hero title="Welcome to Ecclection" subtitle="A true variety store in Portage Park – packed with local art, rescued treasures, gag gifts, funky tees & SO much more… where EVERYONE is welcome & all budgets are loved." backgroundImage="default-hero.jpg" />
       <Intro />
       <ArtistCarousel artists={artistsForCarousel} />
       <StoreActivities />
       <ProductsShowcase />
-      <About
-        title="About us"
-        content="bio text from about section"
-        image={about?.image}
-      />
+      <About title="About Us" content="bio text will go here" />
       <Review />
       <Influencers />
-      <Contact heading={contact?.heading} cards={contact?.cards} />
+      <Contact heading="Come Find Us!" cards={[]} />
     </>
   );
 }

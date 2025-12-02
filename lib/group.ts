@@ -1,5 +1,5 @@
 // lib/group.ts
-import type { Pantry } from "@/data/foodPantries";
+import type { Pantry } from "@/data/foodPantry";
 
 export function groupByNeighborhood(items: Pantry[]) {
   return items.reduce<Record<string, Pantry[]>>((acc, p) => {

@@ -42,21 +42,24 @@ export default function DisclaimerModal() {
         </h2>
 
         <p className="text-sm md:text-base text-black mb-3">
-          Ecclection exists to support real, local artists. Any major creative
-          work we showcase — like murals, photo-op spaces, in-store visuals, or
-          web design — is commissioned from artists in our community.
+          Ecclection is all about celebrating REAL, local artists. Any major
+          creative work you see here — murals, photo-ops, in-store visuals, web
+          design & all the fun stuff — is made by humans in our community who we
+          know, love & proudly support.
         </p>
 
         <p className="text-sm md:text-base text-gray-800 mb-3">
-          We may occasionally use AI tools to help brainstorm ideas or create
-          draft visuals for promotion, but we do <strong>not</strong> promote
-          AI-generated creations as final artwork, and we do not replace human
-          artists with AI.
+          Yes, we may occasionally use AI tools to brainstorm ideas or mock up
+          early concepts (because sometimes inspiration needs a little nudge),
+          but we do <strong>not</strong> showcase AI creations as final artwork,
+          and we never replace human artists with machines. People first —
+          always.
         </p>
 
         <p className="text-sm md:text-base text-gray-800 mb-6">
-          By continuing to use this site, you acknowledge that our focus is on
-          human-made art and direct support for local creators.
+          By continuing to browse our site, you’re acknowledging our commitment
+          to human-made art, local creators & the beautiful, imperfect magic
+          that only real people can make.
         </p>
 
         <div className="flex gap-3 justify-end">

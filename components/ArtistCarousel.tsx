@@ -53,21 +53,11 @@ export function ArtistCarousel({ artists }: ArtistCarouselProps) {
   }, [artists.length]);
 
   return (
-    <section ref={ref} className="w-screen h-screen">
+    <section ref={ref} className="w-screen h-auto">
       <div  className="fade-in mt-16 grid grid-cols-1 items-center container section-pad">
         {renderPunkTitle("Meet the Artists", "text-3xl md:text-4xl", "mb-6", "text-white")}
-        <p className=" mt-4 text-white w-full sm:w-1/2 mx-auto text-left">
-          Look at sample of the talented artists featured at Ecclection. We
-          showcase a number of well curated pieces and collections from our local artists, most of them
-          are with us for a long time, only a few rotate which keeps things
-          interesting and exciting for us and our customers.
-        </p>
-        <p className=" text-white w-full sm:w-1/2 mt-4 mx-auto text-left">
-          Our featured artists come from diverse backgrounds and styles. If you
-          are an artist interested in being featured, please reach out to us
-          through our contact page. We offer affordable spaces <strong className="text-cyan-500">(starts at
-          $20/month)</strong> for artists to showcase their work in our store and join
-          our community.
+        <p className="mt-4 text-white w-full sm:w-1/2 mx-auto text-left">
+          Here’s just a little peek at some of the talented makers & artists featured at Ecclection. We showcase carefully curated pieces and collections from local creatives we truly believe in — most of them stay with us for a long time, and only a handful ever rotate, which keeps things interesting for us AND for you. Our featured artists come from all kinds of backgrounds, styles & stories — painters, jewelry makers, photographers, sewists, sculptors & more. If you’re an artist who wants to be part of this little WONDERLAND, reach out through our contact page. We offer affordable spaces <strong className="text-cyan-500">(starting at just $20/month)</strong> so you can showcase your work in the shop, be seen by our community & keep creating.
         </p>
       </div>
       <div className="relative grid md:grid-cols-2 gap-12 container section-pad min-h-auto items-center">
@@ -82,14 +72,14 @@ export function ArtistCarousel({ artists }: ArtistCarouselProps) {
 
           {/* Tilted Frame with Transition */}
           <div className="relative w-80 max-w-sm sm:ml-12">
-            <div className="relative rotate-2 bg-cyan-600 p-3 border-2 border-black shadow-[8px_8px_0_0_#000]">
-              <div className="aspect-[3/4] bg-black overflow-hidden">
+            <div className="relative rotate-2 bg-cyan-600 w-[310px] h-[310px] p-2border-2 border-black shadow-[8px_8px_0_0_#000]">
+              <div className="grid items-center mt-auto mb-auto overflow-hidden w-[289px] h-[289px]"> {/* Enforce fixed width and height */}
                 {currentArtist.image ? (
                   <img
                     key={currentIndex}
                     src={currentArtist.image}
                     alt={currentArtist.name}
-                    className="w-80 h-full object-cover animate-in duration-500"
+                    className="object-center fixed w-[290px] ml-2 mt-2 h-[290px] object-cover animate-in duration-500"
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center text-6xl">

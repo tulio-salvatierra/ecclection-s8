@@ -30,7 +30,7 @@ export function Hero({
         "text-cyan-400"
       )}
 
-      <p className="split-fade-in mt-4 mb-4 text-center font-brand text-xl md:text-2xl text-white">
+      <p className="fade-in sm:w-3/4 mt-8 mb-4 text-left mx-auto font-brand text-xl md:text-2xl text-white">
         {subtitle}
       </p>
 
@@ -60,7 +60,7 @@ export function Hero({
                 className="p-8 mt-28 hover:rotate-[5deg] transition-all duration-300 col-span-2 mx-auto origin-top-left text-white font-brand text-2xl rounded-md bg-cyan-600/80"
                 href="https://maps.app.goo.gl/ZMgVyGzAmNvomLMcA"
               >
-                Come visit us!
+                Come Dig Around!
               </a>
             )}
           </div>

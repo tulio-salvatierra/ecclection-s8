@@ -43,17 +43,17 @@ export function Review() {
     <section ref={ref} className="py-16 px-4 md:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12">
-          <h2 className="fade-in font-brand text-center text-4xl md:text-5xl text-cyan-500 mb-4">Press & Reviews</h2>
-          <p className="fade-in text-white text-lg max-w-2xl mx-auto text-center">What they're saying about us</p>
+          <h2 className="font-brand text-center text-4xl md:text-5xl text-cyan-500 mb-4">Press & Reviews</h2>
+          <p className="ftext-white text-lg max-w-2xl mx-auto text-center">What they're saying about us</p>
         </div>
 
-        <article className="fade-in border-2 border-black rounded-md mb-12 overflow-hidden backdrop-blur-3xl">
+        <article className="border-2 border-black rounded-md mb-12 overflow-hidden backdrop-blur-3xl">
           <div className="grid md:grid-cols-2 gap-0">
             <div className="relative h-64 md:h-auto bg-muted">
               <img
                 src={featuredArticle.image || "/placeholder.svg"}
                 alt={featuredArticle.title}
-                className="fade-in w-full h-full object-cover shadow-2 shadow-[3px_3px_0_0_#000] hover:translate-x-[1px] hover:translate-y-[1px] transition-all"
+                className="w-full h-full object-cover shadow-2 shadow-[3px_3px_0_0_#000] hover:translate-x-[1px] hover:translate-y-[1px] transition-all"
               />
               <div className="fade-in absolute top-4 left-4 bg-accent text-background px-3 py-1 text-md font-brand uppercase tracking-wider">
                 Featured
@@ -63,15 +63,15 @@ export function Review() {
               <span className="text-white text-sm font-brand uppercase tracking-wider mb-3">
                 {featuredArticle.publication}
               </span>
-              <h3 className="fade-in font-brand text-cyan-500 text-3xl md:text-4xl font-bold mb-4 leading-tight">
+              <h3 className="font-brand text-cyan-500 text-3xl md:text-4xl font-bold mb-4 leading-tight">
                 {featuredArticle.title}
               </h3>
-              <p className="fade-in text-white leading-relaxed mb-6 text-lg">{featuredArticle.excerpt}</p>
+              <p className="text-white leading-relaxed mb-6 text-lg">{featuredArticle.excerpt}</p>
               <div className="flex items-center justify-between">
-                <time className="fade-in text-white text-sm">{featuredArticle.date}</time>
+                <time className="text-white text-sm">{featuredArticle.date}</time>
                 <a
                   href={featuredArticle.url}
-                  className="bg-accent fade-in hover:bg-accent/90 text-accent-foreground text-base md:text-lg p-2 font-brand tracking-wide border-2 border-black shadow-[3px_3px_0_0_#000] hover:translate-x-[1px] hover:translate-y-[1px] transition-all"
+                  className="bg-accent hover:bg-accent/90 text-accent-foreground text-base md:text-lg p-2 font-brand tracking-wide border-2 border-black shadow-[3px_3px_0_0_#000] hover:translate-x-[1px] hover:translate-y-[1px] transition-all"
                 >
                   Read Full Article
                 </a>
@@ -87,7 +87,7 @@ export function Review() {
               href="https://www.google.com/maps/place/Ecclection/@41.9528405,-87.7812916,940m/data=!3m1!1e3!4m8!3m7!1s0x880fcbaefc6b5d6f:0xb8883b1b82dc506e!8m2!3d41.9528405!4d-87.7787167!9m1!1b1!16s%2Fg%2F11vf1t1fyl?entry=ttu&g_ep=EgoyMDI1MTEwMi4wIKXMDSoASAFQAw%3D%3D"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-accent fade-in hover:bg-accent/90 text-accent-foreground text-base md:text-lg p-4 font-brand tracking-wide border-2 border-black shadow-[3px_3px_0_0_#000] hover:translate-x-[1px] hover:translate-y-[1px] transition-all"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground text-base md:text-lg p-4 font-brand tracking-wide border-2 border-black shadow-[3px_3px_0_0_#000] hover:translate-x-[1px] hover:translate-y-[1px] transition-all"
             >
               View All Reviews
             </a>

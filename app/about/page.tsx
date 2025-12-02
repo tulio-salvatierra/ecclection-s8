@@ -33,7 +33,7 @@ export default function AboutPage() {
       <header className="container section-pad text-center">
         {renderPunkTitle("About Ecclection")}
         <p className="text-lg text-white max-w-2xl mx-auto">
-          Where Creativity Meets Compassion, Art & Sustainability
+          Where rescued treasures, local art, community & compassion all collide in the best possible way
         </p>
       </header>
       <LenisProvider />
@@ -52,22 +52,13 @@ export default function AboutPage() {
           </div>
 
           {/* Right: Text Content */}
-          <div className="space-y-6">
+          <div className="space-y-6 bg-black/30 p-4">
             {renderPunkHeading("Welcome to Ecclection", "text-2xl md:text-3xl")}
             <p className="text-white text-lg leading-relaxed">
-              Ecclection is a vibrant local variety shop located at 6059 West Irving
-              Park Road in Chicago's Portage Park neighborhood. We specialize in
-              vintage treasures, handmade art, and locally crafted finds that
-              celebrate creativity and community while keeping it affordable for
-              everyone. We want to keep it welcoming fun and silly, dont only think that we are here to fullfill need but rather have fun, find crazy and silly stuff in a whimsical way  <br /><br />So come by! don't be shy, and explore the eclectic mix
-              that makes Ecclection truly <strong>one-of-a-kind!</strong>
+              Ecclection is a vibrant local variety shop located at 6059 West Irving Park Road in Chicago&apos;s Portage Park neighborhood. We specialize in vintage treasures, handmade art and locally crafted finds that celebrate creativity and community while keeping it all affordable for everyone. We want the shop to feel welcoming, fun and a little bit silly — not just a place to fill a need, but a place to have fun, find crazy & silly stuff and wander through a whimsical mix of oddities. <br /><br />So come by, don&apos;t be shy, and explore the eclectic mix that makes Ecclection truly <strong>one-of-a-kind!</strong>
             </p>
-            <p className="text-white leading-relaxed">
-              Step inside and you'll discover an ever-changing collection of
-              carefully curated, recycled, and up-cycled pieces <strong className="text-cyan-500">(starts at $1)</strong> — from art and
-              jewelry to home décor, crystals, and wellness items. Every corner
-              of our shop tells a story, and every piece has been chosen to
-              inspire.
+            <p className="text-white leading-relaxed ">
+              Step inside and you&apos;ll discover an ever-changing collection of carefully curated, recycled and up-cycled pieces <strong className="text-cyan-500">(starts at $1)</strong> — from art and jewelry to home décor, crystals and wellness goodies. Every corner of our shop tells a story, and every piece has been chosen to inspire, delight or at least make you smile.
             </p>
           </div>
         </div>
@@ -91,16 +82,11 @@ export default function AboutPage() {
           <div className="md:col-span-6 space-y-6 text-lg">
             {renderPunkHeading("Our Philosophy", "text-xl")}
             <p className="text-white leading-relaxed text-lg">
-              At Ecclection, we believe in keeping the shopping experience
-              personal and meaningful. We're proudly brick-and-mortar only — no
-              online carts, no algorithms — just real people, real conversation,
-              and the joy of discovery. Whether you're a Chicago local or
-              visiting the Portage Park area, you'll find something unexpected
-              every time you stop by.
+              At Ecclection, we believe in keeping the shopping experience personal and meaningful. We&apos;re proudly brick-and-mortar only — no online carts, no algorithms — just real people, real conversation and the joy of discovery. Whether you&apos;re a Chicago local or visiting the Portage Park area, you&apos;ll find something unexpected every time you stop by.
             </p>
 
             <p className="text-white leading-relaxed text-lg">
-              We also support engage with our community by featuring kids craft events throughout the year & working with local schools for fundraisers. Fidn Waldo discounts <strong>(he's hidden there somewhere)</strong> and Occasional Sip & Shop events, Plus size Pop up weekened (3rd week of every month), fun Eastern egg hunts, providing goodie bags during the holidays for sll thye kiddos. We have SOOOOOoo many <strong> GREAT</strong> things at Ecclection - we're GIVING IT AWAY FOR FREE! - that's right, FREE! Each purchase earns a free gift from our "GGODIE BASKET" 🧺 & our FAMOUS "Wheel of "GOOD FORTUNE" where you spin to win with any purchase over $25 🏆
+              We also stay engaged with our community by hosting kids craft events throughout the year and working with local schools for fundraisers. Our &quot;Find Waldo&quot; discounts <strong>(he&apos;s hidden there somewhere)</strong>, occasional Sip &amp; Shop events, plus-size pop-up weekends (3rd week of every month), fun Easter egg hunts and holiday goodie bags for all the kiddos keep things playful and fun. We have SOOOOOoo many <strong>GREAT</strong> things at Ecclection that we&apos;re sometimes GIVING THEM AWAY FOR FREE! That&apos;s right, FREE! Each purchase earns a free gift from our &quot;GOODIE BASKET&quot; 🧺 and a spin on our famous &quot;Wheel of GOOD FORTUNE&quot; with any purchase over $25 🏆
             </p>
           </div>
 
@@ -134,14 +120,7 @@ export default function AboutPage() {
               Our Mission
             </h3>
            <p className="text-white leading-relaxed">
-              <strong>Big Elves</strong> is a volunteer‑driven charity
-              initiative founded two long time friends with a big heart <strong>Julie & Elise.</strong><br /><br /> Big Elves
-              collects donations mostly during the holidays to bring comfort and hope to those
-              who need it most — including low income adults, low income
-              facilities, nursing homes, children's hospitals, and foster care
-              centers across Chicago. We prioritize non‑monetary donations and
-              maintain wishlists so we can deliver specific supplies directly to
-              people in need.
+              <strong>Big Elves</strong> is a volunteer‑driven charity initiative founded by two longtime friends with big hearts, <strong>Julie &amp; Elise.</strong><br /><br /> Big Elves collects donations — mostly during the holidays — to bring comfort and hope to those who need it most, including low-income adults, low-income facilities, nursing homes, children&apos;s hospitals and foster care centers across Chicago. We prioritize non‑monetary donations and maintain wishlists so we can deliver specific supplies directly to people in need.
             </p>
           <p className="text-xl text-center text-white font-brand leading-relaxed my-4">
             Learn more about Big Elves and how you can get involved by visiting
@@ -158,33 +137,19 @@ export default function AboutPage() {
           </a>
           </div>
           <p className="text-white my-6 leading-relaxed text-left">
-            Follow <strong>Ecclection</strong> social media channels for
-            upcoming charity events, art collaborations, kids workshops and
-            community initiatives that bring people together through creativity
-            and compassion.{" "}
-            <strong>
-              Together, we can make a difference by help those whose need the
-              most.
-            </strong>
+            Follow <strong>Ecclection</strong> on social media for upcoming charity events, art collaborations, kids workshops and community initiatives that bring people together through creativity and compassion. <strong>Together, we can make a difference by helping those who need it most.</strong>
           </p>{" "}
            <h3 className="text-xl font-bold font-brand text-white mb-3 text-center">
               Community Impact
             </h3>
             <p className="text-white leading-relaxed">
-              What makes Big Elves truly special is the way it unites people
-              through kindness. Whether it's a customer dropping off a donation,
-              an artist contributing a handmade piece, or a volunteer organizing
-              a drive, every act of generosity ripples outward.
+              What makes Big Elves truly special is the way it unites people through kindness. Whether it&apos;s a customer dropping off a donation, an artist contributing a handmade piece or a volunteer organizing a drive, every act of generosity ripples outward.
             </p>
             <h3 className="text-xl mt-4 font-bold font-brand text-white mb-3 text-center">
               How You Can Help?
             </h3>
             <p className="text-white leading-relaxed">
-              You can support Big Elves by donating new or gently used items,
-              volunteering your time, or spreading the word about our mission.
-              Every contribution, big or small, makes a difference in the lives
-              of those we serve. Together, we can create a community where
-              everyone feels valued and cared for.
+              You can support Big Elves by donating new or gently used items, volunteering your time or spreading the word about our mission. Every contribution, big or small, makes a difference in the lives of those we serve. Together, we can create a community where everyone feels valued and cared for.
             </p>
             <div className="grid items-center text-center">
               <a

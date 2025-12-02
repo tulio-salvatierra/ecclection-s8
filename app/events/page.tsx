@@ -1,11 +1,9 @@
 import { Contact } from "@/components/sections/Contact";
-import { SOCIAL_URLS } from "@/lib/constants";
-  import dynamic from "next/dynamic";
+import dynamic from "next/dynamic";
 import { LenisProvider } from "@/components/LenisProvider";
 import Masonry from "@/components/Masonry";
 
 const Stack = dynamic(() => import("@/components/Stack"), { ssr: false });
-
 
 export const metadata = {
   title:
@@ -57,35 +55,15 @@ export default function EventsPage() {
     );
   }
 
-  function renderPunkHeading(text: string, size: string = "text-xl") {
-    const words = text.trim().split(/\s+/);
-    const angles = [-4, -2, 0, 2, 4, -3, 1, -1, 3];
-    return (
-      <h2 className={`${size} font-semibold font-brand mb-4`}>
-        {words.map((word, idx) => {
-          const angle = angles[idx % angles.length];
-          return (
-            <span
-              key={`h-${idx}`}
-              className="inline-block mr-1 md:mr-2 px-1 md:px-2 py-1 bg-cyan-600 text-black rounded-[2px] border border-black shadow-[2px_2px_0_0_#000]"
-              style={{ transform: `rotate(${angle}deg)` }}
-            >
-              {word}
-            </span>
-          );
-        })}
-      </h2>
-    );
-  }
-
   return (
     <>
-      <div className="min-h-screen">
+      <section className="min-h-screen">
         {/* Header Section */}
         <header className="container section-pad text-center">
           {renderPunkTitle("Events & Community Impact")}
           <p className="text-lg text-white max-w-2xl mx-auto">
-            Where Creativity Meets Compassion, Art & Sustainability
+            Where local art, rescued treasures, community & compassion meet
+            under one funky little roof
           </p>
         </header>
         <LenisProvider />
@@ -102,24 +80,47 @@ export default function EventsPage() {
                 </h2>
                 <p className="text-lg text-white leading-relaxed my-8">
                   At <strong>Ecclection</strong>, we believe art has the power
-                  to connect, heal, and inspire. Beyond being a local shop in
-                  <strong> Portage Park, Chicago</strong>, we are a variety shop
-                  hub where creativity and compassion meet. Our philosophy is
-                  simple — to celebrate diversity, uplift local artists, and
-                  give back to those in need through meaningful initiatives and
-                  events that promote human connection, creativity and sustainability.
+                  to connect, heal, surprise and flat-out make your day better.
+                  We’re not just a local shop in
+                  <strong> Portage Park, Chicago</strong> — we’re a funky little
+                  WONDER-HUB where creativity, compassion &amp; community swirl
+                  together in the most magical, chaotic, delightful way. Our
+                  philosophy? Easy: celebrate our people, uplift our artists,
+                  honor every weird &amp; wonderful story, and give back through
+                  events filled with laughter, connection, kindness &amp; silly
+                  little moments you’ll remember later and think, "Wow… that was
+                  actually really nice."
                 </p>
-                <img src="/child.jpeg" alt="Artists Spot" className="my-4 w-full rounded-md" />
+                <img
+                  src="/child.jpeg"
+                  alt="Artists Spot"
+                  className="my-4 w-full rounded-md"
+                />
                 <p className="mb-2">
                   <strong>Location:</strong> Ecclection — 6059 W Irving Park Rd,
                   Chicago, IL 60634 (Portage Park)
                 </p>
                 <ul className="list-disc ml-5 space-y-1 text-lg">
-                  <li>Complimentary snacks & drinks on <strong>Every Event</strong> ONLY! - NO EXCEPTIONS</li>
-                  <li>Affordable vendor spaces for local artists & makers</li>
-                  <li>Inclusive, community‑driven human atmosphere — <strong>in‑store only</strong></li>
-                  <li>Unique and affordable finds for kids, babies & pets</li>
-                  <li>We like to keep it welcoming fun and silly!</li>
+                  <li>
+                    Complimentary snacks &amp; drinks at{" "}
+                    <strong>every event night</strong> — NO EXCEPTIONS, because
+                    we absolutely love feeding our community!
+                  </li>
+                  <li>
+                    Affordable vendor spaces for local artists &amp; makers
+                  </li>
+                  <li>
+                    Inclusive, community-driven &amp; beautifully HUMAN
+                    atmosphere — <strong>in-store only</strong>
+                  </li>
+                  <li>
+                    Unique &amp; affordable finds for kids, babies, adults… and
+                    yes, even a few funky surprises for pets
+                  </li>
+                  <li>
+                    We keep it welcoming, fun, silly, heartfelt &amp; just the
+                    right amount of WEIRD — the Ecclection way!
+                  </li>
                 </ul>
               </div>
               <div className="mt-4 flex flex-wrap gap-3">
@@ -142,97 +143,92 @@ export default function EventsPage() {
               </div>
               <div className="text-center"></div>
             </div>
-            </div>
-            </section>
-    
-        {/* Masonry Section and Introduction */}
-        <section className="section-pad">
-          
-            <Masonry />
-            </section>
-
-            {/* Introduction */}
-
-            {/* Community Events Card */}
-        <section className="container section-pad">
-            <div className="relative border-2 h-[900px] border-black shadow-[6px_6px_0_0_#000] rounded-lg p-8 overflow-hidden">
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="auto"
-                className="absolute inset-0 w-auto h-full object-cover rounded-md"
-              >
-                <source src="/Artists_spot.mp4" type="video/mp4" />
-              </video>
-              <div className="relative z-10 rounded-md p-6 backdrop-blur-3xl">
-                <h2 className="text-2xl md:text-3xl text-white font-brand">
-                  Bi-Monthly Artist & Community Nights
-                </h2>
-                <p className="text-white leading-relaxed sm:text-lg text-xs">
-                  Every event we host is designed to foster connection and
-                  purpose. From our{" "}
-                  <strong>
-                    Bi‑Monthly Artist & Community Appreciation Nights 
-                  </strong>
-                  {" "}to seasonal collaborations, Ecclection creates opportunities
-                  for neighbors, makers, and visitors to come together in a
-                  spirit of inclusion, sustainability and creativity. Each gathering supports
-                  our mission to strengthen human bonds and remind everyone
-                  that art and kindness can change lives. Enjoy complimentary
-                  snacks & drinks on <strong>ONLY ON EVENTS NIGHT ONLY!</strong> and ask us about our affordable vendor spaces
-                  for local artists and makers. Our items are thoughtfully
-                  curated and affordable for our neighborhood. We support the
-                  artists who are displaying their work with us — not a constant
-                  rotation — each selection is intentional, well thought-out,
-                  and carefully reviewed.
-                </p>
-              </div>
-            </div>
+          </div>
         </section>
 
-          {/* Structured Data (JSON-LD) */}
+        {/* Masonry Section and Introduction */}
+        <section className="section-pad">
+          <Masonry />
+        </section>
 
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "Event",
-                name: "Bi‑Monthly Artist & Community Appreciation Event",
-                description:
-                  "Meet local artists, enjoy complimentary snacks & drinks, and discover affordable vendor spaces. In‑store only at Ecclection in Portage Park, Chicago.",
-                eventSchedule: {
-                  "@type": "Schedule",
-                  repeatFrequency: "P2M",
-                  byDay: "https://schema.org/Saturday",
-                  scheduleTimezone: "America/Chicago",
-                },
-                location: {
-                  "@type": "Place",
-                  name: "Ecclection",
-                  address: {
-                    "@type": "PostalAddress",
-                    streetAddress: "6059 W Irving Park Rd",
-                    addressLocality: "Chicago",
-                    addressRegion: "IL",
-                    postalCode: "60634",
-                    addressCountry: "US",
-                  },
-                },
-                organizer: {
-                  "@type": "Organization",
-                  name: "Ecclection",
-                  url: "https://ecclection.com",
-                },
-              }),
-            }}
-          />
-        
+        {/* Introduction */}
 
-      </div>
+        {/* Community Events Card */}
+        <section className="container section-pad">
+          <div className="relative border-2 h-[900px] border-black shadow-[6px_6px_0_0_#000] rounded-lg p-8 overflow-hidden">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+              className="absolute inset-0 w-auto h-full object-cover rounded-md"
+            >
+              <source src="/Artists_spot.mp4" type="video/mp4" />
+            </video>
+            <div className="relative z-10 rounded-md p-6 backdrop-blur-3xl">
+              <h2 className="text-2xl md:text-3xl text-white font-brand">
+                Bi-Monthly Artist & Community Nights
+              </h2>
+              <p className="text-white leading-relaxed sm:text-lg text-xs">
+                Every event we host is crafted to spark connection, creativity
+                &amp; genuine human joy. From our{" "}
+                <strong>
+                  Bi-Monthly Artist &amp; Community Appreciation Nights
+                </strong>{" "}
+                to seasonal pop-ups &amp; quirky collabs, we LOVE bringing
+                neighbors, makers &amp; wanderers together in a spirit of
+                inclusion, sustainability &amp; good vibes all around. Our
+                gatherings celebrate art, kindness &amp; the magic that happens
+                when people show up for each other. Enjoy complimentary snacks
+                &amp; drinks on <strong>EVENT NIGHTS ONLY!</strong> Ask us about
+                affordable vendor spaces for artists &amp; makers. Every item we
+                feature is intentionally chosen, priced with our neighborhood in
+                mind, and displayed with love — no constant artist turnover,
+                just real support &amp; real community.
+              </p>
+            </div>
+          </div>
+        </section>
 
+        {/* Structured Data (JSON-LD) */}
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Event",
+              name: "Bi‑Monthly Artist & Community Appreciation Event",
+              description:
+                "Meet local artists, enjoy complimentary snacks & drinks, and discover affordable vendor spaces. In‑store only at Ecclection in Portage Park, Chicago.",
+              eventSchedule: {
+                "@type": "Schedule",
+                repeatFrequency: "P2M",
+                byDay: "https://schema.org/Saturday",
+                scheduleTimezone: "America/Chicago",
+              },
+              location: {
+                "@type": "Place",
+                name: "Ecclection",
+                address: {
+                  "@type": "PostalAddress",
+                  streetAddress: "6059 W Irving Park Rd",
+                  addressLocality: "Chicago",
+                  addressRegion: "IL",
+                  postalCode: "60634",
+                  addressCountry: "US",
+                },
+              },
+              organizer: {
+                "@type": "Organization",
+                name: "Ecclection",
+                url: "https://ecclection.com",
+              },
+            }),
+          }}
+        />
+      </section>
       <Contact />
     </>
   );

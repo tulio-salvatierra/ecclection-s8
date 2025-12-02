@@ -48,28 +48,24 @@ export function Contact({
   useFadeAnimation(ref);
 
   return (
-    <section ref={ref} className={`container section-pad ${className}`}>
+    <section ref={ref} className={`fade-in container section-pad ${className}`}>
       <div className="text-center mb-12">
         {renderPunkHeading(heading)}
-        <p className="text-lg fade-in text-white max-w-2xl mx-auto">
-          Ready to explore art, join our community, or showcase your work? We'd
-          love to hear from you.
+        <p className="text-lg text-white max-w-2xl mx-auto">
+          Have questions, want to collaborate, or just want to say hi? We LOVE hearing from our neighbors, artists, creators & curious wanderers. Text or email us anytime — it’s our favorite way to chat!
         </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Contact Information */}
-        <Card className="fade-in p-8 bg-cyan-600 border-2 border-black shadow-[6px_6px_0_0_#000]">
+        <Card className="p-8 bg-cyan-600 border-2 border-black shadow-[6px_6px_0_0_#000]">
           <h3 className="text-2xl font-semibold text-black font-brand mb-6">
             Contact Information
           </h3>
-          <p className="mb-4 fade-in text-black">
-            Feel free to reach out to us through any of the following methods.
-            We're here to assist you with any inquiries, collaborations, or
-            opportunities to showcase your art at Ecclection. Text and email us,
-            it is our preferred method of communication.
+          <p className="mb-4 text-black">
+            Reach out anytime! Whether you're looking to showcase your art, ask about events, trade treasures, or just connect, we’re here for it. Texting or emailing is the best way to reach us — quick, easy & totally our style.
           </p>
-          <div className="space-y-4 fade-in">
+          <div className="space-y-4">
             <p className="font-medium text-black font-brand">Store Hours:</p>
             <p className="text-black font-bold">Monday & Tuesday: Closed</p>
             <p className="text-black font-bold">
@@ -164,7 +160,7 @@ export function Contact({
             </div>
           </div>
         </Card>
-        <div className="fade-in w-full h-96 md:h-auto">
+        <div className="w-full h-96 md:h-auto">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4041.277172725385!2d-87.78129698744421!3d41.95284047111365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fcbaefc6b5d6f%3A0xb8883b1b82dc506e!2sEcclection!5e1!3m2!1ses!2sus!4v1760900284271!5m2!1ses!2sus"
             width="600"

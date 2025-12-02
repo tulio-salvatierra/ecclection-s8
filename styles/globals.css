@@ -132,6 +132,7 @@
   /* Global heading colors - apply white to all heading tags */
   h1, h2, h3, h4, h5, h6 {
     color: white;
+    font-family: var(--font-brand);
   }
   
   /* Global accent colors for buttons and interactive elements */
@@ -153,3 +154,4 @@
     color: var(--ecclection-teal-dark);
   }
 }
+

@@ -7,8 +7,13 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true,
+    formats: ['image/webp', 'image/avif'],
+    // Remove unoptimized if you want optimization enabled
   },
-}
+  compress: true,
+  experimental: {
+    optimizeCss: true,
+  },
+};
 
-export default nextConfig
+export default nextConfig;

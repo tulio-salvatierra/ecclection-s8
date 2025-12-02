@@ -3,24 +3,12 @@ import "./globals.css"; // tailwind or your global CSS
 import type { Metadata } from "next";
 import { Header } from "@/components/sections/Header";
 import { ClientEffects } from "@/components/SoundOnScroll/ClientFX";
-import { Inter, Quintessential, Raleway, Pirata_One } from "next/font/google";
+import { Raleway, Pirata_One } from "next/font/google";
 import { SOCIAL_URLS, BUSINESS_INFO } from "@/lib/constants";
 import { PreloadBackground } from "@/components/PreloadBackground";
 import Disclaimer from "@/components/sections/Disclaimer";
 
 // Configure your fonts
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const quintessential = Quintessential({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-brand",
-  display: "swap",
-});
 
 const raleway = Raleway({
   subsets: ["latin"],
@@ -193,11 +181,11 @@ export default function RootLayout({
   };
 
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${quintessential.variable} ${raleway.variable} ${pirataOne.variable}`}
-    >
-      <body>
+    <html lang="en" className={`${raleway.variable} ${pirataOne.variable}`}>
+      {/* Ensure the font file exists at the specified path */}
+      <link rel="preload" href="/fonts/your-font.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+
+      <body className="">
         <PreloadBackground />
         <script
           type="application/ld+json"

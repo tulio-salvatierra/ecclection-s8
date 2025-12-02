@@ -37,15 +37,15 @@ export function About({
           {title}
         </h2>
         {content && (
-          <p className="fade-in text-lg text-white text-left max-w-3xl mx-auto">
-            We also support our community of local artists and makers by featuring <strong>rotating displays</strong> and art events that connect creativity with customers. From handcrafted candles, jewelry, wellness items, home décor and mix media to one-of-a-kind accessories and collectibles, Ecclection continues to grow as a neighborhood hub for imagination and collaboration bringing people together through art and unique <strong>affordable finds</strong>to keep your wardrobe and home looking fresh and funky, connect with other humans or simply to have a conversation.
+          <p className="fade-in text-lg text-white text-left max-w-3xl sm:w-1/2 mx-auto">
+            Ecclection is a little WONDERLAND in Portage Park — a cozy, quirky spot where rescued treasures, vintage oddities, handmade goods & creative chaos all live happily together. We proudly showcase <strong>rotating displays</strong> from our amazing local artists & makers, giving them a space to shine, share their stories and connect with the community. From handcrafted candles, jewelry, wellness goodies, mixed‑media art, home décor and one‑of‑a‑kind accessories to collectibles you didn’t even know you needed — everything here is chosen with love, curiosity & a whole lot of personality. Ecclection continues to grow as a neighborhood hub for imagination, collaboration & human connection… a place to refresh your wardrobe or home, mingle with fellow creatives, or simply pop in for a good chat & a spark of joy.
           </p>
           
         )}
         {image && (
           <div className="mt-8 fade-up">
             <img
-              src={image.src}
+              src="./portrait.jpeg"
               alt={image.alt}
               className="fade-in mx-auto rounded-lg shadow-lg w-full max-w-md border-2 border-black"
             />
@@ -76,7 +76,7 @@ export function About({
         ))}
       </div>
 
-      <div className="mt-12 text-center zoom-out">
+      <div className="mt-12 text-center overflow-hidden">
         <Badge variant="secondary" className="w-auto text-2xl sm:text-4xl md:text-4xl lg:text-6xl px-4 py-2 bg-cyan-600 border-2 border-black shadow-[4px_4px_0_0_#000] font-brand">
           Community • Art • Creativity • Sustainability
         </Badge>

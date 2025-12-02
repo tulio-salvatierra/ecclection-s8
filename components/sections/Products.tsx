@@ -8,30 +8,30 @@ export function ProductsShowcase() {
   useFadeAnimation(ref);
   const categories = [
     {
-      title: "Featured local artist spots & Lucky Finds",
+      title: "Featured Local Artists & Lucky Little Finds",
       description:
-        "Well curated pieces and collections, most of them are with us for a long time, only a few rotate which keeps things exciting for us.",
+        "Carefully curated pieces from local creatives we adore — most stay with us for a long time, and only a handful ever rotate, keeping the treasure hunt fresh & fun.",
       image: "/products/odd.jpeg",
       video: "",
     },
     {
       title: "Graphic Tees & Mystery Wear",
       description:
-        "Iconic tees, indie prints, tiny-batch makers, and tops that make strangers go 'Where did you get that?'",
+        "Iconic tees, indie prints, tiny-batch makers & tops that make strangers stop you to ask, ‘Where did you get that?!’",
       image: "",
       video: "/products/shirts.mp4",
     },
     {
-      title: "Vintage items from the yesteryears",
+      title: "Vintage Treasures from Yesteryears",
       description:
-        "Retro dresses, denim, accessories, mixed media art, crystals, wellness items, home décor, and unexpected gems.",
+        "Retro dresses, denim, accessories, crystals, mixed-media art, wellness goodies, quirky décor & the odd little surprises you didn’t even know you needed.",
       image: "/3pics/vintage2.jpg",
       video: "",
     },
     {
       title: "Boots, Platforms & Power Shoes",
       description:
-        "Stompers, loafers, creepers, and sky-high platforms. Demonias and Doc Martens included.",
+        "Stompers, loafers, creepers & sky-high platforms — Demonias, Docs & all the power shoes you need to strut your story.",
       image: "/products/boots.jpeg",
       video: "",
     },
@@ -45,13 +45,7 @@ export function ProductsShowcase() {
             Curated Treasures & Curious Finds
           </h2>
           <p className="fade-in text-white text-lg max-w-2xl text-left mx-auto">
-            Every piece has a past — and now it’s ready for its next adventure.{" "}
-            <br />
-            Step into a closet full of character: re-loved fashion, indie
-            makers, vintage misfits, jewelry, mixed media art, crystals,
-            wellness items, home décor, and unexpected gems. Sustainable,
-            quirky, inclusive, and always one-of-a-kind — just like the people
-            who shop here.
+            Every piece has a past… and now it’s ready for its next adventure. Step into a closet full of character — re-loved fashion, rescued vintage, indie makers, funky jewelry, mixed-media art, crystals, wellness goodies & all sorts of unexpected gems. Sustainable, quirky, inclusive & always one-of-a-kind — just like the folks who shop here @ Ecclection.
           </p>
         </div>
 

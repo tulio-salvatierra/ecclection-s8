@@ -34,14 +34,10 @@ export function Intro() {
             {/* Description */}
             <div className="max-w-2xl mb-12 md:mb-16">
               <p className="text-lg md:text-2xl leading-relaxed text-primary-foreground/90">
-                A true variety store that has finds unique &fun finds for{" "}
-                all, from kids to adults - {" "}
-                <strong>EVERYONE</strong> is welcome! All budgets are
-                supported with items starting at just <strong>.95 CENTS</strong>{" "}
-                that are best & cheaper than the darn dollar store, plus no
-                tariff drama here! <br /><br /> 
-                We embrace & support self expression, human engagement, sustainability, and
-                self-expression and true wonderment!
+                A true variety store in the heart of Portage Park, stuffed with local art, rescued treasures, vintage oddities, gag gifts & graphic tees for kiddos, teens and grown-ups alike. {" "}
+                <strong>EVERYONE</strong> is welcome here & every budget is loved — with fun finds starting at just <strong>.95 CENTS</strong>{" "}
+                that are often cheaper than the darn dollar store (and with no tariff drama here!). <br /><br />
+                We’re all about self-expression, sustainability, human engagement and that feeling of true WONDERMENT — you never really know what you’ll find @ Ecclection, and that’s the fun of it!
               </p>
             </div>
 
@@ -63,7 +59,7 @@ export function Intro() {
 
             <div className="mt-20 md:mt-32 fade-in ">
               <p className="text-xl font-brand tracking-widest uppercase">
-                where community meets art
+                where community meets art, odd treasures & good weird vibes
               </p>
             </div>
           </div>

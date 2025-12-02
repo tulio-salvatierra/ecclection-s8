@@ -36,7 +36,7 @@ export const ARTISTS_DATA: ArtistCard[] = [
     id: 1,
     name: "Smelly Melly",
     specialty: "Candle & Soap Maker",
-    bio: "Melissa Berardi creates artisanal candles and soaps focused on Health/beauty\nMy soaps and candles are 100% organic and hand made. I use the best products to get the best results.",
+    bio: "Melissa Berardi creates small-batch candles and soaps focused on health, beauty and self-care. Every bar and candle is 100% handmade with thoughtfully sourced ingredients so you can feel good about what you bring into your home and put on your skin.",
     image: "/smelly.jpg",
     featured: true,
     social: {
@@ -48,7 +48,7 @@ export const ARTISTS_DATA: ArtistCard[] = [
     id: 2,
     name: "Roth n Roll Stitch",
     specialty: "Stitcher",
-    bio: "I hand stitch decorative hoops, jewelry, banners, patches, etc. Inspired by nature, spirituality and music",
+    bio: "I hand stitch decorative hoops, jewelry, banners, patches and more — pieces inspired by nature, spirituality and music, made to bring a little bit of magic to your walls, clothes and altar spaces.",
     image: "/stitch.png",
     social: {
       instagram: "rothnrollstitch",
@@ -59,7 +59,7 @@ export const ARTISTS_DATA: ArtistCard[] = [
     id: 3,
     name: "Barbara Ezell",
     specialty: "Unique Jewelry Designer",
-    bio: "Stories inspire me! I am inspired by dreams from known and unknown realms. Meet my mystic muses and other creations.",
+    bio: "Stories inspire me! I am drawn to dreams from known and unknown realms and translate them into talismans you can wear. Meet my mystic muses and other one-of-a-kind creations.",
     image:
       "https://i.etsystatic.com/13508651/r/il/60d066/6703081534/il_1588xN.6703081534_dpum.jpg",
     featured: true,
@@ -73,7 +73,7 @@ export const ARTISTS_DATA: ArtistCard[] = [
     id: 4,
     name: "Englewood Essentials",
     specialty: "Soaps & Body Care",
-    bio: "Oh Hey, My name is Kevin With my sons Thelonius and Biafra we set out to make self care products that celebrate ingredients you can feel good putting on your body. Handmade by us, in my neighborhood, Englewood on the Southside of Chicago. Black owned and operated Englewood Essentials is my way of creating a legacy with my Sons while building something together.",
+    bio: "Oh hey! My name is Kevin. With my sons Thelonius and Biafra, we set out to make self-care products that celebrate ingredients you can feel good putting on your body. Handmade by us in our neighborhood — Englewood on the South Side of Chicago — Englewood Essentials is Black owned and operated and is my way of creating a legacy with my sons while building something together.",
     image:
       "https://peanuttyxx.wordpress.com/wp-content/uploads/2024/02/374657104_17981156780452146_300428832772262792_n.jpg",
     social: {
@@ -85,7 +85,7 @@ export const ARTISTS_DATA: ArtistCard[] = [
     id: 5,
     name: "Glitz",
     specialty: "Custom Jewelry & Accessories",
-    bio: "Headed by Vera, or how I known her my whole life \"Kuma Vera\" long time artisan who cycles up vintage and discarded jewelry reimagined into new, one of a kind pieces. Each piece is handmade with love and care into a stunning new piece, with various styles and afforables prices.",
+    bio: "Headed by Vera — or as I have known her my whole life, \"Kuma Vera\" — Glitz upcycles vintage and discarded jewelry into fresh, one-of-a-kind pieces. Each piece is handmade with love and care, turning forgotten bits into stunning new treasures at truly affordable prices.",
     image: "/glitz.jpeg",
     social: {
       instagram: "glitzbyvera",
