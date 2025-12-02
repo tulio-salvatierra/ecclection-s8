@@ -3,12 +3,24 @@ import "./globals.css"; // tailwind or your global CSS
 import type { Metadata } from "next";
 import { Header } from "@/components/sections/Header";
 import { ClientEffects } from "@/components/SoundOnScroll/ClientFX";
-import { Raleway, Pirata_One } from "next/font/google";
+import { Inter, Quintessential, Raleway, Pirata_One } from "next/font/google";
 import { SOCIAL_URLS, BUSINESS_INFO } from "@/lib/constants";
 import { PreloadBackground } from "@/components/PreloadBackground";
 import Disclaimer from "@/components/sections/Disclaimer";
 
 // Configure your fonts
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const quintessential = Quintessential({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-brand",
+  display: "swap",
+});
 
 const raleway = Raleway({
   subsets: ["latin"],
@@ -16,12 +28,14 @@ const raleway = Raleway({
   display: "swap",
 });
 
+// Alternate brand font for testing/toggling
 const pirataOne = Pirata_One({
   weight: "400",
   subsets: ["latin"],
-  variable: "--font-brand-alt", // ⬅️ was --font-brand-alt
+  variable: "--font-brand-alt",
   display: "swap",
 });
+
 export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL || "https://ecclection.com"
@@ -179,11 +193,11 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${raleway.variable} ${pirataOne.variable}`}>
-      {/* Ensure the font file exists at the specified path */}
-      
-
-      <body className="">
+    <html
+      lang="en"
+      className={`${inter.variable} ${quintessential.variable} ${raleway.variable} ${pirataOne.variable}`}
+    >
+      <body>
         <PreloadBackground />
         <script
           type="application/ld+json"
