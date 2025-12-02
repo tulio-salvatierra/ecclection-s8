@@ -1,5 +1,4 @@
 import { Hero } from "@/components/sections/Hero";
-import { Artists } from "@/components/sections/Artists";
 import { StoreActivities } from "@/components/sections/Activities";
 import { About } from "@/components/sections/About";
 import { Contact } from "@/components/sections/Contact";

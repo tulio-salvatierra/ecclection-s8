@@ -34,7 +34,7 @@ export function Hero({
         {subtitle}
       </p>
 
-      <div className="scale-in relative h-[70vh] min-h-[580px] w-[95%] mx-auto rounded-[14px] overflow-hidden">
+      <div className="relative h-[70vh] min-h-[580px] w-[95%] mx-auto rounded-[14px] overflow-hidden">
         <video
           className="absolute inset-0 h-full w-full object-cover object-top"
           src="/Ecclection_hero.mp4"

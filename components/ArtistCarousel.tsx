@@ -53,16 +53,16 @@ export function ArtistCarousel({ artists }: ArtistCarouselProps) {
   }, [artists.length]);
 
   return (
-    <>
-      <div ref={ref} className="fade-in mt-16 grid grid-cols-1 items-center container section-pad">
-        {renderPunkTitle("Meet the Artists", "text-3xl md:text-4xl fade-in", "mb-6", "text-white")}
-        <p className="fade-in mt-4 text-white w-full sm:w-1/2 mx-auto text-left">
+    <section ref={ref} className="w-screen h-screen">
+      <div  className="fade-in mt-16 grid grid-cols-1 items-center container section-pad">
+        {renderPunkTitle("Meet the Artists", "text-3xl md:text-4xl", "mb-6", "text-white")}
+        <p className=" mt-4 text-white w-full sm:w-1/2 mx-auto text-left">
           Look at sample of the talented artists featured at Ecclection. We
           showcase a number of well curated pieces and collections from our local artists, most of them
           are with us for a long time, only a few rotate which keeps things
           interesting and exciting for us and our customers.
         </p>
-        <p className="fade-in text-white w-full sm:w-1/2 mt-4 mx-auto text-left">
+        <p className=" text-white w-full sm:w-1/2 mt-4 mx-auto text-left">
           Our featured artists come from diverse backgrounds and styles. If you
           are an artist interested in being featured, please reach out to us
           through our contact page. We offer affordable spaces <strong className="text-cyan-500">(starts at
@@ -74,14 +74,14 @@ export function ArtistCarousel({ artists }: ArtistCarouselProps) {
         {/* Left: Tilted Frame with Portrait */}
         <div className="relative flex items-center justify-center">
           {/* Vertical Text */}
-          <div className="fade-in absolute left-0 top-1/2 -translate-y-1/2 -rotate-90 origin-center">
+          <div className=" absolute left-0 top-1/2 -translate-y-1/2 -rotate-90 origin-center">
             <p className="font-brand text-lg tracking-wide text-white uppercase ml-4 whitespace-nowrap">
               Meet the Artists
             </p>
           </div>
 
           {/* Tilted Frame with Transition */}
-          <div className="relative w-80 max-w-sm sm:ml-12 fade-in">
+          <div className="relative w-80 max-w-sm sm:ml-12">
             <div className="relative rotate-2 bg-cyan-600 p-3 border-2 border-black shadow-[8px_8px_0_0_#000]">
               <div className="aspect-[3/4] bg-black overflow-hidden">
                 {currentArtist.image ? (
@@ -89,7 +89,7 @@ export function ArtistCarousel({ artists }: ArtistCarouselProps) {
                     key={currentIndex}
                     src={currentArtist.image}
                     alt={currentArtist.name}
-                    className="w-80 h-full object-cover animate-in fade-in duration-500"
+                    className="w-80 h-full object-cover animate-in duration-500"
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center text-6xl">
@@ -102,14 +102,14 @@ export function ArtistCarousel({ artists }: ArtistCarouselProps) {
         </div>
 
         {/* Right: Text Content with Transition */}
-        <div className="flex flex-col justify-center space-y-6 fade-in">
+        <div className="flex flex-col justify-center space-y-6">
           <p className="font-brand text-sm tracking-wide text-cyan-400 uppercase">
             Featured Artists
           </p>
 
           <div
             key={`content-${currentIndex}`}
-            className="animate-in fade-in slide-in-from-right-4 duration-500"
+            className="animate-in slide-in-from-right-4 duration-500"
           >
             <h2 className="font-brand text-4xl md:text-5xl lg:text-6xl text-cyan-500 leading-tight text-balance mb-6">
               {currentArtist.name}
@@ -174,6 +174,6 @@ export function ArtistCarousel({ artists }: ArtistCarouselProps) {
           </div>
         </div>
       </div>
-    </>
+    </section>
   );
 }

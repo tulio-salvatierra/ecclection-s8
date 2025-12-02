@@ -15,25 +15,25 @@ export function Intro() {
       {/* Background texture overlay */}
 
       {/* Main content */}
-      <div className="relative z-10 container mx-auto px-4 py-20 md:py-32">
+      <div className="relative fade-in z-10 container mx-auto px-4 py-20 md:py-32">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 max-w-7xl mx-auto">
           {/* Left side - Text content */}
           <div className="flex-1">
             {/* Eyebrow text */}
             <div className="mb-8 md:mb-12">
-              <span className="scale-in inline-block border border-primary-foreground px-4 py-2 text-base md:text-lg font-brand rounded-sm tracking-wider">
+              <span className="inline-block border border-primary-foreground px-4 py-2 text-base md:text-lg font-brand rounded-sm tracking-wider">
                 SINCE 2023
               </span>
             </div>
 
             {/* Main headline */}
-            <h2 className="fade-in text-5xl font-brand md:text-7xl lg:text-8xl font-black text-cyan-500 leading-normal mb-8 md:mb-12 text-balance">
+            <h2 className="text-5xl font-brand md:text-7xl lg:text-8xl font-black text-cyan-500 leading-normal mb-8 md:mb-12 text-balance">
               WE ARE ECCLECTION
             </h2>
 
             {/* Description */}
             <div className="max-w-2xl mb-12 md:mb-16">
-              <p className="text-lg fade-in md:text-2xl leading-relaxed text-primary-foreground/90">
+              <p className="text-lg md:text-2xl leading-relaxed text-primary-foreground/90">
                 A true variety store that has finds unique &fun finds for{" "}
                 all, from kids to adults - {" "}
                 <strong>EVERYONE</strong> is welcome! All budgets are
@@ -71,20 +71,21 @@ export function Intro() {
           <div className="flex-1">
             <div className="grid grid-cols-2 h-full">
               {/* Top left - Image placeholder */}
-              <div className="fade-in rounded-md justify-end shadow-lg relative aspect-square bg-primary-foreground/10 border-2 border-primary-foreground/20 overflow-hidden group hover:border-accent transition-colors">
+              <div className="rounded-md justify-end shadow-lg relative aspect-square bg-primary-foreground/10 border-2 border-primary-foreground/20 overflow-hidden group hover:border-accent transition-colors">
                 <video
                   className="w-full h-full object-cover group-hover:opacity-100 transition-opacity"
                   autoPlay
                   loop
                   muted
                   playsInline
+                  
                 >
                   <source src="/clothes.mp4" type="video/mp4" />
                 </video>
               </div>
 
               {/* Top right - Image placeholder */}
-              <div className="fade-in rounded-md shadow-lg relative aspect-square bg-primary-foreground/10 border-2 border-primary-foreground/20 overflow-hidden group hover:border-accent transition-colors">
+              <div className="rounded-md shadow-lg relative aspect-square bg-primary-foreground/10 border-2 border-primary-foreground/20 overflow-hidden group hover:border-accent transition-colors">
                 <img
                   src="/3pics/vintage.jpeg"
                   alt="Vintage band tees"
@@ -93,7 +94,7 @@ export function Intro() {
               </div>
 
               {/* Bottom left - Video placeholder */}
-              <div className="fade-in rounded-md shadow-lg relative aspect-square bg-primary-foreground/10 border-2 border-primary-foreground/20 overflow-hidden group hover:border-accent transition-colors">
+              <div className="rounded-md shadow-lg relative aspect-square bg-primary-foreground/10 border-2 border-primary-foreground/20 overflow-hidden group hover:border-accent transition-colors">
                 <img
                   src="/3pics/shelf.jpeg"
                   alt="Gothic accessories"
@@ -107,7 +108,7 @@ export function Intro() {
               </div>
 
               {/* Bottom right - Image placeholder */}
-              <div className="fade-in rounded-md relative shadow-lg aspect-square bg-primary-foreground/10 border-2 border-primary-foreground/20 overflow-hidden group hover:border-accent transition-colors">
+              <div className="rounded-md relative shadow-lg aspect-square bg-primary-foreground/10 border-2 border-primary-foreground/20 overflow-hidden group hover:border-accent transition-colors">
                 <video
                   className="w-full h-full object-cover group-hover:opacity-100 transition-opacity"
                   autoPlay
