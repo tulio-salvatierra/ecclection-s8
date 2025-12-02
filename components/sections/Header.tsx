@@ -105,13 +105,6 @@ export function Header() {
                 Home
               </Link>
               <Link
-                href="/artists"
-                onClick={closeMobileMenu}
-                className="mobile-nav-link font-brand"
-              >
-                Artists
-              </Link>
-              <Link
                 href="/events"
                 onClick={closeMobileMenu}
                 className="mobile-nav-link font-brand"
