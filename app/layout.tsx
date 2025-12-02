@@ -16,14 +16,12 @@ const raleway = Raleway({
   display: "swap",
 });
 
-// Alternate brand font for testing/toggling
 const pirataOne = Pirata_One({
   weight: "400",
   subsets: ["latin"],
-  variable: "--font-brand-alt",
+  variable: "--font-brand-alt", // ⬅️ was --font-brand-alt
   display: "swap",
 });
-
 export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL || "https://ecclection.com"
@@ -183,7 +181,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${raleway.variable} ${pirataOne.variable}`}>
       {/* Ensure the font file exists at the specified path */}
-      <link rel="preload" href="/fonts/your-font.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+      
 
       <body className="">
         <PreloadBackground />
