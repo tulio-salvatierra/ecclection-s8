@@ -8,44 +8,50 @@ export function ProductsShowcase() {
   useFadeAnimation(ref);
   const categories = [
     {
-      title: "Featured Local Artists & Lucky Little Finds",
+      title: "Featured local artist spots & Lucky Finds",
       description:
-        "Carefully curated pieces from local creatives we adore — most stay with us for a long time, and only a handful ever rotate, keeping the treasure hunt fresh & fun.",
+        "Well curated pieces and collections, most of them are with us for a long time, only a few rotate which keeps things exciting for us.",
       image: "/products/odd.jpeg",
       video: "",
     },
     {
       title: "Graphic Tees & Mystery Wear",
       description:
-        "Iconic tees, indie prints, tiny-batch makers & tops that make strangers stop you to ask, ‘Where did you get that?!’",
+        "Iconic tees, indie prints, tiny-batch makers, and tops that make strangers go 'Where did you get that?'",
       image: "",
       video: "/products/shirts.mp4",
     },
     {
-      title: "Vintage Treasures from Yesteryears",
+      title: "Vintage items from the yesteryears",
       description:
-        "Retro dresses, denim, accessories, crystals, mixed-media art, wellness goodies, quirky décor & the odd little surprises you didn’t even know you needed.",
+        "Retro dresses, denim, accessories, mixed media art, crystals, wellness items, home décor, and unexpected gems.",
       image: "/3pics/vintage2.jpg",
       video: "",
     },
     {
       title: "Boots, Platforms & Power Shoes",
       description:
-        "Stompers, loafers, creepers & sky-high platforms — Demonias, Docs & all the power shoes you need to strut your story.",
+        "Stompers, loafers, creepers, and sky-high platforms. Demonias and Doc Martens included.",
       image: "/products/boots.jpeg",
       video: "",
     },
   ];
 
   return (
-    <section ref={ref} className="my-32 px-4">
+    <section ref={ref} className="py-16 px-4 md:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12 text-center">
           <h2 className="fade-in font-brand text-cyan-500 text-4xl md:text-5xl mb-4">
             Curated Treasures & Curious Finds
           </h2>
           <p className="fade-in text-white text-lg max-w-2xl text-left mx-auto">
-            Every piece has a past… and now it’s ready for its next adventure. Step into a closet full of character — re-loved fashion, rescued vintage, indie makers, funky jewelry, mixed-media art, crystals, wellness goodies & all sorts of unexpected gems. Sustainable, quirky, inclusive & always one-of-a-kind — just like the folks who shop here @ Ecclection.
+            Every piece has a past — and now it’s ready for its next adventure.{" "}
+            <br />
+            Step into a closet full of character: re-loved fashion, indie
+            makers, vintage misfits, jewelry, mixed media art, crystals,
+            wellness items, home décor, and unexpected gems. Sustainable,
+            quirky, inclusive, and always one-of-a-kind — just like the people
+            who shop here.
           </p>
         </div>
 
@@ -72,11 +78,11 @@ export function ProductsShowcase() {
                   />
                 )}
               </div>
-              <div className="absolute bottom-0 left-0 right-0 p-6 bg-black bg-opacity-70">
+              <div className="absolute bottom-0 left-0 right-0 p-2 bg-black bg-opacity-70">
                 <h3 className="font-brand text-cyan-500 text-2xl font-bold mb-2">
                   {category.title}
                 </h3>
-                <p className="text-white text-lg">{category.description}</p>
+                <p className="text-white text-lg hidden sm:block">{category.description}</p>
               </div>
             </div>
           ))}
