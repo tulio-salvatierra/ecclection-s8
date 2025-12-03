@@ -146,7 +146,7 @@ function Masonry() {
           <p className="text-4xl">HUMAN</p>
           <p className="text-4xl">ART</p>
         </div>
-        <p className="font-brand text-9xl text-center text-cyan-500">Empowering human creativity, connection inclusion and sustainability</p>
+        <p className="font-brand sm:text-9xl text-6xl text-center text-cyan-500">Empowering human creativity, connection inclusion and sustainability</p>
         <p className="text-secondary text-center mt-8 max-w-3xl mx-auto">
           We also have. few more tricks under our sleeve & like to mix things up a bit.
         </p>

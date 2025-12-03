@@ -7,6 +7,7 @@ import { Inter, Quintessential, Raleway, Pirata_One } from "next/font/google";
 import { SOCIAL_URLS, BUSINESS_INFO } from "@/lib/constants";
 import { PreloadBackground } from "@/components/PreloadBackground";
 import Disclaimer from "@/components/sections/Disclaimer";
+import { Footer } from "@/components/sections/Footer";
 
 // Configure your fonts
 const inter = Inter({
@@ -218,9 +219,7 @@ export default function RootLayout({
           {children}
         </main>
 
-        <footer className="site-footer">
-          © {new Date().getFullYear()} Ecclection
-        </footer>
+        <Footer />
       </body>
     </html>
   );
