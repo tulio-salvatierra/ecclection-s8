@@ -51,7 +51,7 @@ export function Contact({
     <section ref={ref} className={`fade-in container section-pad ${className}`}>
       <div className="text-center mb-12">
         {renderPunkHeading(heading)}
-        <p className="text-lg text-white max-w-2xl mx-auto">
+        <p className="text-md text-white sm:w-1/2 mx-auto">
           Have questions, want to collaborate, or just want to say hi? We LOVE hearing from our neighbors, artists, creators & curious wanderers. Text or email us anytime — it’s our favorite way to chat!
         </p>
       </div>

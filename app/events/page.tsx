@@ -61,7 +61,7 @@ export default function EventsPage() {
         {/* Header Section */}
         <header className="container section-pad text-center">
           {renderPunkTitle("Events & Community Impact")}
-          <p className="text-lg text-white max-w-2xl mx-auto">
+          <p className="text-lg text-white sm:w-1/2 mx-auto leading-5">
             Where local art, rescued treasures, community & compassion meet
             under one funky little roof
           </p>
@@ -73,74 +73,31 @@ export default function EventsPage() {
           <div className="max-w-4xl mx-auto space-y-8">
             {/* Upcoming Event (concrete date for SEO + visitors) */}
             <div className="bg-cyan-600 border-2 border-black rounded-lg p-6 shadow-[6px_6px_0_0_#000]">
-              <div className="text-black leading-relaxed">
+              <div className="text-black leading-relaxed grid gap-4 sm:grid-cols-2 grid-cols-1">
+                <div>
                 <h2 className="font-brand text-black text-2xl md:text-3xl ">
                   Artist & Community Appreciation Night — Dates announced on
                   social media
                 </h2>
-                <p className="text-lg text-white leading-relaxed my-8">
-                  At <strong>Ecclection</strong>, we believe art has the power
-                  to connect, heal, surprise and flat-out make your day better.
-                  We’re not just a local shop in
-                  <strong> Portage Park, Chicago</strong> — we’re a funky little
-                  WONDER-HUB where creativity, compassion &amp; community swirl
-                  together in the most magical, chaotic, delightful way. Our
-                  philosophy? Easy: celebrate our people, uplift our artists,
-                  honor every weird &amp; wonderful story, and give back through
-                  events filled with laughter, connection, kindness &amp; silly
-                  little moments you’ll remember later and think, "Wow… that was
-                  actually really nice."
+                <p className="text-md text-black mx-auto leading-6 my-8 justify-center">
+                  At <strong>Ecclection</strong>, we believe art should connect
+                  you, surprise you and basically make your whole day better.
+                  We’re not just a shop in <strong>Portage Park</strong> — we’re
+                  a tiny WONDER-HUB where creativity, compassion and community
+                  swirl together in the most magical, chaotic, heart-squeezing
+                  way. Our philosophy is simple: celebrate our people, uplift
+                  our artists, honor every weird & wonderful story, and fill our
+                  events with laughter, kindness and those silly little moments
+                  that make you think, “Wow… that was actually really nice.”
                 </p>
+                </div>
                 <img
                   src="/child.jpeg"
                   alt="Artists Spot"
                   className="my-4 w-full rounded-md"
                 />
-                <p className="mb-2">
-                  <strong>Location:</strong> Ecclection — 6059 W Irving Park Rd,
-                  Chicago, IL 60634 (Portage Park)
-                </p>
-                <ul className="list-disc ml-5 space-y-1 text-lg">
-                  <li>
-                    Complimentary snacks &amp; drinks at{" "}
-                    <strong>every event night</strong> — NO EXCEPTIONS, because
-                    we absolutely love feeding our community!
-                  </li>
-                  <li>
-                    Affordable vendor spaces for local artists &amp; makers
-                  </li>
-                  <li>
-                    Inclusive, community-driven &amp; beautifully HUMAN
-                    atmosphere — <strong>in-store only</strong>
-                  </li>
-                  <li>
-                    Unique &amp; affordable finds for kids, babies, adults… and
-                    yes, even a few funky surprises for pets
-                  </li>
-                  <li>
-                    We keep it welcoming, fun, silly, heartfelt &amp; just the
-                    right amount of WEIRD — the Ecclection way!
-                  </li>
-                </ul>
-              </div>
-              <div className="mt-4 flex flex-wrap gap-3">
-                <a
-                  href="https://maps.app.goo.gl/jN7CMN5aPdA8yMBi8"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block px-4 py-2 bg-cyan-600 text-black font-brand rounded-lg border-2 border-black shadow-[3px_3px_0_0_#000] hover:translate-x-[1px] hover:translate-y-[1px] transition-all"
-                >
-                  Get Directions
-                </a>
-                <a
-                  href="mailto:EcclectionChicago@gmail.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block px-4 py-2 bg-cyan-600 text-black font-brand rounded-lg border-2 border-black shadow-[3px_3px_0_0_#000] hover:translate-x-[1px] hover:translate-y-[1px] transition-all"
-                >
-                  Vendor Space Inquiry
-                </a>
-              </div>
+                
+                </div>
               <div className="text-center"></div>
             </div>
           </div>
@@ -166,11 +123,11 @@ export default function EventsPage() {
             >
               <source src="/Artists_spot.mp4" type="video/mp4" />
             </video>
-            <div className="relative z-10 rounded-md p-6 backdrop-blur-3xl">
+            <div className="relative z-10 rounded-md sm:w-1/2 p-4 backdrop-blur-3xl">
               <h2 className="text-2xl md:text-3xl text-white font-brand">
                 Bi-Monthly Artist & Community Nights
               </h2>
-              <p className="text-white leading-relaxed sm:text-lg text-xs">
+              <p className="text-white leading-6  sm:text-sm text-xs  my-4">
                 Every event we host is crafted to spark connection, creativity
                 &amp; genuine human joy. From our{" "}
                 <strong>

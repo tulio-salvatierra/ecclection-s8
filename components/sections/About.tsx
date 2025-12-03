@@ -37,9 +37,23 @@ export function About({
           {title}
         </h2>
         {content && (
-        <p className="fade-in text-md leading-5 text-white text-left max-w-3xl sm:w-1/2 mx-auto">
-        Ecclection is a little WONDERLAND in Portage Park — a cozy, quirky spot where rescued treasures, vintage oddities, handmade goods & creative chaos all live happily together. We proudly showcase <strong>rotating displays</strong> from amazing local artists & makers, giving them space to shine and connect with the community. From candles and jewelry to wellness goodies, mixed-media art, décor and one-of-a-kind accessories — everything is chosen with love, curiosity & plenty of personality. It’s a neighborhood hub for imagination, creativity & human connection… a place to refresh your space, mingle with makers, escape the headlines of the day, or simply pop in for a good chat & a spark of joy.
-      </p>
+          <p className="fade-in text-md leading-6  text-white text-left max-w-3xl sm:w-1/2 mx-auto">
+            Ecclection is a little WONDERLAND in Portage Park — a cozy, quirky
+            spot where rescued treasures, vintage oddities, handmade goods &
+            creative chaos all live happily together.
+            <br />
+            <br />
+            We proudly showcase <strong>rotating displays</strong> from amazing
+            local artists & makers, giving them space to shine and connect with
+            the community. From candles and jewelry to wellness goodies,
+            mixed-media art, décor and one-of-a-kind accessories — everything is
+            chosen with love, curiosity & plenty of personality. <br />
+            <br />
+            It’s a neighborhood hub for imagination, creativity & human
+            connection… a place to refresh your space, mingle with makers,
+            escape the headlines of the day, or simply pop in for a good chat &
+            a spark of joy.
+          </p>
         )}
         {image && (
           <div className="mt-8 fade-up">

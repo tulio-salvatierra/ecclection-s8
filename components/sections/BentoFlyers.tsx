@@ -8,7 +8,7 @@ export function FlyersBento() {
         {renderPunkTitle("Food, Housing, Mental & Legal Support", "text-4xl sm:text-5xl lg:text-6xl mb-8 text-center text-white")}
         
           
-        <p className="text-left text-white mb-12 max-w-2xl mx-auto text-balance leading-relaxed text-lg">
+        <p className="text-left text-white mb-12 sm:w-1/2 mx-auto leading-6 text-md">
           Below are flyers that provide important information on immigration,
           food, and housing. Feel free to download, print, and share them within
           your community to help spread awareness and support those in need.

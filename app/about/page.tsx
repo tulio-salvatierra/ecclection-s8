@@ -32,7 +32,7 @@ export default function AboutPage() {
       {/* Header Section */}
       <header className="container section-pad text-center">
         {renderPunkTitle("About Ecclection")}
-        <p className="text-lg text-white max-w-2xl mx-auto">
+        <p className="text-md text-left text-white sm:w-1/2 mx-auto leading-5">
           Where rescued treasures, local art, community & compassion all collide
           in the best possible way
         </p>
@@ -64,9 +64,6 @@ export default function AboutPage() {
               and a little bit silly — not just a place to fill a need, but a
               place to have fun, find crazy & silly stuff and wander through a
               whimsical mix of oddities. <br />
-              <br />
-              So come by, don&apos;t be shy, and explore the eclectic mix that
-              makes Ecclection truly <strong>one-of-a-kind!</strong>
             </p>
             <p className="text-white leading-relaxed ">
               Step inside and you&apos;ll discover an ever-changing collection
@@ -75,6 +72,9 @@ export default function AboutPage() {
               art and jewelry to home décor, crystals and wellness goodies.
               Every corner of our shop tells a story, and every piece has been
               chosen to inspire, delight or at least make you smile.
+              <br />
+              <br /> So come by! don&apos;t be shy, and explore the eclectic mix
+              that makes Ecclection truly <strong>one-of-a-kind!</strong>
             </p>
           </div>
         </div>
@@ -126,33 +126,28 @@ export default function AboutPage() {
           <div className="md:col-span-6 space-y-6 text-md">
             {renderPunkHeading("Our Philosophy", "text-xl")}
             <p className="text-white leading-relaxed text-md">
-              At Ecclection, we believe in keeping the shopping experience
-              personal and meaningful. We&apos;re proudly brick-and-mortar only
-              — no online carts, no algorithms — just real people, real
-              conversation and the joy of discovery. Whether you&apos;re a
-              Chicago local or visiting the Portage Park area, you&apos;ll find
-              something unexpected every time you stop by.
+              At Ecclection, we keep shopping personal, playful and real. No
+              online carts, no algorithms—just humans, conversation and the joy
+              of stumbling onto something you didn’t expect. Whether you’re a
+              Chicago local or just wandering through Portage Park, there’s
+              always something new (and a little weird) waiting for you.
             </p>
 
             <p className="text-white leading-relaxed text-md">
-              We also stay engaged with our community by hosting kids craft
-              events throughout the year and working with local schools for
-              fundraisers. Our &quot;Find Waldo&quot; discounts{" "}
-              <strong>(he&apos;s hidden there somewhere)</strong>, occasional
-              Sip &amp; Shop events, plus-size pop-up weekends (3rd week of
-              every month), fun Easter egg hunts and holiday goodie bags for all
-              the kiddos keep things playful and fun. We have SOOOOOoo many{" "}
-              <strong>GREAT</strong> things at Ecclection that we&apos;re
-              sometimes GIVING THEM AWAY FOR FREE! That&apos;s right, FREE! Each
-              purchase earns a free gift from our &quot;GOODIE BASKET&quot; 🧺
-              and a spin on our famous &quot;Wheel of GOOD FORTUNE&quot; with
-              any purchase over $25 🏆
+              We stay busy with community fun—kids crafts, school fundraisers,
+              our sneaky “Find Waldo” discounts{" "}
+              <strong>(he’s hiding… somewhere)</strong>, Sip &amp; Shops,
+              plus-size pop-ups, Easter egg hunts and holiday goodie bags. And
+              yes… sometimes we’re basically giving things away. Every purchase
+              gets a free surprise from our <strong>GOODIE BASKET</strong> 🧺,
+              and anything over $25 earns a spin on the legendary{" "}
+              <strong>Wheel of GOOD FORTUNE</strong> 🏆.
             </p>
+
             <p className="text-white p-8 text-xl tracking-wide bold leading-10">
-              So whether you’re hunting for something special, something weird,
-              or something you didn’t even know you needed, come stop by and dig
-              around. Who knows what treasure is waiting for you — that’s the
-              magic of Ecclection!
+              Hunting for something special? Something strange? Something your
+              soul suddenly decides it MUST have? Come dig around—your next
+              treasure is already waiting for you.
             </p>
           </div>
 
@@ -215,35 +210,62 @@ export default function AboutPage() {
           </div>
         </section>
         {/* Big Elves Section */}
+        {renderPunkHeading(
+          "Beyond Ecclection...",
+          "text-2xl md:text-3xl text-center mb-6"
+        )}
 
         {/* Call to Action */}
         <div className="text-left mt-12 p-8 bg-card/30 backdrop-blur-sm rounded-lg border-2 border-cyan-600">
           <h2 className="mb-8 text-2xl md:text-3xl font-brand text-center mt-12">
-            Big Elves — Spreading Joy Through Giving
+            Big Elves — A Passion Project with a BIG Heart
           </h2>
           <img
             className="rounded-lg shadow-2xlw-full h-auto mx-auto mb-6"
             src="/bigelves.jpeg"
-            alt="Volunteer handing out gifts to children at a charity event organized by Big Elves"
+            alt="Julie and Elise dressed as elves bringing gifts and goodies"
           />
           <h3 className="text-xl font-bold font-brand  mb-3 text-center">
             Our Mission
           </h3>
-          <p className="text-white leading-relaxed">
-            <strong>Big Elves</strong> is a volunteer‑driven charity initiative
-            founded by two longtime friends with big hearts,{" "}
-            <strong>Julie &amp; Elise.</strong>
+          <p className="text-white sm:w-1/2 mx-auto leading-5">
+            <strong>Big Elves</strong> is our passion project created by Julie
+            &amp; Elise, two longtime friends with a BIG heart.{" "}
+            <strong>.</strong>
             <br />
-            <br /> Big Elves collects donations — mostly during the holidays —
-            to bring comfort and hope to those who need it most, including
-            low-income adults, low-income facilities, nursing homes,
-            children&apos;s hospitals and foster care centers across Chicago. We
-            prioritize non‑monetary donations and maintain wishlists so we can
-            deliver specific supplies directly to people in need.
+            <br />
+            We bring hope and a little bit of magic to low-income adults in
+            mental health facilities and nursing homes across Chicago.
+            Throughout the year we collect everyday essentials that make a real
+            difference—things like toiletries, socks, puzzles, games and
+            cleaning supplies. During the holidays, we also create special
+            wishlists to help brighten their days even more.
+            <br />
+            <br />
+            When we visit, we don&apos;t just drop off bags—we SHOW UP as two
+            6-foot elves with cake, goodies, tasty treats and a whole spread of
+            greeting cards so everyone can pick the one that feels right for
+            them.
           </p>
-          <p className="text-xl text-center text-white font-brand leading-relaxed my-4">
-            Learn more about Big Elves and how you can get involved by visiting
-            our official Facebook page:
+          <h3 className="text-xl mt-4 font-bold font-brand text-white mb-3 text-center">
+            How You Can Help
+          </h3>
+          <p className="text-white sm:w-1/2 mx-auto leading-5">
+            You can support Big Elves by donating new or gently used items,
+            helping fulfill holiday wishlists or simply spreading the word.
+            Every contribution—big or small—helps us bring comfort, dignity and
+            a little joy to someone who really needs it.
+          </p>
+
+          <p className="text-white my-6 sm:w-1/2 mx-auto leading-5 text-left">
+            <strong>
+              Together, we can help the folks who need it most feel seen, loved
+              &amp; remembered.
+            </strong>
+          </p>
+
+          <p className="text-xl text-center mx-auto text-white font-brand leading-relaxed my-4">
+            Want to see more of the magic? Visit us on Facebook:
           </p>
           <div className="text-center">
             <a
@@ -253,43 +275,6 @@ export default function AboutPage() {
               className="text-center inline-block mx-auto mt-8 px-8 py-4 bg-cyan-600 text-black font-brand text-lg rounded-lg border-2 border-black shadow-[4px_4px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
             >
               Visit Big Elves on Facebook
-            </a>
-          </div>
-          <p className="text-white my-6 leading-relaxed text-left">
-            Follow <strong>Ecclection</strong> on social media for upcoming
-            charity events, art collaborations, kids workshops and community
-            initiatives that bring people together through creativity and
-            compassion.{" "}
-            <strong>
-              Together, we can make a difference by helping those who need it
-              most.
-            </strong>
-          </p>{" "}
-          <h3 className="text-xl font-bold font-brand text-white mb-3 text-center">
-            Community Impact
-          </h3>
-          <p className="text-white leading-relaxed">
-            What makes Big Elves truly special is the way it unites people
-            through kindness. Whether it&apos;s a customer dropping off a
-            donation, an artist contributing a handmade piece or a volunteer
-            organizing a drive, every act of generosity ripples outward.
-          </p>
-          <h3 className="text-xl mt-4 font-bold font-brand text-white mb-3 text-center">
-            How You Can Help?
-          </h3>
-          <p className="text-white leading-relaxed">
-            You can support Big Elves by donating new or gently used items,
-            volunteering your time or spreading the word about our mission.
-            Every contribution, big or small, makes a difference in the lives of
-            those we serve. Together, we can create a community where everyone
-            feels valued and cared for.
-          </p>
-          <div className="grid items-center text-center">
-            <a
-              href="mailto:BigElvesChicago@gmail.com"
-              className="mx-auto self-centerinline-block mt-8 px-8 py-4 bg-cyan-600 text-black font-brand text-lg rounded-lg border-2 border-black shadow-[4px_4px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
-            >
-              Send Us An Email!
             </a>
           </div>
         </div>

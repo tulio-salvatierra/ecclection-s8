@@ -30,7 +30,7 @@ export function Hero({
         "text-cyan-400"
       )}
 
-      <p className="fade-in sm:w-3/4 mt-8 mb-4 text-left mx-auto font-brand text-xl md:text-2xl text-white p-2">
+      <p className="fade-in sm:w-1/2 mt-8 mb-4 text-left mx-auto font-brand text-xl md:text-2xl text-white p-2">
         {subtitle}
       </p>
 

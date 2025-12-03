@@ -27,11 +27,11 @@ export function useFadeAnimation(ref: React.RefObject<HTMLElement>) {
           opacity: 1,
           y: 0,
           duration: 2,
-          stagger: 0.8,
+          stagger: 0.6,
           ease: "slow(0.7,0.7,false)",
           scrollTrigger: {
             trigger: element,
-            start: "top 80%",
+            start: "top 85%",
             toggleActions: "play none none none",
           },
         }

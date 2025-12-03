@@ -26,17 +26,17 @@ export function Footer() {
             <h3 className="mb-4 text-lg font-semibold font-brand">
               Navigation
             </h3>
-            <nav className="flex flex-col gap-2">
-              <Link href="/" className="hover:underline">
+            <nav className="flex flex-col gap-2 text-white">
+              <Link href="/" className="hover:no-underline hover:text-white">
                 Home
               </Link>
-              <Link href="/events" className="hover:underline">
+              <Link href="/events" className="hover:no-underline hover:text-white">
                 Events
               </Link>
-              <Link href="/about" className="hover:underline">
+              <Link href="/about" className="hover:no-underline hover:text-white">
                 About
               </Link>
-              <Link href="/resources" className="hover:underline">
+              <Link href="/resources" className="hover:no-underline hover:text-white  ">
                 Resources
               </Link>
             </nav>
@@ -80,7 +80,7 @@ export function Footer() {
           <div>
             <h3 className="mb-4 text-lg font-semibold font-brand">Address</h3>
             <a href={SOCIAL_URLS.googleMaps}>
-              <address className="not-italic leading-relaxed">
+              <address className="not-italic leading-relaxed hover:text-white">
                 {BUSINESS_INFO.address.street}
                 <br />
                 {BUSINESS_INFO.address.city}, {BUSINESS_INFO.address.state}{" "}
@@ -102,7 +102,7 @@ export function Footer() {
           </div>
         </div>
         <div className="">
-          <img src="/footer-logo.jpg" alt="Ecclection Logo" className="h-[300px] w-[300px] mx-auto" />
+          <img src="/footer-logo.jpg" alt="Ecclection Logo" className="h-[300px] w-[300px] m-8 mx-auto " />
         </div>
 
         {/* Copyright */}

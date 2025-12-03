@@ -24,7 +24,7 @@ export function ProductsShowcase() {
     {
       title: "Vintage items from the yesteryears",
       description:
-        "Retro dresses, denim, accessories, mixed media art, crystals, wellness items, home décor, and unexpected gems.",
+        "Retro dresses, purses, accessories, mixed media art, crystals, wellness items, home décor, and unexpected gems.",
       image: "/3pics/vintage2.jpg",
       video: "",
     },
@@ -44,9 +44,9 @@ export function ProductsShowcase() {
           <h2 className="fade-in font-brand text-cyan-500 text-4xl md:text-5xl mb-4">
             Curated Treasures & Curious Finds
           </h2>
-          <p className="fade-in text-white text-lg max-w-2xl text-left mx-auto">
+          <p className="fade-in text-white text-md sm:max-w-1/2 text-left mx-auto">
             Every piece has a past — and now it’s ready for its next adventure.{" "}
-            <br />
+            <br /><br />
             Step into a closet full of character: re-loved fashion, indie
             makers, vintage misfits, jewelry, mixed media art, crystals,
             wellness items, home décor, and unexpected gems. Sustainable,
@@ -59,7 +59,7 @@ export function ProductsShowcase() {
           {categories.map((category, index) => (
             <div
               key={index}
-              className="fade-in group relative overflow-hidden border-2 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
+              className="group relative fade-in overflow-hidden border-2 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
             >
               <div className="aspect-[4/3] relative rounded-sm overflow-hidden">
                 {category.video ? (

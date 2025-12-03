@@ -158,13 +158,13 @@ export default function CommunityResourcesPage() {
       {/* Header Section */}
       <section className="container section-pad text-left">
         {renderPunkTitle("Community Resources", "text-4xl md:text-5xl")}
-        <p className="text-lg text-white max-w-3xl mx-auto leading-relaxed">
+        <p className="text-lg text-white sm:w-1/2 mx-auto leading-5">
           We believe in supporting our community. Below you'll find a curated
           list of trusted organizations and resources dedicated to helping
           individuals and families navigate challenging times.
         </p>
         <br />
-        <p className="text-lg text-left text-white max-w-3xl mx-auto leading-relaxed">
+        <p className="text-lg text-left text-white sm:w-1/2 mx-auto leading-5">
           We are giving away whistles for free!, just stop by and pick one up!
           While supplies last.
         </p>
@@ -181,7 +181,7 @@ export default function CommunityResourcesPage() {
           "Local Support Organizations",
           "text-2xl md:text-3xl"
         )}
-        <p className="text-lg text-white max-w-3xl mx-auto text-left leading-relaxed mb-8">
+        <p className="text-lg text-white sm:w-1/2 mx-auto leading-5 text-left mb-8">
           In addition to national resources, here are some local organizations
           in Portage Park that provide essential services to our community.
         </p>
@@ -221,7 +221,7 @@ export default function CommunityResourcesPage() {
       <section>
         <div className="container section-pad text-center">
           {renderPunkHeading("Helpful Resources", "text-2xl md:text-3xl")}
-          <p className="text-lg text-white max-w-3xl mx-auto text-left leading-relaxed mb-8">
+          <p className="text-lg text-white sm:w-1/2 mx-auto text-left leading-5 mb-8">
             Explore the following organizations that provide vital services in
             mental health, food security, housing, and crisis support organized
             by neighborhood.
@@ -275,7 +275,7 @@ export default function CommunityResourcesPage() {
       <section className="container section-pad text-center">
         <div className="max-w-4xl mx-auto">
           {renderPunkHeading("Need Immediate Help?", "text-2xl md:text-3xl")}
-          <p className="text-lg text-white mb-8 leading-relaxed">
+          <p className="text-lg text-white mb-8 sm:w-1/2 mx-auto leading-5">
             If you or someone you know is in crisis, please reach out for help
             immediately. You are not alone.
           </p>

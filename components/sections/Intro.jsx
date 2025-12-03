@@ -35,8 +35,8 @@ export function Intro() {
             </h2>
 
             {/* Description */}
-            <div className="max-w-2xl mb-12 md:mb-16">
-              <p className="text-md leading-5 tracking-normal text-primary-foreground/90">
+            <div className="sm:max-w-2xl mb-12 md:mb-16">
+              <p className="text-md leading-6 text-primary-foreground/90">
                 A true variety store in the heart of Portage Park, filled with
                 local art, rescued treasures, vintage oddities, gag gifts &
                 graphic tees for all ages.

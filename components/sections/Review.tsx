@@ -95,13 +95,13 @@ export function Review() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {googleReviews.map((review, index) => (
-              <div key={index} className="border-2 border-black rounded-md p-6 hover:border-accent transition-colors backdrop-blur-3xl">
+              <div key={index} className="fade-in border-2 border-black rounded-md p-6 hover:border-accent transition-colors backdrop-blur-3xl">
                 <div className="flex items-center gap-1 mb-3">
                   {[...Array(review.rating)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 fill-accent text-accent" />
                   ))}
                 </div>
-                <p className="fade-in text-white text-lg leading-relaxed mb-4">{review.text}</p>
+                <p className="text-white text-lg leading-relaxed mb-4">{review.text}</p>
                 <div className="flex items-center justify-between text-xs text-white">
                   <span className="font-bold">{review.author}</span>
                   <span>{review.date}</span>

@@ -16,7 +16,7 @@ export default function PantriesSection({
 
   return (
     <section className="container m--10">
-      <div className="grid grid-cols-1 w-1/2 mx-auto gap-6">
+      <div className="grid grid-cols-1 sm:w-1/2 mx-auto gap-6">
         {Object.entries(byNeighborhood).map(([neighborhood, pantries]) => (
           <div key={neighborhood}>
             <h3 className="text-2xl font-brand text-white mb-4">
@@ -27,42 +27,43 @@ export default function PantriesSection({
               {pantries.map((p, idx) => (
                 <li
                   key={neighborhood + idx}
-                  className="p-6 rounded-lg bg-cyan-500 border-2 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all group"
+                  className="p-6 rounded-lg text-left bg-cyan-500 border-2 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all group"
                 >
-                  <p className="font-brand text-lg">{p.organization}</p>
+                  <p className="font-brand text-black text-lg">{p.organization}</p>
 
                   {p.address && (
-                    <p className="sm:text-lg text-xs text-gray-700">📍 {p.address}</p>
+                    <p className="sm:text-lg text-xs text-gray-700">
+                      📍 {p.address}
+                    </p>
                   )}
 
                   {p.hours && (
-                    <p className="sm:text-lg text-xs text-gray-700">⏰ Hours: {p.hours}</p>
+                    <p className="sm:text-lg text-xs text-gray-700">
+                      ⏰ Hours: {p.hours}
+                    </p>
                   )}
 
                   {p.type && (
-                    <p className="sm:text-lg text-xs text-gray-700">🏷️ Type: {p.type}</p>
+                    <p className="sm:text-lg text-xs text-gray-700">
+                      🏷️ Type: {p.type}
+                    </p>
                   )}
 
                   {p.website && (
-                    <p className="sm:text-lg text-xs text-blue-600 underline">
+                    <p className="sm:text-lg text-xs text-blue-600 underline mx-auto">
                       <button
-                        onClick={() => window.open(p.website, '_blank')}
-                        className="inline-block my-4 px-4 py-2 bg-cyan-600 text-black font-brand text-lg rounded-lg border-2 border-black shadow-[4px_4px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
-
+                        onClick={() => window.open(p.website, "_blank")}
+                        className="mx-auto inline-block my-4 px-4 py-2 bg-cyan-500 text-black font-brand text-lg rounded-lg border-2 border-black shadow-[4px_4px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
                       >
                         Visit website
                       </button>
                     </p>
                   )}
 
-                  {p.volunteer && (
-                    <p className="sm:text-lg text-xs text-gray-700">
-                      🤝 Volunteer: {p.volunteer}
-                    </p>
-                  )}
-
                   {p.notes && (
-                    <p className="sm:text-lg text-xs text-gray-700">📝 {p.notes}</p>
+                    <p className="sm:text-lg text-xs text-gray-700">
+                      📝 {p.notes}
+                    </p>
                   )}
                 </li>
               ))}

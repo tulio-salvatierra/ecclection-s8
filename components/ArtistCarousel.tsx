@@ -21,8 +21,8 @@ interface ArtistCarouselProps {
 
 export function ArtistCarousel({ artists }: ArtistCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
-    const ref = React.useRef(null);
-    useFadeAnimation(ref);
+  const ref = React.useRef(null);
+  useFadeAnimation(ref);
 
   const nextArtist = () => {
     setCurrentIndex((prev) => (prev + 1) % artists.length);
@@ -48,16 +48,31 @@ export function ArtistCarousel({ artists }: ArtistCarouselProps) {
     const interval = setInterval(() => {
       nextArtist();
     }, 3000); // Auto-advance every 8 seconds
-    
+
     return () => clearInterval(interval);
   }, [artists.length]);
 
   return (
     <section ref={ref} className="w-screen h-auto">
-      <div  className="fade-in mt-16 grid grid-cols-1 items-center container section-pad">
-        {renderPunkTitle("Meet the Artists", "text-3xl md:text-4xl", "mb-6", "text-white")}
-        <p className="mt-4 text-white w-full sm:w-1/2 mx-auto text-left">
-          Here’s just a little peek at some of the talented makers & artists featured at Ecclection. We showcase carefully curated pieces and collections from local creatives we truly believe in — most of them stay with us for a long time, and only a handful ever rotate, which keeps things interesting for us AND for you. Our featured artists come from all kinds of backgrounds, styles & stories — painters, jewelry makers, photographers, sewists, sculptors & more. If you’re an artist who wants to be part of this little WONDERLAND, reach out through our contact page. We offer affordable spaces <strong className="text-cyan-500">(starting at just $20/month)</strong> so you can showcase your work in the shop, be seen by our community & keep creating.
+      <div className="fade-in mt-16 grid grid-cols-1 items-center container section-pad">
+        {renderPunkTitle(
+          "Meet the Artists",
+          "text-3xl md:text-4xl",
+          "mb-6",
+          "text-white"
+        )}
+        <p className="mt-4 text-white w-full sm:w-1/2 mx-auto text-left leading-6">
+          Here’s a little peek at the wonderfully weird, wildly talented humans
+          who make Ecclection what it is. Our artists don’t “rotate” like a
+          gallery — most stay with us for a long while, which keeps things
+          honest, cozy and community-focused. Painters, sewists, jewelry makers,
+          photographers, sculptors… all kinds of magic lives here. If you’re an
+          artist and want to join this tiny WONDERLAND, reach out through our
+          contact page — we offer affordable spaces{" "}
+          <strong className="text-cyan-500">
+            (starting at just $20/month)
+          </strong>{" "}
+          so you can share your work, be seen and stay inspired.
         </p>
       </div>
       <div className="relative grid md:grid-cols-2 sm:gap-12 gap-4 container section-pad min-h-auto items-center">
@@ -73,7 +88,9 @@ export function ArtistCarousel({ artists }: ArtistCarouselProps) {
           {/* Tilted Frame with Transition */}
           <div className="relative w-80 max-w-sm sm:ml-12">
             <div className="relative rotate-2 bg-cyan-600 w-[310px] h-[310px] p-2border-2 border-black shadow-[8px_8px_0_0_#000]">
-              <div className="grid items-center mt-auto mb-auto overflow-hidden w-[289px] h-[289px]"> {/* Enforce fixed width and height */}
+              <div className="grid items-center mt-auto mb-auto overflow-hidden w-[289px] h-[289px]">
+                {" "}
+                {/* Enforce fixed width and height */}
                 {currentArtist.image ? (
                   <img
                     key={currentIndex}
@@ -105,10 +122,10 @@ export function ArtistCarousel({ artists }: ArtistCarouselProps) {
               {currentArtist.name}
             </h2>
 
-            <p className="text-base text-white leading-relaxed max-w-lg mb-8 line-clamp-3">
+            <p className="text-base text-white leading-5 max-w-lg mb-8 line-clamp-3">
               {currentArtist.bio}
             </p>
-            <p className="text-base text-white leading-relaxed max-w-lg mb-8">
+            <p className="text-base text-white leading-5s\ max-w-lg mb-8">
               {currentArtist.specialty && (
                 <strong className="text-cyan-500">
                   Specialty: {currentArtist.specialty}
@@ -116,16 +133,17 @@ export function ArtistCarousel({ artists }: ArtistCarouselProps) {
               )}
             </p>
             {currentArtist.social?.instagram && (
-            <button
-              onClick={() => {
-                window.location.href = "https://www.instagram.com/" + (currentArtist.social?.instagram || "");
-              }}
-              className="inline-block rounded-md bg-cyan-600 text-black font-bold px-6 py-3 border-2 border-black shadow-[4px_4px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
-            >
-              Instagram
-            </button>
+              <button
+                onClick={() => {
+                  window.location.href =
+                    "https://www.instagram.com/" +
+                    (currentArtist.social?.instagram || "");
+                }}
+                className="inline-block rounded-md bg-cyan-600 text-black font-bold px-6 py-3 border-2 border-black shadow-[4px_4px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
+              >
+                Instagram
+              </button>
             )}
-
           </div>
 
           <div className="flex items-center gap-6">

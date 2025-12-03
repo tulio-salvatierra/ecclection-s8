@@ -11,6 +11,7 @@ import { ARTISTS_DATA } from "@/components/sections/Artists";
 import { ArtistCarousel } from "@/components/ArtistCarousel";
 import { ProductsShowcase } from "@/components/sections/Products";
 import type { Metadata } from "next";
+import DisclaimerSection from "@/components/sections/Disclaimer";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -54,6 +55,7 @@ export default async function HomePage() {
       <Hero title="Welcome to Ecclection" subtitle="A true variety store in Portage Park – packed with local art, rescued treasures, gag gifts, funky tees & SO much more… where EVERYONE is welcome & all budgets are loved." backgroundImage="default-hero.jpg" />
       <Intro />
       <ArtistCarousel artists={artistsForCarousel} />
+      <DisclaimerSection />
       <StoreActivities />
       <ProductsShowcase />
       <About title="About Us" content="bio text will go here" />
