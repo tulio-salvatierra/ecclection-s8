@@ -88,8 +88,8 @@ export const ARTISTS_DATA: ArtistCard[] = [
     bio: "Headed by Vera — or as I have known her my whole life, \"Kuma Vera\" — Glitz upcycles vintage and discarded jewelry into fresh, one-of-a-kind pieces. Each piece is handmade with love and care, turning forgotten bits into stunning new treasures at truly affordable prices.",
     image: "/glitz.jpeg",
     social: {
-      instagram: "glitzbyvera",
-      website: "www.glitzbyvera.com",
+      instagram: "",
+      website: "",
     },
   }
 ];

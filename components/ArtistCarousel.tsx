@@ -60,7 +60,7 @@ export function ArtistCarousel({ artists }: ArtistCarouselProps) {
           Here’s just a little peek at some of the talented makers & artists featured at Ecclection. We showcase carefully curated pieces and collections from local creatives we truly believe in — most of them stay with us for a long time, and only a handful ever rotate, which keeps things interesting for us AND for you. Our featured artists come from all kinds of backgrounds, styles & stories — painters, jewelry makers, photographers, sewists, sculptors & more. If you’re an artist who wants to be part of this little WONDERLAND, reach out through our contact page. We offer affordable spaces <strong className="text-cyan-500">(starting at just $20/month)</strong> so you can showcase your work in the shop, be seen by our community & keep creating.
         </p>
       </div>
-      <div className="relative grid md:grid-cols-2 gap-12 container section-pad min-h-auto items-center">
+      <div className="relative grid md:grid-cols-2 sm:gap-12 gap-4 container section-pad min-h-auto items-center">
         {/* Left: Tilted Frame with Portrait */}
         <div className="relative flex items-center justify-center">
           {/* Vertical Text */}
@@ -92,7 +92,7 @@ export function ArtistCarousel({ artists }: ArtistCarouselProps) {
         </div>
 
         {/* Right: Text Content with Transition */}
-        <div className="flex flex-col justify-center space-y-6">
+        <div className="flex flex-col justify-center space-y-6 h-[600px]">
           <p className="font-brand text-sm tracking-wide text-cyan-400 uppercase">
             Featured Artists
           </p>
@@ -115,6 +115,7 @@ export function ArtistCarousel({ artists }: ArtistCarouselProps) {
                 </strong>
               )}
             </p>
+            {currentArtist.social?.instagram && (
             <button
               onClick={() => {
                 window.location.href = "https://www.instagram.com/" + (currentArtist.social?.instagram || "");
@@ -123,6 +124,7 @@ export function ArtistCarousel({ artists }: ArtistCarouselProps) {
             >
               Instagram
             </button>
+            )}
 
           </div>
 
