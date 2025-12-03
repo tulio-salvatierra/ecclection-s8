@@ -164,9 +164,8 @@ export default function CommunityResourcesPage() {
           individuals and families navigate challenging times.
         </p>
         <br />
-        <p className="text-lg text-center text-white max-w-3xl mx-auto leading-relaxed">
-          We are giving away whistles for free! <br />
-          Just stop by and pick one up! <br />
+        <p className="text-lg text-left text-white max-w-3xl mx-auto leading-relaxed">
+          We are giving away whistles for free!, just stop by and pick one up!
           While supplies last.
         </p>
       </section>
@@ -198,7 +197,7 @@ export default function CommunityResourcesPage() {
                 </span>
                 <ExternalLink className="w-4 h-4 text-black opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
-              
+
               <h2 className="text-xl font-semibold text-black font-brand mb-4">
                 {org.title}
               </h2>

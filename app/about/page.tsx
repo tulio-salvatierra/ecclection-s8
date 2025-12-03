@@ -80,7 +80,10 @@ export default function AboutPage() {
         </div>
       </section>
       <section className="container section-pad mx-auto">
-        {renderPunkHeading("What I do", "text-2xl md:text-3xl text-center mb-6")}
+        {renderPunkHeading(
+          "What I do",
+          "text-2xl md:text-3xl text-center mb-6"
+        )}
         <p className="text-white text-md sm:w-1/2 mx-auto">
           I’m Julie — an honest, compassionate, resourceful human who’s also a
           wife, mom, animal lover, nature admirer, traveler and, yes, a{" "}
@@ -145,6 +148,12 @@ export default function AboutPage() {
               and a spin on our famous &quot;Wheel of GOOD FORTUNE&quot; with
               any purchase over $25 🏆
             </p>
+            <p className="text-white p-8 text-xl tracking-wide bold leading-10">
+              So whether you’re hunting for something special, something weird,
+              or something you didn’t even know you needed, come stop by and dig
+              around. Who knows what treasure is waiting for you — that’s the
+              magic of Ecclection!
+            </p>
           </div>
 
           {/* Right: Hand Image */}
@@ -158,6 +167,53 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
+
+        <section className="container section-pad h-auto">
+          <div className="text-center mb-12">
+            {renderPunkTitle("What We Offer", "text-3xl md:text-4xl")}
+          </div>
+          <div className="grid grid-cols-1 sm:h-100 h-auto md:grid-cols-3 gap-6">
+            <div className="text-center p-6 rounded-lg bg-card/100 relative overflow-hidden flex flex-col justify-end">
+              <div
+                className="absolute inset-0 bg-cover bg-center "
+                style={{ backgroundImage: "url(/3pics/vintage.jpeg)" }}
+              />
+              <div className="relative z-10 ">
+                {renderPunkHeading("Vintage Treasures", "text-lg")}
+                <p className="text-white bg-black/50 p-3 rounded">
+                  Curated collection of vintage finds, recycled and up-cycled
+                  pieces that tell unique stories.
+                </p>
+              </div>
+            </div>
+            <div className="text-center p-6 rounded-lg bg-card/100 relative overflow-hidden flex flex-col justify-end">
+              <div
+                className="absolute inset-0 bg-cover bg-top"
+                style={{ backgroundImage: "url(/3pics/DSC02214.jpeg.jpg)" }}
+              />
+              <div className="relative z-10">
+                {renderPunkHeading("Local Art", "text-lg")}
+                <p className="text-white bg-black/50 p-3 rounded">
+                  Handmade art, jewelry, home décor, crystals, and wellness
+                  items from local makers.
+                </p>
+              </div>
+            </div>
+            <div className="text-center p-6 rounded-lg bg-card/100 relative overflow-hidden flex flex-col justify-end">
+              <div
+                className="absolute inset-0 bg-cover bg-top"
+                style={{ backgroundImage: "url(/3pics/DSC02204.jpeg.jpg)" }}
+              />
+              <div className="relative z-10">
+                {renderPunkHeading("Visit Us", "text-lg")}
+                <p className="text-white bg-black/50 p-3 rounded">
+                  Located at 6059 W. Irving Park Road, Chicago, IL 60634 — on
+                  the west end of Portage Park.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
         {/* Big Elves Section */}
 
         {/* Call to Action */}
@@ -240,52 +296,6 @@ export default function AboutPage() {
       </section>
 
       {/* Features Section */}
-      <section className="container section-pad h-auto">
-        <div className="text-center mb-12">
-          {renderPunkTitle("What We Offer", "text-3xl md:text-4xl")}
-        </div>
-        <div className="grid grid-cols-1 sm:h-100 h-auto md:grid-cols-3 gap-6">
-          <div className="text-center p-6 rounded-lg bg-card/100 relative overflow-hidden flex flex-col justify-end">
-            <div
-              className="absolute inset-0 bg-cover bg-center "
-              style={{ backgroundImage: "url(/3pics/vintage.jpeg)" }}
-            />
-            <div className="relative z-10 ">
-              {renderPunkHeading("Vintage Treasures", "text-lg")}
-              <p className="text-white bg-black/50 p-3 rounded">
-                Curated collection of vintage finds, recycled and up-cycled
-                pieces that tell unique stories.
-              </p>
-            </div>
-          </div>
-          <div className="text-center p-6 rounded-lg bg-card/100 relative overflow-hidden flex flex-col justify-end">
-            <div
-              className="absolute inset-0 bg-cover bg-top"
-              style={{ backgroundImage: "url(/3pics/DSC02214.jpeg.jpg)" }}
-            />
-            <div className="relative z-10">
-              {renderPunkHeading("Local Art", "text-lg")}
-              <p className="text-white bg-black/50 p-3 rounded">
-                Handmade art, jewelry, home décor, crystals, and wellness items
-                from local makers.
-              </p>
-            </div>
-          </div>
-          <div className="text-center p-6 rounded-lg bg-card/100 relative overflow-hidden flex flex-col justify-end">
-            <div
-              className="absolute inset-0 bg-cover bg-top"
-              style={{ backgroundImage: "url(/3pics/DSC02204.jpeg.jpg)" }}
-            />
-            <div className="relative z-10">
-              {renderPunkHeading("Visit Us", "text-lg")}
-              <p className="text-white bg-black/50 p-3 rounded">
-                Located at 6059 W. Irving Park Road, Chicago, IL 60634 — on the
-                west end of Portage Park.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Call to Action */}
       <Contact />

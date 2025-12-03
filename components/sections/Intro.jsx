@@ -33,7 +33,7 @@ export function Intro() {
 
             {/* Description */}
             <div className="max-w-2xl mb-12 md:mb-16">
-              <p className="text-lg md:text-2xl leading-relaxed text-primary-foreground/90">
+              <p className="text-md md:text-2xl leading-normal text-primary-foreground/90">
                 A true variety store in the heart of Portage Park, stuffed with local art, rescued treasures, vintage oddities, gag gifts & graphic tees for kiddos, teens and grown-ups alike. {" "}
                 <strong>EVERYONE</strong> is welcome here & every budget is loved — with fun finds starting at just <strong>.95 CENTS</strong>{" "}
                 that are often cheaper than the darn dollar store (and with no tariff drama here!). <br /><br />
