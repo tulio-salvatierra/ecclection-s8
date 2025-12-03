@@ -38,7 +38,7 @@ export function ProductsShowcase() {
   ];
 
   return (
-    <section ref={ref} className="py-16 px-4 md:px-8">
+    <section ref={ref} className="py-16 px-4 mt-18 md:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12 text-center">
           <h2 className="fade-in font-brand text-cyan-500 text-4xl md:text-5xl mb-4">

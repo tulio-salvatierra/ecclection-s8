@@ -37,21 +37,9 @@ export function About({
           {title}
         </h2>
         {content && (
-          <p className="fade-in text-lg text-white text-left max-w-3xl sm:w-1/2 mx-auto">
-            Ecclection is a little WONDERLAND in Portage Park — a cozy, quirky
-            spot where rescued treasures, vintage oddities, handmade goods &
-            creative chaos all live happily together. We proudly showcase{" "}
-            <strong>rotating displays</strong> from our amazing local artists &
-            makers, giving them a space to shine, share their stories and
-            connect with the community. From handcrafted candles, jewelry,
-            wellness goodies, mixed‑media art, home décor and one‑of‑a‑kind
-            accessories to collectibles you didn’t even know you needed —
-            everything here is chosen with love, curiosity & a whole lot of
-            personality. Ecclection continues to grow as a neighborhood hub for
-            imagination, collaboration & human connection… a place to refresh
-            your wardrobe or home, mingle with fellow creatives, or simply pop
-            in for a good chat & a spark of joy.
-          </p>
+        <p className="fade-in text-md leading-5 text-white text-left max-w-3xl sm:w-1/2 mx-auto">
+        Ecclection is a little WONDERLAND in Portage Park — a cozy, quirky spot where rescued treasures, vintage oddities, handmade goods & creative chaos all live happily together. We proudly showcase <strong>rotating displays</strong> from amazing local artists & makers, giving them space to shine and connect with the community. From candles and jewelry to wellness goodies, mixed-media art, décor and one-of-a-kind accessories — everything is chosen with love, curiosity & plenty of personality. It’s a neighborhood hub for imagination, creativity & human connection… a place to refresh your space, mingle with makers, escape the headlines of the day, or simply pop in for a good chat & a spark of joy.
+      </p>
         )}
         {image && (
           <div className="mt-8 fade-up">

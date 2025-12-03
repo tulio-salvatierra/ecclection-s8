@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React from "react";
-import { useFadeAnimation } from "@/app/hooks/useFadeAnimtion"; 
+import { useFadeAnimation } from "@/app/hooks/useFadeAnimtion";
 import { Button } from "@/components/ui/button";
 import { SOCIAL_URLS } from "@/lib/constants";
 
@@ -11,7 +11,10 @@ export function Intro() {
   useFadeAnimation(ref);
 
   return (
-    <section ref={ref} className="relative min-h-auto bg-black/40  text-primary-foreground overflow-hidden">
+    <section
+      ref={ref}
+      className="relative min-h-auto bg-black/40  text-primary-foreground overflow-hidden"
+    >
       {/* Background texture overlay */}
 
       {/* Main content */}
@@ -33,11 +36,22 @@ export function Intro() {
 
             {/* Description */}
             <div className="max-w-2xl mb-12 md:mb-16">
-              <p className="text-md md:text-2xl leading-normal text-primary-foreground/90">
-                A true variety store in the heart of Portage Park, stuffed with local art, rescued treasures, vintage oddities, gag gifts & graphic tees for kiddos, teens and grown-ups alike. {" "}
-                <strong>EVERYONE</strong> is welcome here & every budget is loved — with fun finds starting at just <strong>.95 CENTS</strong>{" "}
-                that are often cheaper than the darn dollar store (and with no tariff drama here!). <br /><br />
-                We’re all about self-expression, sustainability, human engagement and that feeling of true WONDERMENT — you never really know what you’ll find @ Ecclection, and that’s the fun of it!
+              <p className="text-md leading-5 tracking-normal text-primary-foreground/90">
+                A true variety store in the heart of Portage Park, filled with
+                local art, rescued treasures, vintage oddities, gag gifts &
+                graphic tees for all ages.
+                <strong> EVERYONE</strong> is welcome & every budget is loved —
+                with fun finds starting at just <strong>.95 CENTS</strong>{" "}
+                (often cheaper than the darn dollar store… no tariff drama
+                here!).
+                <br />
+                <br />
+                We’re all about self-expression, sustainability & that spark of
+                WONDERMENT — you never really know what you’ll find @
+                Ecclection, and that’s the magic. And if you’re feeling
+                generous, yes… we also welcome gold or silver donations. We’ll
+                happily take those off your hands — purely out of kindness, of
+                course 😄.
               </p>
             </div>
 
@@ -74,7 +88,6 @@ export function Intro() {
                   loop
                   muted
                   playsInline
-                  
                 >
                   <source src="/clothes.mp4" type="video/mp4" />
                 </video>
