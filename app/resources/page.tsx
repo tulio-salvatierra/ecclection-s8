@@ -39,7 +39,7 @@ const localOrganizations = [
   },
   {
     id: 2,
-    title: "Portage Park Food Pantry",
+    title: "SHIFT Behavioral Health",
     category: "Food Security",
     description:
       "Our team is reimagining mental health care to be more accessible, proactive, and reflective of the real experiences of young people and families. Whether you’re dealing with a crisis or simply need someone to talk to, we offer same-day, in-person support in a setting that’s intentionally designed to feel comfortable and relaxed.",
