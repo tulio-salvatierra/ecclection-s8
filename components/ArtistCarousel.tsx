@@ -105,7 +105,7 @@ export function ArtistCarousel({ artists }: ArtistCarouselProps) {
               {currentArtist.name}
             </h2>
 
-            <p className="text-base text-white leading-relaxed max-w-lg mb-8">
+            <p className="text-base text-white leading-relaxed max-w-lg mb-8 line-clamp-3">
               {currentArtist.bio}
             </p>
             <p className="text-base text-white leading-relaxed max-w-lg mb-8">
