@@ -79,7 +79,7 @@ export function ProductsShowcase() {
                 )}
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-2 bg-black bg-opacity-70">
-                <h3 className="font-brand text-cyan-500 text-2xl font-bold mb-2">
+                <h3 className="font-brand text-cyan-500 sm:text-2xl font-bold sm:mb-2">
                   {category.title}
                 </h3>
                 <p className="text-white text-lg hidden sm:block">{category.description}</p>
