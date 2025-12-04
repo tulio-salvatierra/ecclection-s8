@@ -68,6 +68,9 @@ export function ProductsShowcase() {
                     className="absolute inset-0 w-full h-full object-cover "
                     autoPlay
                     loop
+                    muted
+                    playsInline
+                    preload="auto"
                   />
                 ) : (
                   <Image
