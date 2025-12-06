@@ -24,14 +24,14 @@ export function Hero({
   return (
     <section ref={ref} className={`relative mt-12 ${className ?? ""}`}>
       {renderPunkTitle(
-        title,
+        "Welcome to Ecclection",
         "text-[5.5rem] md:text-[14rem] fade-in ",
         "leading-none font-extrabold tracking-tight",
         "text-cyan-400"
       )}
 
       <p className="fade-in sm:w-1/2 mt-8 mb-4 text-left mx-auto font-brand text-xl md:text-2xl text-white p-2">
-        {subtitle}
+        A true variety store in Portage Park – packed with local art, rescued treasures, gag gifts, funky tees & SO much more… where EVERYONE is welcome & it won't break the bank.
       </p>
 
       <div className="relative h-[70vh] min-h-[580px] w-[95%] mx-auto rounded-[14px] overflow-hidden">
