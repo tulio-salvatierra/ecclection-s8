@@ -133,6 +133,7 @@
   }
   body {
     @apply text-foreground font-sans;
+    font-family: var(--font-normal, "Raleway"), system-ui, sans-serif;
     background-image: url('/ecclection-bg.svg');
     background-size: 140%;
     background-position: center;
@@ -322,11 +323,11 @@
 }
 
 .font-sans {
-  font-family: var(--font-normal);
+  font-family: var(--font-normal, "Raleway"), system-ui, sans-serif;
 }
 
 .font-brand {
-  font-family: var(--font-brand-alt);
+  font-family: var(--font-brand-alt, "Pirata One"), serif;
 }
 
 /* Optional: toggling helper

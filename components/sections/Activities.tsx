@@ -28,7 +28,21 @@ export function StoreActivities() {
           {/* Main description (center column) */}
           <div className="md:col-span-2">
             <p className="text-lg leading-relaxed text-white max-w-xl">
-              Ecclection is a neighborhood shop where families, artists &amp; curious neighbors <strong className="text-cyan-500">(obviously!)</strong> come to browse, laugh, trade, discover &amp; just hang out. From our little <strong>Barter Box</strong> — where you can swap fun thrift finds without spending a dime — to the spontaneous spins of the <strong>Wheel of Good Fortune</strong> offering surprise discounts, freebies or glitter‑powered blessings, there’s always something unexpected happening. Our playful <strong>Find Waldo</strong> hunt keeps both the shop and our Instagram buzzing with hidden‑treasure rewards. And of course, our <strong>Donation Drop</strong> is always open for clothing, décor, art supplies &amp; other goodies that help fuel our sustainability mission (gold coins &amp; diamonds still optional… but appreciated). Ecclection is more than a store — it’s a quirky mix of creativity, community, weird &amp; wonderful finds, and everyday joy!
+              Ecclection is a neighborhood shop where families, artists &amp; 
+              curious neighbors come to browse, laugh, trade, discover &amp; 
+              just hang out. From our little <strong>Barter Box</strong> — 
+              where you can swap fun thrift finds without spending a dime — 
+              to the spontaneous spins of the <strong>Wheel of Good 
+              Fortune</strong> offering surprise discounts, freebies or 
+              glitter‑powered blessings, there’s always something unexpected 
+              happening. Our playful <strong>Find Waldo</strong> hunt 
+              keeps both the shop and our Instagram buzzing with hidden‑treasure
+              rewards. And of course, our <strong>Donation Drop</strong> 
+              is always open for clothing, décor, art supplies &amp; other 
+              goodies that help fuel our sustainability mission (gold coins &amp; 
+              diamonds still optional… but appreciated). Ecclection is more 
+              than a store — it’s a quirky mix of creativity, community, weird 
+              &amp; wonderful finds, and everyday joy!
             </p>
           </div>
         </div>

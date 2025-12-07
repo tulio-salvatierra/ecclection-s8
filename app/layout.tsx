@@ -7,12 +7,15 @@ import { Inter, Quintessential, Raleway, Pirata_One } from "next/font/google";
 import { SOCIAL_URLS, BUSINESS_INFO } from "@/lib/constants";
 import { PreloadBackground } from "@/components/PreloadBackground";
 import { Footer } from "@/components/sections/Footer";
+import { FontProvider } from "@/components/FontProvider";
 
 // Configure your fonts
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
+  preload: true,
+  fallback: ["system-ui", "arial"],
 });
 
 const quintessential = Quintessential({
@@ -20,12 +23,16 @@ const quintessential = Quintessential({
   weight: ["400"],
   variable: "--font-brand",
   display: "swap",
+  preload: true,
+  fallback: ["serif"],
 });
 
 const raleway = Raleway({
   subsets: ["latin"],
   variable: "--font-normal",
   display: "swap",
+  preload: true,
+  fallback: ["system-ui", "sans-serif"],
 });
 
 // Alternate brand font for testing/toggling
@@ -34,6 +41,8 @@ const pirataOne = Pirata_One({
   subsets: ["latin"],
   variable: "--font-brand-alt",
   display: "swap",
+  preload: true,
+  fallback: ["serif"],
 });
 
 export const metadata: Metadata = {
@@ -197,7 +206,13 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${quintessential.variable} ${raleway.variable} ${pirataOne.variable}`}
     >
-      <body>
+      <body className={`${inter.variable} ${quintessential.variable} ${raleway.variable} ${pirataOne.variable}`}>
+        <FontProvider
+          interVariable={inter.variable}
+          quintessentialVariable={quintessential.variable}
+          ralewayVariable={raleway.variable}
+          pirataOneVariable={pirataOne.variable}
+        />
         <PreloadBackground />
         <script
           type="application/ld+json"
