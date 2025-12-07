@@ -37,7 +37,7 @@ export function Header() {
               <span className="brand-mark">
                 <img src="/logo.png" alt="Ecclection" className="w-8 h-8" />
               </span>
-              <h1 className="font-brand font-bold text-black font-xl-cyan-600">
+              <h1 className="font-brand font-bold text-black text-xl md:text-2xl">
                 Ecclection
               </h1>
             </Link>

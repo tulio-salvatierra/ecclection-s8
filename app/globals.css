@@ -148,9 +148,23 @@
     }
   }
   
-  /* Global heading colors */
-  h1, h2, h3, h4, h5, h6 {
+  /* Global heading colors - exclude header h1 */
+  h1:not(.site-header h1):not(.brand h1), h2, h3, h4, h5, h6 {
     color: white;
+  }
+  
+  /* Header h1 should use black text and consistent sizing */
+  .site-header h1,
+  .brand h1 {
+    color: black;
+    font-size: 1.25rem;
+  }
+  
+  @media (min-width: 768px) {
+    .site-header h1,
+    .brand h1 {
+      font-size: 1.5rem;
+    }
   }
   
   /* Global accent colors for buttons and interactive elements */
@@ -224,7 +238,7 @@
 }
 
 .nav-links a {
-  @apply text-foreground hover:text-primary transition-colors;
+  @apply text-foreground hover:text-primary transition-colors text-base font-medium;
   text-decoration: none;
 }
 
