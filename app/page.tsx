@@ -52,7 +52,7 @@ export default async function HomePage() {
     <>
       <LenisProvider />
       <SoundOnScroll />
-      <Hero title="Welcome to Ecclection" subtitle="A true variety store in Portage Park – packed with local art, rescued treasures, gag gifts, funky tees & SO much more… where EVERYONE is welcome & all budgets are loved." backgroundImage="default-hero.jpg" />
+      <Hero  />
       <Intro />
       <ArtistCarousel artists={artistsForCarousel} />
       <DisclaimerSection />

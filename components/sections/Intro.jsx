@@ -37,21 +37,15 @@ export function Intro() {
             {/* Description */}
             <div className="sm:max-w-2xl mb-12 md:mb-16">
               <p className="text-md leading-6 text-primary-foreground/90">
-                A true variety store in the heart of Portage Park, filled with
-                local art, rescued treasures, vintage oddities, gag gifts &
-                graphic tees for all ages.
+                We’re all about self-expression, sustainability & that spark of
+                WONDERMENT — you never really know what you’ll find @
+                Ecclection, and that’s the magic.
+                <br />
+                <br />
                 <strong> EVERYONE</strong> is welcome & every budget is loved —
                 with fun finds starting at just <strong>.95 CENTS</strong>{" "}
                 (often cheaper than the darn dollar store… no tariff drama
                 here!).
-                <br />
-                <br />
-                We’re all about self-expression, sustainability & that spark of
-                WONDERMENT — you never really know what you’ll find @
-                Ecclection, and that’s the magic. And if you’re feeling
-                generous, yes… we also welcome gold or silver donations. We’ll
-                happily take those off your hands — purely out of kindness, of
-                course 😄.
               </p>
             </div>
 
@@ -73,7 +67,7 @@ export function Intro() {
 
             <div className="mt-20 md:mt-32 fade-in ">
               <p className="text-xl font-brand tracking-widest uppercase">
-                where community meets art, odd treasures & good weird vibes
+                where community meets art, odd or forgotten treasures & good vibes
               </p>
             </div>
           </div>

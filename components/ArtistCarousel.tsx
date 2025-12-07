@@ -47,7 +47,7 @@ export function ArtistCarousel({ artists }: ArtistCarouselProps) {
   useEffect(() => {
     const interval = setInterval(() => {
       nextArtist();
-    }, 3000); // Auto-advance every 8 seconds
+    }, 8000); 
 
     return () => clearInterval(interval);
   }, [artists.length]);
@@ -62,20 +62,22 @@ export function ArtistCarousel({ artists }: ArtistCarouselProps) {
           "text-white"
         )}
         <p className="mt-4 text-white w-full sm:w-1/2 mx-auto text-left leading-6">
-          Here’s a little peek at the wonderfully weird, wildly talented humans
-          who make Ecclection what it is. Our artists don’t “rotate” like a
-          gallery — most stay with us for a long while, which keeps things
-          honest, cozy and community-focused. Painters, sewists, jewelry makers,
-          photographers, sculptors… all kinds of magic lives here. If you’re an
-          artist and want to join this tiny WONDERLAND, reach out through our
-          contact page — we offer affordable spaces{" "}
-          <strong className="text-cyan-500">
-            (starting at just $20/month)
-          </strong>{" "}
-          so you can share your work, be seen and stay inspired.
+          Here’s a little peek at the wonderfully unique, talented humans who help  
+          make Ecclection  what it is. We usually have over a dozen artisans and 
+          artists work available- from handcrafted jewelry, painters, to photography,
+          crochet work, homemade patches and pins and so much more! We do rotate our
+          art cubbies & feature a “Local Artist’s window Gallery- where we include
+          pieces from each and every artisan. 
+          <br /><br />
+          Rental Spaces start at only $20/month
+          so we can help provide exposure to the community while offering a space 
+          for people to come in  and see, feel, touch or smell and of course BUY 
+          your creations. It’s SO much better than ordering off a BORING screen!! 
+          Feel free to inquire if you or someone you know may be interested in a 
+          display space!
         </p>
       </div>
-      <div className="relative grid md:grid-cols-2 sm:gap-12 gap-4 container section-pad min-h-auto items-center">
+      <div className="relative grid md:grid-cols-2 sm:gap-12 gap-4 container min-h-auto items-center">
         {/* Left: Tilted Frame with Portrait */}
         <div className="relative flex items-center justify-center">
           {/* Vertical Text */}
@@ -163,11 +165,10 @@ export function ArtistCarousel({ artists }: ArtistCarouselProps) {
                   <button
                     key={index}
                     onClick={() => setCurrentIndex(index)}
-                    className={`h-2 rounded-full transition-all border border-black ${
-                      index === currentIndex
-                        ? "bg-cyan-600 w-6"
-                        : "bg-cyan-600/30 w-2"
-                    }`}
+                    className={`h-2 rounded-full transition-all border border-black ${index === currentIndex
+                      ? "bg-cyan-600 w-6"
+                      : "bg-cyan-600/30 w-2"
+                      }`}
                     aria-label={`Go to artist ${index + 1}`}
                   />
                 ))}

@@ -5,24 +5,14 @@ import { renderPunkTitle } from "@/lib/punk-typography";
 import { useFadeAnimation } from "@/app/hooks/useFadeAnimtion";
 import React, { useRef } from "react";
 
-  type HeroProps = {
-  title: string;
-  subtitle?: string;
-  backgroundImage?: string;
-  className?: string;
-};
 
-export function Hero({
-  title,
-  subtitle,
-  backgroundImage,
-  className,
-}: HeroProps) {
+
+export function Hero() {
   const ref = useRef<HTMLDivElement>(null);
   useFadeAnimation(ref);
 
   return (
-    <section ref={ref} className={`relative mt-12 ${className ?? ""}`}>
+    <section ref={ref} className="relative mt-12">
       {renderPunkTitle(
         "Welcome to Ecclection",
         "text-[5.5rem] md:text-[14rem] fade-in ",
@@ -55,14 +45,12 @@ export function Hero({
 
         <div className="relative z-10 grid h-full place-items-center text-center px-4">
           <div className="max-w-3xl fade-in">
-            {subtitle && (
               <a
                 className="p-8 mt-28 hover:rotate-[5deg] transition-all duration-300 col-span-2 mx-auto origin-top-left text-white font-brand text-2xl rounded-md bg-cyan-600/80"
                 href="https://maps.app.goo.gl/ZMgVyGzAmNvomLMcA"
               >
                 Come Dig Around!
               </a>
-            )}
           </div>
         </div>
       </div>
