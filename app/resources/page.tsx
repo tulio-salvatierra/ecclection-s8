@@ -165,8 +165,7 @@ export default function CommunityResourcesPage() {
         </p>
         <br />
         <p className="text-lg text-left text-white sm:w-1/2 mx-auto leading-5">
-          We are giving away whistles for free!, just stop by and pick one up!
-          While supplies last.
+          We always offer complementary whistles, just step in and ask!
         </p>
       </section>
 

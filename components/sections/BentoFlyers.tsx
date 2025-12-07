@@ -39,9 +39,9 @@ export function FlyersBento() {
           {/* Medium flyer - bottom middle-left */}
           <div className="col-span-2 row-span-2 border-2 border-foreground hover:border-accent transition-colors overflow-hidden group">
             <img
-              src="/flyers/IMG_6369.png"
+              src="/flyers/ice.png"
               alt="ICE abduction flyer"
-              className="w-full h-full object-fit group-hover:scale-105 transition-transform duration-300"
+              className="w-full h-full mx-auto object-fit group-hover:scale-105 transition-transform duration-300"
             />
           </div>
           {/* Small flyer - bottom right */}
