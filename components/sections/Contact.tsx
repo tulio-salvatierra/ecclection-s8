@@ -63,7 +63,7 @@ export function Contact({
             Contact Information
           </h3>
           <p className="mb-4 text-black">
-            Reach out anytime! Whether you're looking to showcase your art, ask about events, trade treasures, or just connect, we’re here for it. Texting or emailing is the best way to reach us — quick, easy & totally our style.
+          Text or email us anytime, or just come in for a good old conversation, that’s our preferred a communication. Humans interacting with other humans- what a concept!
           </p>
           <div className="space-y-4">
             <p className="font-medium text-black font-brand">Store Hours:</p>
@@ -92,7 +92,7 @@ export function Contact({
               </div>
 
               <div>
-                <p className="font-medium text-black font-brand">Phone</p>
+                <p className="sm:text-lg text-sm font-medium text-black font-brand">Phone</p>
                 <a
                   href="sms:+1773951799"
                   className="text-black hover:text-gray-700 transition-colors"
@@ -119,7 +119,7 @@ export function Contact({
                 </svg>
               </div>
               <div>
-                <p className="font-medium text-black font-brand">Email</p>
+                <p className="sm:text-lg text-sm font-medium text-black font-brand">Email</p>
                 <a
                   href="mailto:EcclectionChicago@gmail.com"
                   className="text-black hover:text-gray-700 transition-colors"
@@ -152,7 +152,7 @@ export function Contact({
                 </svg>
               </div>
               <div>
-                <p className="font-medium text-black font-brand">Address</p>
+                <p className="sm:text-lg text-sm font-medium text-black font-brand">Address</p>
                 <p className="text-black">
                   6059 W. Irving Park Road, Chicago, IL 60634
                 </p>

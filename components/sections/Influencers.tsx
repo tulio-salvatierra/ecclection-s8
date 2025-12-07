@@ -19,7 +19,7 @@ export default function Influencers() {
       <div className=" text-[#111111] fade-in h-auto w-full px-4">
         {/* Top headline */}
         <h1 className="mx-auto fade-in mt-4 sm:text-[7rem] text-[4rem] leading-tight text-left sm:text-left font-extrabold tracking-tighter">
-          SHOUT OUT INFLUENCERS 📣
+          CALLING ANY INFLUENCERS 📣
         </h1>
 
         {/* Bottom content row */}
@@ -47,13 +47,11 @@ export default function Influencers() {
               influencers like you make a HUGE difference. Any peeps with a
               couple thousand followers or more, come by and show us some love!
               You get something cool and unique for your world, we get a little
-              boost for ours… everybody wins. Come explore the chaos, discover
-              some treasures, and hey — if you’re into it, let’s barter and
-              create something fun together for the neighborhood.
+              boost for ours… everybody wins!
             </p>
-            <button className="px-5 py-2.5 rounded-md bg-cyan-500 text-black font-brand border-2 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all">
-              Let&apos;s Talk
-            </button>
+            <p className="text-lg font-secondary text-white mb-8 leading-5 p-1">
+              Come by! We'd love to have you!
+            </p>
           </div>
         </div>
       </div>

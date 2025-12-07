@@ -8,24 +8,21 @@ export function ProductsShowcase() {
   useFadeAnimation(ref);
   const categories = [
     {
-      title: "Featured local artist spots & Lucky Finds",
-      description:
-        "Well curated pieces and collections, most of them are with us for a long time, only a few rotate which keeps things exciting for us.",
-      image: "/products/odd.jpeg",
+      title: "Art pieces and projects",
+      description: "Proudly displayed.",
+      image: "/products/cubbies.jpg",
       video: "",
     },
     {
-      title: "Graphic Tees & Mystery Wear",
-      description:
-        "Iconic tees, indie prints, tiny-batch makers, and tops that make strangers go 'Where did you get that?'",
+      title: "Cool clothing corner",
+      description: "Curated “Cool clothing  Corner” where we feature hip, designer, vintage & (mostly black) clothing with all inclusive sizing from XS-XXXL",
       image: "",
       video: "/products/shirts.mp4",
     },
     {
-      title: "Vintage items from the yesteryears",
-      description:
-        "Retro dresses, purses, accessories, mixed media art, crystals, wellness items, home décor, and unexpected gems.",
-      image: "/3pics/vintage2.jpg",
+      title: "Vintage items from the yesteryear",
+      description: "From vintage hand bags, old Mad magazines to collectable China & music boxes- you never know what unexpected gems you’ll find",
+      image: "/products/vint.jpg",
       video: "",
     },
     {

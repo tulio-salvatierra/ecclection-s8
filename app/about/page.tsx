@@ -86,7 +86,7 @@ export default function AboutPage() {
         )}
         <p className="text-white text-md sm:w-1/2 mx-auto">
           I’m Julie — an honest, compassionate, resourceful human who’s also a
-          wife, mom, animal lover, nature admirer, traveler and, yes, a{" "}
+          wife, mom, animal lover, artist, designer, nature admirer, traveler and, yes, a{" "}
           <em>bit</em> of a hoarder (as if you couldn’t tell! LOL).
           <br />
           <br />
@@ -130,18 +130,11 @@ export default function AboutPage() {
               online carts, no algorithms—just humans, conversation and the joy
               of stumbling onto something you didn’t expect. Whether you’re a
               Chicago local or just wandering through Portage Park, there’s
-              always something new (and a little weird) waiting for you.
+              always something new (and perhaps a little weird) waiting for you.
             </p>
 
             <p className="text-white leading-relaxed text-md">
-              We stay busy with community fun—kids crafts, school fundraisers,
-              our sneaky “Find Waldo” discounts{" "}
-              <strong>(he’s hiding… somewhere)</strong>, Sip &amp; Shops,
-              plus-size pop-ups, Easter egg hunts and holiday goodie bags. And
-              yes… sometimes we’re basically giving things away. Every purchase
-              gets a free surprise from our <strong>GOODIE BASKET</strong> 🧺,
-              and anything over $25 earns a spin on the legendary{" "}
-              <strong>Wheel of GOOD FORTUNE</strong> 🏆.
+              We enjoy engaging with our community from kids crafts to school fundraisers, sip & shop events, plus-size pop-ups, etc.
             </p>
 
             <p className="text-white p-8 text-xl tracking-wide bold leading-10">
@@ -228,7 +221,7 @@ export default function AboutPage() {
           <h3 className="text-xl font-bold font-brand  mb-3 text-center">
             Our Mission
           </h3>
-          <p className="text-white sm:w-1/2 mx-auto leading-5">
+          <p className="text-white sm:w-1/2 mx-auto leading-6">
             <strong>Big Elves</strong> is our passion project created by Julie
             &amp; Elise, two longtime friends with a BIG heart.{" "}
             <strong>.</strong>
@@ -242,22 +235,21 @@ export default function AboutPage() {
             wishlists to help brighten their days even more.
             <br />
             <br />
-            When we visit, we don&apos;t just drop off bags—we SHOW UP as two
-            6-foot elves with cake, goodies, tasty treats and a whole spread of
-            greeting cards so everyone can pick the one that feels right for
-            them.
+            When we visit, we don’t just drop off bags, we show up dressed
+            as two 6 foot elves, featuring a smorgasbord of tasty treats, toiletries, body sprays to greeting cards, cakes and personal gifts where residents can pick and choose what’s right for them.
+
           </p>
           <h3 className="text-xl mt-4 font-bold font-brand text-white mb-3 text-center">
             How You Can Help
           </h3>
-          <p className="text-white sm:w-1/2 mx-auto leading-5">
+          <p className="text-white sm:w-1/2 mx-auto leading-6">
             You can support Big Elves by donating new or gently used items,
             helping fulfill holiday wishlists or simply spreading the word.
             Every contribution—big or small—helps us bring comfort, dignity and
             a little joy to someone who really needs it.
           </p>
 
-          <p className="text-white my-6 sm:w-1/2 mx-auto leading-5 text-left">
+          <p className="text-white my-6 sm:w-1/2 mx-auto leading-6 text-left">
             <strong>
               Together, we can help the folks who need it most feel seen, loved
               &amp; remembered.

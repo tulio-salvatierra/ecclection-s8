@@ -14,12 +14,12 @@ export default function DisclaimerSection() {
           humans in our community — never machines.
         </p>
 
-        <p className="text-sm md:text-base text-gray-800 mb-3">
+        <p className="text-sm md:text-base text-black mb-3">
           We may use AI here on occasion, when making flyers or print work’s.
           Its simply used as a tool-I’m not asking it for ideas or having 
           deep conversations or relationships with it either!!
         </p>
-        <p className="text-sm md:text-base text-gray-800 mb-6">
+        <p className="text-sm md:text-base text-black mb-6">
           By browsing our site, you’re supporting human-made art, local creators
           & the beautifully imperfect magic only real people make.
         </p>

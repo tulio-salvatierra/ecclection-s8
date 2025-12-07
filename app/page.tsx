@@ -58,7 +58,7 @@ export default async function HomePage() {
       <DisclaimerSection />
       <StoreActivities />
       <ProductsShowcase />
-      <About title="About Us" content="bio text will go here" />
+      <About />
       <Review />
       <Influencers />
       <Contact heading="Come Find Us!" cards={[]} />
