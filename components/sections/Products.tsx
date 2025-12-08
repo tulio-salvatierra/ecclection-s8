@@ -67,7 +67,8 @@ export function ProductsShowcase() {
                     loop
                     muted
                     playsInline
-                    preload="auto"
+                    preload="metadata"
+                    loading="lazy"
                   />
                 ) : (
                   <Image

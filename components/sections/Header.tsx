@@ -2,6 +2,7 @@
 
 // components/sections/Header.tsx
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
@@ -35,7 +36,7 @@ export function Header() {
           <div className="brand">
             <Link href="/" className="flex items-center space-x-2">
               <span className="brand-mark">
-                <img src="/logo.png" alt="Ecclection" className="w-8 h-8" />
+                <Image src="/logo.png" alt="Ecclection" width={32} height={32} priority className="w-8 h-8" />
               </span>
               <h1 className="font-brand font-bold text-black text-xl md:text-2xl">
                 Ecclection
@@ -89,7 +90,7 @@ export function Header() {
             <div className="brand">
               <Link href="/" className="flex items-center space-x-2">
                 <span className="brand-mark">
-                  <img src="/logo.png" alt="Ecclection" className="w-8 h-8" />
+                  <Image src="/logo.png" alt="Ecclection" width={32} height={32} priority className="w-8 h-8" />
                 </span>
                 <h1 className="font-brand font-bold text-black font-xl-cyan-600">
                   Ecclection

@@ -32,7 +32,8 @@ export function Hero() {
           loop
           muted
           playsInline
-          preload="auto"
+          preload="metadata"
+          loading="lazy"
           onLoadedData={(e) => {
             const video = e.currentTarget;
             if (video.readyState >= 2) {

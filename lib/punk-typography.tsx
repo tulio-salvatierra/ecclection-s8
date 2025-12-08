@@ -40,23 +40,37 @@ export function renderPunkTitle(
  * @param size - Tailwind text size classes (default: "text-xl")
  * @param className - Additional CSS classes for the h2 element
  * @param textColor - Text color class (default: "text-black")
+ * @param variant - Style variant: "default" (smaller, cyan-600) or "large" (larger shadow, cyan-600) or "white" (cyan-500 with white text)
  */
 export function renderPunkHeading(
   text: string,
   size: string = "text-xl",
   className: string = "",
-  textColor: string = "text-black"
+  textColor: string = "text-black",
+  variant: "default" | "large" | "white" = "default"
 ): React.ReactElement {
   const words = text.trim().split(/\s+/);
   const angles = [-4, -2, 0, 2, 4, -3, 1, -1, 3];
+  
+  // Determine span classes based on variant
+  let spanClasses = "inline-block mr-1 md:mr-2 px-1 md:px-2 py-1 bg-cyan-600 text-black rounded-[2px] border border-black shadow-[2px_2px_0_0_#000]";
+  if (variant === "large") {
+    spanClasses = "inline-block mr-2 md:mr-3 px-2 md:px-3 py-1 md:py-2 bg-cyan-600 text-black rounded-[3px] border-2 border-black shadow-[3px_3px_0_0_#000]";
+  } else if (variant === "white") {
+    spanClasses = "inline-block mr-1 md:mr-2 px-1 md:px-2 py-1 bg-cyan-500 text-white rounded-[2px] border border-black shadow-[2px_2px_0_0_#000]";
+  }
+  
+  // Determine font weight based on variant
+  const fontWeight = variant === "large" ? "font-bold" : "font-semibold";
+  
   return (
-    <h2 className={`${size} font-semibold font-brand mb-3 ${textColor} ${className}`}>
+    <h2 className={`${size} ${fontWeight} font-brand mb-3 ${textColor} ${className}`}>
       {words.map((word, idx) => {
         const angle = angles[idx % angles.length];
         return (
           <span
             key={`h-${idx}`}
-            className="inline-block mr-1 md:mr-2 px-1 md:px-2 py-1 bg-cyan-600 text-black rounded-[2px] border border-black shadow-[2px_2px_0_0_#000]"
+            className={spanClasses}
             style={{ transform: `rotate(${angle}deg)` }}
           >
             {word}

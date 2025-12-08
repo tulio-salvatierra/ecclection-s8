@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 
 import React from "react";
 import { useFadeAnimation } from "@/app/hooks/useFadeAnimtion";
+import { renderPunkHeading } from "@/lib/punk-typography";
 
 interface ContactCard {
   title: string;
@@ -21,36 +22,13 @@ export function Contact({
   cards = [],
   className = "",
 }: ContactProps) {
-  function renderPunkHeading(
-    text: string,
-    size: string = "text-3xl md:text-4xl"
-  ) {
-    const words = text.trim().split(/\s+/);
-    const angles = [-4, -2, 0, 2, 4, -3, 1, -1, 3];
-    return (
-      <h2 className={`${size} font-bold font-brand mb-4 text-center`}>
-        {words.map((word, idx) => {
-          const angle = angles[idx % angles.length];
-          return (
-            <span
-              key={`h-${idx}`}
-              className="inline-block mr-2 md:mr-3 px-2 md:px-3 py-1 md:py-2 bg-cyan-600 text-black rounded-[3px] border-2 border-black shadow-[3px_3px_0_0_#000]"
-              style={{ transform: `rotate(${angle}deg)` }}
-            >
-              {word}
-            </span>
-          );
-        })}
-      </h2>
-    );
-  }
   const ref = React.useRef<HTMLElement>(null);
   useFadeAnimation(ref);
 
   return (
     <section ref={ref} className={`fade-in container section-pad ${className}`}>
       <div className="text-center mb-12">
-        {renderPunkHeading(heading)}
+        {renderPunkHeading(heading, "text-3xl md:text-4xl", "mb-4 text-center", "text-black", "large")}
         <p className="text-md text-white sm:w-1/2 mx-auto">
           Have questions, want to collaborate, or just want to say hi? We LOVE hearing from our neighbors, artists, creators & curious wanderers. Text or email us anytime — it’s our favorite way to chat!
         </p>

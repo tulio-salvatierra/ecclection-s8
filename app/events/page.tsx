@@ -1,25 +1,60 @@
 import { Contact } from "@/components/sections/Contact";
 import dynamic from "next/dynamic";
 import { LenisProvider } from "@/components/LenisProvider";
-import Masonry from "@/components/Masonry";
+import { renderPunkTitle } from "@/lib/punk-typography";
+import Image from "next/image";
+
+// Lazy load heavy components
+const Masonry = dynamic(() => import("@/components/Masonry"), { 
+  ssr: false,
+  loading: () => <div className="h-64 flex items-center justify-center"><p className="text-white">Loading...</p></div>
+});
 
 const Stack = dynamic(() => import("@/components/Stack"), { ssr: false });
 
-export const metadata = {
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
   title:
     "Chicago Art Events (Bi‑Monthly) — Artist & Community Appreciation | Ecclection",
   description:
-    "Join our bi‑monthly Artist & Community Appreciation nights in Portage Park, Chicago. Complimentary snacks & drinks and affordable vendor spaces for local artists.",
+    "Join our bi‑monthly Artist & Community Appreciation nights in Portage Park, Chicago. Complimentary snacks & drinks and affordable vendor spaces for local artists. Community art events celebrating local makers and neighbors.",
+  keywords: [
+    "Chicago art events",
+    "Portage Park events",
+    "artist appreciation night",
+    "community events Chicago",
+    "local art events",
+    "Chicago art community",
+    "vendor spaces Chicago",
+    "artist market Chicago",
+    "community appreciation",
+    "Portage Park art",
+    "local makers Chicago",
+    "art night Chicago",
+  ],
+  authors: [{ name: "Ecclection" }],
+  creator: "Ecclection",
+  publisher: "Ecclection",
   alternates: {
     canonical: "https://ecclection.com/events",
   },
   openGraph: {
     type: "website",
+    locale: "en_US",
     url: "https://ecclection.com/events",
+    siteName: "Ecclection",
     title: "Bi‑Monthly Artist & Community Appreciation — Ecclection",
     description:
-      "Community art events in Portage Park, Chicago with complimentary snacks & drinks and affordable vendor spaces.",
-    images: [{ url: "https://ecclection.com/og/events.png" }],
+      "Community art events in Portage Park, Chicago with complimentary snacks & drinks and affordable vendor spaces. Join us for our bi-monthly celebration of local artists and community.",
+    images: [
+      {
+        url: "https://ecclection.com/og/events.png",
+        width: 1200,
+        height: 630,
+        alt: "Ecclection Artist & Community Appreciation Events",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -27,40 +62,28 @@ export const metadata = {
     description:
       "Community art events in Portage Park, Chicago with complimentary snacks & drinks and affordable vendor spaces.",
     images: ["https://ecclection.com/og/events.png"],
+    creator: "@Ecclectionchicago",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
 export default function EventsPage() {
-  function renderPunkTitle(
-    text: string,
-    size: string = "text-3xl md:text-4xl"
-  ) {
-    const words = text.trim().split(/\s+/);
-    const angles = [-6, -3, 0, 3, 6, -4, 2, -2, 4];
-    return (
-      <h1 className={`${size} font-bold font-brand mb-6 text-center`}>
-        {words.map((word, idx) => {
-          const angle = angles[idx % angles.length];
-          return (
-            <span
-              key={`w-${idx}`}
-              className="inline-block mr-2 md:mr-3 px-2 md:px-3 py-1 md:py-2 bg-cyan-600 text-black rounded-[3px] border-2 border-black shadow-[3px_3px_0_0_#000]"
-              style={{ transform: `rotate(${angle}deg)` }}
-            >
-              {word}
-            </span>
-          );
-        })}
-      </h1>
-    );
-  }
-
   return (
     <>
       <section className="min-h-screen">
         {/* Header Section */}
         <header className="container section-pad text-center">
-          {renderPunkTitle("Events & Community Impact")}
+          {renderPunkTitle("Events & Community Impact", "text-3xl md:text-4xl", "mb-6")}
           <p className="text-lg text-white sm:w-1/2 mx-auto leading-5">
             Where local art, rescued treasures, community & compassion meet
             under one funky little roof
@@ -91,11 +114,16 @@ export default function EventsPage() {
                   that make you think, “Wow… that was actually really nice.”
                 </p>
                 </div>
-                <img
-                  src="/child.jpeg"
-                  alt="Artists Spot"
-                  className="my-4 w-full rounded-md"
-                />
+                <div className="relative my-4 w-full aspect-video rounded-md overflow-hidden">
+                  <Image
+                    src="/child.jpeg"
+                    alt="Artists Spot"
+                    fill
+                    className="object-cover rounded-md"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    loading="lazy"
+                  />
+                </div>
                 
                 </div>
               <div className="text-center"></div>
@@ -118,7 +146,8 @@ export default function EventsPage() {
               loop
               muted
               playsInline
-              preload="auto"
+              preload="metadata"
+              loading="lazy"
               className="absolute inset-0 w-auto h-full object-cover rounded-md"
             >
               <source src="/Artists_spot.mp4" type="video/mp4" />
@@ -149,42 +178,76 @@ export default function EventsPage() {
         </section>
 
         {/* Structured Data (JSON-LD) */}
+        {(() => {
+          const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ecclection.com";
+          
+          const breadcrumbSchema = {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: siteUrl,
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Events",
+                item: `${siteUrl}/events`,
+              },
+            ],
+          };
 
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Event",
-              name: "Bi‑Monthly Artist & Community Appreciation Event",
-              description:
-                "Meet local artists, enjoy complimentary snacks & drinks, and discover affordable vendor spaces. In‑store only at Ecclection in Portage Park, Chicago.",
-              eventSchedule: {
-                "@type": "Schedule",
-                repeatFrequency: "P2M",
-                byDay: "https://schema.org/Saturday",
-                scheduleTimezone: "America/Chicago",
+          const eventSchema = {
+            "@context": "https://schema.org",
+            "@type": "Event",
+            name: "Bi‑Monthly Artist & Community Appreciation Event",
+            description:
+              "Meet local artists, enjoy complimentary snacks & drinks, and discover affordable vendor spaces. In‑store only at Ecclection in Portage Park, Chicago.",
+            eventSchedule: {
+              "@type": "Schedule",
+              repeatFrequency: "P2M",
+              byDay: "https://schema.org/Saturday",
+              scheduleTimezone: "America/Chicago",
+            },
+            location: {
+              "@type": "Place",
+              name: "Ecclection",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "6059 W Irving Park Rd",
+                addressLocality: "Chicago",
+                addressRegion: "IL",
+                postalCode: "60634",
+                addressCountry: "US",
               },
-              location: {
-                "@type": "Place",
-                name: "Ecclection",
-                address: {
-                  "@type": "PostalAddress",
-                  streetAddress: "6059 W Irving Park Rd",
-                  addressLocality: "Chicago",
-                  addressRegion: "IL",
-                  postalCode: "60634",
-                  addressCountry: "US",
-                },
-              },
-              organizer: {
-                "@type": "Organization",
-                name: "Ecclection",
-                url: "https://ecclection.com",
-              },
-            }),
-          }}
-        />
+            },
+            organizer: {
+              "@type": "Organization",
+              name: "Ecclection",
+              url: siteUrl,
+            },
+          };
+
+          return (
+            <>
+              <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                  __html: JSON.stringify(breadcrumbSchema),
+                }}
+              />
+              <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                  __html: JSON.stringify(eventSchema),
+                }}
+              />
+            </>
+          );
+        })()}
       </section>
       <Contact />
     </>

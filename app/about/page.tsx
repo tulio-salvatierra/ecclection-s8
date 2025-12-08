@@ -2,33 +2,126 @@ import { Contact } from "@/components/sections/Contact";
 import type { Metadata } from "next";
 import { renderPunkTitle, renderPunkHeading } from "@/lib/punk-typography";
 import { LenisProvider } from "@/components/LenisProvider";
+import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "About Us",
+  title: "About Us | Ecclection - Local Art & Community Shop in Portage Park, Chicago",
   description:
-    "Learn about Ecclection - a vibrant local shop in Portage Park, Chicago. Discover our mission to support local artists, build community connections, and offer unique vintage treasures, handmade art, and locally crafted finds.",
+    "Learn about Ecclection - a vibrant local shop in Portage Park, Chicago. Discover our mission to support local artists, build community connections, and offer unique vintage treasures, handmade art, and locally crafted finds. Meet Julie, the owner, and learn about Big Elves community project.",
+  keywords: [
+    "Ecclection about",
+    "Portage Park shop",
+    "Chicago local business",
+    "vintage shop owner",
+    "local artists support",
+    "community shop Chicago",
+    "Big Elves charity",
+    "Julie Ecclection",
+    "Chicago variety store",
+    "local art community",
+    "Portage Park business",
+  ],
+  authors: [{ name: "Ecclection" }],
+  creator: "Ecclection",
+  publisher: "Ecclection",
   openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://ecclection.com/about",
+    siteName: "Ecclection",
     title: "About Ecclection | Local Art & Community Shop in Chicago",
     description:
-      "Learn about Ecclection's mission to support local artists and build community connections in Portage Park, Chicago.",
-    url: "/about",
+      "Learn about Ecclection's mission to support local artists and build community connections in Portage Park, Chicago. Discover our story, philosophy, and Big Elves community project.",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "https://ecclection.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "About Ecclection",
+        alt: "About Ecclection - Local Art & Community Shop",
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Ecclection | Local Art & Community Shop in Chicago",
+    description:
+      "Learn about Ecclection's mission to support local artists and build community connections in Portage Park, Chicago.",
+    images: ["https://ecclection.com/og-image.jpg"],
+    creator: "@Ecclectionchicago",
+  },
   alternates: {
-    canonical: "/about",
+    canonical: "https://ecclection.com/about",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
 export default function AboutPage() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ecclection.com";
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: siteUrl,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "About",
+        item: `${siteUrl}/about`,
+      },
+    ],
+  };
+
+  const aboutPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    name: "About Ecclection",
+    description:
+      "Learn about Ecclection - a vibrant local shop in Portage Park, Chicago. Discover our mission to support local artists, build community connections, and offer unique vintage treasures, handmade art, and locally crafted finds.",
+    url: `${siteUrl}/about`,
+    mainEntity: {
+      "@type": "LocalBusiness",
+      name: "Ecclection",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "6059 W Irving Park Rd",
+        addressLocality: "Chicago",
+        addressRegion: "IL",
+        postalCode: "60634",
+        addressCountry: "US",
+      },
+    },
+  };
+
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(aboutPageSchema),
+        }}
+      />
       {/* Header Section */}
       <header className="container section-pad text-center">
         {renderPunkTitle("About Ecclection")}
@@ -43,11 +136,14 @@ export default function AboutPage() {
       <section className="container section-pad">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           {/* Left: Portrait Image */}
-          <div className="relative rounded-lg overflow-hidden shadow-lg">
-            <img
+          <div className="relative rounded-lg overflow-hidden shadow-lg h-[400px]">
+            <Image
               src="/portrait.jpeg"
               alt="Professional portrait of shop owner inside of Ecclection store"
-              className="w-full h-[400px] object-cover object-center"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              priority
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
           </div>
@@ -146,11 +242,14 @@ export default function AboutPage() {
 
           {/* Right: Hand Image */}
           <div className="md:col-span-3 flex justify-center">
-            <div className="w-100 h-auto rounded-lg overflow-hidden shadow-lg">
-              <img
+            <div className="relative w-full h-auto aspect-square rounded-lg overflow-hidden shadow-lg">
+              <Image
                 src="/herofigure.png"
                 alt="Woman standing in front of Ecclection storefront"
-                className="w-full h-full object-cover object-top"
+                fill
+                className="object-cover object-top"
+                sizes="(max-width: 768px) 100vw, 25vw"
+                loading="lazy"
               />
             </div>
           </div>

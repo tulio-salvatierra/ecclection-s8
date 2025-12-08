@@ -4,27 +4,68 @@ import { FlyersBento } from "@/components/sections/BentoFlyers";
 import PantriesSection from "@/components/sections/Pantries";
 import type { Metadata } from "next";
 import { LenisProvider } from "@/components/LenisProvider";
+import { renderPunkTitle, renderPunkHeading } from "@/lib/punk-typography";
 
 export const metadata: Metadata = {
-  title: "Community Resources",
+  title: "Community Resources | Ecclection - Support Services in Portage Park, Chicago",
   description:
-    "Access essential community resources including mental health support, food security, housing assistance, crisis support, and more. Ecclection is committed to supporting our community in Portage Park, Chicago.",
+    "Access essential community resources including mental health support, food security, housing assistance, crisis support, and more. Ecclection is committed to supporting our community in Portage Park, Chicago. Find local food pantries, counseling services, and crisis helplines.",
+  keywords: [
+    "community resources Chicago",
+    "Portage Park resources",
+    "mental health support Chicago",
+    "food pantries Chicago",
+    "housing assistance Chicago",
+    "crisis support Chicago",
+    "community services",
+    "local resources Chicago",
+    "Portage Cragin Counseling",
+    "SHIFT Behavioral Health",
+    "food security Chicago",
+    "crisis helpline",
+    "211 helpline",
+  ],
+  authors: [{ name: "Ecclection" }],
+  creator: "Ecclection",
+  publisher: "Ecclection",
   openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://ecclection.com/resources",
+    siteName: "Ecclection",
     title: "Community Resources | Ecclection",
     description:
-      "Essential community resources for mental health, food security, housing, crisis support, and more in Chicago.",
-    url: "/resources",
+      "Essential community resources for mental health, food security, housing, crisis support, and more in Chicago. Find local organizations and national helplines.",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "https://ecclection.com/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Community Resources at Ecclection",
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Community Resources | Ecclection",
+    description:
+      "Essential community resources for mental health, food security, housing, crisis support, and more in Chicago.",
+    images: ["https://ecclection.com/og-image.jpg"],
+    creator: "@Ecclectionchicago",
+  },
   alternates: {
-    canonical: "/resources",
+    canonical: "https://ecclection.com/resources",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -107,57 +148,60 @@ const resources = [
 ];
 
 export default function CommunityResourcesPage() {
-  function renderPunkTitle(
-    text: string,
-    size: string = "text-3xl md:text-4xl"
-  ) {
-    const words = text.trim().split(/\s+/);
-    const angles = [-6, -3, 0, 3, 6, -4, 2, -2, 4];
-    return (
-      <h1 className={`${size} font-bold font-brand mb-8 text-center`}>
-        {words.map((word, idx) => {
-          const angle = angles[idx % angles.length];
-          return (
-            <span
-              key={`w-${idx}`}
-              className="inline-block mr-2 md:mr-3 px-2 md:px-3 py-1 md:py-2 bg-cyan-600 text-black rounded-[3px] border-2 border-black shadow-[3px_3px_0_0_#000]"
-              style={{ transform: `rotate(${angle}deg)` }}
-            >
-              {word}
-            </span>
-          );
-        })}
-      </h1>
-    );
-  }
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ecclection.com";
 
-  function renderPunkHeading(text: string, size: string = "text-xl") {
-    const words = text.trim().split(/\s+/);
-    const angles = [-4, -2, 0, 2, 4, -3, 1, -1, 3];
-    return (
-      <h2 className={`${size} font-semibold font-brand mb-8`}>
-        {words.map((word, idx) => {
-          const angle = angles[idx % angles.length];
-          return (
-            <span
-              key={`h-${idx}`}
-              className="inline-block mr-1 md:mr-2 px-1 md:px-2 py-1 bg-cyan-500 text-white rounded-[2px] border border-black shadow-[2px_2px_0_0_#000]"
-              style={{ transform: `rotate(${angle}deg)` }}
-            >
-              {word}
-            </span>
-          );
-        })}
-      </h2>
-    );
-  }
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: siteUrl,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Community Resources",
+        item: `${siteUrl}/resources`,
+      },
+    ],
+  };
+
+  const collectionPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Community Resources",
+    description:
+      "Access essential community resources including mental health support, food security, housing assistance, crisis support, and more in Portage Park, Chicago.",
+    url: `${siteUrl}/resources`,
+    about: {
+      "@type": "Thing",
+      name: "Community Support Services",
+      description:
+        "Resources for mental health, food security, housing, and crisis support in Chicago",
+    },
+  };
 
   return (
     <main className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(collectionPageSchema),
+        }}
+      />
       <LenisProvider />
       {/* Header Section */}
       <section className="container section-pad text-left">
-        {renderPunkTitle("Community Resources", "text-4xl md:text-5xl")}
+        {renderPunkTitle("Community Resources", "text-4xl md:text-5xl", "mb-8")}
         <p className="text-lg text-white sm:w-1/2 mx-auto leading-5">
           We believe in supporting our community. Below you'll find a curated
           list of trusted organizations and resources dedicated to helping
@@ -178,7 +222,10 @@ export default function CommunityResourcesPage() {
       <section className="container section-pad text-center">
         {renderPunkHeading(
           "Local Support Organizations",
-          "text-2xl md:text-3xl"
+          "text-2xl md:text-3xl",
+          "mb-8",
+          "text-black",
+          "white"
         )}
         <p className="text-lg text-white sm:w-1/2 mx-auto leading-5 text-left mb-8">
           In addition to national resources, here are some local organizations
@@ -219,7 +266,7 @@ export default function CommunityResourcesPage() {
 
       <section>
         <div className="container section-pad text-center">
-          {renderPunkHeading("Helpful Resources", "text-2xl md:text-3xl")}
+          {renderPunkHeading("Helpful Resources", "text-2xl md:text-3xl", "mb-8", "text-black", "white")}
           <p className="text-lg text-white sm:w-1/2 mx-auto text-left leading-5 mb-8">
             Explore the following organizations that provide vital services in
             mental health, food security, housing, and crisis support organized
@@ -233,7 +280,10 @@ export default function CommunityResourcesPage() {
       <section className="container section-pad">
         {renderPunkHeading(
           "Food, Housing & More",
-          "text-center text-white mb-8 text-2xl md:text-3xl"
+          "text-2xl md:text-3xl",
+          "text-center mb-8",
+          "text-white",
+          "white"
         )}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {resources.map((resource, index) => (
@@ -273,7 +323,7 @@ export default function CommunityResourcesPage() {
       {/* Call to Action */}
       <section className="container section-pad text-center">
         <div className="max-w-4xl mx-auto">
-          {renderPunkHeading("Need Immediate Help?", "text-2xl md:text-3xl")}
+          {renderPunkHeading("Need Immediate Help?", "text-2xl md:text-3xl", "mb-8", "text-white", "white")}
           <p className="text-lg text-white mb-8 sm:w-1/2 mx-auto leading-5">
             If you or someone you know is in crisis, please reach out for help
             immediately. You are not alone.

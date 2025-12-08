@@ -9,13 +9,16 @@ import { PreloadBackground } from "@/components/PreloadBackground";
 import { Footer } from "@/components/sections/Footer";
 import { FontProvider } from "@/components/FontProvider";
 
-// Configure your fonts
+// Configure your fonts with optimized loading
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
   preload: true,
   fallback: ["system-ui", "arial"],
+  adjustFontFallback: true,
+  // Only load what we need
+  weight: ["400", "500", "600", "700"],
 });
 
 const quintessential = Quintessential({
@@ -25,24 +28,28 @@ const quintessential = Quintessential({
   display: "swap",
   preload: true,
   fallback: ["serif"],
+  adjustFontFallback: true,
 });
 
 const raleway = Raleway({
   subsets: ["latin"],
   variable: "--font-normal",
   display: "swap",
-  preload: true,
+  preload: false, // Not critical, can load later
   fallback: ["system-ui", "sans-serif"],
+  adjustFontFallback: true,
+  weight: ["400", "500", "600"],
 });
 
-// Alternate brand font for testing/toggling
+// Alternate brand font for testing/toggling - lazy load
 const pirataOne = Pirata_One({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-brand-alt",
   display: "swap",
-  preload: true,
+  preload: false, // Not critical
   fallback: ["serif"],
+  adjustFontFallback: true,
 });
 
 export const metadata: Metadata = {
@@ -99,8 +106,8 @@ export const metadata: Metadata = {
     title: "Ecclection | Local Art & Community Vibe",
     description:
       "A vibrant local shop featuring vintage treasures, handmade art, and community events in Portage Park, Chicago.",
-    images: ["/og-image.jpg"],
-    creator: "@ecclection",
+    images: ["https://ecclection.com/og-image.jpg"],
+    creator: "@Ecclectionchicago",
   },
   robots: {
     index: true,
@@ -120,7 +127,7 @@ export const metadata: Metadata = {
     // yahoo: "your-yahoo-verification-code",
   },
   alternates: {
-    canonical: "/",
+    canonical: "https://ecclection.com",
   },
   icons: {
     icon: "/logo.png",
@@ -177,7 +184,6 @@ export default function RootLayout({
       SOCIAL_URLS.instagram,
       SOCIAL_URLS.facebook,
       SOCIAL_URLS.tiktok,
-      SOCIAL_URLS.website,
     ],
   };
 
@@ -206,6 +212,16 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${quintessential.variable} ${raleway.variable} ${pirataOne.variable}`}
     >
+      <head>
+        {/* Resource hints for external domains */}
+        <link rel="dns-prefetch" href="https://maps.app.goo.gl" />
+        <link rel="dns-prefetch" href="https://instagram.com" />
+        <link rel="dns-prefetch" href="https://facebook.com" />
+        <link rel="dns-prefetch" href="https://tiktok.com" />
+        {/* Preconnect to Google Fonts */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
       <body className={`${inter.variable} ${quintessential.variable} ${raleway.variable} ${pirataOne.variable}`}>
         <FontProvider
           interVariable={inter.variable}

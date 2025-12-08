@@ -1,34 +1,14 @@
 // components/sections/UnderConstruction.tsx
 import { SOCIAL_URLS } from "@/lib/constants";
+import { renderPunkTitle } from "@/lib/punk-typography";
 
 export function UnderConstruction() {
-  function renderPunkTitle(text: string) {
-    const words = text.trim().split(/\s+/);
-    const angles = [-6, -3, 0, 3, 6, -4, 2, -2, 4];
-    return (
-      <h1 className="text-4xl md:text-6xl font-bold font-brand mb-6 text-center">
-        {words.map((word, idx) => {
-          const angle = angles[idx % angles.length];
-          return (
-            <span
-              key={`w-${idx}`}
-              className="inline-block mr-2 md:mr-3 px-2 md:px-3 py-1 md:py-2 bg-cyan-600 text-black rounded-[3px] border-2 border-black shadow-[3px_3px_0_0_#000]"
-              style={{ transform: `rotate(${angle}deg)` }}
-            >
-              {word}
-            </span>
-          );
-        })}
-      </h1>
-    );
-  }
-
   return (
     <section className="min-h-screen flex items-center justify-center">
       <div className="container section-pad">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           {/* Under Construction Header */}
-          {renderPunkTitle("Under Construction")}
+          {renderPunkTitle("Under Construction", "text-4xl md:text-6xl", "mb-6")}
           
           <p className="text-xl md:text-2xl text-white font-brand">
             We're building something special! 🎨
