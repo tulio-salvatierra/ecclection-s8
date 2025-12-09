@@ -8,7 +8,7 @@ export function StoreActivities() {
   useFadeAnimation(ref);
 
   return (
-    <section ref={ref} className="bg-transparent h-screen py-16 px-4 md:px-8">
+    <section ref={ref} className="bg-transparent h-auto sm:py-16 px-4 md:px-8">
       <div className="relative max-w-5xl mx-auto min-h-[60vh] flex flex-col justify-between">
         {/* Top oversized title */}
         <div className="mb-10">
