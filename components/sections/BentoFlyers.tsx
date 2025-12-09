@@ -23,7 +23,7 @@ export function FlyersBento() {
             <img
               src="/flyers/IMG_6129.jpeg"
               alt="Housing services flyer"
-              className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+              className="w-full h-full object-fit group-hover:scale-105 transition-transform duration-300"
             />
           </div>
 
@@ -32,16 +32,16 @@ export function FlyersBento() {
             <img
               src="/flyers/IMG_6197.jpeg"
               alt="Free store flyer"
-              className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+              className="w-full h-full object-fit group-hover:scale-105 transition-transform duration-300"
             />
           </div>
 
           {/* Medium flyer - bottom middle-left */}
           <div className="col-span-1 sm:col-span-2 sm:row-span-2 border-2 border-foreground hover:border-accent transition-colors overflow-hidden group flex items-center justify-center bg-black/10">
             <img
-              src="/flyers/ice.png"
+              src="/flyers/kyr.png"
               alt="ICE abduction flyer"
-              className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+              className="w-full h-full object-fit group-hover:scale-105 transition-transform duration-300"
             />
           </div>
           {/* Small flyer - bottom right */}
@@ -49,7 +49,7 @@ export function FlyersBento() {
             <img
               src="/flyers/IMG_6370.jpeg"
               alt="Immigrant healthcare flyer"
-              className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+              className="w-full h-full object-fit group-hover:scale-105 transition-transform duration-300"
             />
           </div><div className="mt-12 text-center col-span-1 sm:col-span-6">
         <Badge
