@@ -102,7 +102,7 @@ export default function EventsPage() {
                   Artist & Community Appreciation Night — Dates announced on
                   social media
                 </h2>
-                <p className="text-md text-black mx-auto leading-6 my-8 justify-center">
+                <p className="text-sm sm:text-md text-black mx-auto leading-6 sm:my-8 my-4 justify-center">
                   At <strong>Ecclection</strong>, we believe art should connect
                   you, surprise you and basically make your whole day better.
                   We’re not just a shop in <strong>Portage Park</strong> — we’re
@@ -119,7 +119,7 @@ export default function EventsPage() {
                     src="/child.jpeg"
                     alt="Artists Spot"
                     fill
-                    className="object-cover rounded-md"
+                    className="object-cover object-top h-full w-full rounded-md"
                     sizes="(max-width: 768px) 100vw, 50vw"
                     loading="lazy"
                   />
@@ -152,11 +152,11 @@ export default function EventsPage() {
             >
               <source src="/Artists_spot.mp4" type="video/mp4" />
             </video>
-            <div className="relative z-10 rounded-md sm:w-1/2 p-4 backdrop-blur-3xl">
-              <h2 className="text-2xl md:text-3xl text-white font-brand">
+            <div className="relative z-10 rounded-md sm:w-1/2 p-2 sm:p-4 backdrop-blur-3xl">
+              <h2 className="text-xl sm:text-2xl md:text-3xl text-white font-brand">
                 Bi-Monthly Artist & Community Nights
               </h2>
-              <p className="text-white leading-6  sm:text-sm text-xs  my-4">
+              <p className="text-white leading-6  sm:text-sm text-xs  my-2 sm:my-4">
                 Every event we host is crafted to spark connection, creativity
                 &amp; genuine human joy. From our{" "}
                 <strong>

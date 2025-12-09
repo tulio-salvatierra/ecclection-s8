@@ -29,7 +29,7 @@ export function Contact({
     <section ref={ref} className={`fade-in container section-pad ${className}`}>
       <div className="text-center mb-12">
         {renderPunkHeading(heading, "text-3xl md:text-4xl", "mb-4 text-center", "text-black", "large")}
-        <p className="text-md text-white sm:w-1/2 mx-auto">
+        <p className="text-sm sm:text-md text-white sm:w-1/2 mx-auto text-left">
           Have questions, want to collaborate, or just want to say hi? We LOVE hearing from our neighbors, artists, creators & curious wanderers. Text or email us anytime — it’s our favorite way to chat!
         </p>
       </div>
@@ -40,16 +40,16 @@ export function Contact({
           <h3 className="text-2xl font-semibold text-black font-brand mb-6">
             Contact Information
           </h3>
-          <p className="mb-4 text-black">
+          <p className="mb-4 text-black text-left text-sm sm:text-md">
           Text or email us anytime, or just come in for a good old conversation, that’s our preferred a communication. Humans interacting with other humans- what a concept!
           </p>
           <div className="space-y-4">
-            <p className="font-medium text-black font-brand">Store Hours:</p>
-            <p className="text-black font-bold">Monday & Tuesday: Closed</p>
-            <p className="text-black font-bold">
+            <p className="font-medium text-black font-brand text-left text-sm sm:text-md">Store Hours:</p>
+            <p className="text-black font-bold text-left text-sm sm:text-md">Monday & Tuesday: Closed</p>
+            <p className="text-black font-bold text-left text-sm sm:text-md">
               Wednesday, Thursday, Friday: 12pm - 6pm
             </p>
-            <p className="text-black font-bold">
+            <p className="text-black font-bold text-left text-sm sm:text-md">
               Saturday & Sunday: 11am - 5pm
             </p>
             <div className="flex items-center space-x-3">
@@ -70,17 +70,17 @@ export function Contact({
               </div>
 
               <div>
-                <p className="sm:text-lg text-sm font-medium text-black font-brand">Phone</p>
+                <p className="sm:text-lg text-xs sm:text-md font-medium text-black font-brand">Phone</p>
                 <a
                   href="sms:+1773951799"
-                  className="text-black hover:text-gray-700 transition-colors"
+                  className="text-black hover:text-gray-700 transition-colors text-left text-sm sm:text-md"
                 >
                   +1 (773) 951-7992
                 </a>
               </div>
             </div>
 
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-3 text-left">
               <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center">
                 <svg
                   className="w-5 h-5 text-cyan-600"
@@ -97,17 +97,17 @@ export function Contact({
                 </svg>
               </div>
               <div>
-                <p className="sm:text-lg text-sm font-medium text-black font-brand">Email</p>
+                <p className="sm:text-lg text-xs sm:text-md font-medium text-black font-brand">Email</p>
                 <a
                   href="mailto:EcclectionChicago@gmail.com"
-                  className="text-black hover:text-gray-700 transition-colors"
+                  className="text-black hover:text-gray-700 transition-colors text-left text-sm sm:text-md"
                 >
                   EcclectionChicago@gmail.com
                 </a>
               </div>
             </div>
 
-            <div className="flex items-start space-x-3">
+            <div className="flex items-start space-x-3 text-left">
               <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center mt-1">
                 <svg
                   className="w-5 h-5 text-cyan-600"
@@ -130,8 +130,8 @@ export function Contact({
                 </svg>
               </div>
               <div>
-                <p className="sm:text-lg text-sm font-medium text-black font-brand">Address</p>
-                <p className="text-black">
+                <p className="sm:text-lg text-xs sm:text-md font-medium text-black font-brand">Address</p>
+                <p className="text-black text-left text-sm sm:text-md">
                   6059 W. Irving Park Road, Chicago, IL 60634
                 </p>
               </div>

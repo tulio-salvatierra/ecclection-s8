@@ -14,44 +14,44 @@ export function FlyersBento() {
           your community to help spread awareness and support those in need.
         </p>
 
-        <div className="grid grid-cols-6 grid-rows-3 gap-4 h-[600px] sm:h-[700px] lg:h-[800px]">
+        <div className="grid grid-cols-1 sm:grid-cols-6 sm:grid-rows-3 gap-4 sm:h-[700px] lg:h-[800px]">
           {/* Large flyer - spans 2 columns and 2 rows */}
           
 
           {/* Tall flyer - right side, spans 3 rows */}
-          <div className="col-span-2 row-span-2 border-2 border-foreground hover:border-accent transition-colors overflow-hidden group">
+          <div className="col-span-1 sm:col-span-2 sm:row-span-2 border-2 border-foreground hover:border-accent transition-colors overflow-hidden group flex items-center justify-center bg-black/10">
             <img
               src="/flyers/IMG_6129.jpeg"
               alt="Housing services flyer"
-              className="w-full h-full object-fit group-hover:scale-105 transition-transform duration-300"
+              className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
             />
           </div>
 
           {/* Small flyer - bottom left */}
-          <div className="col-span-2 row-span-1 border-2 border-foreground hover:border-accent transition-colors overflow-hidden group">
+          <div className="col-span-1 sm:col-span-2 sm:row-span-1 border-2 border-foreground hover:border-accent transition-colors overflow-hidden group flex items-center justify-center bg-black/10">
             <img
               src="/flyers/IMG_6197.jpeg"
               alt="Free store flyer"
-              className="w-full h-full object-fit group-hover:scale-105 transition-transform duration-300"
+              className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
             />
           </div>
 
           {/* Medium flyer - bottom middle-left */}
-          <div className="col-span-2 row-span-2 border-2 border-foreground hover:border-accent transition-colors overflow-hidden group">
+          <div className="col-span-1 sm:col-span-2 sm:row-span-2 border-2 border-foreground hover:border-accent transition-colors overflow-hidden group flex items-center justify-center bg-black/10">
             <img
               src="/flyers/ice.png"
               alt="ICE abduction flyer"
-              className="w-full h-full mx-auto object-fit group-hover:scale-105 transition-transform duration-300"
+              className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
             />
           </div>
           {/* Small flyer - bottom right */}
-          <div className="col-span-2 row-span-1 border-2 border-foreground hover:border-accent transition-colors overflow-hidden group">
+          <div className="col-span-1 sm:col-span-2 sm:row-span-1 border-2 border-foreground hover:border-accent transition-colors overflow-hidden group flex items-center justify-center bg-black/10">
             <img
               src="/flyers/IMG_6370.jpeg"
               alt="Immigrant healthcare flyer"
-              className="w-full h-full object-fit group-hover:scale-105 transition-transform duration-300"
+              className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
             />
-          </div><div className="mt-12 text-center col-span-6">
+          </div><div className="mt-12 text-center col-span-1 sm:col-span-6">
         <Badge
           variant="secondary"
           className="w-auto text-4xl sm:text-4xl md:text-4xl lg:text-6xl px-4 py-2 bg-cyan-600 border-2 border-black shadow-[4px_4px_0_0_#000] font-brand"
