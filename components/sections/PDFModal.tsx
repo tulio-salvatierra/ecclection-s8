@@ -73,7 +73,7 @@ export function PDFModal() {
             </p>
             
             <p className="font-brand text-lg sm:text-xl text-primary text-center mt-8">
-              See you soon — the magic is worth the wait
+              We'll be back in February 7th — the magic is worth the wait
             </p>
             
             <div className="border-t border-border pt-6 mt-8 space-y-3 text-center">

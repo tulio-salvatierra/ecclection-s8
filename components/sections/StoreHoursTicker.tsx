@@ -3,7 +3,7 @@
 import { Clock } from "lucide-react";
 
 export function StoreHoursTicker() {
-  const tickerText = "Updated Store Hours: Ecclection will be closed for January - We will be back with fresh energy and new treasures";
+  const tickerText = "Updated Store Hours: Ecclection will be closed for January - We will be back with fresh energy and new treasures on February 7th";
 
   return (
     <div className="sticky top-[72px] z-40 bg-primary/95 backdrop-blur-md border-b border-primary/30 shadow-sm overflow-hidden">
