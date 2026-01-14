@@ -304,6 +304,19 @@
   }
 }
 
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-600.333%);
+  }
+}
+
+.animate-ticker {
+  animation: ticker-scroll 60s linear infinite;
+}
+
 /* Site footer */
 .site-footer {
   @apply bg-muted text-muted-foreground text-center py-6 mt-12;
