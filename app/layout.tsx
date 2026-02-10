@@ -3,7 +3,7 @@ import "./globals.css"; // tailwind or your global CSS
 import type { Metadata } from "next";
 import { Header } from "@/components/sections/Header";
 import { StoreHoursTicker } from "@/components/sections/StoreHoursTicker";
-import { PDFModal } from "@/components/sections/PDFModal";
+
 import { ClientEffects } from "@/components/SoundOnScroll/ClientFX";
 import { Inter, Quintessential, Raleway, Pirata_One } from "next/font/google";
 import { SOCIAL_URLS, BUSINESS_INFO } from "@/lib/constants";
@@ -244,7 +244,7 @@ export default function RootLayout({
         />
         <Header />
         <StoreHoursTicker />
-        <PDFModal />
+        
 
         {/* Main content area */}
         <main>

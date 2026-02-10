@@ -3,7 +3,8 @@
 import { Clock } from "lucide-react";
 
 export function StoreHoursTicker() {
-  const tickerText = "Updated Store Hours: Ecclection will be closed for January - We will be back with fresh energy and new treasures on February 7th";
+  const tickerText = "Welcome!  Surpies!!! We are back in business! We are open Monday - Friday from 12pm - 6pm We are open Saturday - Sunday from 11am - 5pm";
+
 
   return (
     <div className="sticky top-[72px] z-40 bg-primary/95 backdrop-blur-md border-b border-primary/30 shadow-sm overflow-hidden">
@@ -12,13 +13,13 @@ export function StoreHoursTicker() {
           <Clock className="w-4 h-4 shrink-0 ml-4 z-10 bg-primary/95" />
           <div className="flex-1 overflow-hidden">
             <div className="flex animate-ticker whitespace-nowrap">
-              <span className="sm:text-lg text-xl  font-brand font-normal mr-8 inline-block">
+              <span className=" text-xl  font-brand font-normal mr-8 inline-block">
                 {tickerText}
               </span>
-              <span className="sm:text-lg text-xl  font-brand font-normal mr-8 inline-block">
+              <span className="text-xl  font-brand font-normal mr-8 inline-block">
                 {tickerText}
               </span>
-              <span className="sm:text-lg text-xl  font-brand font-normal mr-8 inline-block">
+              <span className="text-xl  font-brand font-normal mr-8 inline-block">
                 {tickerText}
               </span>
             </div>
