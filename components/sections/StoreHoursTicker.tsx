@@ -3,7 +3,7 @@
 import { Clock } from "lucide-react";
 
 export function StoreHoursTicker() {
-  const tickerText = "Welcome!  Surpies!!! We are back in business! We are open Monday - Friday from 12pm - 6pm We are open Saturday - Sunday from 11am - 5pm";
+  const tickerText = "Welcome!  Surpies!!! We are back in business! We are open Wednesday - Sunday from 11am - 5pm";
 
 
   return (

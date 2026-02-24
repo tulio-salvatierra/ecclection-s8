@@ -96,8 +96,8 @@ export function Footer() {
             </h3>
             <ul className="space-y-1">
               <li>Monday & Tuesday: Closed</li>
-              <li>Wednesday, Thursday & Friday: 12:00 PM - 6:00 PM</li>
-              <li>Saturday & Sunday: 11:00 AM - 5:00 PM</li>
+              <li>Wednesday - Sunday: 11am - 5pm</li>
+              <li></li>
             </ul>
           </div>
         </div>
