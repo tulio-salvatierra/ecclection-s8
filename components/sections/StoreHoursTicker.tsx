@@ -3,7 +3,7 @@
 import { Clock } from "lucide-react";
 
 export function StoreHoursTicker() {
-  const tickerText = "Welcome!  Surpies!!! We are back in business! We are open Wednesday - Sunday from 11am - 5pm";
+  const tickerText = "Welcome!  Surpies!!! We are back in business! We are open from Wednesday to Sunday from 11am - 5pm";
 
 
   return (
@@ -19,7 +19,7 @@ export function StoreHoursTicker() {
               <span className="text-xl  font-brand font-normal mr-8 inline-block">
                 {tickerText}
               </span>
-              <span className="text-xl  font-brand font-normal mr-8 inline-block">
+              <span className="text-2xl  font-brand font-normal mr-8 inline-block">
                 {tickerText}
               </span>
             </div>
