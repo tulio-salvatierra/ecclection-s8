@@ -33,7 +33,6 @@ export function Hero() {
           muted
           playsInline
           preload="metadata"
-          loading="lazy"
           onLoadedData={(e) => {
             const video = e.currentTarget;
             if (video.readyState >= 2) {
