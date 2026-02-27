@@ -37,6 +37,7 @@
   --chart-4: oklch(0.96 0.01 120);
   --chart-5: oklch(0.25 0.01 240);
   --radius: 0.5rem;
+  --bg-parallax-offset: 0px;
   --sidebar: oklch(0.98 0.02 85);
   --sidebar-foreground: oklch(0.25 0.01 240);
   --sidebar-primary: var(--ecclection-teal);
@@ -136,7 +137,7 @@
     font-family: var(--font-normal, system-ui, sans-serif);
     background-image: url('/ecclection-bg.svg');
     background-size: 140%;
-    background-position: center;
+    background-position: center calc(50% + var(--bg-parallax-offset));
     background-repeat: no-repeat;
     background-attachment: fixed;
     min-height: 100vh;
