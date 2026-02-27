@@ -27,20 +27,20 @@ export function Contact({
 
   return (
     <section ref={ref} className={`fade-in container section-pad ${className}`}>
-      <div className="text-center mb-12">
+      <div className="text-center my-12">
         {renderPunkHeading(heading, "text-3xl md:text-4xl", "mb-4 text-center", "text-black", "large")}
-        <p className="text-sm sm:text-md text-white sm:w-1/2 mx-auto text-left">
+        <p className="fade-in text-xl font-brand sm:text-2xl text-white sm:w-1/2 mx-auto text-left">
           Have questions, want to collaborate, or just want to say hi? We LOVE hearing from our neighbors, artists, creators & curious wanderers. Text or email us anytime — it’s our favorite way to chat!
         </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Contact Information */}
-        <Card className="p-8 bg-cyan-600 border-2 border-black shadow-[6px_6px_0_0_#000]">
-          <h3 className="text-2xl font-semibold text-black font-brand mb-6">
+        <Card className="fade-in p-8 bg-cyan-600/40 backdrop-blur-sm border-2 border-black shadow-[6px_6px_0_0_#000]">
+          <h3 className="fade-in text-2xl font-semibold text-black font-brand mb-6">
             Contact Information
           </h3>
-          <p className="mb-4 text-black text-left text-sm sm:text-md">
+          <p className="fade-in mb-4 text-black text-left text-sm sm:text-md">
           Text or email us anytime, or just come in for a good old conversation, that’s our preferred a communication. Humans interacting with other humans- what a concept!
           </p>
           <div className="space-y-4">
@@ -138,7 +138,7 @@ export function Contact({
             </div>
           </div>
         </Card>
-        <div className="w-full h-96 md:h-auto">
+        <div className="w-full h-96 md:h-auto fade-in">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4041.277172725385!2d-87.78129698744421!3d41.95284047111365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fcbaefc6b5d6f%3A0xb8883b1b82dc506e!2sEcclection!5e1!3m2!1ses!2sus!4v1760900284271!5m2!1ses!2sus"
             width="600"

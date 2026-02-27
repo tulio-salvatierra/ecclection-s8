@@ -31,7 +31,7 @@ export function Header() {
 
   return (
     <>
-      <header className="w-3/4 mt-6 md:mt-8 container site-header sticky top-0 z-50 backdrop-blur-md bg-card/90 rounded-lg mt-2 mx-10">
+      <header className="w-3/4 left-1/2 -translate-x-1/2 container site-header fixed top-15 z-50 backdrop-blur-md bg-card/90 rounded-lg mt-2 mx-10">
         <div className="w-full flex items-center justify-between nav">
           <div className="brand">
             <Link href="/" className="flex items-center space-x-2">

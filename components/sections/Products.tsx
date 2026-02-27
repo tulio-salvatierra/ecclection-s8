@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useFadeAnimation } from "@/app/hooks/useFadeAnimtion";
 import React, { useRef } from "react";
+import { renderPunkHeading } from "@/lib/punk-typography";
 
 export function ProductsShowcase() {
   const ref = useRef<HTMLDivElement>(null);
@@ -38,9 +39,7 @@ export function ProductsShowcase() {
     <section ref={ref} className="py-16 px-4 mt-18 md:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12 text-center">
-          <h2 className="fade-in font-brand text-cyan-500 text-4xl md:text-5xl mb-4">
-            Curated Treasures & Curious Finds
-          </h2>
+          {renderPunkHeading("Curated Treasures & Curious Finds", "fade-in text-4xl md:text-5xl text-cyan-500 mb-4", "text-center", "text-white", "large")}
           <p className="fade-in text-white text-md sm:max-w-1/2 text-left mx-auto">
             Every piece has a past — and now it’s ready for its next adventure.{" "}
             <br /><br />
@@ -68,7 +67,6 @@ export function ProductsShowcase() {
                     muted
                     playsInline
                     preload="metadata"
-                    loading="lazy"
                   />
                 ) : (
                   <Image

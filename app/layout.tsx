@@ -222,7 +222,15 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://tiktok.com" />
         {/* Preconnect to Google Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&family=Mrs+Saint+Delafield&display=swap"
+          rel="stylesheet"
+        />
       </head>
       <body className={`${inter.variable} ${quintessential.variable} ${kadwa.variable} ${pirataOne.variable}`}>
         <FontProvider

@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import React from "react";
 import { useFadeAnimation } from "@/app/hooks/useFadeAnimtion";
+import { ScrollBanner } from "../sections/ScrollBanner/ScrollBanner";
 
 interface AboutProps {
   title?: string;
@@ -89,12 +90,7 @@ export function About({
       </div>
 
       <div className="mt-12 text-center overflow-hidden">
-        <Badge
-          variant="secondary"
-          className="w-auto text-2xl sm:text-4xl md:text-4xl lg:text-6xl px-4 py-2 bg-cyan-600 border-2 border-black shadow-[4px_4px_0_0_#000] font-brand"
-        >
-          Community • Art • Creativity • Sustainability
-        </Badge>
+       <ScrollBanner />
       </div>
     </section>
   );

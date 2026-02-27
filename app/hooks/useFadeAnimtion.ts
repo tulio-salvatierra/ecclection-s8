@@ -26,7 +26,7 @@ export function useFadeAnimation(ref: React.RefObject<HTMLElement>) {
         {
           opacity: 1,
           y: 0,
-          duration: 2,
+          duration: 1.5,
           stagger: 0.8,
           ease: "power3.inOut",
           scrollTrigger: {

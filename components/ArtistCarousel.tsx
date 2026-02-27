@@ -61,7 +61,7 @@ export function ArtistCarousel({ artists }: ArtistCarouselProps) {
           "mb-6",
           "text-white"
         )}
-        <p className="mt-2 text-xl text-white w-full sm:w-3/4 mx-auto text-left leading-6">
+        <p className="fade-in mt-2 text-xl text-white w-full sm:w-3/4 mx-auto text-left leading-6">
           Here’s a little peek at the wonderfully unique, talented humans who help  
           make Ecclection  what it is. We usually have over a dozen artisans and 
           artists work available- from handcrafted jewelry, painters, to photography,
@@ -77,19 +77,19 @@ export function ArtistCarousel({ artists }: ArtistCarouselProps) {
           display space!
         </p>
       </div>
-      <div className="relative grid md:grid-cols-2 sm:gap-12 gap-4 container min-h-auto items-center">
+      <div className="relative grid md:grid-cols-2 sm:gap-1 gap-1 container min-h-auto items-center">
         {/* Left: Tilted Frame with Portrait */}
         <div className="relative flex items-center justify-center">
           {/* Vertical Text */}
           <div className=" absolute left-0 top-1/2 -translate-y-1/2 -rotate-90 origin-center">
-            <p className="font-brand text-lg tracking-wide text-white uppercase ml-4 whitespace-nowrap">
+            <p className="fade-in font-brand text-lg tracking-wide text-white uppercase ml-4 whitespace-nowrap">
               Meet the Artists
             </p>
           </div>
 
           {/* Tilted Frame with Transition */}
           <div className="relative w-80 max-w-sm sm:ml-12">
-            <div className="relative rotate-2 bg-cyan-600 w-[310px] h-[310px] p-2border-2 border-black shadow-[8px_8px_0_0_#000]">
+            <div className="fade-in relative rotate-2 bg-cyan-600 w-[310px] h-[310px] p-2border-2 border-black shadow-[8px_8px_0_0_#000]">
               <div className="grid items-center mt-auto mb-auto overflow-hidden w-[289px] h-[289px]">
                 {" "}
                 {/* Enforce fixed width and height */}
@@ -98,10 +98,10 @@ export function ArtistCarousel({ artists }: ArtistCarouselProps) {
                     key={currentIndex}
                     src={currentArtist.image}
                     alt={currentArtist.name}
-                    className="object-center fixed w-[290px] ml-2 mt-2 h-[290px] object-cover animate-in duration-500"
+                    className="fade-in object-center fixed w-[290px] ml-2 mt-2 h-[290px] object-cover animate-in duration-500"
                   />
                 ) : (
-                  <div className="w-full h-full flex items-center justify-center text-6xl">
+                  <div className="fade-in w-full h-full flex items-center justify-center text-6xl">
                     🎨
                   </div>
                 )}
@@ -111,23 +111,23 @@ export function ArtistCarousel({ artists }: ArtistCarouselProps) {
         </div>
 
         {/* Right: Text Content with Transition */}
-        <div className="flex flex-col justify-center space-y-6 h-[600px]">
-          <p className="font-brand text-sm tracking-wide text-cyan-400 uppercase">
+        <div className="flex flex-col justify-center space-y-1 h-[600px]">
+          <p className="fade-in font-brand text-sm tracking-wide text-cyan-400 uppercase">
             Featured Artists
           </p>
 
           <div
             key={`content-${currentIndex}`}
-            className="animate-in slide-in-from-right-4 duration-500"
+            className="fade-in slide-in-from-right-4 duration-500"
           >
-            <h2 className="font-brand text-4xl md:text-5xl lg:text-6xl text-cyan-500 leading-tight text-balance mb-6">
+            <h2 className="fade-in font-brand text-4xl md:text-5xl lg:text-6xl text-cyan-500 leading-tight text-balance mb-6">
               {currentArtist.name}
             </h2>
 
-            <p className="text-base text-white leading-5 max-w-lg mb-8 line-clamp-3">
+            <p className="fade-in text-xl text-white leading-5 max-w-lg mb-8 line-clamp-3">
               {currentArtist.bio}
             </p>
-            <p className="text-base text-white leading-5s\ max-w-lg mb-8">
+            <p className="fade-in text-base text-white leading-5s\ max-w-lg mb-8">
               {currentArtist.specialty && (
                 <strong className="text-cyan-500">
                   Specialty: {currentArtist.specialty}
@@ -141,14 +141,14 @@ export function ArtistCarousel({ artists }: ArtistCarouselProps) {
                     "https://www.instagram.com/" +
                     (currentArtist.social?.instagram || "");
                 }}
-                className="inline-block rounded-md bg-cyan-600 text-black font-bold px-6 py-3 border-2 border-black shadow-[4px_4px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
+                className="fade-in inline-block rounded-md bg-cyan-600 text-black font-bold px-6 py-3 border-2 border-black shadow-[4px_4px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
               >
                 Instagram
               </button>
             )}
           </div>
 
-          <div className="flex items-center gap-6">
+          <div className="fade-in flex items-center gap-6">
             {/* Navigation Controls */}
             <div className="flex items-center gap-3">
               <button

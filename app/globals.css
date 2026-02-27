@@ -330,6 +330,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background: linear-gradient(180deg,rgba(0, 183, 255, 1) 0%, rgba(87, 169, 199, 1) 26%, rgba(242, 225, 225, 1) 100%);
 }
 
 /* Font utility classes */

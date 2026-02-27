@@ -3,6 +3,7 @@ import { ExternalLink, Star } from "lucide-react"
 import { Button } from "../ui/button"
 import React from "react"
 import { useFadeAnimation } from "@/app/hooks/useFadeAnimtion"
+import { renderPunkHeading } from "@/lib/punk-typography"
 
 export function Review() {
   const ref = React.useRef<HTMLElement>(null);
@@ -43,8 +44,9 @@ export function Review() {
     <section ref={ref} className="py-16 px-4 md:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12">
-          <h2 className="font-brand text-center text-4xl md:text-5xl text-cyan-500 mb-4">Press & Reviews</h2>
-          <p className="ftext-white text-lg max-w-2xl mx-auto text-center">What they're saying about us</p>
+          {renderPunkHeading("Press & Reviews", "fade-in text-4xl md:text-5xl text-cyan-500 mb-4", "text-center", "text-white", "large")}
+          
+          <p className="fade-in text-white text-xl max-w-2xl mx-auto text-center">What they're saying about us</p>
         </div>
 
         <article className="border-2 border-black rounded-md mb-12 overflow-hidden backdrop-blur-3xl">
