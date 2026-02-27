@@ -133,7 +133,7 @@
   }
   body {
     @apply text-foreground font-sans;
-    font-family: var(--font-normal, "Raleway"), system-ui, sans-serif;
+    font-family: var(--font-normal, system-ui, sans-serif);
     background-image: url('/ecclection-bg.svg');
     background-size: 140%;
     background-position: center;
@@ -336,30 +336,15 @@
   font-family: var(--font-poppins);
 }
 
-.pirata-one-regular {
-  font-family: "Pirata One", system-ui;
-  font-weight: 400;
-  font-style: normal;
-}
-
-
-
-
 .font-serif {
   font-family: var(--font-playfair);
 }
 
 .font-sans {
-  font-family: var(--font-normal, "Raleway"), system-ui, sans-serif;
+  font-family: var(--font-normal, system-ui, sans-serif);
 }
 
 .font-brand {
-  font-family: var(--font-brand-alt, "Pirata One"), serif;
+  font-family: var(--font-normal, system-ui, sans-serif);
 }
 
-/* Optional: toggling helper
-   Add class 'use-brand-alt' on <html> to switch to Pirata One
-*/
-.use-brand-alt .font-brand {
-  font-family: var(--font-brand-alt);
-}
