@@ -135,7 +135,7 @@
   body {
     @apply text-foreground font-sans;
     font-family: var(--font-normal, system-ui, sans-serif);
-    background-image: url('/ecclection-bg.svg');
+    background-image: url('/ecclection-bg.jpg');
     background-size: 140%;
     background-position: center calc(50% + var(--bg-parallax-offset));
     background-repeat: no-repeat;

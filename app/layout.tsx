@@ -242,8 +242,9 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
-        <Header />
         <StoreHoursTicker />
+        <Header />
+        
         
 
         {/* Main content area */}

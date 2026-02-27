@@ -61,7 +61,7 @@ export function ArtistCarousel({ artists }: ArtistCarouselProps) {
           "mb-6",
           "text-white"
         )}
-        <p className="mt-4 text-white w-full sm:w-1/2 mx-auto text-left leading-6">
+        <p className="mt-2 text-xl text-white w-full sm:w-3/4 mx-auto text-left leading-6">
           Here’s a little peek at the wonderfully unique, talented humans who help  
           make Ecclection  what it is. We usually have over a dozen artisans and 
           artists work available- from handcrafted jewelry, painters, to photography,

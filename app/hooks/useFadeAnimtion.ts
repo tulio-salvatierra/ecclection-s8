@@ -27,91 +27,16 @@ export function useFadeAnimation(ref: React.RefObject<HTMLElement>) {
           opacity: 1,
           y: 0,
           duration: 2,
-          stagger: 0.6,
-          ease: "slow(0.7,0.7,false)",
-          scrollTrigger: {
-            trigger: element,
-            start: "top 85%",
-            toggleActions: "play none none none",
-          },
-        }
-      );
-    });
-    zoomOutElements?.forEach((element) => {
-        gsap.fromTo(
-            element,
-            {  scale: 10 },
-            {
-        
-                scale: 1,
-                duration: 1.5,
-                ease: "expoScale(0.5,7,none)",
-                scrollTrigger: {
-                    trigger: element,
-                    start: "top 80%",
-                    toggleActions: "play none none none",
-                },
-            }
-        );
-    });
-
-
-    scaleElements?.forEach((element) => {
-      gsap.fromTo(
-        element,
-        { opacity: 0, scale: 0.7 },
-        {
-          opacity: 1,
-          scale: 1,
-          duration: 1.2,
-          ease: "power4.inOut",
-          scrollTrigger: {
-            trigger: element,
-            start: "top 80%",
-            toggleActions: "play none none none",
-          },
-        }
-      );
-    });
-
-    splitElements?.forEach((element) => {
-      gsap.fromTo(
-        element,
-        { opacity: 0, y: 100 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 2,
           stagger: 0.8,
-          ease: "power3.out",
+          ease: "power3.inOut",
           scrollTrigger: {
             trigger: element,
-            start: "top 80%",
-            toggleActions: "play none none none",
+            start: "top 75%",
+            toggleActions: "play none none reverse",
           },
         }
       );
     });
-
-    fadeUpElements?.forEach((element) => {
-        gsap.fromTo(
-            element,
-            { opacity: 0, },
-            {
-              opacity: 1,
-                
-            duration: 2.5,
-            ease: "power4.inOut",
-            scrollTrigger: {
-                trigger: element,
-                start: "top 80%",
-                toggleActions: "play none none none",
-            },
-        }
-    );
-    });
-    }
-    }, [ref]);
-
+  }
+});
 }
-
