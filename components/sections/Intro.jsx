@@ -22,19 +22,19 @@ export function Intro() {
           {/* Left side - Text content */}
           <div className="p-2 flex-1 flex flex-col justify-center">
             {/* Eyebrow text */}
-            <div className="mb-2 md:mb-12 fade-in">
+            <div className="mb-2 md:mb-12 fade-in mx-auto">
               <span className="inline-block border border-primary-foreground px-4 py-2 text-base md:text-lg font-brand rounded-sm tracking-wider">
                 SINCE 2023
               </span>
             </div>
 
             {/* Main headline */}
-            <h2 className="text-5xl font-brand md:text-7xl lg:text-8xl font-black text-cyan-300 leading-none mb-4 text-balance fade-in">
+            <h2 className="mx-auto text-5xl font-brand md:text-7xl lg:text-8xl font-black text-cyan-300 leading-none mb-4 text-balance fade-in">
               WE ARE ECCLECTION
             </h2>
 
             {/* Description */}
-            <div className="sm:max-w-2xl mb-12 md:mb-16">
+            <div className="mx-auto sm:max-w-2xl mb-12 md:mb-16">
               <p className="text-xl leading-6 text-primary-foreground/90 fade-in">
                 We’re all about self-expression, sustainability & that spark of
                 WONDERMENT — you never really know what you’ll find @
@@ -64,7 +64,7 @@ export function Intro() {
               </a>
             </div>
 
-            <div className="mt-20 md:mt-32 fade-in ">
+            <div className="mt-20 md:mt-32 fade-in mx-auto">
               <p className="text-xl font-brand tracking-widest uppercase">
                 where community meets art, odd or forgotten treasures & good
                 vibes

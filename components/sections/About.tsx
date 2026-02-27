@@ -32,13 +32,13 @@ export function About({
   useFadeAnimation(ref);
 
   return (
-    <section ref={ref} className={`container section-pad ${className}`}>
+    <section ref={ref} className={`w-screen section-pad ${className}`}>
       <div className="text-center mb-12">
-        <h2 className="fade-in text-3xl md:text-4xl font-bold text-cyan-600 font-brand mb-4">
+        <h2 className="fade-in text-3xl sm:text-4xl font-bold text-cyan-600 font-brand mb-4">
           {title}
         </h2>
         {content && (
-          <p className="fade-in text-md leading-6  text-white text-left max-w-3xl sm:w-1/2 mx-auto">
+          <p className="fade-in text-xl sm:text-2xl leading-6  text-white text-left max-w-3xl sm:w-1/2 mx-auto">
             Ecclection is a little WONDERLAND in Portage Park — a cozy, quirky
             spot where rescued treasures, vintage oddities, handmade goods &
             creative chaos all live happily together.

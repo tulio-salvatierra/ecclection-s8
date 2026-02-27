@@ -67,7 +67,7 @@ export function ScrollBanner() {
   return (
     <section className="mwg_effect013 min-h-[450px] flex items-center justify-center">
       <div className="inner">
-        <div className="banner-container" ref={containerRef} style={{ willChange: 'transform' }}>
+        <div className="banner-container w-screen" ref={containerRef} style={{ willChange: 'transform' }}>
           <p className="phrase flex" ref={phraseRef} style={{ height: "500px" }}>
             {Array.from({ length: 20 }).map((_, index) => (
               <span

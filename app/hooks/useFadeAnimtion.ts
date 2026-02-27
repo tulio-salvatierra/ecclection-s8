@@ -31,7 +31,7 @@ export function useFadeAnimation(ref: React.RefObject<HTMLElement>) {
           ease: "power3.inOut",
           scrollTrigger: {
             trigger: element,
-            start: "top 75%",
+            start: "top 85%",
             toggleActions: "play none none reverse",
           },
         }

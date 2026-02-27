@@ -12,7 +12,7 @@ export function StoreActivities() {
       <div className="relative mx-auto min-h-[60vh] flex flex-col justify-between">
         {/* Top oversized title */}
         <div className="mb-10">
-          <h2 className="fade-in text-4xl md:text-8xl tracking-light text-pink-500 leading-tight" style={{ textShadow: '2px 2px 0px rgba(0, 0, 0, 0.5)', fontFamily: '"Mrs Saint Delafield", cursive' }}>
+          <h2 className="mt-20 md:mt-40 fade-in text-6xl md:text-8xl tracking-light text-pink-500 leading-tight" style={{ textShadow: '2px 2px 0px rgba(0, 0, 0, 0.5)', fontFamily: '"Mrs Saint Delafield", cursive' }}>
             More Than A Store
           </h2>
         </div>
