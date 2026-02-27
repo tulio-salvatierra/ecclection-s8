@@ -42,7 +42,7 @@ export function Review() {
 
   return (
     <section ref={ref} className="py-4 px-4 max-w-full overflow-hidden">
-      <div className="max-w-6xl w-full mx-auto">
+      <div className="w-auto mx-auto">
         <div className="mb-12">
           {renderPunkHeading("Press & Reviews", "fade-in text-4xl md:text-5xl text-cyan-500 mb-4", "text-center", "text-white", "large")}
           

@@ -87,7 +87,7 @@
   --font-sans: var(--font-normal);
   --font-serif: var(--font-playfair);
   --font-display: var(--font-poppins);
-  --font-brand: var(--font-brand);
+  --font-brand: var(--font-normal);
   --font-brand-alt: var(--font-brand-alt);
   --font-mono: var(--font-geist-mono);
   --color-background: var(--background);
@@ -348,10 +348,10 @@
 }
 
 .font-sans {
-  font-family: var(--font-normal, system-ui, sans-serif);
+  font-family: var(--font-normal, Mrs Saint Delafield, sans-serif);
 }
 
 .font-brand {
-  font-family: var(--font-normal, system-ui, sans-serif);
+  font-family: var(--font-brand, Mrs Saint Delafield, sans-serif);
 }
 

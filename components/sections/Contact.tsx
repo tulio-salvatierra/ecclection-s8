@@ -26,7 +26,7 @@ export function Contact({
   useFadeAnimation(ref);
 
   return (
-    <section ref={ref} className={`fade-in container section-pad ${className}`}>
+    <section ref={ref} className={`fade-in container section-pad font-sans ${className}`}>
       <div className="text-center my-12">
         {renderPunkHeading(heading, "text-3xl md:text-4xl", "mb-4 text-center", "text-black", "large")}
         <p className="fade-in text-xl font-brand sm:text-2xl text-white sm:w-1/2 mx-auto text-left">
@@ -40,16 +40,16 @@ export function Contact({
           <h3 className="fade-in text-2xl font-semibold text-black font-brand mb-6">
             Contact Information
           </h3>
-          <p className="fade-in mb-4 text-black text-left text-sm sm:text-md">
+          <p className="fade-in mb-4 text-black text-left text-xl sm:text-2xl font-brand">
           Text or email us anytime, or just come in for a good old conversation, that’s our preferred a communication. Humans interacting with other humans- what a concept!
           </p>
           <div className="space-y-4">
-            <p className="font-medium text-black font-brand text-left text-sm sm:text-md">Store Hours:</p>
-            <p className="text-black font-bold text-left text-sm sm:text-md">Monday & Tuesday: Closed</p>
-            <p className="text-black font-bold text-left text-sm sm:text-md">
+            <p className="font-bold text-black text-left text-xl sm:text-2xl">Store Hours:</p>
+            <p className="text-black font-bold text-left text-xl sm:text-2xl">Monday & Tuesday: Closed</p>
+            <p className="text-black font-bold text-left text-xl sm:text-2xl">
               Wednesday, Thursday, Friday: 12pm - 6pm
             </p>
-            <p className="text-black font-bold text-left text-sm sm:text-md">
+            <p className="text-black font-bold text-left text-xl sm:text-2xl">
               Saturday & Sunday: 11am - 5pm
             </p>
             <div className="flex items-center space-x-3">
@@ -70,10 +70,10 @@ export function Contact({
               </div>
 
               <div>
-                <p className="sm:text-lg text-xs sm:text-md font-medium text-black font-brand">Phone</p>
+                <p className="text-xl sm:text-2xl font-brand text-black">Phone</p>
                 <a
                   href="sms:+1773951799"
-                  className="text-black hover:text-gray-700 transition-colors text-left text-sm sm:text-md"
+                  className="text-black hover:text-gray-700 transition-colors text-left text-xl sm:text-2xl"
                 >
                   +1 (773) 951-7992
                 </a>
