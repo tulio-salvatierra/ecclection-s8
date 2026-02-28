@@ -18,7 +18,7 @@ export default function Influencers() {
         backgroundColor: "rgba(0, 0, 0, 0.5)",
         backgroundBlendMode: "overlay",
       }}
-      className="w-full max-w-full flex justify-between section-pad fade-in overflow-hidden">
+      className="w-full max-w-full flex transition-all duration-300 hover:h-screen hover:w-full justify-between section-pad fade-in overflow-hidden">
       <div className=" text-[#111111] h-auto w-full px-4">
         <h2 className="fade-in text-6xl sm:text-8xl font-brand text-white leading-none p-1">CALLING ANY INFLUENCERS 📣</h2>
         <div className=" sm:mt-5 h-full grid grid-cols-1 md:grid-cols-2 items-start justify-between gap-10">

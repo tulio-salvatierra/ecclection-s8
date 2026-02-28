@@ -10,6 +10,7 @@ import { SOCIAL_URLS, BUSINESS_INFO } from "@/lib/constants";
 import { PreloadBackground } from "@/components/PreloadBackground";
 import { Footer } from "@/components/sections/Footer";
 import { FontProvider } from "@/components/FontProvider";
+import { UnicornStudioBackground } from "@/components/UnicornStudioBackground";
 
 // Configure your fonts with optimized loading
 const inter = Inter({
@@ -233,6 +234,8 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.variable} ${quintessential.variable} ${kadwa.variable} ${pirataOne.variable}`}>
+        <UnicornStudioBackground />
+        <div className="relative z-10">
         <FontProvider
           interVariable={inter.variable}
           quintessentialVariable={quintessential.variable}
@@ -263,6 +266,7 @@ export default function RootLayout({
         </main>
 
         <Footer />
+        </div>
       </body>
     </html>
   );
