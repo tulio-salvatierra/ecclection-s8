@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import React from "react";
 import { useFadeAnimation } from "@/app/hooks/useFadeAnimtion";
+import { ScrollBanner } from "../sections/ScrollBanner/ScrollBanner";
 
 interface AboutProps {
   title?: string;
@@ -31,13 +32,13 @@ export function About({
   useFadeAnimation(ref);
 
   return (
-    <section ref={ref} className={`container section-pad ${className}`}>
+    <section ref={ref} className={`w-screen section-pad ${className}`}>
       <div className="text-center mb-12">
-        <h2 className="fade-in text-3xl md:text-4xl font-bold text-cyan-600 font-brand mb-4">
+        <h2 className="fade-in text-3xl sm:text-4xl font-bold text-cyan-600 font-brand mb-4">
           {title}
         </h2>
         {content && (
-          <p className="fade-in text-md leading-6  text-white text-left max-w-3xl sm:w-1/2 mx-auto">
+          <p className="fade-in text-xl sm:text-2xl leading-6  text-white text-left max-w-3xl sm:w-1/2 mx-auto">
             Ecclection is a little WONDERLAND in Portage Park — a cozy, quirky
             spot where rescued treasures, vintage oddities, handmade goods &
             creative chaos all live happily together.
@@ -89,12 +90,7 @@ export function About({
       </div>
 
       <div className="mt-12 text-center overflow-hidden">
-        <Badge
-          variant="secondary"
-          className="w-auto text-2xl sm:text-4xl md:text-4xl lg:text-6xl px-4 py-2 bg-cyan-600 border-2 border-black shadow-[4px_4px_0_0_#000] font-brand"
-        >
-          Community • Art • Creativity • Sustainability
-        </Badge>
+       <ScrollBanner />
       </div>
     </section>
   );

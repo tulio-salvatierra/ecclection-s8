@@ -3,6 +3,7 @@ import { ExternalLink, Star } from "lucide-react"
 import { Button } from "../ui/button"
 import React from "react"
 import { useFadeAnimation } from "@/app/hooks/useFadeAnimtion"
+import { renderPunkHeading } from "@/lib/punk-typography"
 
 export function Review() {
   const ref = React.useRef<HTMLElement>(null);
@@ -40,11 +41,12 @@ export function Review() {
   ]
 
   return (
-    <section ref={ref} className="py-16 px-4 md:px-8">
-      <div className="max-w-7xl mx-auto">
+    <section ref={ref} className="py-4 px-4 max-w-full overflow-hidden">
+      <div className="w-auto mx-auto">
         <div className="mb-12">
-          <h2 className="font-brand text-center text-4xl md:text-5xl text-cyan-500 mb-4">Press & Reviews</h2>
-          <p className="ftext-white text-lg max-w-2xl mx-auto text-center">What they're saying about us</p>
+          {renderPunkHeading("Press & Reviews", "fade-in text-4xl md:text-5xl text-cyan-500 mb-4", "text-center", "text-white", "large")}
+          
+          <p className="fade-in text-white text-xl max-w-2xl mx-auto text-center">What they're saying about us</p>
         </div>
 
         <article className="border-2 border-black rounded-md mb-12 overflow-hidden backdrop-blur-3xl">
@@ -53,13 +55,13 @@ export function Review() {
               <img
                 src={featuredArticle.image || "/placeholder.svg"}
                 alt={featuredArticle.title}
-                className="w-full h-full object-cover shadow-2 shadow-[3px_3px_0_0_#000] hover:translate-x-[1px] hover:translate-y-[1px] transition-all"
+                className="fade-in w-full h-full object-cover shadow-2 shadow-[3px_3px_0_0_#000] hover:translate-x-[1px] hover:translate-y-[1px] transition-all"
               />
               <div className="fade-in absolute top-4 left-4 bg-accent text-background px-3 py-1 text-md font-brand uppercase tracking-wider">
                 Featured
               </div>
             </div>
-            <div className="p-8 md:p-10 flex flex-col justify-center">
+            <div className="fade-in p-8 md:p-10 flex flex-col justify-center">
               <span className="text-white text-sm font-brand uppercase tracking-wider mb-3">
                 {featuredArticle.publication}
               </span>
@@ -80,7 +82,7 @@ export function Review() {
           </div>
         </article>
 
-        <div className="mb-12">
+        <div className="fade-in mb-12">
           <div className="flex items-center justify-between mb-6">
             <h3 className="font-brand text-2xl md:text-3xl font-bold text-cyan-500">Google Reviews</h3>
             <a
