@@ -1,6 +1,5 @@
 import { Hero } from "@/components/sections/Hero";
 import { LenisProvider } from "@/components/LenisProvider";
-import SoundOnScroll from "@/components/SoundOnScroll/SoundOnScroll";
 import { ARTISTS_DATA } from "@/components/sections/Artists";
 import { ArtistCarousel } from "@/components/ArtistCarousel";
 import type { Metadata } from "next";
@@ -117,7 +116,6 @@ export default async function HomePage() {
         }}
       />
       <LenisProvider />
-      <SoundOnScroll />
       <Hero  />
       <Intro />
       <ArtistCarousel artists={artistsForCarousel} />
