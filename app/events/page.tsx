@@ -5,7 +5,10 @@ import { renderPunkTitle } from "@/lib/punk-typography";
 import Image from "next/image";
 
 // Lazy load heavy components
-const Masonry = dynamic(() => import("@/components/Masonry"), { ssr: false });
+const Masonry = dynamic(() => import("@/components/Masonry"), { 
+  ssr: false,
+  loading: () => <div className="h-64 flex items-center justify-center"><p className="text-white">Loading...</p></div>
+});
 
 const Stack = dynamic(() => import("@/components/Stack"), { ssr: false });
 
@@ -77,29 +80,29 @@ export const metadata: Metadata = {
 export default function EventsPage() {
   return (
     <>
-      <section className="min-h-screen w-screen">
+      <section className="min-h-screen">
         {/* Header Section */}
-        <div role="banner" className="text-center mt-40">
+        <header className="container section-pad text-center">
           {renderPunkTitle("Events & Community Impact", "text-3xl md:text-4xl", "mb-6")}
-          <p className="text-xl sm:text-2xl font-brand text-white sm:w-1/2 mx-auto leading-5">
+          <p className="text-lg text-white sm:w-1/2 mx-auto leading-5">
             Where local art, rescued treasures, community & compassion meet
             under one funky little roof
           </p>
-        </div>
+        </header>
         <LenisProvider />
 
         {/* Main Content Section */}
-        <section className="mt-10">
-          <div className=" px-4 md:px-8 mx-auto space-y-8">
+        <section className="">
+          <div className="max-w-4xl mx-auto space-y-8">
             {/* Upcoming Event (concrete date for SEO + visitors) */}
-            <div className="bg-cyan-600/80 border-2 border-black rounded-lg p-6 shadow-[6px_6px_0_0_#000]">
+            <div className="bg-cyan-600 border-2 border-black rounded-lg p-6 shadow-[6px_6px_0_0_#000]">
               <div className="text-black leading-relaxed grid gap-4 sm:grid-cols-2 grid-cols-1">
                 <div>
                 <h2 className="font-brand text-black text-2xl md:text-3xl ">
                   Artist & Community Appreciation Night — Dates announced on
                   social media
                 </h2>
-                <p className="text-xl sm:text-2xl font-brand text-black mx-auto leading-6 sm:my-8 my-4 justify-center">
+                <p className="text-sm sm:text-md text-black mx-auto leading-6 sm:my-8 my-4 justify-center">
                   At <strong>Ecclection</strong>, we believe art should connect
                   you, surprise you and basically make your whole day better.
                   We’re not just a shop in <strong>Portage Park</strong> — we’re
@@ -144,15 +147,16 @@ export default function EventsPage() {
               muted
               playsInline
               preload="metadata"
+              loading="lazy"
               className="absolute inset-0 w-auto h-full object-cover rounded-md"
             >
               <source src="/Artists_spot.mp4" type="video/mp4" />
             </video>
-            <div className="relative z-10 rounded-md p-2 sm:p-4 backdrop-blur-3xl">
+            <div className="relative z-10 rounded-md sm:w-1/2 p-2 sm:p-4 backdrop-blur-3xl">
               <h2 className="text-xl sm:text-2xl md:text-3xl text-white font-brand">
                 Bi-Monthly Artist & Community Nights
               </h2>
-              <p className="text-xl sm:text-2xl font-brand text-white leading-6  sm:text-sm text-xs  my-2 sm:my-4">
+              <p className="text-white leading-6  sm:text-sm text-xs  my-2 sm:my-4">
                 Every event we host is crafted to spark connection, creativity
                 &amp; genuine human joy. From our{" "}
                 <strong>

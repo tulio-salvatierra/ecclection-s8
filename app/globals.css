@@ -37,7 +37,6 @@
   --chart-4: oklch(0.96 0.01 120);
   --chart-5: oklch(0.25 0.01 240);
   --radius: 0.5rem;
-  --bg-parallax-offset: 0px;
   --sidebar: oklch(0.98 0.02 85);
   --sidebar-foreground: oklch(0.25 0.01 240);
   --sidebar-primary: var(--ecclection-teal);
@@ -85,11 +84,11 @@
 
 @theme inline {
   --font-sans: var(--font-normal);
-  --font-serif: var(--font-normal);
-  --font-display: var(--font-normal);
-  --font-brand: var(--font-normal);
-  --font-brand-alt: var(--font-normal);
-  --font-mono: var(--font-normal);
+  --font-serif: var(--font-playfair);
+  --font-display: var(--font-poppins);
+  --font-brand: var(--font-brand);
+  --font-brand-alt: var(--font-brand-alt);
+  --font-mono: var(--font-geist-mono);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -134,13 +133,13 @@
   }
   body {
     @apply text-foreground font-sans;
-    font-family: var(--font-normal, system-ui, sans-serif);
-    background-image: url('/ecclection-bg.jpg');
-    background-size: cover;
-    background-position: center calc(50% + var(--bg-parallax-offset));
+    font-family: var(--font-normal, "Raleway"), system-ui, sans-serif;
+    background-image: url('/ecclection-bg.svg');
+    background-size: 140%;
+    background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    min-height: 100dvh;
+    min-height: 100vh;
   }
 
   @media (max-width: 768px) {
@@ -148,6 +147,7 @@
       background-size: cover;
     }
   }
+  
   /* Global heading colors - exclude header h1 */
   h1:not(.site-header h1):not(.brand h1), h2, h3, h4, h5, h6 {
     color: white;
@@ -324,34 +324,42 @@
 
 /* App-wide background styles */
 .app-bg {
-  min-height: 100vh;
-  background-image: linear-gradient(
-      180deg,
-      rgba(0, 183, 255, 1) 0%,
-      rgba(87, 169, 199, 1) 26%,
-      rgba(242, 225, 225, 1) 100%
-    ),
-    url('/ecclection-bg.svg');
+  background-image: url('/ecclection-bg.svg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
-/* Font utility classes – all Kadwa (--font-normal) */
+/* Font utility classes */
 .font-display {
-  font-family: var(--font-normal, system-ui, sans-serif);
+  font-family: var(--font-poppins);
 }
 
+.pirata-one-regular {
+  font-family: "Pirata One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+
 .font-serif {
-  font-family: var(--font-normal, system-ui, sans-serif);
+  font-family: var(--font-playfair);
 }
 
 .font-sans {
-  font-family: var(--font-normal, system-ui, sans-serif);
+  font-family: var(--font-normal, "Raleway"), system-ui, sans-serif;
 }
 
 .font-brand {
-  font-family: var(--font-normal, system-ui, sans-serif);
+  font-family: var(--font-brand-alt, "Pirata One"), serif;
 }
 
+/* Optional: toggling helper
+   Add class 'use-brand-alt' on <html> to switch to Pirata One
+*/
+.use-brand-alt .font-brand {
+  font-family: var(--font-brand-alt);
+}

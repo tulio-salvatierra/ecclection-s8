@@ -2,7 +2,6 @@
 import Image from "next/image";
 import { useFadeAnimation } from "@/app/hooks/useFadeAnimtion";
 import React, { useRef } from "react";
-import { renderPunkHeading } from "@/lib/punk-typography";
 
 export function ProductsShowcase() {
   const ref = useRef<HTMLDivElement>(null);
@@ -36,11 +35,13 @@ export function ProductsShowcase() {
   ];
 
   return (
-    <section ref={ref} className="py-4 px-4 mt-18 md:px-8 max-w-full overflow-hidden">
-      <div className="max-w-6xl w-full mx-auto">
+    <section ref={ref} className="py-16 px-4 mt-18 md:px-8">
+      <div className="max-w-7xl mx-auto">
         <div className="mb-12 text-center">
-          {renderPunkHeading("Curated Treasures & Curious Finds", "fade-in text-4xl md:text-5xl text-cyan-500 mb-4", "text-center", "text-white", "large")}
-          <p className="fade-in text-xl sm:text-2xl leading-6  text-white text-left max-w-3xl sm:w-1/2 mx-auto">
+          <h2 className="fade-in font-brand text-cyan-500 text-4xl md:text-5xl mb-4">
+            Curated Treasures & Curious Finds
+          </h2>
+          <p className="fade-in text-white text-md sm:max-w-1/2 text-left mx-auto">
             Every piece has a past — and now it’s ready for its next adventure.{" "}
             <br /><br />
             Step into a closet full of character: re-loved fashion, indie
@@ -51,23 +52,23 @@ export function ProductsShowcase() {
           </p>
         </div>
 
-        <div className="grid items-center justify-center grid-cols-1 md:grid-cols-2 gap-4 w-full mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {categories.map((category, index) => (
             <div
               key={index}
               className="group relative fade-in overflow-hidden border-2 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
-              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="relative w-full aspect-[4/3] rounded-sm overflow-hidden mx-auto">
+              <div className="aspect-[4/3] relative rounded-sm overflow-hidden">
                 {category.video ? (
                   <video
                     src={category.video}
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className="absolute inset-0 w-full h-full object-cover "
                     autoPlay
                     loop
                     muted
                     playsInline
                     preload="metadata"
+                    loading="lazy"
                   />
                 ) : (
                   <Image

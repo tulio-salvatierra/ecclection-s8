@@ -31,19 +31,19 @@ export function Header() {
 
   return (
     <>
-      <header className="w-3/4 left-1/2 -translate-x-1/2 container site-header fixed top-15 z-50 backdrop-blur-md bg-card/90 rounded-lg mt-2 mx-10">
-        <div className="w-full flex items-center justify-between nav">
+      <header className="site-header sticky top-0 z-50 backdrop-blur-md bg-card/90">
+        <div className="container nav">
           <div className="brand">
             <Link href="/" className="flex items-center space-x-2">
               <span className="brand-mark">
                 <Image src="/logo.png" alt="Ecclection" width={32} height={32} priority className="w-8 h-8" />
               </span>
               <h1 className="font-brand font-bold text-black text-xl md:text-2xl">
-                ECCLECTION
+                Ecclection
               </h1>
             </Link>
           </div>
-          <nav className="nav-links text-xl md:text-2xl">
+          <nav className="nav-links">
             <Link href="/">Home</Link>
             <Link href="/events">Events</Link>
             <Link href="/about">About</Link>

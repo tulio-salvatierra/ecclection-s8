@@ -7,7 +7,7 @@ export function StoreHoursTicker() {
 
 
   return (
-    <div className="sticky top-[0px] z-40 bg-primary/95 backdrop-blur-md border-b border-primary/30 shadow-sm overflow-hidden">
+    <div className="sticky top-[72px] z-40 bg-primary/95 backdrop-blur-md border-b border-primary/30 shadow-sm overflow-hidden">
       <div className="py-3.5">
         <div className="flex items-center gap-3 text-primary-foreground">
           <Clock className="w-4 h-4 shrink-0 ml-4 z-10 bg-primary/95" />

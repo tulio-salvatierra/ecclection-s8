@@ -5,12 +5,11 @@ import { Header } from "@/components/sections/Header";
 import { StoreHoursTicker } from "@/components/sections/StoreHoursTicker";
 
 import { ClientEffects } from "@/components/SoundOnScroll/ClientFX";
-import { Inter, Quintessential, Kadwa, Pirata_One } from "next/font/google";
+import { Inter, Quintessential, Raleway, Pirata_One } from "next/font/google";
 import { SOCIAL_URLS, BUSINESS_INFO } from "@/lib/constants";
 import { PreloadBackground } from "@/components/PreloadBackground";
 import { Footer } from "@/components/sections/Footer";
 import { FontProvider } from "@/components/FontProvider";
-import { UnicornStudioBackground } from "@/components/UnicornStudioBackground";
 
 // Configure your fonts with optimized loading
 const inter = Inter({
@@ -34,14 +33,14 @@ const quintessential = Quintessential({
   adjustFontFallback: true,
 });
 
-const kadwa = Kadwa({
+const raleway = Raleway({
   subsets: ["latin"],
   variable: "--font-normal",
   display: "swap",
-  preload: true,
+  preload: false, // Not critical, can load later
   fallback: ["system-ui", "sans-serif"],
   adjustFontFallback: true,
-  weight: ["400", "700"],
+  weight: ["400", "500", "600"],
 });
 
 // Alternate brand font for testing/toggling - lazy load
@@ -213,7 +212,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${quintessential.variable} ${kadwa.variable} ${pirataOne.variable}`}
+      className={`${inter.variable} ${quintessential.variable} ${raleway.variable} ${pirataOne.variable}`}
     >
       <head>
         {/* Resource hints for external domains */}
@@ -223,23 +222,13 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://tiktok.com" />
         {/* Preconnect to Google Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&family=Mrs+Saint+Delafield&display=swap"
-          rel="stylesheet"
-        />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body className={`${inter.variable} ${quintessential.variable} ${kadwa.variable} ${pirataOne.variable}`}>
-        <UnicornStudioBackground />
-        <div className="relative z-10">
+      <body className={`${inter.variable} ${quintessential.variable} ${raleway.variable} ${pirataOne.variable}`}>
         <FontProvider
           interVariable={inter.variable}
           quintessentialVariable={quintessential.variable}
-          ralewayVariable={kadwa.variable}
+          ralewayVariable={raleway.variable}
           pirataOneVariable={pirataOne.variable}
         />
         <PreloadBackground />
@@ -253,9 +242,8 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
-        <StoreHoursTicker />
         <Header />
-        
+        <StoreHoursTicker />
         
 
         {/* Main content area */}
@@ -266,7 +254,6 @@ export default function RootLayout({
         </main>
 
         <Footer />
-        </div>
       </body>
     </html>
   );
