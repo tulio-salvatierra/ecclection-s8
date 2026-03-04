@@ -229,7 +229,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&family=Mrs+Saint+Delafield&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap"
           rel="stylesheet"
         />
       </head>
