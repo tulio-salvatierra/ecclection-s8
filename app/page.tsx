@@ -23,9 +23,10 @@ const Contact = dynamic(() => import("@/components/sections/Contact").then(mod =
 
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Ecclection | Local Art & Community Vibe in Portage Park, Chicago",
+  title:
+    "Portage Park Vintage & Local Art Shop in Chicago | Ecclection",
   description:
-    "A vibrant local variety shop in Portage Park, Chicago featuring vintage treasures, handmade art, locally crafted finds, and community events. Supporting local artists and building community connections. Items starting at $1!",
+    "Shop vintage treasures, handmade art, and local maker goods at Ecclection in Portage Park, Chicago. Discover community events, unique gifts, and one-of-a-kind finds.",
   path: "",
   keywords: [
     ...SEO_KEYWORD_CLUSTERS.brandAndLocal,
@@ -64,8 +65,8 @@ export default async function HomePage() {
       <SoundOnScroll />
       <Hero  />
       <Intro />
-      <ArtistCarousel artists={artistsForCarousel} />
       <DisclaimerSection />
+      <ArtistCarousel artists={artistsForCarousel} />
       <StoreActivities />
       <ProductsShowcase />
       <About />

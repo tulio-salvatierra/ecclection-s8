@@ -93,8 +93,18 @@ export function Artists({ className = "", data }: ArtistsProps) {
   return (
     <section ref={ref} className={`container section-pad ${className}`}>
       <div className="text-center mb-12">
-        {renderPunkTitle("Featured Artists", "text-5xl md:text-5xl font-bold text-cyan-500 font-brand mb-4")}
-        {/* Section description removed; can add static description here if desired */}
+        {renderPunkTitle("Featured Local Artists in Chicago", "text-5xl md:text-5xl font-bold text-cyan-500 font-brand mb-4")}
+        <p className="text-xl text-white sm:w-2/3 mx-auto leading-6 font-brand text-left">
+          Ecclection is proud to share space with wonderfully creative humans
+          from Chicago and nearby neighborhoods. From handmade body care and
+          jewelry to stitched art, prints, and one-of-a-kind pieces, every
+          artist brings their own magic to the shop.
+        </p>
+        <p className="text-xl text-white sm:w-2/3 mx-auto leading-6 font-brand text-left mt-4">
+          When you support these makers, you&apos;re not just buying something
+          beautiful — you&apos;re backing real people, real stories, and a
+          stronger local creative community.
+        </p>
       </div>
 
       <div className="flex flex-col gap-6">

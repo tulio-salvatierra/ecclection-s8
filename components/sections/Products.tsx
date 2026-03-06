@@ -41,11 +41,14 @@ export function ProductsShowcase() {
         <div className="mb-6 text-center shrink-0">
           {renderPunkHeading("Curated Treasures & Curious Finds", "fade-in text-5xl sm:text-7xl text-cyan-500 mb-4", "text-center", "text-white", "large")}
           <p className="fade-in text-2xl text-white text-left max-w-3xl mx-auto">
-            Step into a closet full of character: re-loved fashion, indie
-            makers, vintage misfits, jewelry, mixed media art, crystals,
-            wellness items, home décor, and unexpected gems. Sustainable,
-            quirky, inclusive, and always one-of-a-kind — just like the people
-            who shop here.
+            Come rummage through the good stuff: rescued vintage gems, odd
+            little beauties, useful home finds, playful gifts, old-school cool,
+            and handmade pieces from local artists.
+          </p>
+          <p className="fade-in text-2xl text-white text-left max-w-3xl mx-auto mt-4">
+            Some things are practical. Some are weird. Some are both. That&apos;s
+            the fun of Ecclection — you walk in for one thing and leave with a
+            treasure you didn&apos;t know your heart needed.
           </p>
         </div>
 
@@ -60,7 +63,7 @@ export function ProductsShowcase() {
                 {category.video ? (
                   <video
                     src={category.video}
-                    className="absolute inset-0 w-full h-full object-contain"
+                    className="absolute inset-0 w-full h-full object-cover"
                     autoPlay
                     loop
                     muted
@@ -72,7 +75,7 @@ export function ProductsShowcase() {
                     src={category.image || "/placeholder.svg"}
                     alt={category.title}
                     fill
-                    className="object-contain group-hover:scale-105 transition-transform"
+                    className="object-cover group-hover:scale-105 transition-transform"
                   />
                 )}
               </div>

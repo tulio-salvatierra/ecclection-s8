@@ -1,6 +1,7 @@
 "use client";
 
 import { useFadeAnimation } from "@/hooks/useFadeAnimtion";
+import { renderPunkTitle } from "@/lib/punk-typography";
 import React from "react";
 
 export default function DisclaimerSection() {
@@ -8,26 +9,27 @@ export default function DisclaimerSection() {
   useFadeAnimation(ref);
 
   return (
-    <section ref={ref} className="w-full h-auto py-24 border-t-2 border-b-2 border-black bg-black/30 backdrop-blur-2xl">
-      <div className="fade-in sm:w-3/4 mx-auto p-8">
-        <h2 className="fade-in font-brand text-5xl sm:text-7xl mb-3 text-white">
-          About our artwork & AI
-        </h2>
-
-        <p className="fade-in text-2xl text-white mb-3">
-          Ecclection proudly supports REAL, local artists. Our murals, photo
-          ops, visuals, web design & all the fun creative stuff are made by
-          humans in our community — never machines.
+    <section
+      ref={ref}
+      className="relative w-full h-screen py-24 border-t-2 border-b-2 border-black overflow-hidden"
+    >
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: "url('/image.png')" }}
+      />
+      <div className="absolute inset-0 bg-black/55 backdrop-blur-[1px]" />
+      <div className="relative z-10 sm:w-3/4 mx-auto p-8 h-full flex flex-col justify-center">
+        {renderPunkTitle("Welcome Surpies!!!", "text-5xl sm:text-7xl mb-3 text-white font-brand mb-8 text-center fade-in")}
+        <p className="fade-in text-2xl text-white mb-3 font-brand w-1/2 mx-auto text-left mb-8 fade-in">
+          We are back in business! We are open from Wednesday to Sunday from
+          11am - 5pm
         </p>
 
-        <p className="fade-in text-2xl text-white mb-3">
-          We may use AI here on occasion, when making flyers or print work’s.
-          Its simply used as a tool-I’m not asking it for ideas or having 
-          deep conversations or relationships with it either!!
-        </p>
-        <p className="fade-in text-2xl text-white mb-6">
-          By browsing our site, you’re supporting human-made art, local creators
-          & the beautifully imperfect magic only real people make.
+        <p className="fade-in text-2xl text-white mb-3 w-1/2 mx-auto text-left fade-in">
+          We are excited to see you all again! Specially after acquiring a large
+          inventory from the historic American Science & Surplus store! So many
+          cool items that won't end up in the landfill! Bring your bags and come
+          dig around!
         </p>
       </div>
     </section>

@@ -18,7 +18,7 @@ interface ContactProps {
 }
 
 export function Contact({
-  heading = "Come Find Us!",
+  heading = "Come Dig Around With Us",
   cards = [],
   className = "",
 }: ContactProps) {
@@ -30,30 +30,37 @@ export function Contact({
       <div className="text-center my-12">
         {renderPunkHeading(heading, "text-3xl md:text-4xl", "mb-4 text-center", "text-black", "large")}
         <p className="fade-in text-xl font-brand sm:text-2xl text-white sm:w-1/2 mx-auto text-left">
-          Have questions, want to collaborate, or just want to say hi? We LOVE hearing from our neighbors, artists, creators & curious wanderers. Text or email us anytime — it’s our favorite way to chat!
+          We&apos;re a neighborhood shop in Portage Park where old treasures,
+          local makers, and second-life finds all hang out together. Come in,
+          take your time, and explore the shelves — you&apos;ll see, touch, feel,
+          and discover things no algorithm could ever recommend properly.
+        </p>
+        <p className="fade-in mt-4 text-xl font-brand sm:text-2xl text-white sm:w-1/2 mx-auto text-left">
+          Bring a friend, bring your curiosity, and let yourself wander. Half
+          the fun is finding something unexpected.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-white">
         {/* Contact Information */}
-        <Card className="fade-in p-8 bg-cyan-600/40 backdrop-blur-sm border-2 border-black shadow-[6px_6px_0_0_#000]">
-          <h3 className="fade-in text-2xl font-semibold text-black font-brand mb-6">
+        <Card className="fade-in p-8 bg-cyan-600/10 backdrop-blur-sm border-2 border-black shadow-[6px_6px_0_0_#000]">
+          <h3 className="fade-in text-2xl font-semibold text-white font-brand mb-6">
             Contact Information
           </h3>
-          <p className="fade-in mb-4 text-black text-left text-xl sm:text-2xl font-brand">
-          Text or email us anytime, or just come in for a good old conversation, that’s our preferred a communication. Humans interacting with other humans- what a concept!
+          <p className="fade-in mb-4 text-white text-left text-xl sm:text-2xl font-brand">
+            A little weird, very welcoming, always worth the visit.
           </p>
           <div className="space-y-4">
-            <p className="font-bold text-black text-left text-xl sm:text-2xl">Store Hours:</p>
-            <p className="text-black font-bold text-left text-xl sm:text-2xl">Monday & Tuesday: Closed</p>
-            <p className="text-black font-bold text-left text-xl sm:text-2xl">
+            <p className="text-white text-left text-xl sm:text-2xl">Store Hours:</p>
+            <p className="text-white text-left text-xl sm:text-2xl">Monday & Tuesday: Closed</p>
+            <p className="text-white text-left text-xl sm:text-2xl">
               Wednesday, Thursday, Friday: 12pm - 6pm
             </p>
-            <p className="text-black font-bold text-left text-xl sm:text-2xl">
+            <p className="text-white text-left text-xl sm:text-2xl">
               Saturday & Sunday: 11am - 5pm
             </p>
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center">
+              <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
                 <svg
                   className="w-5 h-5 text-cyan-600"
                   fill="none"
@@ -70,10 +77,10 @@ export function Contact({
               </div>
 
               <div>
-                <p className="text-xl sm:text-2xl font-brand text-black">Phone</p>
+                <p className="text-xl sm:text-2xl font-brand text-white">Phone</p>
                 <a
                   href="sms:+1773951799"
-                  className="text-black hover:text-gray-700 transition-colors text-left text-xl sm:text-2xl"
+                  className="text-white hover:text-gray-700 transition-colors text-left text-xl sm:text-2xl"
                 >
                   +1 (773) 951-7992
                 </a>
@@ -81,7 +88,7 @@ export function Contact({
             </div>
 
             <div className="flex items-center space-x-3 text-left">
-              <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center">
+              <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
                 <svg
                   className="w-5 h-5 text-cyan-600"
                   fill="none"
@@ -97,10 +104,10 @@ export function Contact({
                 </svg>
               </div>
               <div>
-                <p className="sm:text-lg text-xs sm:text-md font-medium text-black font-brand">Email</p>
+                <p className="sm:text-lg text-xs sm:text-md font-medium text-white font-brand">Email</p>
                 <a
                   href="mailto:EcclectionChicago@gmail.com"
-                  className="text-black hover:text-gray-700 transition-colors text-left text-sm sm:text-md"
+                  className="text-white hover:text-gray-700 transition-colors text-left text-sm sm:text-md"
                 >
                   EcclectionChicago@gmail.com
                 </a>
@@ -108,7 +115,7 @@ export function Contact({
             </div>
 
             <div className="flex items-start space-x-3 text-left">
-              <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center mt-1">
+              <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center mt-1">
                 <svg
                   className="w-5 h-5 text-cyan-600"
                   fill="none"
@@ -130,8 +137,8 @@ export function Contact({
                 </svg>
               </div>
               <div>
-                <p className="sm:text-lg text-xs sm:text-md font-medium text-black font-brand">Address</p>
-                <p className="text-black text-left text-sm sm:text-md">
+                <p className="sm:text-lg text-xs sm:text-md font-medium text-white font-brand">Address</p>
+                <p className="text-white text-left text-sm sm:text-md">
                   6059 W. Irving Park Road, Chicago, IL 60634
                 </p>
               </div>

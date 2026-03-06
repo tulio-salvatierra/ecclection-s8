@@ -18,10 +18,9 @@ const Stack = dynamic(() => import("@/components/Stack"), { ssr: false });
 import type { Metadata } from "next";
 
 export const metadata: Metadata = buildPageMetadata({
-  title:
-    "Chicago Art Events (Bi‑Monthly) — Artist & Community Appreciation | Ecclection",
+  title: "Chicago Art Events in Portage Park | Ecclection",
   description:
-    "Join our bi‑monthly Artist & Community Appreciation nights in Portage Park, Chicago. Complimentary snacks & drinks and affordable vendor spaces for local artists. Community art events celebrating local makers and neighbors.",
+    "Join recurring Chicago art events at Ecclection in Portage Park, including Artist & Community Appreciation nights, local maker showcases, and neighborhood collaborations.",
   path: "/events",
   keywords: [
     ...SEO_KEYWORD_CLUSTERS.eventsAndCommunity,
@@ -44,13 +43,15 @@ export default function EventsPage() {
         {/* Header Section */}
         <div role="banner" className="text-center mt-40">
           {renderPunkTitle(
-            "Events & Community Impact",
+            "Chicago Art Events & Community Impact",
             "text-3xl md:text-4xl",
             "mb-6",
           )}
           <p className="text-xl sm:text-2xl font-brand text-white sm:w-1/2 mx-auto leading-5">
-            Where local art, rescued treasures, community & compassion meet
-            under one funky little roof
+            Our events are where Ecclection really comes alive. We host
+            community-centered nights that bring together local artists, curious
+            neighbors, and wonderfully creative energy — all under one funky
+            little roof.
           </p>
         </div>
 
@@ -78,17 +79,11 @@ export default function EventsPage() {
                     )}
                   </div>
                   <p className="bottom-0 text-lg sm:text-xl font-brand text-white mx-auto leading-6 sm:my-8 my-4 justify-center fade-in w-1/2 justify-self-end">
-                    At <strong>Ecclection</strong>, we believe art should
-                    connect you, surprise you and basically make your whole day
-                    better. We’re not just a shop in{" "}
-                    <strong>Portage Park</strong> — we’re a tiny WONDER-HUB
-                    where creativity, compassion and community swirl together in
-                    the most magical, chaotic, heart-squeezing way. Our
-                    philosophy is simple: celebrate our people, uplift our
-                    artists, honor every weird & wonderful story, and fill our
-                    events with laughter, kindness and those silly little
-                    moments that make you think, “Wow… that was actually really
-                    nice.”
+                    From Artist &amp; Community Appreciation Nights to seasonal
+                    pop-ups and maker features, these gatherings are built for
+                    connection. Come meet people, discover new work, share good
+                    vibes, and experience the neighborhood in a way you just
+                    can&apos;t online.
                   </p>
                 </div>
               </div>

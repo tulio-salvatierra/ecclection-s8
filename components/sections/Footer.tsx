@@ -21,30 +21,48 @@ export function Footer() {
     <footer className="bg-black/50 text-primary-foreground min-h-8/12">
       <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+          {/* Brand */}
+          <div>
+            <h3 className="mb-4 text-lg font-semibold font-brand">
+              Ecclection — Vintage, Variety & Local Art in Portage Park
+            </h3>
+            <p className="text-white font-brand leading-relaxed">
+              A wonderfully weird Chicago shop full of rescued treasures, local
+              maker goods, gifts, games, and second-life finds.
+            </p>
+            <p className="text-white font-brand leading-relaxed mt-3">
+              Come see, touch, feel, and discover something unexpected in
+              person.
+            </p>
+          </div>
+
           {/* Navigation Links */}
           <div>
             <h3 className="mb-4 text-lg font-semibold font-brand">
-              Navigation
+              Shop Vibe
             </h3>
             <nav className="flex flex-col gap-2 text-white font-brand">
               <Link href="/" className="hover:no-underline hover:text-white">
                 Home
               </Link>
+              <Link href="/artists" className="hover:no-underline hover:text-white">
+                Featured Artists
+              </Link>
               <Link href="/events" className="hover:no-underline hover:text-white">
-                Events
+                Events & Community Nights
               </Link>
               <Link href="/about" className="hover:no-underline hover:text-white">
-                About
+                About the Shop
               </Link>
               <Link href="/resources" className="hover:no-underline hover:text-white  ">
-                Resources
+                Community Resources
               </Link>
             </nav>
           </div>
 
           {/* Social Media Links */}
           <div>
-            <h3 className="mb-4 text-lg font-semibold font-brand">Follow Us</h3>
+            <h3 className="mb-4 text-lg font-semibold font-brand">Follow Along on Instagram</h3>
             <div className="flex gap-4 font-brand">
               <a
                 href={SOCIAL_URLS.instagram}
@@ -78,27 +96,18 @@ export function Footer() {
 
           {/* Address */}
           <div className="font-brand">
-            <h3 className="mb-4 text-lg font-semibold font-brand">Address</h3>
+            <h3 className="mb-4 text-lg font-semibold font-brand">Visit Us</h3>
             <a href={SOCIAL_URLS.googleMaps}>
               <address className="not-italic leading-relaxed hover:text-white">
                 {BUSINESS_INFO.address.street}
                 <br />
                 {BUSINESS_INFO.address.city}, {BUSINESS_INFO.address.state}{" "}
                 {BUSINESS_INFO.address.zip}
+                <br />
+                Portage Park
               </address>
             </a>
-          </div>
-
-          {/* Store Hours */}
-          <div>
-            <h3 className="mb-4 text-lg font-semibold font-brand">
-              Store Hours
-            </h3>
-            <ul className="space-y-1 font-brand text-cyan-600">
-              <li>Monday & Tuesday: Closed</li>
-              <li>Wednesday - Sunday: 11am - 5pm</li>
-              <li></li>
-            </ul>
+            <p className="mt-3 text-white">Need directions? Tap and come dig around.</p>
           </div>
         </div>
         <div className="">
@@ -110,6 +119,7 @@ export function Footer() {
           <p className="font-brand">
             &copy; {new Date().getFullYear()} Ecclection
           </p>
+          <p className="font-brand text-white mt-1">Everyone is welcome. Every budget is loved.</p>
           <p className="font-brand text-cyan-600">
             Made By <a href="https://cicerowebstudio.xyz">Cicero Web Studio</a>
           </p>

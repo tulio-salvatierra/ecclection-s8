@@ -4,9 +4,9 @@ import { LenisProvider } from "@/components/LenisProvider";
 import { buildPageMetadata, SEO_KEYWORD_CLUSTERS } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Artists | Ecclection",
+  title: "Featured Local Artists in Chicago | Ecclection",
   description:
-    "Meet the artists and makers featured at Ecclection — a rotating lineup of local creatives bringing handmade goods, art, and curiosities to Portage Park.",
+    "Meet featured local artists and makers at Ecclection in Portage Park, Chicago, from handmade jewelry and body care to original art and creative goods.",
   path: "/artists",
   keywords: [
     ...SEO_KEYWORD_CLUSTERS.artistsAndMakers,

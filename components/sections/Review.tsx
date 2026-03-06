@@ -315,15 +315,23 @@ export function Review() {
     <section ref={ref} className="py-4 px-4 max-w-full h-screen overflow-hidden">
         <div className="mb-12">
           {renderPunkHeading(
-            "Press & Reviews",
+            "What Folks Are Saying About Ecclection",
             "fade-in text-5xl sm:text-7xl text-cyan-500 mb-4",
             "text-center",
             "text-white",
             "large"
           )}
 
-          <p className="fade-in text-white text-2xl max-w-2xl mx-auto text-center">
-            What they&apos;re saying about us
+          <p className="fade-in text-white text-2xl max-w-3xl mx-auto text-center">
+            From local articles to Google love, your support means the world to
+            us. People have been especially excited about our new wave of
+            curious inventory, including pieces connected to the beloved
+            American Science &amp; Surplus story.
+          </p>
+          <p className="fade-in text-white text-2xl max-w-3xl mx-auto text-center mt-4">
+            Every review, shout-out, and share helps more people wander in,
+            discover treasures in person, and support a neighborhood shop full
+            of creativity, reuse, and good vibes.
           </p>
         </div>
 
@@ -376,7 +384,7 @@ export function Review() {
                     rel="noopener noreferrer"
                     className="text-xs md:text-sm font-semibold uppercase tracking-wide hover:opacity-70"
                   >
-                    Read →
+                    Read the Full Article →
                   </a>
                 </div>
               </div>

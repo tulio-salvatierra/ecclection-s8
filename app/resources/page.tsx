@@ -13,9 +13,9 @@ import {
 } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Community Resources | Ecclection - Support Services in Portage Park, Chicago",
+  title: "Chicago Community Resources | Mental Health, Food & Housing",
   description:
-    "Access essential community resources including mental health support, food security, housing assistance, crisis support, and more. Ecclection is committed to supporting our community in Portage Park, Chicago. Find local food pantries, counseling services, and crisis helplines.",
+    "Find trusted Chicago community resources for mental health, food support, housing assistance, and crisis help, including local Portage Park organizations and national services.",
   path: "/resources",
   keywords: [
     ...SEO_KEYWORD_CLUSTERS.resourcesAndSupport,
@@ -140,19 +140,22 @@ export default function CommunityResourcesPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(collectionPageSchema),
         }}
-      />
+      />  
       <LenisProvider />
       {/* Header Section */}
       <section className="container section-pad text-left fade-in mt-12">
-        {renderPunkTitle("Community Resources", "text-4xl md:text-5xl", "mb-8")}
+        {renderPunkTitle("Chicago Community Resources", "text-4xl md:text-5xl", "mb-8")}
         <p className="text-xl text-white sm:w-1/2 mx-auto leading-5 font-brand">
-          We believe in supporting our community. Below you'll find a curated
-          list of trusted organizations and resources dedicated to helping
-          individuals and families navigate challenging times.
+          At Ecclection, we believe community means showing up for each other —
+          especially when life feels heavy. We put together this resource page
+          to help you quickly find trusted support for food, housing, mental
+          health, and crisis care.
         </p>
         <br />
         <p className="text-xl text-left text-white sm:w-1/2 mx-auto leading-5 font-brand">
-          We always offer complementary whistles, just step in and ask!
+          No one should have to figure everything out alone. Take what you
+          need, share it with someone who needs it, and know we&apos;re always
+          rooting for you.
         </p>
       </section>
 
@@ -208,7 +211,7 @@ export default function CommunityResourcesPage() {
 
       <section>
         <div className="container section-pad text-center">
-          {renderPunkHeading("Helpful Resources", "text-2xl md:text-3xl", "mb-8", "text-black", "white")}
+          {renderPunkHeading("Helpful Resources", "text-2xl md:text-3xl", "mb-8", "text-black")}
           <p className="text-xl text-white sm:w-1/2 mx-auto text-left leading-5 mb-8 font-brand">
             Explore the following organizations that provide vital services in
             mental health, food security, housing, and crisis support organized
@@ -221,11 +224,11 @@ export default function CommunityResourcesPage() {
       {/* Resources Grid */}
       <section className="container section-pad">
         {renderPunkHeading(
-          "Food, Housing & More",
+          "Mental Health, Housing & More",
           "text-2xl md:text-3xl",
           "text-center mb-8",
-          "text-white",
-          "white"
+          "text-black",
+          "default"
         )}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {resources.map((resource, index) => (
@@ -234,7 +237,7 @@ export default function CommunityResourcesPage() {
               className={resourceCardClass}
             >
               <div className="flex items-start justify-between mb-4">
-                <span className="text-xs tracking-wide uppercase text-black font-brand">
+                <span className="text-xs tracking-wide uppercase text-white font-brand">
                   {resource.category}
                 </span>
               </div>
@@ -251,7 +254,7 @@ export default function CommunityResourcesPage() {
                 href={resource.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-base font-brand text-black hover:text-cyan-700 transition-colors"
+                className="inline-flex items-center gap-2 text-base font-brand text-white hover:text-cyan-700 transition-colors"
               >
                 Visit Resource
                 <ArrowRight className="w-4 h-4" />
@@ -264,7 +267,7 @@ export default function CommunityResourcesPage() {
       {/* Call to Action */}
       <section className="container section-pad text-center fade-in mt-12">
         <div className="max-w-4xl mx-auto">
-          {renderPunkHeading("Need Immediate Help?", "text-2xl md:text-3xl", "mb-8", "text-white", "white")}
+          {renderPunkHeading("Need Immediate Help?", "text-2xl md:text-3xl", "mb-8", "text-black")}
             <p className="text-xl text-white mb-8 sm:w-1/2 mx-auto leading-5 font-brand">
             If you or someone you know is in crisis, please reach out for help
             immediately. You are not alone.

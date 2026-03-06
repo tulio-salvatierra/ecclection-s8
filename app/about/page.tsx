@@ -11,9 +11,9 @@ import {
 } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "About Us | Ecclection - Local Art & Community Shop in Portage Park, Chicago",
+  title: "About Ecclection | Portage Park Local Art & Vintage Shop",
   description:
-    "Learn about Ecclection - a vibrant local shop in Portage Park, Chicago. Discover our mission to support local artists, build community connections, and offer unique vintage treasures, handmade art, and locally crafted finds. Meet Julie, the owner, and learn about Big Elves community project.",
+    "Learn the story behind Ecclection in Portage Park, Chicago, including our mission to support local artists, community initiatives, and unique vintage and handmade finds.",
   path: "/about",
   keywords: [
     ...SEO_KEYWORD_CLUSTERS.brandAndLocal,
@@ -70,7 +70,7 @@ export default function AboutPage() {
       />
       {/* Header Section */}
       <header className="container section-pad text-center fade-in mt-12">
-        {renderPunkTitle("About Ecclection")}
+        {renderPunkTitle("About Ecclection in Portage Park")}
         <p className="text-xl text-center text-white sm:w-1/2 mx-auto leading-5 font-brand">
           Where rescued treasures, local art, community & compassion all collide
           in the best possible way

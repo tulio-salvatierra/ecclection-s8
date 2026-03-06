@@ -32,17 +32,14 @@ export function Hero() {
 
       <div className="absolute inset-0 bg-black/70" />
 
-      <div className="relative z-10 h-screen w-full mx-auto md:w-1/2 flex flex-col items-center justify-center px-4 text-center">
-        <h1 className="sm:text-[12rem] text-[4.5rem] leading-none font-extrabold tracking-tighter text-pink-500">
-          <span className="font-brand text-pink-500/80 zoom-out elastic-in z-10">
-            Welcome to
-          </span>{" "}
-          <span className="text-cyan-400 fade-in z-0">ECCLECTION</span>
+      <div className="relative z-10 h-screen w-full mx-auto md:w-2/3 flex flex-col items-center justify-center px-4 text-center">
+        <h1 className="text-4xl md:text-6xl leading-tight font-extrabold tracking-tight text-cyan-400 fade-in">
+          A Wonderfully Weird Vintage &amp; Variety Shop in Chicago
         </h1>
         <p className="fade-in mt-2 text-[1.5rem] md:text-[2rem] mb-6 text-left mx-auto text-xl md:text-2xl text-white">
-          A true variety store in Portage Park – packed with local art, rescued
-          treasures, gag gifts, funky tees & SO much more… where EVERYONE is
-          welcome & it won't break the bank.
+          We rescue beautiful, useful, and delightfully strange things, give
+          them a second life, and fill the shop with local art, gifts, games,
+          and treasures you won’t find on a boring screen.
         </p>
 
         <a

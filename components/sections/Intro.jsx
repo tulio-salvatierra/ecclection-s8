@@ -36,15 +36,16 @@ export function Intro() {
             {/* Description */}
             <div className="mx-auto sm:max-w-2xl mb-12 md:mb-16">
               <p className="text-2xl text-primary-foreground/90 fade-in">
-                We’re all about self-expression, sustainability & that spark of
-                WONDERMENT — you never really know what you’ll find @
-                Ecclection, and that’s the magic.
+                We’re a wonderfully weird Chicago shop where old things, odd
+                things, useful things, and beautiful things get a second life.
+                Think vintage gems, antiques, local maker goods, home finds,
+                games, gifts, and all kinds of curious treasures.
                 <br />
                 <br />
-                <strong> EVERYONE</strong> is welcome & every budget is loved —
-                with fun finds starting at just <strong>.95 CENTS</strong>{" "}
-                (often cheaper than the darn dollar store… no tariff drama
-                here!).
+                Come explore in person — see it, touch it, feel it, and find
+                something that feels like it was waiting just for you. Everyone
+                is welcome, every budget is loved, and the magic is in the
+                hunt.
               </p>
             </div>
 
@@ -66,8 +67,8 @@ export function Intro() {
 
             <div className="mt-20 md:mt-32 fade-in mx-auto">
               <p className="text-xl font-brand tracking-widest uppercase">
-                where community meets art, odd or forgotten treasures & good
-                vibes
+                where portage park community, local art & second-life finds
+                come together
               </p>
             </div>
           </div>
