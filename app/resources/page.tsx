@@ -5,69 +5,25 @@ import PantriesSection from "@/components/sections/Pantries";
 import type { Metadata } from "next";
 import { LenisProvider } from "@/components/LenisProvider";
 import { renderPunkTitle, renderPunkHeading } from "@/lib/punk-typography";
+import {
+  buildBreadcrumbSchema,
+  buildPageMetadata,
+  SEO_KEYWORD_CLUSTERS,
+  SITE_URL,
+} from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Community Resources | Ecclection - Support Services in Portage Park, Chicago",
   description:
     "Access essential community resources including mental health support, food security, housing assistance, crisis support, and more. Ecclection is committed to supporting our community in Portage Park, Chicago. Find local food pantries, counseling services, and crisis helplines.",
+  path: "/resources",
   keywords: [
-    "community resources Chicago",
-    "Portage Park resources",
-    "mental health support Chicago",
-    "food pantries Chicago",
-    "housing assistance Chicago",
-    "crisis support Chicago",
-    "community services",
-    "local resources Chicago",
+    ...SEO_KEYWORD_CLUSTERS.resourcesAndSupport,
+    ...SEO_KEYWORD_CLUSTERS.brandAndLocal,
     "Portage Cragin Counseling",
     "SHIFT Behavioral Health",
-    "food security Chicago",
-    "crisis helpline",
-    "211 helpline",
   ],
-  authors: [{ name: "Ecclection" }],
-  creator: "Ecclection",
-  publisher: "Ecclection",
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://ecclection.com/resources",
-    siteName: "Ecclection",
-    title: "Community Resources | Ecclection",
-    description:
-      "Essential community resources for mental health, food security, housing, crisis support, and more in Chicago. Find local organizations and national helplines.",
-    images: [
-      {
-        url: "https://ecclection.com/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Community Resources at Ecclection",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Community Resources | Ecclection",
-    description:
-      "Essential community resources for mental health, food security, housing, crisis support, and more in Chicago.",
-    images: ["https://ecclection.com/og-image.jpg"],
-    creator: "@Ecclectionchicago",
-  },
-  alternates: {
-    canonical: "https://ecclection.com/resources",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-};
+});
 
 const localOrganizations = [
   {
@@ -151,26 +107,10 @@ const resourceCardClass =
   "p-6 rounded-lg bg-cyan-600/10 border-2 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all";
 
 export default function CommunityResourcesPage() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ecclection.com";
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: siteUrl,
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Community Resources",
-        item: `${siteUrl}/resources`,
-      },
-    ],
-  };
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Home", path: "" },
+    { name: "Community Resources", path: "/resources" },
+  ]);
 
   const collectionPageSchema = {
     "@context": "https://schema.org",
@@ -178,7 +118,7 @@ export default function CommunityResourcesPage() {
     name: "Community Resources",
     description:
       "Access essential community resources including mental health support, food security, housing assistance, crisis support, and more in Portage Park, Chicago.",
-    url: `${siteUrl}/resources`,
+    url: `${SITE_URL}/resources`,
     about: {
       "@type": "Thing",
       name: "Community Support Services",

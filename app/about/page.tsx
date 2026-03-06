@@ -3,89 +3,35 @@ import type { Metadata } from "next";
 import { renderPunkTitle, renderPunkHeading } from "@/lib/punk-typography";
 import { LenisProvider } from "@/components/LenisProvider";
 import Image from "next/image";
+import {
+  buildBreadcrumbSchema,
+  buildPageMetadata,
+  SEO_KEYWORD_CLUSTERS,
+  SITE_URL,
+} from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "About Us | Ecclection - Local Art & Community Shop in Portage Park, Chicago",
   description:
     "Learn about Ecclection - a vibrant local shop in Portage Park, Chicago. Discover our mission to support local artists, build community connections, and offer unique vintage treasures, handmade art, and locally crafted finds. Meet Julie, the owner, and learn about Big Elves community project.",
+  path: "/about",
   keywords: [
+    ...SEO_KEYWORD_CLUSTERS.brandAndLocal,
+    ...SEO_KEYWORD_CLUSTERS.artistsAndMakers,
     "Ecclection about",
-    "Portage Park shop",
-    "Chicago local business",
-    "vintage shop owner",
-    "local artists support",
-    "community shop Chicago",
     "Big Elves charity",
     "Julie Ecclection",
-    "Chicago variety store",
-    "local art community",
-    "Portage Park business",
   ],
-  authors: [{ name: "Ecclection" }],
-  creator: "Ecclection",
-  publisher: "Ecclection",
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://ecclection.com/about",
-    siteName: "Ecclection",
-    title: "About Ecclection | Local Art & Community Shop in Chicago",
-    description:
-      "Learn about Ecclection's mission to support local artists and build community connections in Portage Park, Chicago. Discover our story, philosophy, and Big Elves community project.",
-    images: [
-      {
-        url: "https://ecclection.com/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "About Ecclection - Local Art & Community Shop",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "About Ecclection | Local Art & Community Shop in Chicago",
-    description:
-      "Learn about Ecclection's mission to support local artists and build community connections in Portage Park, Chicago.",
-    images: ["https://ecclection.com/og-image.jpg"],
-    creator: "@Ecclectionchicago",
-  },
-  alternates: {
-    canonical: "https://ecclection.com/about",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-};
+  ogTitle: "About Ecclection | Local Art & Community Shop in Chicago",
+  ogDescription:
+    "Learn about Ecclection's mission to support local artists and build community connections in Portage Park, Chicago.",
+});
 
 export default function AboutPage() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ecclection.com";
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: siteUrl,
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "About",
-        item: `${siteUrl}/about`,
-      },
-    ],
-  };
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Home", path: "" },
+    { name: "About", path: "/about" },
+  ]);
 
   const aboutPageSchema = {
     "@context": "https://schema.org",
@@ -93,7 +39,7 @@ export default function AboutPage() {
     name: "About Ecclection",
     description:
       "Learn about Ecclection - a vibrant local shop in Portage Park, Chicago. Discover our mission to support local artists, build community connections, and offer unique vintage treasures, handmade art, and locally crafted finds.",
-    url: `${siteUrl}/about`,
+    url: `${SITE_URL}/about`,
     mainEntity: {
       "@type": "LocalBusiness",
       name: "Ecclection",

@@ -12,6 +12,7 @@ import { Footer } from "@/components/sections/Footer";
 import { FontProvider } from "@/components/FontProvider";
 import { UnicornStudioBackground } from "@/components/UnicornStudioBackground";
 import { LandingScreen } from "@/components/LandingScreen";
+import { DEFAULT_KEYWORDS, SITE_NAME, SITE_URL, TWITTER_HANDLE } from "@/lib/seo";
 
 // Configure your fonts with optimized loading
 const inter = Inter({
@@ -37,32 +38,17 @@ const kadwa = Kadwa({
 
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://ecclection.com"
-  ),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "Ecclection | Local Art & Community Vibe in Portage Park, Chicago",
-    template: "%s | Ecclection",
+    default: `${SITE_NAME} | Local Art & Community Vibe in Portage Park, Chicago`,
+    template: `%s | ${SITE_NAME}`,
   },
   description:
     "Ecclection is a vibrant local shop in Portage Park, Chicago featuring vintage treasures, handmade art, locally crafted finds, and community events. Supporting local artists and building community connections.",
-  keywords: [
-    "Ecclection",
-    "Chicago art shop",
-    "Portage Park",
-    "local artists",
-    "vintage shop",
-    "handmade art",
-    "community events",
-    "local crafts",
-    "Chicago vintage",
-    "art gallery Chicago",
-    "community space",
-    "local business Chicago",
-  ],
-  authors: [{ name: "Ecclection" }],
-  creator: "Ecclection",
-  publisher: "Ecclection",
+  keywords: DEFAULT_KEYWORDS,
+  authors: [{ name: SITE_NAME }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
   formatDetection: {
     email: false,
     address: false,
@@ -72,8 +58,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "/",
-    siteName: "Ecclection",
-    title: "Ecclection | Local Art & Community Vibe in Portage Park, Chicago",
+    siteName: SITE_NAME,
+    title: `${SITE_NAME} | Local Art & Community Vibe in Portage Park, Chicago`,
     description:
       "A vibrant local shop featuring vintage treasures, handmade art, locally crafted finds, and community events in Portage Park, Chicago.",
     images: [
@@ -87,11 +73,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ecclection | Local Art & Community Vibe",
+    title: `${SITE_NAME} | Local Art & Community Vibe`,
     description:
       "A vibrant local shop featuring vintage treasures, handmade art, and community events in Portage Park, Chicago.",
     images: ["https://ecclection.com/og-image.jpg"],
-    creator: "@Ecclectionchicago",
+    creator: TWITTER_HANDLE,
   },
   robots: {
     index: true,
@@ -111,7 +97,7 @@ export const metadata: Metadata = {
     // yahoo: "your-yahoo-verification-code",
   },
   alternates: {
-    canonical: "https://ecclection.com",
+    canonical: SITE_URL,
   },
   icons: {
     icon: "/logo.png",
@@ -125,7 +111,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ecclection.com";
+  const siteUrl = SITE_URL;
 
   // Build opening hours specification from constants
   const openingHoursSpecification = Object.entries(BUSINESS_INFO.openingHours)

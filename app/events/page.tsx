@@ -3,6 +3,12 @@ import dynamic from "next/dynamic";
 import { LenisProvider } from "@/components/LenisProvider";
 import { renderPunkTitle } from "@/lib/punk-typography";
 import Image from "next/image";
+import {
+  buildBreadcrumbSchema,
+  buildPageMetadata,
+  SEO_KEYWORD_CLUSTERS,
+  SITE_URL,
+} from "@/lib/seo";
 
 // Lazy load heavy components
 const Masonry = dynamic(() => import("@/components/Masonry"), { ssr: false });
@@ -11,68 +17,23 @@ const Stack = dynamic(() => import("@/components/Stack"), { ssr: false });
 
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title:
     "Chicago Art Events (Bi‑Monthly) — Artist & Community Appreciation | Ecclection",
   description:
     "Join our bi‑monthly Artist & Community Appreciation nights in Portage Park, Chicago. Complimentary snacks & drinks and affordable vendor spaces for local artists. Community art events celebrating local makers and neighbors.",
+  path: "/events",
   keywords: [
-    "Chicago art events",
-    "Portage Park events",
-    "artist appreciation night",
-    "community events Chicago",
-    "local art events",
-    "Chicago art community",
-    "vendor spaces Chicago",
+    ...SEO_KEYWORD_CLUSTERS.eventsAndCommunity,
+    ...SEO_KEYWORD_CLUSTERS.brandAndLocal,
     "artist market Chicago",
-    "community appreciation",
-    "Portage Park art",
-    "local makers Chicago",
-    "art night Chicago",
+    "vendor spaces Chicago",
   ],
-  authors: [{ name: "Ecclection" }],
-  creator: "Ecclection",
-  publisher: "Ecclection",
-  alternates: {
-    canonical: "https://ecclection.com/events",
-  },
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://ecclection.com/events",
-    siteName: "Ecclection",
-    title: "Bi‑Monthly Artist & Community Appreciation — Ecclection",
-    description:
-      "Community art events in Portage Park, Chicago with complimentary snacks & drinks and affordable vendor spaces. Join us for our bi-monthly celebration of local artists and community.",
-    images: [
-      {
-        url: "https://ecclection.com/og/events.png",
-        width: 1200,
-        height: 630,
-        alt: "Ecclection Artist & Community Appreciation Events",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Bi‑Monthly Artist & Community Appreciation — Ecclection",
-    description:
-      "Community art events in Portage Park, Chicago with complimentary snacks & drinks and affordable vendor spaces.",
-    images: ["https://ecclection.com/og/events.png"],
-    creator: "@Ecclectionchicago",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-};
+  ogTitle: "Bi‑Monthly Artist & Community Appreciation — Ecclection",
+  ogDescription:
+    "Community art events in Portage Park, Chicago with complimentary snacks & drinks and affordable vendor spaces.",
+  ogImage: `${SITE_URL}/og/events.png`,
+});
 
 export default function EventsPage() {
   return (
@@ -183,27 +144,10 @@ export default function EventsPage() {
 
         {/* Structured Data (JSON-LD) */}
         {(() => {
-          const siteUrl =
-            process.env.NEXT_PUBLIC_SITE_URL || "https://ecclection.com";
-
-          const breadcrumbSchema = {
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            itemListElement: [
-              {
-                "@type": "ListItem",
-                position: 1,
-                name: "Home",
-                item: siteUrl,
-              },
-              {
-                "@type": "ListItem",
-                position: 2,
-                name: "Events",
-                item: `${siteUrl}/events`,
-              },
-            ],
-          };
+          const breadcrumbSchema = buildBreadcrumbSchema([
+            { name: "Home", path: "" },
+            { name: "Events", path: "/events" },
+          ]);
 
           const eventSchema = {
             "@context": "https://schema.org",
@@ -232,7 +176,7 @@ export default function EventsPage() {
             organizer: {
               "@type": "Organization",
               name: "Ecclection",
-              url: siteUrl,
+              url: SITE_URL,
             },
           };
 
