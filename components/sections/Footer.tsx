@@ -26,7 +26,7 @@ export function Footer() {
             <h3 className="mb-4 text-lg font-semibold font-brand">
               Navigation
             </h3>
-            <nav className="flex flex-col gap-2 text-white">
+            <nav className="flex flex-col gap-2 text-white font-brand">
               <Link href="/" className="hover:no-underline hover:text-white">
                 Home
               </Link>
@@ -45,7 +45,7 @@ export function Footer() {
           {/* Social Media Links */}
           <div>
             <h3 className="mb-4 text-lg font-semibold font-brand">Follow Us</h3>
-            <div className="flex gap-4">
+            <div className="flex gap-4 font-brand">
               <a
                 href={SOCIAL_URLS.instagram}
                 target="_blank"
@@ -77,7 +77,7 @@ export function Footer() {
           </div>
 
           {/* Address */}
-          <div>
+          <div className="font-brand">
             <h3 className="mb-4 text-lg font-semibold font-brand">Address</h3>
             <a href={SOCIAL_URLS.googleMaps}>
               <address className="not-italic leading-relaxed hover:text-white">
@@ -94,7 +94,7 @@ export function Footer() {
             <h3 className="mb-4 text-lg font-semibold font-brand">
               Store Hours
             </h3>
-            <ul className="space-y-1">
+            <ul className="space-y-1 font-brand text-cyan-600">
               <li>Monday & Tuesday: Closed</li>
               <li>Wednesday - Sunday: 11am - 5pm</li>
               <li></li>
@@ -106,11 +106,11 @@ export function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-12 border-t border-primary-foreground/20 pt-6 text-center text-sm">
+        <div className="mt-12 border-t border-primary-foreground/20 pt-6 text-center text-sm font-brand text-cyan-600">
           <p className="font-brand">
             &copy; {new Date().getFullYear()} Ecclection
           </p>
-          <p>
+          <p className="font-brand text-cyan-600">
             Made By <a href="https://cicerowebstudio.xyz">Cicero Web Studio</a>
           </p>
         </div>

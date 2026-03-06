@@ -5,12 +5,13 @@ import { Header } from "@/components/sections/Header";
 import { StoreHoursTicker } from "@/components/sections/StoreHoursTicker";
 
 import { ClientEffects } from "@/components/SoundOnScroll/ClientFX";
-import { Inter, Quintessential, Kadwa, Pirata_One } from "next/font/google";
+import { Inter, Kadwa } from "next/font/google";
 import { SOCIAL_URLS, BUSINESS_INFO } from "@/lib/constants";
 import { PreloadBackground } from "@/components/PreloadBackground";
 import { Footer } from "@/components/sections/Footer";
 import { FontProvider } from "@/components/FontProvider";
 import { UnicornStudioBackground } from "@/components/UnicornStudioBackground";
+import { LandingScreen } from "@/components/LandingScreen";
 
 // Configure your fonts with optimized loading
 const inter = Inter({
@@ -24,16 +25,6 @@ const inter = Inter({
   weight: ["400", "500", "600", "700"],
 });
 
-const quintessential = Quintessential({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-brand",
-  display: "swap",
-  preload: true,
-  fallback: ["serif"],
-  adjustFontFallback: true,
-});
-
 const kadwa = Kadwa({
   subsets: ["latin"],
   variable: "--font-normal",
@@ -44,16 +35,6 @@ const kadwa = Kadwa({
   weight: ["400", "700"],
 });
 
-// Alternate brand font for testing/toggling - lazy load
-const pirataOne = Pirata_One({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-brand-alt",
-  display: "swap",
-  preload: false, // Not critical
-  fallback: ["serif"],
-  adjustFontFallback: true,
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -182,6 +163,13 @@ export default function RootLayout({
     telephone: BUSINESS_INFO.phone,
     email: BUSINESS_INFO.email,
     priceRange: "$$",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.8",
+      reviewCount: "23",
+      bestRating: "5",
+      worstRating: "1",
+    },
     openingHoursSpecification,
     sameAs: [
       SOCIAL_URLS.instagram,
@@ -213,7 +201,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${quintessential.variable} ${kadwa.variable} ${pirataOne.variable}`}
+      className={`${inter.variable} ${kadwa.variable}`}
     >
       <head>
         {/* Resource hints for external domains */}
@@ -229,18 +217,18 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&family=Mrs+Saint+Delafield&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&display=swap"
           rel="stylesheet"
         />
       </head>
-      <body className={`${inter.variable} ${quintessential.variable} ${kadwa.variable} ${pirataOne.variable}`}>
+      <body className={`${inter.variable} ${kadwa.variable}`}>
         <UnicornStudioBackground />
         <div className="relative z-10">
         <FontProvider
           interVariable={inter.variable}
-          quintessentialVariable={quintessential.variable}
+          quintessentialVariable={kadwa.variable}
           ralewayVariable={kadwa.variable}
-          pirataOneVariable={pirataOne.variable}
+          pirataOneVariable={""}
         />
         <PreloadBackground />
         <script
@@ -267,6 +255,7 @@ export default function RootLayout({
 
         <Footer />
         </div>
+        <LandingScreen />
       </body>
     </html>
   );

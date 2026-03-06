@@ -123,9 +123,9 @@ export default function AboutPage() {
         }}
       />
       {/* Header Section */}
-      <header className="container section-pad text-center">
+      <header className="container section-pad text-center fade-in mt-12">
         {renderPunkTitle("About Ecclection")}
-        <p className="text-md text-left text-white sm:w-1/2 mx-auto leading-5">
+        <p className="text-xl text-center text-white sm:w-1/2 mx-auto leading-5 font-brand">
           Where rescued treasures, local art, community & compassion all collide
           in the best possible way
         </p>
@@ -133,7 +133,7 @@ export default function AboutPage() {
       <LenisProvider />
 
       {/* Hero Section */}
-      <section className="container section-pad">
+      <section className="container section-pad fade-in mt-12">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           {/* Left: Portrait Image */}
           <div className="relative rounded-lg overflow-hidden shadow-lg h-[400px]">
@@ -151,7 +151,7 @@ export default function AboutPage() {
           {/* Right: Text Content */}
           <div className="space-y-6 bg-black/30 p-4">
             {renderPunkHeading("Welcome to Ecclection", "text-2xl md:text-3xl")}
-            <p className="text-white text-md leading-relaxed">
+            <p className="text-white text-xl leading-relaxed">
               Ecclection is a vibrant local variety shop located at 6059 West
               Irving Park Road in Chicago&apos;s Portage Park neighborhood. We
               specialize in vintage treasures, handmade art and locally crafted
@@ -161,7 +161,7 @@ export default function AboutPage() {
               place to have fun, find crazy & silly stuff and wander through a
               whimsical mix of oddities. <br />
             </p>
-            <p className="text-white leading-relaxed ">
+            <p className="text-white text-xl leading-relaxed ">
               Step inside and you&apos;ll discover an ever-changing collection
               of carefully curated, recycled and up-cycled pieces{" "}
               <strong className="text-cyan-500">(starts at $1)</strong> — from
@@ -180,7 +180,7 @@ export default function AboutPage() {
           "What I do",
           "text-2xl md:text-3xl text-center mb-6"
         )}
-        <p className="text-white text-md sm:w-1/2 mx-auto">
+        <p className="text-white text-xl sm:w-1/2 mx-auto font-brand">
           I’m Julie — an honest, compassionate, resourceful human who’s also a
           wife, mom, animal lover, artist, designer, nature admirer, traveler and, yes, a{" "}
           <em>bit</em> of a hoarder (as if you couldn’t tell! LOL).
@@ -221,7 +221,7 @@ export default function AboutPage() {
           {/* Center: Body Text */}
           <div className="md:col-span-6 space-y-6 text-md">
             {renderPunkHeading("Our Philosophy", "text-xl")}
-            <p className="text-white leading-relaxed text-md">
+            <p className="text-white leading-relaxed text-xl font-brand">
               At Ecclection, we keep shopping personal, playful and real. No
               online carts, no algorithms—just humans, conversation and the joy
               of stumbling onto something you didn’t expect. Whether you’re a
@@ -229,11 +229,11 @@ export default function AboutPage() {
               always something new (and perhaps a little weird) waiting for you.
             </p>
 
-            <p className="text-white leading-relaxed text-md">
+            <p className="text-white leading-relaxed text-xl font-brand">
               We enjoy engaging with our community from kids crafts to school fundraisers, sip & shop events, plus-size pop-ups, etc.
             </p>
 
-            <p className="text-white p-8 text-xl tracking-wide bold leading-10">
+            <p className="text-white p-8 text-xl tracking-wide bold leading-10 font-brand">
               Hunting for something special? Something strange? Something your
               soul suddenly decides it MUST have? Come dig around—your next
               treasure is already waiting for you.
@@ -248,7 +248,7 @@ export default function AboutPage() {
                 alt="Woman standing in front of Ecclection storefront"
                 fill
                 className="object-cover object-top"
-                sizes="(max-width: 768px) 100vw, 25vw"
+                sizes="100vw, 100vw"
                 loading="lazy"
               />
             </div>
@@ -256,7 +256,7 @@ export default function AboutPage() {
         </div>
 
         <section className="container section-pad h-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 fade-in">
             {renderPunkTitle("What We Offer", "text-3xl md:text-4xl")}
           </div>
           <div className="grid grid-cols-1 sm:h-100 h-auto md:grid-cols-3 gap-6">

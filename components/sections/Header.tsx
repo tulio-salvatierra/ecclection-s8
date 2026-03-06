@@ -43,11 +43,12 @@ export function Header() {
               </h1>
             </Link>
           </div>
-          <nav className="nav-links text-xl md:text-2xl">
+          <nav className="nav-links text-xl md:text-2xl font-brand text-cyan-600">
             <Link href="/">Home</Link>
-            <Link href="/events">Events</Link>
-            <Link href="/about">About</Link>
-            <Link href="/resources">Resources</Link>
+            <Link href="/artists" className="text-cyan-600">Artists</Link>
+            <Link href="/events" className="text-cyan-600">Events</Link>
+            <Link href="/about" className="text-cyan-600">About</Link>
+            <Link href="/resources" className="text-cyan-600">Resources</Link>
           </nav>
           <div className="contact-mini hidden md:block">
             <a className="btn" href="https://maps.app.goo.gl/ZMgVyGzAmNvomLMcA">
@@ -104,6 +105,13 @@ export function Header() {
                 className="mobile-nav-link font-brand"
               >
                 Home
+              </Link>
+              <Link
+                href="/artists"
+                onClick={closeMobileMenu}
+                className="mobile-nav-link font-brand"
+              >
+                Artists
               </Link>
               <Link
                 href="/events"

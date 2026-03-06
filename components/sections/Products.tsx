@@ -1,6 +1,6 @@
 'use client';
 import Image from "next/image";
-import { useFadeAnimation } from "@/app/hooks/useFadeAnimtion";
+import { useFadeAnimation } from "@/hooks/useFadeAnimtion";
 import React, { useRef } from "react";
 import { renderPunkHeading } from "@/lib/punk-typography";
 
@@ -36,13 +36,11 @@ export function ProductsShowcase() {
   ];
 
   return (
-    <section ref={ref} className="py-4 px-4 mt-18 md:px-8 max-w-full overflow-hidden">
-      <div className="max-w-6xl w-full mx-auto">
-        <div className="mb-12 text-center">
-          {renderPunkHeading("Curated Treasures & Curious Finds", "fade-in text-4xl md:text-5xl text-cyan-500 mb-4", "text-center", "text-white", "large")}
-          <p className="fade-in text-xl sm:text-2xl leading-6  text-white text-left max-w-3xl sm:w-1/2 mx-auto">
-            Every piece has a past — and now it’s ready for its next adventure.{" "}
-            <br /><br />
+    <section ref={ref} className="py-4 px-4 mt-18 md:px-8 max-w-full h-screen overflow-hidden">
+      <div className="w-full mx-auto h-full flex flex-col">
+        <div className="mb-6 text-center shrink-0">
+          {renderPunkHeading("Curated Treasures & Curious Finds", "fade-in text-5xl sm:text-7xl text-cyan-500 mb-4", "text-center", "text-white", "large")}
+          <p className="fade-in text-2xl text-white text-left max-w-3xl mx-auto">
             Step into a closet full of character: re-loved fashion, indie
             makers, vintage misfits, jewelry, mixed media art, crystals,
             wellness items, home décor, and unexpected gems. Sustainable,
@@ -51,18 +49,18 @@ export function ProductsShowcase() {
           </p>
         </div>
 
-        <div className="grid items-center justify-center grid-cols-1 md:grid-cols-2 gap-4 w-full mx-auto">
+        <div className="grid items-stretch justify-center grid-cols-1 sm:grid-cols-2 sm:grid-rows-2 gap-4 w-full mx-auto flex-1 min-h-0">
           {categories.map((category, index) => (
             <div
               key={index}
-              className="group relative fade-in overflow-hidden border-2 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
+              className="group relative fade-in overflow-hidden border-2 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all h-full min-h-0"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="relative w-full aspect-[4/3] rounded-sm overflow-hidden mx-auto">
+              <div className="relative w-full h-full rounded-sm overflow-hidden mx-auto bg-black">
                 {category.video ? (
                   <video
                     src={category.video}
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className="absolute inset-0 w-full h-full object-contain"
                     autoPlay
                     loop
                     muted
@@ -74,15 +72,15 @@ export function ProductsShowcase() {
                     src={category.image || "/placeholder.svg"}
                     alt={category.title}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform"
+                    className="object-contain group-hover:scale-105 transition-transform"
                   />
                 )}
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-2 bg-black bg-opacity-70">
-                <h3 className="font-brand text-cyan-500 sm:text-2xl font-bold sm:mb-2">
+                <h3 className="font-brand text-cyan-500 sm:text-2xl font-bold sm:mb-2 fade-in">
                   {category.title}
                 </h3>
-                <p className="text-white text-lg hidden sm:block">{category.description}</p>
+                <p className="text-white text-lg hidden sm:block fade-in">{category.description}</p>
               </div>
             </div>
           ))}

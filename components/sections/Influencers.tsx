@@ -1,5 +1,5 @@
 "use client";
-import { useFadeAnimation } from "@/app/hooks/useFadeAnimtion";
+import { useFadeAnimation } from "@/hooks/useFadeAnimtion";
 import React from "react";
 
 export default function Influencers() {

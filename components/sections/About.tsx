@@ -3,7 +3,7 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import React from "react";
-import { useFadeAnimation } from "@/app/hooks/useFadeAnimtion";
+import { useFadeAnimation } from "@/hooks/useFadeAnimtion";
 import { ScrollBanner } from "../sections/ScrollBanner/ScrollBanner";
 
 interface AboutProps {

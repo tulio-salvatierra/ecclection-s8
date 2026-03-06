@@ -1,7 +1,7 @@
 import { Hero } from "@/components/sections/Hero";
 import { LenisProvider } from "@/components/LenisProvider";
 import SoundOnScroll from "@/components/SoundOnScroll/SoundOnScroll";
-import { ARTISTS_DATA } from "@/components/sections/Artists";
+import { ARTISTS_DATA } from "@/data/artists";
 import { ArtistCarousel } from "@/components/ArtistCarousel";
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
@@ -15,7 +15,7 @@ const About = dynamic(() => import("@/components/sections/About").then(mod => ({
 const Review = dynamic(() => import("@/components/sections/Review").then(mod => ({ default: mod.Review })), { ssr: true });
 const Influencers = dynamic(() => import("@/components/sections/Influencers"), { ssr: true });
 const Contact = dynamic(() => import("@/components/sections/Contact").then(mod => ({ default: mod.Contact })), { ssr: true });
-const ScrollBanner = dynamic(() => import("@/components/sections/ScrollBanner/ScrollBanner").then(mod => ({ default: mod.ScrollBanner })), { ssr: true });
+
 
 export const metadata: Metadata = {
   title: "Ecclection | Local Art & Community Vibe in Portage Park, Chicago",

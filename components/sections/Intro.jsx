@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useFadeAnimation } from "@/app/hooks/useFadeAnimtion";
+import { useFadeAnimation } from "@/hooks/useFadeAnimtion";
 import { Button } from "@/components/ui/button";
 import { SOCIAL_URLS } from "@/lib/constants";
 
@@ -29,13 +29,13 @@ export function Intro() {
             </div>
 
             {/* Main headline */}
-            <h2 className="mx-auto text-5xl font-brand md:text-7xl lg:text-8xl font-black text-cyan-300 leading-none mb-4 text-balance fade-in">
+            <h2 className="mx-auto text-5xl sm:text-7xl font-brand font-black text-cyan-300 leading-none mb-4 text-balance fade-in">
               WE ARE ECCLECTION
             </h2>
 
             {/* Description */}
             <div className="mx-auto sm:max-w-2xl mb-12 md:mb-16">
-              <p className="text-xl leading-6 text-primary-foreground/90 fade-in">
+              <p className="text-2xl text-primary-foreground/90 fade-in">
                 We’re all about self-expression, sustainability & that spark of
                 WONDERMENT — you never really know what you’ll find @
                 Ecclection, and that’s the magic.

@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 // components/Masonry.jsx
 import { useRef } from "react";
@@ -25,6 +25,8 @@ const items = [
   { id: 14, img: "/carousel/IMG_4390.jpeg.jpg" },
   { id: 15, img: "/carousel/IMG_4394.jpeg.jpg" },
 ];
+
+const tickerWords = ["Diversity", "Inclusion", "Human", "Art"];
 
 function Masonry() {
   const rootRef = useRef(null);
@@ -70,7 +72,7 @@ function Masonry() {
             scaleY: 1,
             ease: "elastic.out(2, 0.6)",
             duration: 0.6,
-          }
+          },
         );
 
         tl.fromTo(
@@ -87,7 +89,7 @@ function Masonry() {
             ease: "power4.out",
             duration: 1.5,
           },
-          "<"
+          "<",
         );
 
         tl.to(image, {
@@ -134,31 +136,69 @@ function Masonry() {
         root.removeEventListener("mousemove", handleMove);
       };
     },
-    { scope: rootRef } // tells useGSAP what DOM subtree to scope to
+    { scope: rootRef }, // tells useGSAP what DOM subtree to scope to
   );
 
   return (
-    <section ref={rootRef} className="mwg_effect020 w-screen" style={{ backgroundImage: 'url("/texture.jpg")', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+    <section ref={rootRef} className="mwg_effect020 w-screen">
       <div className="container mx-auto py-20 relative z-10 w-screen max-w-full">
-        <div className="header font-brand flex justify-center mb-8 w-screen mx-auto">
-          <p className="text-4xl text-white">Diversity</p>
-          <p className="text-4xl text-white">Inclusion</p>
-          <p className="text-4xl text-white">Human</p>
-          <p className="text-4xl text-white">Art</p>
+        <div className="header font-brand mb-8 w-screen mx-auto">
+          <div className="header-ticker" aria-label="Values ticker">
+            <div className="header-track">
+              {[...tickerWords, ...tickerWords].map((word, idx) => (
+                <span key={`${word}-${idx}`} className="header-item">
+                  {word}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
-        <div className="grid items-center justify-center" style={{ top: '50%' }}>
-        <p className="font-brand text-cyan-200 sm:text-9xl text-6xl text-center mx-auto grid items-center justify-center" style={{ fontFamily: 'Mrs Saint Delafield, normal', marginLeft: 'auto', marginRight: 'auto', top: '50%' }}>Empowering human creativity, connection inclusion and sustainability</p>
-        <p className="grid items-center justify-center text-xl sm:text-2xl font-brand text-white text-center mt-8 max-w-3xl mx-auto" style={{ fontFamily: 'Kadwa, cursive', marginLeft: 'auto', marginRight: 'auto', width: '100%' }}>
-            We also have. few more tricks under our sleeve & like to mix things up a bit.
+        <div
+          className="grid items-center justify-center"
+          style={{ top: "50%" }}
+        >
+          <p
+            className="font-brand text-cyan-200 sm:text-9xl text-6xl text-center mx-auto grid items-center justify-center"
+            style={{
+              fontFamily: "Kadwa, cursive",
+              marginLeft: "auto",
+              marginRight: "auto",
+              top: "50%",
+            }}
+          >
+            Empowering human creativity, connection inclusion and sustainability
+          </p>
+          <p
+            className="grid items-center justify-center text-xl sm:text-2xl font-brand text-white text-center mt-8 max-w-3xl mx-auto"
+            style={{
+              fontFamily: "Kadwa, cursive",
+              marginLeft: "auto",
+              marginRight: "auto",
+              width: "100%",
+            }}
+          >
+            We also have. few more tricks under our sleeve & like to mix things
+            up a bit.
           </p>
         </div>
+        <div className="header-ticker" aria-label="Values ticker">
+            <div className="header-track">
+              {[...tickerWords, ...tickerWords].map((word, idx) => (
+                <span key={`${word}-${idx}`} className="header-item">
+                  {word}
+                </span>
+              ))}
+            </div>
+          </div>
       </div>
 
       {/* hidden “source” images, like the original demo */}
-      <div className="medias">
-        {items.map((item) => (
-          <img key={item.id} src={item.img} alt="" />
-        ))}
+      <div className="medias header-ticker" aria-label="Values ticker">
+        <div className="header-track">
+          {items.map((item) => (
+            <img key={item.id} src={item.img} alt="" />
+          ))}
+        </div>
       </div>
     </section>
   );

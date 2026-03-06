@@ -28,23 +28,39 @@ body {
     gap: 3vw;
 }
 .mwg_effect020 .header {
-    display: flex;
-    justify-content: space-between;
     width: 100vw;
     padding: 25px;
     position: absolute;
     top: 0;
     left: 0;
     background-color: #E05A89;
-
+    overflow: hidden;
 }
-.mwg_effect020 .header p {
+.mwg_effect020 .header-ticker {
+    width: 100%;
+    overflow: hidden;
+}
+.mwg_effect020 .header-track {
+    display: flex;
+    width: max-content;
+    animation: masonry-ticker 20s linear infinite;
+}
+.mwg_effect020 .header-item {
     text-transform: uppercase;
     letter-spacing: -0.01em;
     font-size: 2.5rem;
     font-family: 'Kadwa', cursive;
-    padding: 0 10px 0 0;
+    padding-right: 2rem;
     color: #140e10;
+    white-space: nowrap;
+}
+@keyframes masonry-ticker {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
 }
 .mwg_effect020 img {
     width: 15vw;

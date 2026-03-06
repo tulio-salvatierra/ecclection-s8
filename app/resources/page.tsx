@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { FlyersBento } from "@/components/sections/BentoFlyers";
 import PantriesSection from "@/components/sections/Pantries";
 import type { Metadata } from "next";
@@ -147,6 +147,9 @@ const resources = [
   },
 ];
 
+const resourceCardClass =
+  "p-6 rounded-lg bg-cyan-600/10 border-2 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all";
+
 export default function CommunityResourcesPage() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ecclection.com";
 
@@ -200,15 +203,15 @@ export default function CommunityResourcesPage() {
       />
       <LenisProvider />
       {/* Header Section */}
-      <section className="container section-pad text-left">
+      <section className="container section-pad text-left fade-in mt-12">
         {renderPunkTitle("Community Resources", "text-4xl md:text-5xl", "mb-8")}
-        <p className="text-lg text-white sm:w-1/2 mx-auto leading-5">
+        <p className="text-xl text-white sm:w-1/2 mx-auto leading-5 font-brand">
           We believe in supporting our community. Below you'll find a curated
           list of trusted organizations and resources dedicated to helping
           individuals and families navigate challenging times.
         </p>
         <br />
-        <p className="text-lg text-left text-white sm:w-1/2 mx-auto leading-5">
+        <p className="text-xl text-left text-white sm:w-1/2 mx-auto leading-5 font-brand">
           We always offer complementary whistles, just step in and ask!
         </p>
       </section>
@@ -227,7 +230,7 @@ export default function CommunityResourcesPage() {
           "text-black",
           "white"
         )}
-        <p className="text-lg text-white sm:w-1/2 mx-auto leading-5 text-left mb-8">
+        <p className="text-xl text-white sm:w-1/2 mx-auto leading-5 text-left mb-8 font-brand">
           In addition to national resources, here are some local organizations
           in Portage Park that provide essential services to our community.
         </p>
@@ -235,29 +238,28 @@ export default function CommunityResourcesPage() {
           {localOrganizations.map((org) => (
             <article
               key={org.id}
-              className="p-6 rounded-lg bg-cyan-500 border-2 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all group"
+              className={resourceCardClass}
             >
               <div className="flex items-start justify-between mb-4">
                 <span className="text-xs tracking-wide uppercase text-black font-brand">
                   {org.category}
                 </span>
-                <ExternalLink className="w-4 h-4 text-black opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
 
-              <h2 className="text-xl font-semibold text-black font-brand mb-4">
+              <h2 className="text-xl font-semibold text-cyan-600 font-brand mb-4">
                 {org.title}
               </h2>
-              <p className="text-black text-lg leading-relaxed mb-6">
+              <p className="text-cyan-600 text-lg leading-relaxed mb-6 font-brand">
                 {org.description}
               </p>
               <a
                 href={org.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-lg font-brand text-black hover:text-gray-700 transition-colors group/link"
+                className="inline-flex items-center gap-2 text-base font-brand text-black hover:text-cyan-700 transition-colors"
               >
                 Visit Organization
-                <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4" />
               </a>
             </article>
           ))}
@@ -267,7 +269,7 @@ export default function CommunityResourcesPage() {
       <section>
         <div className="container section-pad text-center">
           {renderPunkHeading("Helpful Resources", "text-2xl md:text-3xl", "mb-8", "text-black", "white")}
-          <p className="text-lg text-white sm:w-1/2 mx-auto text-left leading-5 mb-8">
+          <p className="text-xl text-white sm:w-1/2 mx-auto text-left leading-5 mb-8 font-brand">
             Explore the following organizations that provide vital services in
             mental health, food security, housing, and crisis support organized
             by neighborhood.
@@ -289,20 +291,19 @@ export default function CommunityResourcesPage() {
           {resources.map((resource, index) => (
             <article
               key={index}
-              className="p-6 rounded-lg bg-cyan-500 border-2 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all group"
+              className={resourceCardClass}
             >
               <div className="flex items-start justify-between mb-4">
                 <span className="text-xs tracking-wide uppercase text-black font-brand">
                   {resource.category}
                 </span>
-                <ExternalLink className="w-4 h-4 text-black opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
 
-              <h2 className="text-xl font-semibold text-black font-brand mb-4">
+              <h2 className="text-xl font-semibold text-cyan-600 font-brand mb-4">
                 {resource.title}
               </h2>
 
-              <p className="text-black text-lg leading-relaxed mb-6">
+              <p className="text-cyan-600 text-lg leading-relaxed mb-6 font-brand">
                 {resource.description}
               </p>
 
@@ -310,10 +311,10 @@ export default function CommunityResourcesPage() {
                 href={resource.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-lg font-brand text-black hover:text-gray-700 transition-colors group/link"
+                className="inline-flex items-center gap-2 text-base font-brand text-black hover:text-cyan-700 transition-colors"
               >
                 Visit Resource
-                <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4" />
               </a>
             </article>
           ))}
@@ -321,10 +322,10 @@ export default function CommunityResourcesPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="container section-pad text-center">
+      <section className="container section-pad text-center fade-in mt-12">
         <div className="max-w-4xl mx-auto">
           {renderPunkHeading("Need Immediate Help?", "text-2xl md:text-3xl", "mb-8", "text-white", "white")}
-          <p className="text-lg text-white mb-8 sm:w-1/2 mx-auto leading-5">
+            <p className="text-xl text-white mb-8 sm:w-1/2 mx-auto leading-5 font-brand">
             If you or someone you know is in crisis, please reach out for help
             immediately. You are not alone.
           </p>

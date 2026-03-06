@@ -3,7 +3,7 @@
 import { Card } from "@/components/ui/card";
 
 import React from "react";
-import { useFadeAnimation } from "@/app/hooks/useFadeAnimtion";
+import { useFadeAnimation } from "@/hooks/useFadeAnimtion";
 import { renderPunkHeading } from "@/lib/punk-typography";
 
 interface ContactCard {

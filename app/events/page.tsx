@@ -77,52 +77,60 @@ export const metadata: Metadata = {
 export default function EventsPage() {
   return (
     <>
-      <section className="min-h-screen w-screen">
+      {" "}
+      <LenisProvider />
+      <section className="min-h-screen w-screen ">
         {/* Header Section */}
         <div role="banner" className="text-center mt-40">
-          {renderPunkTitle("Events & Community Impact", "text-3xl md:text-4xl", "mb-6")}
+          {renderPunkTitle(
+            "Events & Community Impact",
+            "text-3xl md:text-4xl",
+            "mb-6",
+          )}
           <p className="text-xl sm:text-2xl font-brand text-white sm:w-1/2 mx-auto leading-5">
             Where local art, rescued treasures, community & compassion meet
             under one funky little roof
           </p>
         </div>
-        <LenisProvider />
 
         {/* Main Content Section */}
-        <section className="mt-10">
-          <div className=" px-4 md:px-8 mx-auto space-y-8">
+        <section className="mt-20">
+          <div className=" ">
             {/* Upcoming Event (concrete date for SEO + visitors) */}
-            <div className="bg-cyan-600/80 border-2 border-black rounded-lg p-6 shadow-[6px_6px_0_0_#000]">
-              <div className="text-black leading-relaxed grid gap-4 sm:grid-cols-2 grid-cols-1">
-                <div>
-                <h2 className="font-brand text-black text-2xl md:text-3xl ">
-                  Artist & Community Appreciation Night — Dates announced on
-                  social media
-                </h2>
-                <p className="text-xl sm:text-2xl font-brand text-black mx-auto leading-6 sm:my-8 my-4 justify-center">
-                  At <strong>Ecclection</strong>, we believe art should connect
-                  you, surprise you and basically make your whole day better.
-                  We’re not just a shop in <strong>Portage Park</strong> — we’re
-                  a tiny WONDER-HUB where creativity, compassion and community
-                  swirl together in the most magical, chaotic, heart-squeezing
-                  way. Our philosophy is simple: celebrate our people, uplift
-                  our artists, honor every weird & wonderful story, and fill our
-                  events with laughter, kindness and those silly little moments
-                  that make you think, “Wow… that was actually really nice.”
-                </p>
+            <div className="relative h-screen border-2 border-black rounded-lg shadow-[6px_6px_0_0_#000] overflow-hidden">
+              <Image
+                src="/child.jpeg"
+                alt="Artists Spot"
+                fill
+                className="object-cover object-top"
+                sizes="100vw"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-cyan-900/55" />
+              <div className="relative z-10 p-6 h-full">
+                <div className="text-white leading-relaxed flex h-full flex-col justify-end">
+                  <div className="self-start text-right">
+                    {renderPunkTitle(
+                      "Artist & Community Appreciation Night — Dates announced on social media",
+                      "text-2xl md:text-3xl fade-in",
+                      "mt-2",
+                    )}
+                  </div>
+                  <p className="bottom-0 text-lg sm:text-xl font-brand text-white mx-auto leading-6 sm:my-8 my-4 justify-center fade-in w-1/2 justify-self-end">
+                    At <strong>Ecclection</strong>, we believe art should
+                    connect you, surprise you and basically make your whole day
+                    better. We’re not just a shop in{" "}
+                    <strong>Portage Park</strong> — we’re a tiny WONDER-HUB
+                    where creativity, compassion and community swirl together in
+                    the most magical, chaotic, heart-squeezing way. Our
+                    philosophy is simple: celebrate our people, uplift our
+                    artists, honor every weird & wonderful story, and fill our
+                    events with laughter, kindness and those silly little
+                    moments that make you think, “Wow… that was actually really
+                    nice.”
+                  </p>
                 </div>
-                <div className="relative my-4 w-full aspect-video rounded-md overflow-hidden">
-                  <Image
-                    src="/child.jpeg"
-                    alt="Artists Spot"
-                    fill
-                    className="object-cover object-top h-full w-full rounded-md"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    loading="lazy"
-                  />
-                </div>
-                
-                </div>
+              </div>
               <div className="text-center"></div>
             </div>
           </div>
@@ -175,8 +183,9 @@ export default function EventsPage() {
 
         {/* Structured Data (JSON-LD) */}
         {(() => {
-          const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ecclection.com";
-          
+          const siteUrl =
+            process.env.NEXT_PUBLIC_SITE_URL || "https://ecclection.com";
+
           const breadcrumbSchema = {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
