@@ -19,7 +19,7 @@ export default function DisclaimerSection() {
       />
       <div className="absolute inset-0 bg-black/55 backdrop-blur-[1px]" />
       <div className="relative z-10 sm:w-3/4 mx-auto p-8 h-full flex flex-col justify-center">
-        {renderPunkTitle("Welcome Surpies!!!", "text-5xl sm:text-7xl mb-3 text-white font-brand mb-8 text-center fade-in")}
+        {renderPunkTitle("🥳🥳🥳 Welcome Surpies!!! 🎉🎉🎉", "text-5xl sm:text-7xl mb-3 text-white font-brand mb-8 text-center fade-in")}
         <p className="fade-in text-2xl text-white mb-3 font-brand w-1/2 mx-auto text-left mb-8 fade-in">
           We are back in business! We are open from Wednesday to Sunday from
           11am - 5pm
