@@ -10,10 +10,7 @@ export function Intro() {
   useFadeAnimation(ref);
 
   return (
-    <section
-      ref={ref}
-      className="relative h-screen text-primary-foreground"
-    >
+    <section ref={ref} className="relative h-screen text-primary-foreground">
       {/* Background texture overlay */}
 
       {/* Main content */}
@@ -44,8 +41,7 @@ export function Intro() {
                 <br />
                 Come explore in person — see it, touch it, feel it, and find
                 something that feels like it was waiting just for you. Everyone
-                is welcome, every budget is loved, and the magic is in the
-                hunt.
+                is welcome, every budget is loved, and the magic is in the hunt.
               </p>
             </div>
 
@@ -67,23 +63,12 @@ export function Intro() {
 
             <div className="mt-20 md:mt-32 fade-in mx-auto">
               <p className="text-xl font-brand tracking-widest uppercase">
-                where portage park community, local art & second-life finds
-                come together
+                where portage park community, local art & second-life finds come
+                together
               </p>
             </div>
           </div>
         </div>
-      </div>
-      <div className="relative w-full h-full">
-        <video
-          src="/clothes.mp4"
-          className="w-full h-full object-cover"
-          autoPlay
-          loop
-          muted
-          playsInline
-        />
-        <div className="absolute inset-0 bg-black/60 pointer-events-none" />
       </div>
     </section>
   );
