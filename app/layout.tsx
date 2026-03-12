@@ -212,7 +212,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${quintessential.variable} ${raleway.variable} ${pirataOne.variable}`}
+      
     >
       <head>
         {/* Resource hints for external domains */}
@@ -225,12 +225,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className={`${inter.variable} ${quintessential.variable} ${raleway.variable} ${pirataOne.variable}`}>
-        <FontProvider
-          interVariable={inter.variable}
-          quintessentialVariable={quintessential.variable}
-          ralewayVariable={raleway.variable}
-          pirataOneVariable={pirataOne.variable}
-        />
+        
         <PreloadBackground />
         <script
           type="application/ld+json"
