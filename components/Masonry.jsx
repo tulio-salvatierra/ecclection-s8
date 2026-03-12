@@ -160,7 +160,7 @@ function Masonry() {
           <p
             className="font-brand text-cyan-200 sm:text-9xl text-6xl text-center mx-auto grid items-center justify-center"
             style={{
-              fontFamily: "Kadwa, cursive",
+              fontFamily: "Kadwa, sans-serif",
               marginLeft: "auto",
               marginRight: "auto",
               top: "50%",
@@ -171,7 +171,7 @@ function Masonry() {
           <p
             className="grid items-center justify-center text-xl sm:text-2xl font-brand text-white text-center mt-8 max-w-3xl mx-auto"
             style={{
-              fontFamily: "Kadwa, cursive",
+              fontFamily: "Kadwa, sans-serif",
               marginLeft: "auto",
               marginRight: "auto",
               width: "100%",

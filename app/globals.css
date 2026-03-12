@@ -146,6 +146,7 @@
   @media (max-width: 768px) {
     body {
       background-size: cover;
+      background-attachment: scroll;
     }
   }
   /* Global heading colors - exclude header h1 */

@@ -16,10 +16,9 @@ This document outlines all the performance improvements made to increase load sp
 
 ### 2. **Font Loading Optimization** (`app/layout.tsx`)
 - ✅ **Font Subsetting**: Optimized font weights (only loading what's needed)
-- ✅ **Font Display Strategy**: Using `swap` for all fonts to prevent FOIT
+- ✅ **Font Display Strategy**: Using `swap` for Kadwa to prevent FOIT
 - ✅ **Font Fallbacks**: Added proper fallback fonts with `adjustFontFallback`
-- ✅ **Selective Preloading**: Only preload critical fonts (Inter, Quintessential)
-- ✅ **Lazy Font Loading**: Non-critical fonts (Raleway, Pirata One) set to `preload: false`
+- ✅ **Single Font Strategy**: Kadwa is the only font used site-wide
 
 ### 3. **Image Optimization**
 - ✅ **Next.js Image Component**: Replaced `<img>` tags with Next.js `Image` component in:
@@ -58,7 +57,6 @@ This document outlines all the performance improvements made to increase load sp
   - Instagram
   - Facebook
   - TikTok
-- ✅ **Preconnect**: Added for Google Fonts (fonts.googleapis.com and fonts.gstatic.com)
 
 ### 7. **Bundle Optimization**
 - ✅ **Package Imports**: Optimized imports for icon libraries

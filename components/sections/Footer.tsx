@@ -18,8 +18,8 @@ function TikTokIcon({ className }: { className?: string }) {
 
 export function Footer() {
   return (
-    <footer className="bg-black/50 text-primary-foreground min-h-8/12">
-      <div className="container mx-auto px-6 py-12">
+    <footer className="relative z-20 w-full mt-10 border-t-2 border-cyan-500/60 bg-black/85 text-white">
+      <div className="container mx-auto px-4 sm:px-6 py-12">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
@@ -63,7 +63,7 @@ export function Footer() {
           {/* Social Media Links */}
           <div>
             <h3 className="mb-4 text-lg font-semibold font-brand">Follow Along on Instagram</h3>
-            <div className="flex gap-4 font-brand">
+            <div className="flex gap-4 font-brand text-white">
               <a
                 href={SOCIAL_URLS.instagram}
                 target="_blank"
@@ -97,7 +97,7 @@ export function Footer() {
           {/* Address */}
           <div className="font-brand">
             <h3 className="mb-4 text-lg font-semibold font-brand">Visit Us</h3>
-            <a href={SOCIAL_URLS.googleMaps}>
+            <a href={SOCIAL_URLS.googleMaps} className="text-white hover:text-cyan-300">
               <address className="not-italic leading-relaxed hover:text-white">
                 {BUSINESS_INFO.address.street}
                 <br />

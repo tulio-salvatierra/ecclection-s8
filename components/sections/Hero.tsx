@@ -12,7 +12,7 @@ export function Hero() {
   return (
     <section
       ref={ref}
-      className="relative h-screen min-h-[580px] overflow-hidden top-[-150px]"
+      className="relative min-h-[100svh] md:h-screen md:min-h-[580px] overflow-hidden top-0 md:top-[-150px]"
     >
       <video
         className="absolute inset-0 h-full w-full object-cover object-top"
@@ -32,7 +32,7 @@ export function Hero() {
 
       <div className="absolute inset-0 bg-black/70" />
 
-      <div className="relative z-10 h-screen w-full mx-auto md:w-2/3 flex flex-col items-center justify-center px-4 text-center">
+      <div className="relative z-10 min-h-[100svh] md:h-screen w-full mx-auto md:w-2/3 flex flex-col items-center justify-center px-4 pt-20 md:pt-0 text-center">
         <h1 className="text-4xl md:text-6xl leading-tight font-extrabold tracking-tight text-cyan-400 fade-in">
           A Wonderfully Weird Vintage &amp; Variety Shop in Chicago
         </h1>

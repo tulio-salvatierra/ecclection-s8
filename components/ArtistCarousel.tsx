@@ -53,15 +53,15 @@ export function ArtistCarousel({ artists }: ArtistCarouselProps) {
   }, [artists.length]);
 
   return (
-    <section ref={ref} className="w-screen h-screen grid items-center">
-      <div className="fade-in mt-16 flex flex-col items-center container section-pad">
+    <section ref={ref} className="w-screen min-h-[100svh] md:h-screen grid items-center py-10 md:py-0">
+      <div className="fade-in mt-8 md:mt-16 flex flex-col items-center container section-pad">
         {renderPunkTitle(
           "Meet the Artists",
           "text-5xl md:text-7xl",
           "mb-6",
           "text-white",
         )}
-        <p className="fade-in mt-2 text-2xl text-white w-full sm:w-3/4 mx-auto text-left ">
+        <p className="fade-in mt-2 text-xl sm:text-2xl text-white w-full sm:w-3/4 mx-auto text-left ">
           Here’s a little peek at the wonderfully unique, talented humans who
           help   make Ecclection  what it is. We usually have over a dozen
           artisans and artists work available- from handcrafted jewelry,
@@ -71,7 +71,7 @@ export function ArtistCarousel({ artists }: ArtistCarouselProps) {
           <br />
           <br />
           </p>
-          <p className="fade-in mt-2 text-2xl text-white w-full sm:w-3/4 mx-auto text-left">
+          <p className="fade-in mt-2 text-xl sm:text-2xl text-white w-full sm:w-3/4 mx-auto text-left">
             Rental Spaces start at only $20/month so we can help provide exposure
             to the community while offering a space for people to come in  and
             see, feel, touch or smell and of course BUY your creations. It’s SO

@@ -36,23 +36,23 @@ export function ProductsShowcase() {
   ];
 
   return (
-    <section ref={ref} className="py-4 px-4 mt-18 md:px-8 max-w-full h-screen overflow-hidden">
+    <section ref={ref} className="py-6 md:py-4 px-4 mt-18 md:px-8 max-w-full min-h-[100svh] md:h-screen overflow-visible md:overflow-hidden">
       <div className="w-full mx-auto h-full flex flex-col">
         <div className="mb-6 text-center shrink-0">
           {renderPunkHeading("Curated Treasures & Curious Finds", "fade-in text-5xl sm:text-7xl text-cyan-500 mb-4", "text-center", "text-white", "large")}
-          <p className="fade-in text-2xl text-white text-left max-w-3xl mx-auto">
+          <p className="fade-in text-xl sm:text-2xl text-white text-left max-w-3xl mx-auto">
             Come rummage through the good stuff: rescued vintage gems, odd
             little beauties, useful home finds, playful gifts, old-school cool,
             and handmade pieces from local artists.
           </p>
-          <p className="fade-in text-2xl text-white text-left max-w-3xl mx-auto mt-4">
+          <p className="fade-in text-xl sm:text-2xl text-white text-left max-w-3xl mx-auto mt-4">
             Some things are practical. Some are weird. Some are both. That&apos;s
             the fun of Ecclection — you walk in for one thing and leave with a
             treasure you didn&apos;t know your heart needed.
           </p>
         </div>
 
-        <div className="grid items-stretch justify-center grid-cols-1 sm:grid-cols-2 sm:grid-rows-2 gap-4 w-full mx-auto flex-1 min-h-0">
+        <div className="grid items-stretch justify-center grid-cols-1 sm:grid-cols-2 sm:grid-rows-2 gap-4 w-full mx-auto flex-1 min-h-0 auto-rows-[minmax(220px,1fr)] sm:auto-rows-auto">
           {categories.map((category, index) => (
             <div
               key={index}

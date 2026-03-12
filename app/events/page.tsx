@@ -59,26 +59,27 @@ export default function EventsPage() {
         <section className="mt-20">
           <div className=" ">
             {/* Upcoming Event (concrete date for SEO + visitors) */}
-            <div className="relative h-screen border-2 border-black rounded-lg shadow-[6px_6px_0_0_#000] overflow-hidden">
-              <Image
-                src="/child.jpeg"
-                alt="Artists Spot"
-                fill
-                className="object-cover object-top"
-                sizes="100vw"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-cyan-900/55" />
-              <div className="relative z-10 p-6 h-full">
-                <div className="text-white leading-relaxed flex h-full flex-col justify-end">
-                  <div className="self-start text-right">
+            <div className="border-2 border-black rounded-lg shadow-[6px_6px_0_0_#000] overflow-hidden bg-cyan-900/40">
+              <div className="grid grid-cols-1 md:grid-cols-2 min-h-[520px]">
+                <div className="relative min-h-[320px] md:min-h-full">
+                  <Image
+                    src="/child.jpeg"
+                    alt="Artists Spot"
+                    fill
+                    className="object-cover object-center"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="p-6 md:p-10 flex flex-col justify-center text-white">
+                  <div className="self-start">
                     {renderPunkTitle(
                       "Artist & Community Appreciation Night — Dates announced on social media",
                       "text-2xl md:text-3xl fade-in",
-                      "mt-2",
+                      "mb-4",
                     )}
                   </div>
-                  <p className="bottom-0 text-lg sm:text-xl font-brand text-white mx-auto leading-6 sm:my-8 my-4 justify-center fade-in w-1/2 justify-self-end">
+                  <p className="text-lg sm:text-xl font-brand leading-6 fade-in">
                     From Artist &amp; Community Appreciation Nights to seasonal
                     pop-ups and maker features, these gatherings are built for
                     connection. Come meet people, discover new work, share good
@@ -87,7 +88,6 @@ export default function EventsPage() {
                   </p>
                 </div>
               </div>
-              <div className="text-center"></div>
             </div>
           </div>
         </section>

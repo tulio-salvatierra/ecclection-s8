@@ -31,7 +31,7 @@ export function Header() {
 
   return (
     <>
-      <header className="w-3/4 left-1/2 -translate-x-1/2 container site-header fixed top-15 z-50 backdrop-blur-md bg-card/90 rounded-lg mt-2 mx-10">
+      <header className="site-header fixed top-2 left-2 right-2 md:top-4 md:left-1/2 md:right-auto md:w-3/4 md:-translate-x-1/2 z-50 backdrop-blur-md bg-card/90 rounded-lg">
         <div className="w-full flex items-center justify-between nav">
           <div className="brand">
             <Link href="/" className="flex items-center space-x-2">
@@ -80,7 +80,7 @@ export function Header() {
 
       {/* Mobile Menu */}
       <div
-        className={`mobile-menu fixed top-0 left-0 right-0 z-50 md:hidden transition-all duration-300 ease-out ${
+        className={`mobile-menu fixed top-0 left-0 right-0 z-50 md:hidden transition-all duration-300 ease-out p-1 ${
           isMobileMenuOpen
             ? "translate-y-0 opacity-100"
             : "-translate-y-full opacity-0 pointer-events-none"
@@ -91,7 +91,7 @@ export function Header() {
             <div className="brand">
               <Link href="/" className="flex items-center space-x-2">
                 <span className="brand-mark">
-                  <Image src="/logo.png" alt="Ecclection" width={32} height={32} priority className="w-8 h-8" />
+                  <Image src="/logo.png" alt="Ecclection" width={32} height={32} priority className="w-8 h-8 mx-2" />
                 </span>
                 <h1 className="font-brand font-bold text-black font-xl-cyan-600">
                   Ecclection

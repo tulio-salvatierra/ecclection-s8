@@ -1,6 +1,6 @@
 body {
     color: #F1F1F1;
-    font: 500 normal 22px/1.3 'Mrs Saint Delafield', cursive;
+    font: 500 normal 22px/1.3 'Kadwa', sans-serif;
 }
 .mwg_effect020 {
     margin-top: 100px;
@@ -49,7 +49,7 @@ body {
     text-transform: uppercase;
     letter-spacing: -0.01em;
     font-size: 2.5rem;
-    font-family: 'Kadwa', cursive;
+    font-family: 'Kadwa', sans-serif;
     padding-right: 2rem;
     color: #140e10;
     white-space: nowrap;
@@ -76,7 +76,7 @@ body {
     width: 100%;
     text-align: center;
     text-transform: uppercase;
-    font: 400 italic 9vw / 0.76 'Mrs Saint Delafield', cursive;
+    font: 400 normal 9vw / 0.76 'Kadwa', sans-serif;
     letter-spacing: -0.05em;
     width: 56%;
 }
@@ -86,7 +86,7 @@ body {
     max-width: 34vw;
     text-align: center;
     color: #140e10;
-    font-family: 'Mrs Saint Delafield', cursive;
+    font-family: 'Kadwa', sans-serif;
 }
 
 .mwg_effect020 .medias img {

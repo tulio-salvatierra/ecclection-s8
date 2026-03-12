@@ -312,7 +312,7 @@ export function Review() {
 
   return (
     <>
-    <section ref={ref} className="py-4 px-4 max-w-full h-screen overflow-hidden">
+    <section ref={ref} className="py-6 md:py-4 px-4 max-w-full min-h-[100svh] md:h-screen overflow-visible md:overflow-hidden">
         <div className="mb-12">
           {renderPunkHeading(
             "What Folks Are Saying About Ecclection",
@@ -322,13 +322,13 @@ export function Review() {
             "large"
           )}
 
-          <p className="fade-in text-white text-2xl max-w-3xl mx-auto text-center">
+          <p className="fade-in text-white text-xl sm:text-2xl max-w-3xl mx-auto text-center">
             From local articles to Google love, your support means the world to
             us. People have been especially excited about our new wave of
             curious inventory, including pieces connected to the beloved
             American Science &amp; Surplus story.
           </p>
-          <p className="fade-in text-white text-2xl max-w-3xl mx-auto text-center mt-4">
+          <p className="fade-in text-white text-xl sm:text-2xl max-w-3xl mx-auto text-center mt-4">
             Every review, shout-out, and share helps more people wander in,
             discover treasures in person, and support a neighborhood shop full
             of creativity, reuse, and good vibes.
@@ -394,7 +394,7 @@ export function Review() {
       </section>
 
         {/* Testimonial lines slider */}
-        <section ref={sliderWrapRef} className="fade-in mb-12 h-screen">
+        <section className="fade-in mb-12 min-h-[70svh] md:h-screen">
           
 
           <div

@@ -50,7 +50,7 @@ body {
     display: flex;
     gap: 4vw;
     width: max-content;
-    font-family: "Kadwa", cursive;
+    font-family: "Kadwa", sans-serif;
     white-space: nowrap;
     overflow: visible;
     transform: translateZ(0);

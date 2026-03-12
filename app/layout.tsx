@@ -5,7 +5,7 @@ import { Header } from "@/components/sections/Header";
 import { StoreHoursTicker } from "@/components/sections/StoreHoursTicker";
 
 import { ClientEffects } from "@/components/SoundOnScroll/ClientFX";
-import { Inter, Kadwa } from "next/font/google";
+import { Kadwa } from "next/font/google";
 import { SOCIAL_URLS, BUSINESS_INFO } from "@/lib/constants";
 import { PreloadBackground } from "@/components/PreloadBackground";
 import { Footer } from "@/components/sections/Footer";
@@ -13,18 +13,6 @@ import { FontProvider } from "@/components/FontProvider";
 import { UnicornStudioBackground } from "@/components/UnicornStudioBackground";
 import { LandingScreen } from "@/components/LandingScreen";
 import { DEFAULT_KEYWORDS, SITE_NAME, SITE_URL, TWITTER_HANDLE } from "@/lib/seo";
-
-// Configure your fonts with optimized loading
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-  preload: true,
-  fallback: ["system-ui", "arial"],
-  adjustFontFallback: true,
-  // Only load what we need
-  weight: ["400", "500", "600", "700"],
-});
 
 const kadwa = Kadwa({
   subsets: ["latin"],
@@ -187,7 +175,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${kadwa.variable}`}
+      className={kadwa.variable}
     >
       <head>
         {/* Resource hints for external domains */}
@@ -195,23 +183,12 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://instagram.com" />
         <link rel="dns-prefetch" href="https://facebook.com" />
         <link rel="dns-prefetch" href="https://tiktok.com" />
-        {/* Preconnect to Google Fonts */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&display=swap"
-          rel="stylesheet"
-        />
       </head>
-      <body className={`${inter.variable} ${kadwa.variable}`}>
+      <body className={kadwa.variable}>
         <UnicornStudioBackground />
         <div className="relative z-10">
         <FontProvider
-          interVariable={inter.variable}
+          interVariable={kadwa.variable}
           quintessentialVariable={kadwa.variable}
           ralewayVariable={kadwa.variable}
           pirataOneVariable={""}

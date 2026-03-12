@@ -10,12 +10,12 @@ export function Intro() {
   useFadeAnimation(ref);
 
   return (
-    <section ref={ref} className="relative h-screen text-primary-foreground">
+    <section ref={ref} className="relative min-h-[100svh] md:h-screen text-primary-foreground py-10 md:py-0">
       {/* Background texture overlay */}
 
       {/* Main content */}
       <div className="relative z-10 px-4">
-        <div className="flex mx-auto h-screen items-stretch gap-4">
+        <div className="flex mx-auto min-h-[100svh] md:h-screen items-stretch gap-4">
           {/* Left side - Text content */}
           <div className="p-2 flex-1 flex flex-col justify-center">
             {/* Eyebrow text */}
@@ -26,13 +26,13 @@ export function Intro() {
             </div>
 
             {/* Main headline */}
-            <h2 className="mx-auto text-5xl sm:text-7xl font-brand font-black text-cyan-300 leading-none mb-4 text-balance fade-in">
+            <h2 className="mx-auto text-4xl sm:text-7xl font-brand font-black text-cyan-300 leading-none mb-4 text-balance fade-in">
               WE ARE ECCLECTION
             </h2>
 
             {/* Description */}
             <div className="mx-auto sm:max-w-2xl mb-12 md:mb-16">
-              <p className="text-2xl text-primary-foreground/90 fade-in">
+              <p className="text-xl sm:text-2xl text-primary-foreground/90 fade-in">
                 We’re a wonderfully weird Chicago shop where old things, odd
                 things, useful things, and beautiful things get a second life.
                 Think vintage gems, antiques, local maker goods, home finds,
@@ -62,7 +62,7 @@ export function Intro() {
             </div>
 
             <div className="mt-20 md:mt-32 fade-in mx-auto">
-              <p className="text-xl font-brand tracking-widest uppercase">
+              <p className="text-base sm:text-xl font-brand tracking-widest uppercase">
                 where portage park community, local art & second-life finds come
                 together
               </p>

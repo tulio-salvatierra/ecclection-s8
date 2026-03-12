@@ -8,11 +8,11 @@ export function StoreActivities() {
   useFadeAnimation(ref);
 
   return (
-    <section ref={ref} className="bg-transparent h-screen py-2 sm:py-4 p-2 md:px-8">
-      <div className="relative mx-auto h-screen flex flex-col justify-between">
+    <section ref={ref} className="bg-transparent min-h-[100svh] md:h-screen py-8 sm:py-10 p-2 md:px-8">
+      <div className="relative mx-auto min-h-[100svh] md:h-screen flex flex-col justify-between gap-8">
         {/* Top oversized title */}
         <div className="mb-10">
-          <h2 className="mt-20 md:mt-40 fade-in text-5xl sm:text-9xl tracking-light text-cyan-500 leading-tight" style={{ textShadow: '2px 2px 0px rgba(0, 0, 0, 0.5)', fontFamily: '"Mrs Saint Delafield", cursive' }}>
+          <h2 className="mt-10 md:mt-40 fade-in text-4xl sm:text-9xl tracking-light text-cyan-500 leading-tight font-brand" style={{ textShadow: '2px 2px 0px rgba(0, 0, 0, 0.5)' }}>
             More Than A Store
           </h2>
         </div>
@@ -27,7 +27,7 @@ export function StoreActivities() {
 
           {/* Main description (center column) */}
           <div className="md:col-span-2">
-              <p className="fade-in text-2xl text-white max-w-xl">
+              <p className="fade-in text-xl sm:text-2xl text-white max-w-xl">
               Ecclection is a neighborhood shop where families, artists &amp;
               curious neighbors come to browse, laugh, trade, discover &amp;
               just hang out. You'll get to spin the <strong>Wheel of Good
@@ -43,7 +43,7 @@ export function StoreActivities() {
         </div>
 
         {/* Bottom right CTA + small meta text */}
-        <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6">
+        <div className="mt-6 md:mt-12 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6">
           <div className="fade-in font-brand text-3xl md:text-6xl tracking-light text-white uppercase leading-tight">
             <p className="fade-in text-cyan-300">EXPERIENCE&nbsp;IN‑STORE&nbsp;ONLY</p>
             <p className="fade-in text-cyan-300">NO&nbsp;ONLINE&nbsp;SHOP · NO&nbsp;PHONE&nbsp;ORDERS</p>
