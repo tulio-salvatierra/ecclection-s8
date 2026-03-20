@@ -34,7 +34,7 @@ export function Review() {
         "Funky Portage Park Vintage Shop Ecclection Expands to Bigger Location",
       excerpt:
         "Opened in fall 2023, Ecclection has moved to a new location that allows it to sell more art and unique finds like disco Doc Martens and seasonal decorations.",
-      date: "March 2026",
+      date: "March 2025",
       url: "https://blockclubchicago.org/2025/03/17/funky-portage-park-vintage-shop-ecclection-expands-to-bigger-location/",
       image: "/article2.png",
     },

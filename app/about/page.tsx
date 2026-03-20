@@ -194,7 +194,7 @@ export default function AboutPage() {
                 alt="Woman standing in front of Ecclection storefront"
                 fill
                 className="object-cover object-top"
-                sizes="100vw, 100vw"
+                sizes="(max-width: 768px) 100vw, (max-width: 1280px) 45vw, 33vw"
                 loading="lazy"
               />
             </div>
