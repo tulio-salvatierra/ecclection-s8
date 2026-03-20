@@ -12,6 +12,7 @@ import { Footer } from "@/components/sections/Footer";
 import { FontProvider } from "@/components/FontProvider";
 import { UnicornStudioBackground } from "@/components/UnicornStudioBackground";
 import { LandingScreen } from "@/components/LandingScreen";
+import { FloatingDisclaimer } from "@/components/FloatingDisclaimer";
 import { DEFAULT_KEYWORDS, SITE_NAME, SITE_URL, TWITTER_HANDLE } from "@/lib/seo";
 
 const kadwa = Kadwa({
@@ -206,6 +207,7 @@ export default function RootLayout({
         />
         
         <Header />
+        <FloatingDisclaimer />
         
         
 
