@@ -111,7 +111,7 @@ export function Footer() {
           </div>
         </div>
         <div className="">
-          <img src="/footer-logo.jpg" alt="Ecclection Logo" className="h-[300px] w-[300px] m-8 mx-auto " />
+          <img src="/footer-logo.jpg" alt="Ecclection Logo" className="sm:h-[600px] sm:w-[600px] h-[300px] w-[300px] m-8 mx-auto fade-in" />
         </div>
 
         {/* Copyright */}

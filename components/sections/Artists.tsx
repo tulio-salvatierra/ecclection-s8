@@ -122,7 +122,7 @@ export function Artists({ className = "", data }: ArtistsProps) {
               className="fade-in overflow-hidden bg-cyan-600/10 text-black border-2 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all w-full h-[50vh]"
             >
               <div className="grid h-full grid-cols-1 md:grid-cols-2">
-                <div className="h-full flex items-center justify-center relative">
+                <div className="h-full w-3/4 flex items-center justify-center relative">
                   {img ? (
                     <img
                     loading="lazy"

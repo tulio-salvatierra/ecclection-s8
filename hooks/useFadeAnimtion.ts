@@ -52,7 +52,7 @@ export function useFadeAnimation(ref: React.RefObject<HTMLElement>) {
           display: "inline-block",
           scrollTrigger: {
             trigger: element,
-            start: "top 75%",
+            start: "top 85%",
             toggleActions: "play none none none",
           },
         },

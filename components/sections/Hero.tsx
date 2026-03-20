@@ -12,10 +12,10 @@ export function Hero() {
   return (
     <section
       ref={ref}
-      className="relative min-h-[100svh] md:h-screen md:min-h-[580px] overflow-hidden top-0 md:top-[-150px]"
+      className="relative min-h-[100dvh] h-screen overflow-hidden top-0 md:top-[-150px]"
     >
       <video
-        className="absolute inset-0 h-full w-full object-cover object-top"
+        className="absolute inset-0 h-screen w-screen object-cover object-center"
         src="/Ecclection_hero.mp4"
         autoPlay
         loop
@@ -30,16 +30,16 @@ export function Hero() {
         }}
       />
 
-      <div className="absolute inset-0 bg-black/70" />
+      <div className="absolute inset-0 bg-black/70 h-full w-screen" />
 
-      <div className="relative z-10 min-h-[100svh] md:h-screen w-full mx-auto md:w-2/3 flex flex-col items-center justify-center px-4 pt-20 md:pt-0 text-center">
-        <h1 className="text-4xl md:text-6xl leading-tight font-extrabold tracking-tight text-cyan-400 fade-in">
+      <div className="pb-12 relative z-10 min-h-[100svh] md:h-screen w-screen mx-auto md:w-2/3 flex flex-col items-end justify-end px-4 pt-20 md:pt-0 text-center">
+        <h1 className="text-5xl md:text-6xl leading-tight font-extrabold tracking-tight text-cyan-400 fade-in mb-4">
           A Wonderfully Weird Vintage &amp; Variety Shop in Chicago
         </h1>
-        <p className="fade-in mt-2 text-[1.5rem] md:text-[2rem] mb-6 text-left mx-auto text-xl md:text-2xl text-white">
+        <p className="fade-in mt-2 mb-6 text-left mx-auto text-xl md:text-2xl text-white">
           We rescue beautiful, useful, and delightfully strange things, give
           them a second life, and fill the shop with local art, gifts, games,
-          and treasures you won’t find on a boring screen.
+          and treasures you won’t find on a boring screen, right here in Portage Park.
         </p>
 
         <a

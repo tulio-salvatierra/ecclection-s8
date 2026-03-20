@@ -36,7 +36,7 @@ export function ProductsShowcase() {
   ];
 
   return (
-    <section ref={ref} className="py-6 md:py-4 px-4 mt-18 md:px-8 max-w-full min-h-[100svh] md:h-screen overflow-visible md:overflow-hidden">
+    <section ref={ref} className="py-20  px-4 mt-18  max-w-full min-h-[100svh] md:h-screen overflow-visible md:overflow-hidden">
       <div className="w-full mx-auto h-full flex flex-col">
         <div className="mb-6 text-center shrink-0">
           {renderPunkHeading("Curated Treasures & Curious Finds", "fade-in text-5xl sm:text-7xl text-cyan-500 mb-4", "text-center", "text-white", "large")}

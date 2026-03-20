@@ -19,22 +19,25 @@ export default function Influencers() {
         backgroundBlendMode: "overlay",
         touchAction: "pan-y",
       }}
-      className="w-full max-w-full flex transition-all duration-300 justify-between section-pad fade-in overflow-hidden">
+      className="w-full max-w-full h-content flex transition-all duration-300 justify-between section-pad fade-in overflow-hidden"
+    >
       <div className=" text-[#111111] h-auto w-full px-4">
-        <h2 className="fade-in text-4xl sm:text-8xl font-brand text-white leading-none p-1">CALLING ANY INFLUENCERS 📣</h2>
-        <div className=" sm:mt-5 h-full grid grid-cols-1 md:grid-cols-2 items-start justify-between gap-10">
+        <h2 className="fade-in text-4xl sm:text-8xl font-brand text-white leading-none p-1">
+          CALLING ANY INFLUENCERS 📣
+        </h2>
+        <div className="fade-in sm:mt-5 h-full grid grid-cols-1 md:grid-cols-2 items-start justify-between gap-10">
           <div
-            className="w-full h-[40vh] md:h-[55vh] mx-auto items-start"
-            style={{ backgroundImage: `url(/Artists_spot.mp4)` }}
+            className="w-full h-auto mx-auto items-start"
           >
-            <video
-              src="/Artists_spot.mp4"
-              className="rounded-l-md object-cover w-full h-full mx-auto fade-in pointer-events-none"
-              autoPlay
-              loop
-              muted
-              playsInline
-            />
+            <iframe
+              className="w-full h-full aspect-video"
+              src="https://www.youtube.com/embed/UELFFqLSDxs?si=H6F3fkyt7gr3cc1q&amp;start=76"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+           ></iframe>
           </div>
 
           {/* Right: copy + button */}

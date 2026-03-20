@@ -8,7 +8,9 @@ body {
 
 .mwg_effect013 {
     height: 100%;
-    overflow: visible;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
 }
 .mwg_effect013 .header {
     position: absolute;
@@ -44,7 +46,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: visible;
+    overflow: hidden;
 }
 .mwg_effect013 .banner-container {
     display: flex;

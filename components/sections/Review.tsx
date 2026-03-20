@@ -394,7 +394,7 @@ export function Review() {
       </section>
 
         {/* Testimonial lines slider */}
-        <section className="fade-in mb-12 min-h-[70svh] md:h-screen">
+        <section className="fade-in mb-12 min-h-content">
           
 
           <div

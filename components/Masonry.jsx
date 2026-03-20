@@ -140,9 +140,9 @@ function Masonry() {
   );
 
   return (
-    <section ref={rootRef} className="mwg_effect020 w-screen">
-      <div className="container mx-auto py-20 relative z-10 w-screen max-w-full">
-        <div className="header font-brand mb-8 w-screen mx-auto">
+    <section ref={rootRef} className="mwg_effect020 w-screen mx-auto">
+      <div className="container mx-auto py-20 relative z-10 w-screen max-w-full fade-in flex flex-col items-center justify-center">
+        <div className="header font-brand mb-8 w-screen mx-auto flex items-center justify-center">
           <div className="header-ticker" aria-label="Values ticker">
             <div className="header-track">
               {[...tickerWords, ...tickerWords].map((word, idx) => (
@@ -158,7 +158,7 @@ function Masonry() {
           style={{ top: "50%" }}
         >
           <p
-            className="font-brand text-cyan-200 sm:text-9xl text-6xl text-center mx-auto grid items-center justify-center"
+            className="font-brand text-cyan-200 sm:text-5xl text-3xl text-center mx-auto grid items-center justify-center"
             style={{
               fontFamily: "Kadwa, sans-serif",
               marginLeft: "auto",
@@ -184,7 +184,7 @@ function Masonry() {
         <div className="header-ticker" aria-label="Values ticker">
             <div className="header-track">
               {[...tickerWords, ...tickerWords].map((word, idx) => (
-                <span key={`${word}-${idx}`} className="header-item">
+                <span key={`${word}-${idx}`} className="header-item text-white">
                   {word}
                 </span>
               ))}

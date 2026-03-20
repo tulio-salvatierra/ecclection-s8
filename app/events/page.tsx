@@ -2,7 +2,6 @@ import { Contact } from "@/components/sections/Contact";
 import dynamic from "next/dynamic";
 import { LenisProvider } from "@/components/LenisProvider";
 import { renderPunkTitle } from "@/lib/punk-typography";
-import Image from "next/image";
 import {
   buildBreadcrumbSchema,
   buildPageMetadata,
@@ -39,7 +38,7 @@ export default function EventsPage() {
     <>
       {" "}
       <LenisProvider />
-      <section className="min-h-screen w-screen ">
+      <section className="min-h-screen w-screen fade-in">
         {/* Header Section */}
         <div role="banner" className="text-center mt-40">
           {renderPunkTitle(
@@ -47,7 +46,7 @@ export default function EventsPage() {
             "text-3xl md:text-4xl",
             "mb-6",
           )}
-          <p className="text-xl sm:text-2xl font-brand text-white sm:w-1/2 mx-auto leading-5">
+          <p className="text-xl sm:text-2xl font-brand text-white sm:w-1/2 mx-auto leading-8">
             Our events are where Ecclection really comes alive. We host
             community-centered nights that bring together local artists, curious
             neighbors, and wonderfully creative energy — all under one funky
@@ -57,22 +56,12 @@ export default function EventsPage() {
 
         {/* Main Content Section */}
         <section className="mt-20">
-          <div className=" ">
+          <div className="container section-pad h-screen flex items-end justify-end" style={{ backgroundImage: "url('/child.jpeg')", backgroundSize: "cover", backgroundPosition: "center" }}>
             {/* Upcoming Event (concrete date for SEO + visitors) */}
-            <div className="border-2 border-black rounded-lg shadow-[6px_6px_0_0_#000] overflow-hidden bg-cyan-900/40">
-              <div className="grid grid-cols-1 md:grid-cols-2 min-h-[520px]">
-                <div className="relative min-h-[320px] md:min-h-full">
-                  <Image
-                    src="/child.jpeg"
-                    alt="Artists Spot"
-                    fill
-                    className="object-cover object-center"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="p-6 md:p-10 flex flex-col justify-center text-white">
-                  <div className="self-start">
+            <div className="border-2 border-black rounded-lg shadow-[6px_6px_0_0_#000] overflow-hidden bg-cyan-900/60">
+              <div className="grid grid-cols-1 items-end justify-end">
+                <div className="p-6 md:p-10 flex flex-col justify-end text-white">
+                  <div className="self-end fade-in">
                     {renderPunkTitle(
                       "Artist & Community Appreciation Night — Dates announced on social media",
                       "text-2xl md:text-3xl fade-in",

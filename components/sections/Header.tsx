@@ -31,14 +31,14 @@ export function Header() {
 
   return (
     <>
-      <header className="site-header fixed top-2 left-2 right-2 md:top-4 md:left-1/2 md:right-auto md:w-3/4 md:-translate-x-1/2 z-50 backdrop-blur-md bg-card/90 rounded-lg">
-        <div className="w-full flex items-center justify-between nav">
+      <header className="site-header fixed top-2 left-2 right-2 md:top-4 md:left-1/2 md:right-auto md:w-[75vw] md:-translate-x-1/2 z-50 backdrop-blur-md bg-card/90 rounded-lg">
+        <div className="flex items-center justify-between nav px-4 mx-auto">
           <div className="brand">
             <Link href="/" className="flex items-center space-x-2">
               <span className="brand-mark">
                 <Image src="/logo.png" alt="Ecclection" width={32} height={32} priority className="w-8 h-8" />
               </span>
-              <h1 className="font-brand font-bold text-black text-xl md:text-2xl">
+              <h1 className="font-brand font-bold text-black text-base sm:text-lg md:text-2xl">
                 ECCLECTION
               </h1>
             </Link>
@@ -80,25 +80,25 @@ export function Header() {
 
       {/* Mobile Menu */}
       <div
-        className={`mobile-menu fixed top-0 left-0 right-0 z-50 md:hidden transition-all duration-300 ease-out p-1 ${
+        className={`mobile-menu fixed top-2 left-2 right-2 z-50 md:hidden transition-all duration-300 ease-out ${
           isMobileMenuOpen
             ? "translate-y-0 opacity-100"
             : "-translate-y-full opacity-0 pointer-events-none"
         }`}
       >
         <div className="mobile-menu-content backdrop-blur-lg bg-card/95 border-b border-border shadow-lg">
-          <div className="container py-6 bg">
-            <div className="brand">
+          <div className="container py-4">
+            <div className="brand mb-4">
               <Link href="/" className="flex items-center space-x-2">
                 <span className="brand-mark">
                   <Image src="/logo.png" alt="Ecclection" width={32} height={32} priority className="w-8 h-8 mx-2" />
                 </span>
-                <h1 className="font-brand font-bold text-black font-xl-cyan-600">
+                <h1 className="font-brand font-semibold text-black text-lg">
                   Ecclection
                 </h1>
               </Link>
             </div>
-            <nav className="mobile-nav-links flex flex-col space-y-4 mt-16">
+            <nav className="mobile-nav-links flex flex-col space-y-3 mt-2">
               <Link
                 href="/"
                 onClick={closeMobileMenu}
@@ -135,7 +135,7 @@ export function Header() {
                 Resources
               </Link>
               <a
-                className="btn mobile-visit-btn mt-4 font-brand rounded-md p-4"
+                className="btn mobile-visit-btn mt-4 font-brand rounded-md p-4 mx-auto"
                 href="https://maps.app.goo.gl/ZMgVyGzAmNvomLMcA"
                 onClick={closeMobileMenu}
               >

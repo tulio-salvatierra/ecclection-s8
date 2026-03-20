@@ -13,7 +13,7 @@ import {
 
 // Lazy load below-the-fold components
 const Intro = dynamic(() => import("@/components/sections/Intro").then(mod => ({ default: mod.Intro })), { ssr: true });
-const DisclaimerSection = dynamic(() => import("@/components/sections/Disclaimer").then(mod => ({ default: mod.default })), { ssr: true });
+
 const StoreActivities = dynamic(() => import("@/components/sections/Activities").then(mod => ({ default: mod.StoreActivities })), { ssr: true });
 const ProductsShowcase = dynamic(() => import("@/components/sections/Products").then(mod => ({ default: mod.ProductsShowcase })), { ssr: true });
 const About = dynamic(() => import("@/components/sections/About").then(mod => ({ default: mod.About })), { ssr: true });
@@ -65,14 +65,13 @@ export default async function HomePage() {
       <SoundOnScroll />
       <Hero  />
       <Intro />
-      <DisclaimerSection />
       <ArtistCarousel artists={artistsForCarousel} />
       <StoreActivities />
       <ProductsShowcase />
       <About />
       <Review />
       <Influencers />
-      <Contact heading="Come Find Us!" cards={[]} />
+      <Contact heading="Come Find Us!"  />
     </>
   );
 }
