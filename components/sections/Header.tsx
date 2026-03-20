@@ -32,7 +32,7 @@ export function Header() {
   return (
     <>
       <header className="site-header fixed top-2 left-2 right-2 md:top-4 md:left-1/2 md:right-auto md:w-[75vw] md:-translate-x-1/2 z-50 backdrop-blur-md bg-card/90 rounded-lg">
-        <div className="flex items-center justify-between nav px-4 mx-auto">
+        <div className="p-4 flex items-center justify-between nav px-4 mx-auto">
           <div className="brand">
             <Link href="/" className="flex items-center space-x-2">
               <span className="brand-mark">
@@ -45,10 +45,10 @@ export function Header() {
           </div>
           <nav className="nav-links text-xl md:text-2xl font-brand text-cyan-600">
             <Link href="/">Home</Link>
-            <Link href="/artists" className="text-cyan-600">Artists</Link>
-            <Link href="/events" className="text-cyan-600">Events</Link>
-            <Link href="/about" className="text-cyan-600">About</Link>
-            <Link href="/resources" className="text-cyan-600">Resources</Link>
+            <Link href="/artists#" className="text-cyan-600">Artists</Link>
+            <Link href="/events#" className="text-cyan-600">Events</Link>
+            <Link href="/about#" className="text-cyan-600">About</Link>
+            <Link href="/resources#" className="text-cyan-600">Resources</Link>
           </nav>
           <div className="contact-mini hidden md:block">
             <a className="btn" href="https://maps.app.goo.gl/ZMgVyGzAmNvomLMcA">

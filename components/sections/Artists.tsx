@@ -93,7 +93,12 @@ export function Artists({ className = "", data }: ArtistsProps) {
   return (
     <section ref={ref} className={`container section-pad ${className}`}>
       <div className="text-center mb-12">
-        {renderPunkTitle("Featured Local Artists in Chicago", "text-5xl md:text-5xl font-bold text-cyan-500 font-brand mb-4")}
+        <img
+          src="/a few.svg"
+          alt="Featured Local Artists in Chicago"
+          className="w-1/4 mr-auto md:mb-[-80px] mb-[-40px] object-contain z-100"
+        />
+        {renderPunkTitle("Featured Local Artists in Chicago", "text-5xl md:text-5xl font-bold text-cyan-500 font-brand mb-4 relative z-0")}
         <p className="text-xl text-white sm:w-2/3 mx-auto leading-6 font-brand text-left">
           Ecclection is proud to share space with wonderfully creative humans
           from Chicago and nearby neighborhoods. From handmade body care and
@@ -119,10 +124,10 @@ export function Artists({ className = "", data }: ArtistsProps) {
           return (
             <Card
               key={key}
-              className="fade-in overflow-hidden bg-cyan-600/10 text-black border-2 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all w-full h-[50vh]"
+              className="fade-in p-0 h-content md:h-full bg-cyan-600/10 text-black border-2 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all w-full h-full"
             >
-              <div className="grid h-full grid-cols-1 md:grid-cols-2">
-                <div className="h-full w-3/4 flex items-center justify-center relative">
+              <div className="grid h-content md:h-full grid-cols-1 gap-1 md:grid-cols-2">
+                <div className="md:h-content w-full flex items-center justify-center relative">
                   {img ? (
                     <img
                     loading="lazy"
@@ -163,12 +168,12 @@ export function Artists({ className = "", data }: ArtistsProps) {
                     {seoSnippet}
                   </p>
 
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 justify-center md:justify-center">
                     {ig && (
                       <Button
                         size="sm"
                         variant="outline"
-                        className="bg-cyan-100 text-black hover:bg-cyan-200"
+                        className="bg-cyan-100 text-black hover:bg-cyan-200 w-full md:w-auto"
                         asChild
                       >
                         <a href={ig} target="_blank" rel="noopener noreferrer">

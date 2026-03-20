@@ -30,14 +30,14 @@ export function Contact({
       <div className="text-center my-12">
         {renderPunkHeading(heading, "text-3xl md:text-4xl", "mb-4 text-center", "text-black", "large")}
         <p className="fade-in text-xl font-brand sm:text-2xl text-white sm:w-1/2 mx-auto text-left">
-          We&apos;re a neighborhood shop in Portage Park where old treasures,
-          local makers, and second-life finds all hang out together. Come in,
-          take your time, and explore the shelves — you&apos;ll see, touch, feel,
-          and discover things no algorithm could ever recommend properly.
+          We&apos;re a neighborhood shop in Portage Park where vintage treasures,
+          local art, and second-life finds all live happily together. Come in,
+          take your time, and explore—this is the kind of place where the best
+          finds don&apos;t come from an algorithm.
         </p>
         <p className="fade-in mt-4 text-xl font-brand sm:text-2xl text-white sm:w-1/2 mx-auto text-left">
-          Bring a friend, bring your curiosity, and let yourself wander. Half
-          the fun is finding something unexpected.
+          Bring a friend, bring your curiosity, and let yourself wander.
+          Half the fun is finding something you never saw coming.
         </p>
       </div>
 
@@ -77,7 +77,7 @@ export function Contact({
               </div>
 
               <div>
-                <p className="text-xl sm:text-2xl font-brand text-white">Phone</p>
+                <p className="text-xl sm:text-2xl font-brand text-white">Text</p>
                 <a
                   href="sms:+1773951799"
                   className="text-white hover:text-gray-700 transition-colors text-left text-xl sm:text-2xl"

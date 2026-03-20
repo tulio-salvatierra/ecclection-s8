@@ -42,19 +42,19 @@ export function Footer() {
               Shop Vibe
             </h3>
             <nav className="flex flex-col gap-2 text-white font-brand">
-              <Link href="/" className="hover:no-underline hover:text-white">
+              <Link href="/#" className="hover:no-underline hover:text-white">
                 Home
               </Link>
-              <Link href="/artists" className="hover:no-underline hover:text-white">
+              <Link href="/artists#" className="hover:no-underline hover:text-white">
                 Featured Artists
               </Link>
-              <Link href="/events" className="hover:no-underline hover:text-white">
+              <Link href="/events#" className="hover:no-underline hover:text-white">
                 Events & Community Nights
               </Link>
-              <Link href="/about" className="hover:no-underline hover:text-white">
+              <Link href="/about#" className="hover:no-underline hover:text-white">
                 About the Shop
               </Link>
-              <Link href="/resources" className="hover:no-underline hover:text-white  ">
+              <Link href="/resources#" className="hover:no-underline hover:text-white  ">
                 Community Resources
               </Link>
             </nav>

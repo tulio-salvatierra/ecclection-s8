@@ -72,8 +72,7 @@ export default function AboutPage() {
       <header className="container section-pad text-center fade-in mt-12">
         {renderPunkTitle("About Ecclection in Portage Park")}
         <p className="text-xl text-center text-white sm:w-1/2 mx-auto leading-5 font-brand">
-          Where rescued treasures, local art, community & compassion all collide
-          in the best possible way
+          Where rescued treasures, local art, and community all collide in the best possible way.
         </p>
       </header>
       <LenisProvider />
@@ -98,25 +97,28 @@ export default function AboutPage() {
           <div className="space-y-6 bg-black/30 p-4">
             {renderPunkHeading("Welcome to Ecclection", "text-2xl md:text-3xl")}
             <p className="text-white text-xl leading-relaxed">
-              Ecclection is a vibrant local variety shop located at 6059 West
-              Irving Park Road in Chicago&apos;s Portage Park neighborhood. We
-              specialize in vintage treasures, handmade art and locally crafted
-              finds that celebrate creativity and community while keeping it all
-              affordable for everyone. We want the shop to feel welcoming, fun
-              and a little bit silly — not just a place to fill a need, but a
-              place to have fun, find crazy & silly stuff and wander through a
-              whimsical mix of oddities. <br />
+              Ecclection is a neighborhood shop at 6059 West Irving Park Road in
+              Chicago’s Portage Park—filled with vintage treasures, handmade
+              art, and locally crafted finds.
+              <br />
+              <br />
+              We keep things welcoming, affordable, and a little delightfully
+              odd. It’s not just a place to pick something up—it’s a place to
+              wander, laugh, and find something you didn’t know you needed.
             </p>
             <p className="text-white text-xl leading-relaxed ">
-              Step inside and you&apos;ll discover an ever-changing collection
-              of carefully curated, recycled and up-cycled pieces{" "}
-              <strong className="text-cyan-500">(starts at $1)</strong> — from
-              art and jewelry to home décor, crystals and wellness goodies.
-              Every corner of our shop tells a story, and every piece has been
-              chosen to inspire, delight or at least make you smile.
+              Step inside and you&apos;ll find an ever-changing mix of curated,
+              recycled, and up-cycled pieces <strong className="text-cyan-500">(starting at $1)</strong>
+              — from art and jewelry to home décor, crystals, and wellness
+              goodies.
               <br />
-              <br /> So come by! don&apos;t be shy, and explore the eclectic mix
-              that makes Ecclection truly <strong>one-of-a-kind!</strong>
+              <br />
+              Every corner has a story, and every piece is here to inspire,
+              delight, or at the very least make you smile.
+              <br />
+              <br />
+              So come by, take your time, and explore what makes Ecclection so
+              one of a kind.
             </p>
           </div>
         </div>
@@ -127,26 +129,24 @@ export default function AboutPage() {
           "text-2xl md:text-3xl text-center mb-6"
         )}
         <p className="text-white text-xl sm:w-1/2 mx-auto font-brand">
-          I’m Julie — an honest, compassionate, resourceful human who’s also a
-          wife, mom, animal lover, artist, designer, nature admirer, traveler and, yes, a{" "}
-          <em>bit</em> of a hoarder (as if you couldn’t tell! LOL).
+          I’m Julie, an honest, compassionate, resourceful human who also
+          happens to be a wife, mom, animal lover, artist, designer, nature
+          admirer, traveler, and yes… a bit of a hoarder if you couldn't tell.
           <br />
           <br />
-          People always ask, “How do you find all these unique, quirky things
-          for Ecclection?” Well… outside of our amazing local artists, here’s
-          the short story:
+          People always ask how I find all these quirky treasures for
+          Ecclection. Outside of our amazing local artists, here’s the short
+          version:
           <br />
           <br />
-          I’ve been collecting these self-proclaimed <strong>
-            TREASURES
-          </strong>{" "}
-          for decades — estate sales, thrift shops, garage sales, clearance
-          aisles, going-out-of-business sales… if there’s a deal or a hidden
-          gem, <em>move out of my way</em> because I’m diving in.
+          I&apos;ve been collecting these self-proclaimed <strong>TREASURES{" "}<span className="text-cyan-500">TREASURES</span>{" "}</strong>
+          for decades—from estate sales and thrift shops to garage sales,
+          clearance aisles, and going-out-of-business deals. If there’s a
+          hidden gem, I&apos;m probably already digging for it.
           <br />
           <br />
-          Now all those years of treasure hunting live here at Ecclection —
-          ready for new homes, new stories & new joy.
+          Now all those years of treasure hunting live here at Ecclection,
+          ready for new homes, new stories, and new joy!
         </p>
       </section>
 
@@ -168,21 +168,21 @@ export default function AboutPage() {
           <div className="md:col-span-6 space-y-6 text-md">
             {renderPunkHeading("Our Philosophy", "text-xl")}
             <p className="text-white leading-relaxed text-xl font-brand">
-              At Ecclection, we keep shopping personal, playful and real. No
-              online carts, no algorithms—just humans, conversation and the joy
-              of stumbling onto something you didn’t expect. Whether you’re a
-              Chicago local or just wandering through Portage Park, there’s
-              always something new (and perhaps a little weird) waiting for you.
+              At Ecclection, shopping stays personal, playful, and real. No
+              online carts. No algorithms. Just humans, conversation, and the
+              joy of stumbling onto something unexpected.
             </p>
 
             <p className="text-white leading-relaxed text-xl font-brand">
-              We enjoy engaging with our community from kids crafts to school fundraisers, sip & shop events, plus-size pop-ups, etc.
+              We love being part of the neighborhood too—from kids&apos; crafts and
+              school fundraisers to sip-and-shops, plus-size pop-ups, and other
+              community gatherings.
             </p>
 
             <p className="text-white p-8 text-xl tracking-wide bold leading-10 font-brand">
               Hunting for something special? Something strange? Something your
-              soul suddenly decides it MUST have? Come dig around—your next
-              treasure is already waiting for you.
+              soul suddenly decides it must have? Come dig around—your next
+              treasure is probably already waiting.
             </p>
           </div>
 
@@ -214,8 +214,7 @@ export default function AboutPage() {
               <div className="relative z-10 ">
                 {renderPunkHeading("Vintage Treasures", "text-lg")}
                 <p className="text-white bg-black/50 p-3 rounded">
-                  Curated collection of vintage finds, recycled and up-cycled
-                  pieces that tell unique stories.
+                  Curated vintage finds, recycled pieces, and rescued gems with stories to tell.
                 </p>
               </div>
             </div>
@@ -227,8 +226,7 @@ export default function AboutPage() {
               <div className="relative z-10">
                 {renderPunkHeading("Local Art", "text-lg")}
                 <p className="text-white bg-black/50 p-3 rounded">
-                  Handmade art, jewelry, home décor, crystals, and wellness
-                  items from local makers.
+                  Handmade art, jewelry, décor, crystals, and other beautiful things from local makers.
                 </p>
               </div>
             </div>
@@ -240,8 +238,7 @@ export default function AboutPage() {
               <div className="relative z-10">
                 {renderPunkHeading("Visit Us", "text-lg")}
                 <p className="text-white bg-black/50 p-3 rounded">
-                  Located at 6059 W. Irving Park Road, Chicago, IL 60634 — on
-                  the west end of Portage Park.
+                  Find us at 6059 W. Irving Park Road in Chicago—right on the west end of Portage Park.
                 </p>
               </div>
             </div>
@@ -267,42 +264,37 @@ export default function AboutPage() {
             Our Mission
           </h3>
           <p className="text-white sm:w-1/2 mx-auto leading-6">
-            <strong>Big Elves</strong> is our passion project created by Julie
-            &amp; Elise, two longtime friends with a BIG heart.{" "}
-            <strong>.</strong>
+            <strong>Big Elves</strong> is a passion project created by Julie
+            &amp; Elise—two longtime friends with a very big heart.
             <br />
             <br />
-            We bring hope and a little bit of magic to low-income adults in
-            mental health facilities and nursing homes across Chicago.
-            Throughout the year we collect everyday essentials that make a real
-            difference—things like toiletries, socks, puzzles, games and
-            cleaning supplies. During the holidays, we also create special
-            wishlists to help brighten their days even more.
+            Together, we bring comfort, hope, and a little magic to low-income
+            adults in mental health residences and nursing homes across
+            Chicago.
             <br />
             <br />
-            When we visit, we don’t just drop off bags, we show up dressed
-            as two 6 foot elves, featuring a smorgasbord of tasty treats, toiletries, body sprays to greeting cards, cakes and personal gifts where residents can pick and choose what’s right for them.
-
+            Throughout the year, we collect essentials like toiletries, socks,
+            puzzles, games, and cleaning supplies. During the holidays, we also
+            help fulfill special wish lists.
           </p>
           <h3 className="text-xl mt-4 font-bold font-brand text-white mb-3 text-center">
             How You Can Help
           </h3>
           <p className="text-white sm:w-1/2 mx-auto leading-6">
             You can support Big Elves by donating new or gently used items,
-            helping fulfill holiday wishlists or simply spreading the word.
-            Every contribution—big or small—helps us bring comfort, dignity and
-            a little joy to someone who really needs it.
+            helping with holiday wish lists, or simply spreading the word.
+            Every contribution helps bring comfort, dignity, and joy to someone
+            who truly needs it.
           </p>
 
           <p className="text-white my-6 sm:w-1/2 mx-auto leading-6 text-left">
             <strong>
-              Together, we can help the folks who need it most feel seen, loved
-              &amp; remembered.
+              Together, we can help people feel seen, loved, and remembered.
             </strong>
           </p>
 
           <p className="text-xl text-center mx-auto text-white font-brand leading-relaxed my-4">
-            Want to see more of the magic? Visit us on Facebook:
+            See more of the magic on Facebook:
           </p>
           <div className="text-center">
             <a

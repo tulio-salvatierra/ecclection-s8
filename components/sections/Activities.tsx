@@ -8,7 +8,7 @@ export function StoreActivities() {
   useFadeAnimation(ref);
 
   return (
-    <section ref={ref} className="bg-transparent min-h-[60dvh] md:h-screen py-8 sm:py-10 p-2 md:px-8">
+    <section ref={ref} className="bg-transparent  md:h-auto py-32 p-2 md:px-8">
       <div className="relative mx-auto min-h-full md:h-screen flex flex-col justify-between gap-8">
         {/* Top oversized title */}
         <div className="mb-10">
@@ -28,18 +28,16 @@ export function StoreActivities() {
           {/* Main description (center column) */}
           <div className="md:col-span-2">
               <p className="fade-in text-xl sm:text-2xl text-white max-w-xl">
-              Ecclection is a neighborhood shop where families, artists &amp;
-              curious and children alike neighbors come to browse, laugh, trade, discover &amp;
-              just hang out. You'll get to spin the <strong>Wheel of Good
-              Fortune</strong> for a surprise discount, freebie or
-              glitter‑powered blessing! 
-              <br/><br/>There’s always something unexpected
-              happening. We also have a <strong>Find Waldo</strong> hunt
-              keeps both the shop and our Instagram buzzing with hidden‑treasure
-              rewards. <br/><br/> And of course, our <strong>Donation Drop {" "}</strong>
-              is always open for clothing, décor, art supplies &amp; other goodies that help fuel our sustainability mission (gold coins &amp; diamonds still optional… but appreciated). Ecclection is more
-              than a store — it’s a quirky mix of creativity, community, weird &amp; wonderful finds, and everyday joy!
-            </p>
+                Ecclection is a neighborhood shop where curious neighbors come to browse, laugh, trade, discover—and hang out.
+                <br /><br />
+                Spin the <strong>Wheel of Good Fortune</strong> for a surprise discount, freebie, or glitter-powered blessing.
+                <br /><br />
+                There’s always something unexpected. Try our <strong>Find Waldo</strong> hunt—hidden treasures that keep the shop (and Instagram) buzzing.
+                <br /><br />
+                Our <strong>Donation Drop</strong> is always open for clothing, décor, art supplies, and other goodies that support our sustainability mission (gold coins and diamonds still optional… but appreciated).
+                <br /><br />
+                More than a store—it’s a quirky mix of creativity, community, and everyday joy.
+              </p>
           </div>
         </div>
 

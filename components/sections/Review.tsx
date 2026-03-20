@@ -2,7 +2,6 @@
 
 import React from "react"
 import { Star } from "lucide-react"
-import { Button } from "../ui/button"
 import { useFadeAnimation } from "@/hooks/useFadeAnimtion"
 import { renderPunkHeading, renderPunkTitle } from "@/lib/punk-typography"
 import { useGSAP } from "@gsap/react"
@@ -323,15 +322,14 @@ export function Review() {
           )}
 
           <p className="fade-in text-white text-xl sm:text-2xl max-w-3xl mx-auto text-center">
-            From local articles to Google love, your support means the world to
-            us. People have been especially excited about our new wave of
-            curious inventory, including pieces connected to the beloved
-            American Science &amp; Surplus story.
+            From press love to Google praise, people have been especially excited
+            about Eclection’s fresh wave of curious finds—including pieces tied
+            to the beloved American Science &amp; Surplus story.
           </p>
           <p className="fade-in text-white text-xl sm:text-2xl max-w-3xl mx-auto text-center mt-4">
             Every review, shout-out, and share helps more people wander in,
-            discover treasures in person, and support a neighborhood shop full
-            of creativity, reuse, and good vibes.
+            discover treasures in person, and support a neighborhood shop built
+            on creativity, reuse, and good vibes.
           </p>
         </div>
 
@@ -396,7 +394,7 @@ export function Review() {
         {/* Testimonial lines slider */}
         <section className="fade-in mb-12 min-h-content">
           
-
+            {renderPunkTitle("What our visitors say:", "text-5xl sm:text-7xl text-cyan-500 mb-4", "text-center", "text-white")}
           <div
             data-testimonial-wrap
             data-autoplay="true"
@@ -445,6 +443,7 @@ export function Review() {
               </button>
             </div>
 
+            
             <div className="testimonial-lines__main">
               <div className="testimonial-lines__main-details">
                 <p className="testimonial-lines__p is--faded text-white text-2xl">
@@ -453,7 +452,6 @@ export function Review() {
                   </span>{" "}
                   / <span data-total>{googleReviews.length}</span>
                 </p>
-                {renderPunkTitle("What our visitors say:", "text-2xl text-white font-brand", "mb-4 text-center")}
               </div>
 
               <div className="testimonial-lines__collection">

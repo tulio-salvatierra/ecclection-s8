@@ -36,19 +36,20 @@ export function ProductsShowcase() {
   ];
 
   return (
-    <section ref={ref} className="py-20  px-4 mt-18  max-w-full min-h-[100svh] md:h-screen overflow-visible md:overflow-hidden">
+    <section ref={ref} className="mt-42  px-4  max-w-full min-h-[100vh] md:h-screen overflow-visible md:overflow-hidden">
       <div className="w-full mx-auto h-full flex flex-col">
         <div className="mb-6 text-center shrink-0">
           {renderPunkHeading("Curated Treasures & Curious Finds", "fade-in text-5xl sm:text-7xl text-cyan-500 mb-4", "text-center", "text-white", "large")}
           <p className="fade-in text-xl sm:text-2xl text-white text-left max-w-3xl mx-auto">
-            Come rummage through the good stuff: rescued vintage gems, odd
-            little beauties, useful home finds, playful gifts, old-school cool,
-            and handmade pieces from local artists.
+            Come dig through the good stuff—rescued vintage gems, odd little
+            beauties, useful finds, playful gifts, and handmade pieces from
+            local artists.
           </p>
           <p className="fade-in text-xl sm:text-2xl text-white text-left max-w-3xl mx-auto mt-4">
-            Some things are practical. Some are weird. Some are both. That&apos;s
-            the fun of Ecclection — you walk in for one thing and leave with a
-            treasure you didn&apos;t know your heart needed.
+            Some things are practical. Some are weird. Some are both.
+            <br />
+            That’s the magic of Eclection—you come in for one thing and leave
+            with something you didn’t know you needed.
           </p>
         </div>
 
