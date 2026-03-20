@@ -192,13 +192,11 @@ function Masonry() {
           </div>
       </div>
 
-      {/* hidden “source” images, like the original demo */}
-      <div className="medias header-ticker" aria-label="Values ticker">
-        <div className="header-track">
-          {items.map((item) => (
-            <img key={item.id} src={item.img} alt="" />
-          ))}
-        </div>
+      {/* Hidden source images — direct children of .medias so .mwg_effect020 .medias img applies; avoid header-track (ticker flex/animation) on these */}
+      <div className="medias" aria-hidden="true">
+        {items.map((item) => (
+          <img key={item.id} src={item.img} alt="" />
+        ))}
       </div>
     </section>
   );
