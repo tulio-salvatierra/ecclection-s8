@@ -336,7 +336,7 @@ export function Review() {
         <article className="fade-in bg-white/10 backdrop-blur-3xl mb-12 border-2 border-black text-black font-brand rounded-md overflow-hidden mx-auto">
           <div className="px-5 md:px-8 py-4 border-b border-black/20 flex items-center justify-between text-xs md:text-sm uppercase tracking-wide">
             <span className="font-bold text-cyan-500">ECCLECTION PRESS</span>
-            <span className="opacity-70">Local Stories</span>
+            <span className="font-brand text-white opacity-70">Local Stories</span>
           </div>
 
           <div className="px-5 md:px-8 pt-3 pb-5">
@@ -351,7 +351,7 @@ export function Review() {
                 key={article.url}
                 className="grid grid-cols-[auto_1fr_auto] gap-4 md:gap-6 items-center py-6 border-t border-black/20"
               >
-                <div className="text-sm md:text-base font-semibold w-8">
+                <div className="text-sm md:text-base font-brand text-white font-semibold w-8">
                   {String(index + 1).padStart(2, "0")}
                 </div>
 
@@ -359,28 +359,28 @@ export function Review() {
                   <img
                     src={article.image || "/placeholder.svg"}
                     alt={article.title}
-                    className="text-blackw-16 h-16 md:w-24 md:h-24 object-cover border border-black/20"
+                    className="text-white h-16 md:w-24 md:h-24 object-cover border border-black/20"
                   />
                   <div className="min-w-0">
-                    <p className="text-xs text-cyan-500 uppercase tracking-wide opacity-70 mb-1">
+                    <p className="text-xs text-cyan-500 font-brand text-white uppercase tracking-wide opacity-70 mb-1">
                       {article.publication}
                     </p>
-                    <h4 className="font-bold text-cyan-600 text-base md:text-2xl leading-tight line-clamp-2">
+                    <h4 className="font-bold text-cyan-600 font-brand text-base md:text-2xl leading-tight line-clamp-2">
                       {article.title}
                     </h4>
-                    <p className="hidden md:block text-sm opacity-70 mt-2 line-clamp-2">
+                    <p className="hidden md:block text-sm font-brand text-white opacity-70 mt-2 line-clamp-2">
                       {article.excerpt}
                     </p>
                   </div>
                 </div>
 
                 <div className="text-right">
-                  <p className="text-xs md:text-sm opacity-70 mb-1">{article.date}</p>
+                  <p className="text-xs md:text-sm font-brand text-white opacity-70 mb-1">{article.date}</p>
                   <a
                     href={article.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs md:text-sm font-semibold uppercase tracking-wide hover:opacity-70"
+                    className="text-xs md:text-sm font-semibold font-brand uppercase tracking-wide hover:opacity-70"
                   >
                     Read the Full Article →
                   </a>
