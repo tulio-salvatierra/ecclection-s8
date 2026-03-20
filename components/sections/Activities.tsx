@@ -8,11 +8,11 @@ export function StoreActivities() {
   useFadeAnimation(ref);
 
   return (
-    <section ref={ref} className="bg-transparent min-h-[60dvh] md:h-screen py-8 sm:py-10 p-2 md:px-8">
+    <section ref={ref} className="bg-transparent min-h-auto md:h-auto py-8 p-2 md:px-8">
       <div className="relative mx-auto min-h-full md:h-screen flex flex-col justify-between gap-8">
         {/* Top oversized title */}
         <div className="mb-10">
-          <h2 className="mt-10 md:mt-40 fade-in text-4xl sm:text-9xl tracking-light text-cyan-500 leading-tight font-brand" style={{ textShadow: '2px 2px 0px rgba(0, 0, 0, 0.5)' }}>
+          <h2 className="mt-10 fade-in text-4xl sm:text-9xl tracking-light text-cyan-500 leading-tight font-brand" style={{ textShadow: '2px 2px 0px rgba(0, 0, 0, 0.5)' }}>
             More Than A Store
           </h2>
         </div>

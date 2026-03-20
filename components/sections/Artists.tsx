@@ -94,17 +94,20 @@ export function Artists({ className = "", data }: ArtistsProps) {
     <section ref={ref} className={`container section-pad ${className}`}>
       <div className="text-center mb-12">
         {renderPunkTitle("Featured Local Artists in Chicago", "text-5xl md:text-5xl font-bold text-cyan-500 font-brand mb-4")}
-        <p className="text-xl text-white sm:w-2/3 mx-auto leading-6 font-brand text-left">
+        <p className="text-xl text-white sm:w-2/3 mx-auto leading-8font-brand text-left">
           Ecclection is proud to share space with wonderfully creative humans
           from Chicago and nearby neighborhoods. From handmade body care and
           jewelry to stitched art, prints, and one-of-a-kind pieces, every
           artist brings their own magic to the shop.
         </p>
-        <p className="text-xl text-white sm:w-2/3 mx-auto leading-6 font-brand text-left mt-4">
-          When you support these makers, you&apos;re not just buying something
-          beautiful — you&apos;re backing real people, real stories, and a
-          stronger local creative community.
-        </p>
+        <br />
+        
+        <p className="text-xl text-white sm:w-2/3 mx-auto leading-8 font-brand text-left">
+            Rental Spaces start at only $20/month so we can help provide exposure
+            to the community while offering a space for people to come in  and
+            see, feel, touch or smell and of course BUY your creations. It’s SO
+            much better than ordering off a BORING screen!!  
+          </p>
       </div>
 
       <div className="flex flex-col gap-6">
@@ -119,17 +122,17 @@ export function Artists({ className = "", data }: ArtistsProps) {
           return (
             <Card
               key={key}
-              className="fade-in overflow-hidden bg-cyan-600/10 text-black border-2 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all w-full h-[50vh]"
+              className="fade-in overflow-hidden bg-cyan-600/30 text-black border-2 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all w-full h-[75vh]"
             >
               <div className="grid h-full grid-cols-1 md:grid-cols-2">
-                <div className="h-full w-3/4 flex items-center justify-center relative">
+                <div className="h-full w-full flex items-center justify-center relative">
                   {img ? (
                     <img
                     loading="lazy"
                       src={img}
                       alt={displayName}
                       data-artist-parallax
-                      className="w-full h-full object-cover will-change-transform transition-transform duration-300"
+                      className="w-full h-full object-cover will-change-transform transition-transform duration-300 p-8"
                     />
                   ) : (
                     <div className="text-6xl opacity-50">🎨</div>

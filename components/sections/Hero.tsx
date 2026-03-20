@@ -12,7 +12,7 @@ export function Hero() {
   return (
     <section
       ref={ref}
-      className="relative min-h-[100dvh] h-screen overflow-hidden top-0 md:top-[-150px]"
+      className="relative h-screen overflow-hidden top-0"
     >
       <video
         className="absolute inset-0 h-screen w-screen object-cover object-center"
@@ -43,7 +43,7 @@ export function Hero() {
         </p>
 
         <a
-          className="p-4 fade-in md:p-6 mt-6 hover:rotate-[-15deg] transition-all duration-300 col-span-2 mx-auto origin-top-left text-white text-xl md:text-2xl rounded-md bg-cyan-600/80"
+          className="p-4 fade-in md:p-6 mt-6 hover:rotate-[-15deg] transition-all duration-300 col-span-2 mx-auto origin-top-left text-white text-lg md:text-2xl rounded-md bg-cyan-600/80"
           href="https://maps.app.goo.gl/ZMgVyGzAmNvomLMcA"
         >
           Come Dig Around!

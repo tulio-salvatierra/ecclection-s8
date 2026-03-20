@@ -35,39 +35,34 @@ export function Intro() {
           {/* Left side - Text content */}
           <div className="p-2 flex-1 flex flex-col justify-end">
             {/* Eyebrow text */}
-            
-
-            {/* Main headline */}
-            {/* <h2 className="mx-auto text-4xl sm:text-7xl font-brand font-black text-cyan-300/10 leading-none mb-4 text-balance fade-in display-none">
-              WE ARE ECCLECTION
-            </h2> */}
 
             {/* Description */}
-            <div className="mx-auto sm:max-w-2xl mb-12 md:mb-8 mt-10">
-            <div className="mb-2 md:my-6 fade-in text-center">
-              <span className="mx-auto inline-block border border-primary-foreground px-4 py-2 text-base md:text-lg font-brand rounded-sm tracking-wider">
-                SINCE 2023
-              </span>
-            </div>
+            <div className="mx-auto sm:max-w-2xl mb-12 md:mb-8">
+              <div className="mb-2 md:my-6 fade-in text-center">
+                <span className="mx-auto inline-block border border-primary-foreground px-4 py-2 text-base md:text-lg font-brand rounded-sm tracking-wider">
+                  SINCE 2023
+                </span>
+              </div>
               <p className="text-sm sm:text-2xl text-primary-foreground/90 fade-in">
-                We’re a wonderfully weird Chicago shop where old things, odd
+                We’re a uniquely weird Chicago shop where old things, odd
                 things, useful things, and beautiful things get a second life.
                 Think vintage gems, antiques, local maker goods, home finds,
                 games, gifts, and all kinds of curious treasures.
                 <br />
                 <br />
-                Come explore in person — see it, touch it, feel it, and find
+                Come explore in person, see it, touch, feel, and find
                 something that feels like it was waiting just for you. Everyone
-                is welcome, every budget is loved, and the magic is in the hunt.
+                is welcome, every budget is loved.
                 <br />
                 <br />
-                We recently acquired a large inventory from the historic American Science &
-                Surplus store so... 
+                We recently acquired a large inventory from the historic
+                American Science & Surplus store so...
               </p>
-              
-              
             </div>
-            {renderPunkTitle("🥳🥳🥳 Welcome Surpies!!! 🎉🎉🎉", "mt-5 sm:mt-10 text-3xl sm:text-5xl mb-3 text-white font-brand sm:mb-8 text-center fade-in")}
+            {renderPunkTitle(
+              "🥳🥳🥳 Welcome Surpies!!! 🎉🎉🎉",
+              "mt-5 sm:mt-10 text-3xl sm:text-5xl mb-3 text-white font-brand sm:mb-8 text-center fade-in",
+            )}
             {/* CTA Buttons */}
             <div className="flex flex-col fade-in sm:flex-row justify-center items-center">
               <a

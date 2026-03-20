@@ -62,22 +62,15 @@ export function ArtistCarousel({ artists }: ArtistCarouselProps) {
           "text-white",
         )}
         <p className="fade-in mt-2 text-xl sm:text-2xl text-white w-full sm:w-3/4 mx-auto text-left ">
-          Here’s a little peek at the wonderfully unique, talented humans who
-          help   make Ecclection  what it is. We usually have over a dozen
-          artisans and artists work available- from handcrafted jewelry,
+          We usually have over a dozen
+          artisans and artists work available, from handcrafted jewelry,
           painters, to photography, crochet work, homemade patches and pins and
           so much more! We do rotate our art cubbies & feature a “Local Artist’s
           window Gallery- where we include pieces from each and every artisan.
           <br />
           <br />
           </p>
-          <p className="fade-in mt-2 text-xl sm:text-2xl text-white w-full sm:w-3/4 mx-auto text-left">
-            Rental Spaces start at only $20/month so we can help provide exposure
-            to the community while offering a space for people to come in  and
-            see, feel, touch or smell and of course BUY your creations. It’s SO
-            much better than ordering off a BORING screen!!  Feel free to inquire
-            if you or someone you know may be interested in a display space!
-          </p>
+          
         <a
           className="p-4 fade-in md:p-6 mt-6 hover:rotate-[-15deg] transition-all duration-300 col-span-2 mx-auto origin-top-left text-white text-xl md:text-2xl rounded-md bg-cyan-600/80"
           href="/artists"
