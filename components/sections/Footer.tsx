@@ -20,6 +20,14 @@ export function Footer() {
   return (
     <footer className="relative z-20 w-full mt-10 border-t-2 border-cyan-500/60 bg-black/85 text-white">
       <div className="container mx-auto px-4 sm:px-6 py-12">
+        <h2 className="text-5xl sm:text-7xl text-cyan-500 mb-2">
+          This changes quickly around here...
+        </h2>
+        <p className="text-white font-brand leading-relaxed mb-16 w-1/2">
+          Follow Ecclection to keep up with: new treasures, weekly deals,
+          plus-size pop-up events, community happening and the latest curious
+          additions to the shop
+        </p>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
@@ -38,23 +46,33 @@ export function Footer() {
 
           {/* Navigation Links */}
           <div>
-            <h3 className="mb-4 text-lg font-semibold font-brand">
-              Shop Vibe
-            </h3>
+            <h3 className="mb-4 text-lg font-semibold font-brand">Shop Vibe</h3>
             <nav className="flex flex-col gap-2 text-white font-brand">
               <Link href="/#" className="hover:no-underline hover:text-white">
                 Home
               </Link>
-              <Link href="/artists#" className="hover:no-underline hover:text-white">
+              <Link
+                href="/artists#"
+                className="hover:no-underline hover:text-white"
+              >
                 Featured Artists
               </Link>
-              <Link href="/events#" className="hover:no-underline hover:text-white">
+              <Link
+                href="/events#"
+                className="hover:no-underline hover:text-white"
+              >
                 Events & Community Nights
               </Link>
-              <Link href="/about#" className="hover:no-underline hover:text-white">
+              <Link
+                href="/about#"
+                className="hover:no-underline hover:text-white"
+              >
                 About the Shop
               </Link>
-              <Link href="/resources#" className="hover:no-underline hover:text-white  ">
+              <Link
+                href="/resources#"
+                className="hover:no-underline hover:text-white  "
+              >
                 Community Resources
               </Link>
             </nav>
@@ -62,7 +80,9 @@ export function Footer() {
 
           {/* Social Media Links */}
           <div>
-            <h3 className="mb-4 text-lg font-semibold font-brand">Follow Along on Instagram</h3>
+            <h3 className="mb-4 text-lg font-semibold font-brand">
+              Follow Along on Instagram
+            </h3>
             <div className="flex gap-4 font-brand text-white">
               <a
                 href={SOCIAL_URLS.instagram}
@@ -97,7 +117,10 @@ export function Footer() {
           {/* Address */}
           <div className="font-brand">
             <h3 className="mb-4 text-lg font-semibold font-brand">Visit Us</h3>
-            <a href={SOCIAL_URLS.googleMaps} className="text-white hover:text-cyan-300">
+            <a
+              href={SOCIAL_URLS.googleMaps}
+              className="text-white hover:text-cyan-300"
+            >
               <address className="not-italic leading-relaxed hover:text-white">
                 {BUSINESS_INFO.address.street}
                 <br />
@@ -107,11 +130,17 @@ export function Footer() {
                 Portage Park
               </address>
             </a>
-            <p className="mt-3 text-white">Need directions? Tap and come dig around.</p>
+            <p className="mt-3 text-white">
+              Need directions? Tap and come dig around.
+            </p>
           </div>
         </div>
         <div className="">
-          <img src="/footer-logo.jpg" alt="Ecclection Logo" className="sm:h-[600px] sm:w-[600px] h-[300px] w-[300px] m-8 mx-auto fade-in" />
+          <img
+            src="/footer-logo.jpg"
+            alt="Ecclection Logo"
+            className="sm:h-[600px] sm:w-[600px] h-[300px] w-[300px] m-8 mx-auto fade-in"
+          />
         </div>
 
         {/* Copyright */}
@@ -119,7 +148,9 @@ export function Footer() {
           <p className="font-brand">
             &copy; {new Date().getFullYear()} Ecclection
           </p>
-          <p className="font-brand text-white mt-1">Everyone is welcome. Every budget is loved.</p>
+          <p className="font-brand text-white mt-1">
+            Everyone is welcome. Every budget is loved.
+          </p>
           <p className="font-brand text-cyan-600">
             Made By <a href="https://cicerowebstudio.xyz">Cicero Web Studio</a>
           </p>
