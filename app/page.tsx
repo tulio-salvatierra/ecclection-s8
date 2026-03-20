@@ -54,24 +54,48 @@ export default async function HomePage() {
   const breadcrumbSchema = buildBreadcrumbSchema([{ name: "Home", path: "" }]);
 
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema),
-        }}
-      />
-      <LenisProvider />
-      <SoundOnScroll />
-      <Hero  />
-      <Intro />
-      <ArtistCarousel artists={artistsForCarousel} />
-      <StoreActivities />
-      <ProductsShowcase />
-      <About />
-      <Review />
-      <Influencers />
-      <Contact heading="Come Find Us!"  />
-    </>
+    <div className="grid grid-cols-1 h-auto auto-rows-auto">
+      <div>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(breadcrumbSchema),
+          }}
+        />
+      </div>
+      <div>
+        <LenisProvider />
+      </div>
+      <div>
+        <SoundOnScroll />
+      </div>
+      <div>
+        <Hero />
+      </div>
+      <div>
+        <Intro />
+      </div>
+      <div> className="h=auto"
+        <ArtistCarousel artists={artistsForCarousel} />
+      </div>
+      <div className="h-auto">
+        <StoreActivities />
+      </div>
+      <div>
+        <ProductsShowcase />
+      </div>
+      <div>
+        <About />
+      </div>
+      <div>
+        <Review />
+      </div>
+      <div>
+        <Influencers />
+      </div>
+      <div>
+        <Contact heading="Come Find Us!" />
+      </div>
+    </div>
   );
 }

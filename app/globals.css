@@ -136,9 +136,10 @@
     overflow-x: hidden;
   }
 
-    * {
+  * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply text-foreground font-sans;
     font-family: var(--font-normal, system-ui, sans-serif);

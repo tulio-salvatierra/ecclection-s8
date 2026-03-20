@@ -1,6 +1,6 @@
 "use client";
 import { useFadeAnimation } from "@/hooks/useFadeAnimtion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { renderPunkTitle } from "@/lib/punk-typography";
 import React from "react";
 import { Button } from "@/components/ui/button";
@@ -22,6 +22,9 @@ interface ArtistCarouselProps {
 export function ArtistCarousel({ artists }: ArtistCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const ref = React.useRef(null);
+  /** Keeps interval callback off latest `artists` without stale closures when props update */
+  const artistsRef = useRef(artists);
+  artistsRef.current = artists;
   useFadeAnimation(ref);
 
   const nextArtist = () => {
@@ -45,11 +48,20 @@ export function ArtistCarousel({ artists }: ArtistCarouselProps) {
   const currentArtist = artists[currentIndex];
 
   useEffect(() => {
+    if (artists.length === 0) return;
     const interval = setInterval(() => {
-      nextArtist();
+      const list = artistsRef.current;
+      if (list.length === 0) return;
+      setCurrentIndex((prev) => (prev + 1) % list.length);
     }, 8000);
 
     return () => clearInterval(interval);
+  }, [artists.length]);
+
+  // Clamp index when the list shrinks so `currentArtist` stays valid
+  useEffect(() => {
+    if (artists.length === 0) return;
+    setCurrentIndex((i) => Math.min(i, artists.length - 1));
   }, [artists.length]);
 
   return (

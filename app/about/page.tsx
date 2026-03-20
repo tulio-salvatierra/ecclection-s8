@@ -94,7 +94,7 @@ export default function AboutPage() {
           </div>
 
           {/* Right: Text Content */}
-          <div className="space-y-6 bg-black/30 p-4">
+          <div className="space-y-6 bg-black/30 p-4 font-brand">
             {renderPunkHeading("Welcome to Ecclection", "text-2xl md:text-3xl")}
             <p className="text-white text-xl leading-relaxed">
               Ecclection is a neighborhood shop at 6059 West Irving Park Road in
@@ -194,7 +194,7 @@ export default function AboutPage() {
                 alt="Woman standing in front of Ecclection storefront"
                 fill
                 className="object-cover object-top"
-                sizes="100vw, 100vw"
+                sizes="(max-width: 768px) 100vw, (max-width: 1280px) 45vw, 33vw"
                 loading="lazy"
               />
             </div>

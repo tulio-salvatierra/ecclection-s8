@@ -25,14 +25,17 @@ export function LandingScreen() {
   useEffect(() => {
     if (!isVisible) return;
     const showDuration = 2500; // ms the splash stays fully visible before fade
+    let exitTimer: ReturnType<typeof setTimeout> | undefined;
 
     const timer = setTimeout(() => {
       setIsExiting(true);
-      const exitTimer = setTimeout(() => setIsVisible(false), 600);
-      return () => clearTimeout(exitTimer);
+      exitTimer = setTimeout(() => setIsVisible(false), 600);
     }, showDuration);
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      if (exitTimer !== undefined) clearTimeout(exitTimer);
+    };
   }, [isVisible]);
 
   // GSAP Willem loading animation
