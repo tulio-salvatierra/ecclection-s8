@@ -56,7 +56,7 @@ export default function EventsPage() {
 
         {/* Main Content Section */}
         <section className="mt-20">
-          <div className="container section-pad h-screen flex items-end justify-end" style={{ backgroundImage: "url('/child.jpeg')", backgroundSize: "cover", backgroundPosition: "center" }}>
+          <div className="container rounded-lg section-pad h-auto flex items-end justify-end" style={{ backgroundImage: "url('/child.jpeg')", backgroundSize: "cover", backgroundPosition: "top", backgroundRepeat: "no-repeat", height: "150dvh"}}>
             {/* Upcoming Event (concrete date for SEO + visitors) */}
             <div className="border-2 border-black rounded-lg shadow-[6px_6px_0_0_#000] overflow-hidden bg-cyan-900/60">
               <div className="grid grid-cols-1 items-end justify-end">
@@ -105,7 +105,7 @@ export default function EventsPage() {
               <h2 className="text-xl sm:text-2xl md:text-3xl text-white font-brand">
                 Bi-Monthly Artist & Community Nights
               </h2>
-              <p className="text-xl sm:text-2xl font-brand text-white leading-6  sm:text-sm text-xs  my-2 sm:my-4">
+              <p className="text-xl sm:text-2xl font-brand text-white leading-6 my-2 sm:my-4">
                 Every event we host is crafted to spark connection, creativity
                 &amp; genuine human joy. From our{" "}
                 <strong>

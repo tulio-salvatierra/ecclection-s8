@@ -335,7 +335,7 @@ export function Review() {
           </p>
         </div>
 
-        <article className="fade-in bg-white/10 backdrop-blur-3xl mb-12 border-2 border-black bg-zinc-50 text-black rounded-md overflow-hidden mx-auto">
+        <article className="fade-in bg-white/10 backdrop-blur-3xl mb-12 border-2 border-black text-black font-brand rounded-md overflow-hidden mx-auto">
           <div className="px-5 md:px-8 py-4 border-b border-black/20 flex items-center justify-between text-xs md:text-sm uppercase tracking-wide">
             <span className="font-bold text-cyan-500">ECCLECTION PRESS</span>
             <span className="opacity-70">Local Stories</span>
@@ -367,7 +367,7 @@ export function Review() {
                     <p className="text-xs text-cyan-500 uppercase tracking-wide opacity-70 mb-1">
                       {article.publication}
                     </p>
-                    <h4 className="font-bold text-cyan-600 text-base md:text-2xl text-black leading-tight line-clamp-2">
+                    <h4 className="font-bold text-cyan-600 text-base md:text-2xl leading-tight line-clamp-2">
                       {article.title}
                     </h4>
                     <p className="hidden md:block text-sm opacity-70 mt-2 line-clamp-2">

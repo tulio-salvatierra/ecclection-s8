@@ -141,7 +141,7 @@ function Masonry() {
 
   return (
     <section ref={rootRef} className="mwg_effect020 w-screen mx-auto">
-      <div className="container mx-auto py-20 relative z-10 w-screen max-w-full fade-in flex flex-col items-center justify-center">
+      <div className="container mx-auto py-20 relative z-10 w-screen max-w-full fade-in flex flex-col items-between justify-between">
         <div className="header font-brand mb-8 w-screen mx-auto flex items-center justify-center">
           <div className="header-ticker" aria-label="Values ticker">
             <div className="header-track">
@@ -158,12 +158,12 @@ function Masonry() {
           style={{ top: "50%" }}
         >
           <p
-            className="font-brand text-cyan-200 sm:text-5xl text-3xl text-center mx-auto grid items-center justify-center"
+            className="font-normal text-cyan-500 sm:text-5xl text-3xl text-center mx-auto grid items-center justify-center"
             style={{
               fontFamily: "Kadwa, sans-serif",
               marginLeft: "auto",
               marginRight: "auto",
-              top: "50%",
+              top: "100%",
             }}
           >
             Empowering human creativity, connection inclusion and sustainability

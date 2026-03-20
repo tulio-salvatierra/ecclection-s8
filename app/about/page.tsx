@@ -95,25 +95,20 @@ export default function AboutPage() {
           </div>
 
           {/* Right: Text Content */}
-          <div className="space-y-6 bg-black/30 p-4">
+          <div className="space-y-6 bg-black/30 p-4 font-brand">
             {renderPunkHeading("Welcome to Ecclection", "text-2xl md:text-3xl")}
             <p className="text-white text-xl leading-relaxed">
               Ecclection is a vibrant local variety shop located at 6059 West
               Irving Park Road in Chicago&apos;s Portage Park neighborhood. We
               specialize in vintage treasures, handmade art and locally crafted
               finds that celebrate creativity and community while keeping it all
-              affordable for everyone. We want the shop to feel welcoming, fun
-              and a little bit silly — not just a place to fill a need, but a
-              place to have fun, find crazy & silly stuff and wander through a
-              whimsical mix of oddities. <br />
+              affordable for everyone. <br />
             </p>
             <p className="text-white text-xl leading-relaxed ">
               Step inside and you&apos;ll discover an ever-changing collection
               of carefully curated, recycled and up-cycled pieces{" "}
-              <strong className="text-cyan-500">(starts at $1)</strong> — from
+              <strong className="text-cyan-500">(starts at $1)</strong> from
               art and jewelry to home décor, crystals and wellness goodies.
-              Every corner of our shop tells a story, and every piece has been
-              chosen to inspire, delight or at least make you smile.
               <br />
               <br /> So come by! don&apos;t be shy, and explore the eclectic mix
               that makes Ecclection truly <strong>one-of-a-kind!</strong>
@@ -143,10 +138,7 @@ export default function AboutPage() {
           for decades — estate sales, thrift shops, garage sales, clearance
           aisles, going-out-of-business sales… if there’s a deal or a hidden
           gem, <em>move out of my way</em> because I’m diving in.
-          <br />
-          <br />
-          Now all those years of treasure hunting live here at Ecclection —
-          ready for new homes, new stories & new joy.
+          
         </p>
       </section>
 
