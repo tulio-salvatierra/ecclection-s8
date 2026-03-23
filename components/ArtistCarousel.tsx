@@ -78,26 +78,23 @@ export function ArtistCarousel({ artists }: ArtistCarouselProps) {
           Eclection what it is.
           <br />
           <br />
-          We’re packed with rotating work from local artists—jewelry,
-          paintings, photography, crochet, patches, pins… and a few things we
+          We’re packed with rotating work from local artists, jewelry,
+          paintings, photography, crochet, patches, pins, and a few things we
           can’t quite explain (but love anyway).
           <br />
           <br />
           Our artist cubbies and front window are always shifting, so no two
           visits feel the same.
         </p>
-        <p className="fade-in mt-2 text-xl sm:text-2xl text-white w-full sm:w-3/4 mx-auto text-left">
-          Got something to show?
-          <br />
-          <br />
-          Rental spaces start at $20/month.
+        <p className="fade-in mt-4 text-xl sm:text-2xl text-white w-full sm:w-3/4 mx-auto text-left">
+          Got something to show? Rental spaces start at $20/month.
           <br />
           <br />
           Your work gets seen, touched, and actually bought—no endless
           scrolling required.
           <br />
           <br />
-          Come join the chaos.
+          Come join the fun!
         </p>
         <a
           className="p-4 fade-in md:p-6 mt-6 hover:rotate-[-15deg] transition-all duration-300 col-span-2 mx-auto origin-top-left text-white text-xl md:text-2xl rounded-md bg-cyan-600/80"

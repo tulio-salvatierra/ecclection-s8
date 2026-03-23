@@ -87,7 +87,31 @@ export default function EventsPage() {
         </section>
 
         {/* Introduction */}
-
+        <section className="mt-20">
+          <div className="container rounded-lg section-pad h-auto flex items-end justify-end" style={{ backgroundImage: "url('/child.jpeg')", backgroundSize: "cover", backgroundPosition: "top", backgroundRepeat: "no-repeat", height: "150dvh"}}>
+            {/* Upcoming Event (concrete date for SEO + visitors) */}
+            <div className="border-2 border-black rounded-lg shadow-[6px_6px_0_0_#000] overflow-hidden bg-cyan-900/60">
+              <div className="grid grid-cols-1 items-end justify-end">
+                <div className="p-6 md:p-10 flex flex-col justify-end text-white">
+                  <div className="self-end fade-in">
+                    {renderPunkTitle(
+                      "Artist & Community Appreciation Night — Dates announced on social media",
+                      "text-2xl md:text-3xl fade-in",
+                      "mb-4",
+                    )}
+                  </div>
+                  <p className="text-lg sm:text-xl font-brand leading-6 fade-in">
+                    From Artist &amp; Community Appreciation Nights to seasonal
+                    pop-ups and maker features, these gatherings are built for
+                    connection. Come meet people, discover new work, share good
+                    vibes, and experience the neighborhood in a way you just
+                    can&apos;t online.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
         {/* Community Events Card */}
         <section className="container section-pad">
           <div className="relative border-2 h-[900px] border-black shadow-[6px_6px_0_0_#000] rounded-lg p-8 overflow-hidden">
