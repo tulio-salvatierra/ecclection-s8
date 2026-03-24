@@ -141,7 +141,7 @@ function Masonry() {
 
   return (
     <section ref={rootRef} className="mwg_effect020 w-screen mx-auto">
-      <div className="container mx-auto py-20 relative z-10 w-screen max-w-full fade-in flex flex-col items-between justify-between">
+      <div className="container mx-auto py-20 relative z-10 w-[105%] max-w-full fade-in flex flex-col items-between justify-between">
         <div className="header font-brand mb-8 w-screen mx-auto flex items-center justify-center">
           <div className="header-ticker" aria-label="Values ticker">
             <div className="header-track">
@@ -166,7 +166,7 @@ function Masonry() {
               top: "100%",
             }}
           >
-            Empowering human creativity, connection inclusion and sustainability
+            3rd Thursday Every of Month
           </p>
           <p
             className="grid items-center justify-center text-xl sm:text-2xl font-brand text-white text-center mt-8 max-w-3xl mx-auto"
@@ -177,8 +177,18 @@ function Masonry() {
               width: "100%",
             }}
           >
-            We also have. few more tricks under our sleeve & like to mix things
-            up a bit.
+          Dates and times: April 16th, 2026 from 6:00pm - 8:00pm
+          <br />
+          May 21st, 2026 from 6:00pm - 8:00pm
+          <br />
+          June 18th, 2026 from 6:00pm - 8:00pm
+          <br />
+          July 16th, 2026 from 6:00pm - 8:00pm
+          <br />
+          August 20th, 2026 from 6:00pm - 8:00pm
+          <br />
+          September 17th, 2026 from 6:00pm - 8:00pm
+          <br />
           </p>
         </div>
         <div className="header-ticker" aria-label="Values ticker">

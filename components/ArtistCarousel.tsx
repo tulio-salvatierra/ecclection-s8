@@ -98,7 +98,7 @@ export function ArtistCarousel({ artists }: ArtistCarouselProps) {
         </p>
         <a
           className="p-4 fade-in md:p-6 mt-6 hover:rotate-[-15deg] transition-all duration-300 col-span-2 mx-auto origin-top-left text-white text-xl md:text-2xl rounded-md bg-cyan-600/80"
-          href="/artists"
+          href="/artists#"
         >
           Read More here!
         </a>

@@ -56,7 +56,16 @@ export default function EventsPage() {
 
         {/* Main Content Section */}
         <section className="mt-20">
-          <div className="container rounded-lg section-pad h-auto flex items-end justify-end" style={{ backgroundImage: "url('/child.jpeg')", backgroundSize: "cover", backgroundPosition: "top", backgroundRepeat: "no-repeat", height: "150dvh"}}>
+          <div
+            className="container rounded-lg section-pad h-auto flex items-end justify-end"
+            style={{
+              backgroundImage: "url('/child.jpeg')",
+              backgroundSize: "cover",
+              backgroundPosition: "top",
+              backgroundRepeat: "no-repeat",
+              height: "150dvh",
+            }}
+          >
             {/* Upcoming Event (concrete date for SEO + visitors) */}
             <div className="border-2 border-black rounded-lg shadow-[6px_6px_0_0_#000] overflow-hidden bg-cyan-900/60">
               <div className="grid grid-cols-1 items-end justify-end">
@@ -82,30 +91,44 @@ export default function EventsPage() {
         </section>
 
         {/* Masonry Section and Introduction */}
-        <section className="section-pad">
+        <section className="mt-20">
           <Masonry />
         </section>
 
         {/* Introduction */}
         <section className="mt-20">
-          <div className="container rounded-lg section-pad h-auto flex items-end justify-end" style={{ backgroundImage: "url('/child.jpeg')", backgroundSize: "cover", backgroundPosition: "top", backgroundRepeat: "no-repeat", height: "150dvh"}}>
+          <div
+            className="container rounded-lg section-pad h-auto flex items-end justify-end"
+            style={{
+              backgroundImage: "url('/store.jpg')",
+              backgroundSize: "cover",
+              backgroundPosition: "top",
+              backgroundRepeat: "no-repeat",
+              height: "150dvh",
+            }}
+          >
             {/* Upcoming Event (concrete date for SEO + visitors) */}
             <div className="border-2 border-black rounded-lg shadow-[6px_6px_0_0_#000] overflow-hidden bg-cyan-900/60">
-              <div className="grid grid-cols-1 items-end justify-end">
-                <div className="p-6 md:p-10 flex flex-col justify-end text-white">
-                  <div className="self-end fade-in">
+              <div className="grid grid-cols-1 items-center justify-center">
+                <div className="p-6 md:p-10 flex flex-col justify-center text-white">
+                  <div className="self-center fade-in">
                     {renderPunkTitle(
-                      "Artist & Community Appreciation Night — Dates announced on social media",
-                      "text-2xl md:text-3xl fade-in",
+                      "Thaft High School art club showcase",
+                      "text-2xl md:text-3xl text-center fade-in",
                       "mb-4",
                     )}
                   </div>
                   <p className="text-lg sm:text-xl font-brand leading-6 fade-in">
-                    From Artist &amp; Community Appreciation Nights to seasonal
-                    pop-ups and maker features, these gatherings are built for
-                    connection. Come meet people, discover new work, share good
-                    vibes, and experience the neighborhood in a way you just
-                    can&apos;t online.
+                    We’re proud to partner with Taft High School’s Art Club
+                    through our “Budding Artists” program. An initiative
+                    dedicated to uplifting young, local talent. The program
+                    gives emerging artists and artisans a platform to showcase
+                    their work in a real retail environment, helping them gain
+                    exposure, confidence, and real-world experience. Even
+                    better—100% of the proceeds go directly back to the
+                    students’ school or chosen cause. It’s more than a
+                    collaboration—it’s a win-win for creativity, community, and
+                    impact.
                   </p>
                 </div>
               </div>

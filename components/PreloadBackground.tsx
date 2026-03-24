@@ -5,12 +5,12 @@ export function PreloadBackground() {
         __html: `
           (function() {
             // Preload background image
-            if (!document.querySelector('link[rel="preload"][href="/ecclection-bg.svg"]')) {
+            if (!document.querySelector('link[rel="preload"][href="/store.jpg"]')) {
               const bgLink = document.createElement('link');
               bgLink.rel = 'preload';
-              bgLink.href = '/ecclection-bg.svg';
+              bgLink.href = '/store.jpg';
               bgLink.as = 'image';
-              bgLink.type = 'image/svg+xml';
+              bgLink.type = 'image/jpeg';
               bgLink.setAttribute('fetchPriority', 'high');
               document.head.insertBefore(bgLink, document.head.firstChild);
             }
