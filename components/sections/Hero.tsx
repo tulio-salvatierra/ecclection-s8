@@ -17,6 +17,7 @@ export function Hero() {
       <video
         className="absolute inset-0 h-screen w-screen object-cover object-center"
         src="/Ecclection_hero.mp4"
+        poster="/store.jpg"
         autoPlay
         loop
         muted

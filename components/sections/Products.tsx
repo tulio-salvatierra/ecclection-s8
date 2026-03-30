@@ -64,6 +64,7 @@ export function ProductsShowcase() {
                 {category.video ? (
                   <video
                     src={category.video}
+                    poster="/products/cubbies.jpg"
                     className="absolute inset-0 w-full h-full object-cover"
                     autoPlay
                     loop

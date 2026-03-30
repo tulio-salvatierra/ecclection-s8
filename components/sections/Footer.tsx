@@ -30,19 +30,7 @@ export function Footer() {
         </p>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
-          <div>
-            <h3 className="mb-4 text-lg font-semibold font-brand">
-              Ecclection — Vintage, Variety & Local Art in Portage Park
-            </h3>
-            <p className="text-white font-brand leading-relaxed">
-              A wonderfully weird Chicago shop full of rescued treasures, local
-              maker goods, gifts, games, and second-life finds.
-            </p>
-            <p className="text-white font-brand leading-relaxed mt-3">
-              Come see, touch, feel, and discover something unexpected in
-              person.
-            </p>
-          </div>
+          
 
           {/* Navigation Links */}
           <div>

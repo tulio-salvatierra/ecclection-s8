@@ -34,6 +34,26 @@ export const metadata: Metadata = buildPageMetadata({
 });
 
 export default function EventsPage() {
+  const eventsVideoSchema = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: "Bi-Monthly Artist & Community Nights",
+    description:
+      "Highlights from Ecclection's artist and community appreciation nights in Portage Park, Chicago.",
+    thumbnailUrl: [`${SITE_URL}/article.png`],
+    uploadDate: "2026-03-01",
+    contentUrl: `${SITE_URL}/Artists_spot.mp4`,
+    embedUrl: `${SITE_URL}/events`,
+    publisher: {
+      "@type": "Organization",
+      name: "Ecclection",
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/logo.png`,
+      },
+    },
+  };
+
   return (
     <>
       {" "}
@@ -144,6 +164,7 @@ export default function EventsPage() {
               muted
               playsInline
               preload="metadata"
+              poster="/article.png"
               className="absolute inset-0 w-auto h-full object-cover rounded-md"
             >
               <source src="/Artists_spot.mp4" type="video/mp4" />
@@ -223,6 +244,12 @@ export default function EventsPage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
                   __html: JSON.stringify(eventSchema),
+                }}
+              />
+              <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                  __html: JSON.stringify(eventsVideoSchema),
                 }}
               />
             </>

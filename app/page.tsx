@@ -9,6 +9,7 @@ import {
   buildBreadcrumbSchema,
   buildPageMetadata,
   SEO_KEYWORD_CLUSTERS,
+  SITE_URL,
 } from "@/lib/seo";
 
 // Lazy load below-the-fold components
@@ -52,6 +53,25 @@ export default async function HomePage() {
   }));
 
   const breadcrumbSchema = buildBreadcrumbSchema([{ name: "Home", path: "" }]);
+  const homeVideoSchema = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: "Ecclection Vintage Shop in Chicago",
+    description:
+      "A look inside Ecclection's vintage and local art shop in Portage Park, Chicago.",
+    thumbnailUrl: [`${SITE_URL}/store.jpg`],
+    uploadDate: "2026-03-01",
+    contentUrl: `${SITE_URL}/Ecclection_hero.mp4`,
+    embedUrl: `${SITE_URL}/`,
+    publisher: {
+      "@type": "Organization",
+      name: "Ecclection",
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/logo.png`,
+      },
+    },
+  };
 
   return (
     <div className="grid grid-cols-1 h-auto auto-rows-auto">
@@ -60,6 +80,12 @@ export default async function HomePage() {
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(breadcrumbSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(homeVideoSchema),
           }}
         />
       </div>
@@ -75,7 +101,7 @@ export default async function HomePage() {
       <div>
         <Intro />
       </div>
-      <div> className="h=auto"
+      <div className="h-auto">
         <ArtistCarousel artists={artistsForCarousel} />
       </div>
       <div className="h-auto">
