@@ -1,4 +1,6 @@
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://ecclection.com";
+const SITE_URL = (
+  process.env.NEXT_PUBLIC_SITE_URL || "https://ecclection.com"
+).replace(/\/+$/, "");
 
 export async function GET() {
   const content = `# Ecclection
@@ -9,9 +11,8 @@ export async function GET() {
 ${SITE_URL}
 
 ## Key Pages
-- Home: ${SITE_URL}/
+- Home: ${SITE_URL}
 - About: ${SITE_URL}/about
-- Artists: ${SITE_URL}/artists
 - Events: ${SITE_URL}/events
 - Resources: ${SITE_URL}/resources
 
