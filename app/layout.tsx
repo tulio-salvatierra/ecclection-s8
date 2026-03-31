@@ -10,6 +10,7 @@ import { SOCIAL_URLS, BUSINESS_INFO } from "@/lib/constants";
 import { PreloadBackground } from "@/components/PreloadBackground";
 import { Footer } from "@/components/sections/Footer";
 import { FontProvider } from "@/components/FontProvider";
+import Script from "next/script";
 
 // Configure your fonts with optimized loading
 const inter = Inter({
@@ -215,6 +216,13 @@ export default function RootLayout({
       
     >
       <head>
+        <Script id="gtm-init" strategy="afterInteractive">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PPFKH2BW');`}
+        </Script>
         {/* Resource hints for external domains */}
         <link rel="dns-prefetch" href="https://maps.app.goo.gl" />
         <link rel="dns-prefetch" href="https://instagram.com" />
@@ -225,6 +233,14 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className={`${inter.variable} ${quintessential.variable} ${raleway.variable} ${pirataOne.variable}`}>
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-PPFKH2BW"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
         
         <PreloadBackground />
         <script
