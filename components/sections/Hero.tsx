@@ -30,7 +30,7 @@ export function Hero() {
           text="A whimsical treasure trove in Portage Park..."
           speed={4.4}
           delay={0.2}
-          color="#6e9fee"
+          color="#06B6D4"
           shineColor="#ffffff"
           spread={155}
           direction="left"
@@ -42,7 +42,7 @@ export function Hero() {
           Where you lose yourself in{" "}
           <ShinyText
             text="AFFORDABLE"
-            color="#6e9fee"
+            color="#06B6D4"
             shineColor="#ffffff"
             spread={155}
             direction="left"
@@ -50,12 +50,12 @@ export function Hero() {
             pauseOnHover={false}
             disabled={false}
           />{" "}
-          local art, rescued and vintage treasures, American Science Suplus
+          local art, rescued and vintage treasures, American Science Surplus
           Salvage, as well as Funky Fashions and Tees, Gag Gifts, Jewelry and so
           much{" "}
           <ShinyText
             text="MORE!!!"
-            color="#6e9fee"
+            color="#06B6D4"
             shineColor="#ffffff"
             spread={155}
             direction="left"
@@ -63,7 +63,7 @@ export function Hero() {
             pauseOnHover={false}
             disabled={false}
           />
-          .
+          
         </p>
 
         <div className="relative grid h-full place-items-center text-center px-4">

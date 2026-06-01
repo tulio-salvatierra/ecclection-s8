@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { Button } from "@/components/ui/button";
 import { useFadeAnimation } from "@/app/hooks/useFadeAnimtion";
 import React from "react";
@@ -14,10 +14,49 @@ export function StoreActivities() {
         {/* Top oversized title */}
         <div className="mb-10">
           <h2 className=" font-brand text-3xl md:text-7xl tracking-light text-cyan-500 uppercase leading-tight">
-            <ShinyText text="MORE" color="#6e9fee" shineColor="#ffffff" spread={155} direction="left" yoyo pauseOnHover={false} disabled={false} />&nbsp;
-            <ShinyText text="THAN" color="#6e9fee" shineColor="#ffffff" spread={155} direction="left" yoyo pauseOnHover={false} disabled={false} />&nbsp;
-            <ShinyText text="A" color="#6e9fee" shineColor="#ffffff" spread={155} direction="left" yoyo pauseOnHover={false} disabled={false} />&nbsp;
-            <ShinyText text="STORE" color="#6e9fee" shineColor="#ffffff" spread={155} direction="left" yoyo pauseOnHover={false} disabled={false} />
+            <ShinyText
+              text="MORE"
+              color="#06B6D4"
+              shineColor="#ffffff"
+              spread={155}
+              direction="left"
+              yoyo
+              pauseOnHover={false}
+              disabled={false}
+            />
+            &nbsp;
+            <ShinyText
+              text="THAN"
+              color="#06B6D4"
+              shineColor="#ffffff"
+              spread={155}
+              direction="left"
+              yoyo
+              pauseOnHover={false}
+              disabled={false}
+            />
+            &nbsp;
+            <ShinyText
+              text="A"
+              color="#06B6D4"
+              shineColor="#ffffff"
+              spread={155}
+              direction="left"
+              yoyo
+              pauseOnHover={false}
+              disabled={false}
+            />
+            &nbsp;
+            <ShinyText
+              text="STORE"
+              color="#06B6D4"
+              shineColor="#ffffff"
+              spread={155}
+              direction="left"
+              yoyo
+              pauseOnHover={false}
+              disabled={false}
+            />
           </h2>
         </div>
 
@@ -32,7 +71,57 @@ export function StoreActivities() {
           {/* Main description (center column) */}
           <div className="md:col-span-2">
             <p className="text-2xl leading-relaxed text-white max-w-xl">
-              It's a quirky mix of creativity, community, weird & wonderful, from classics to . A neverending journey into the abyss of vintage curiosities...
+              It’s a quirky mix of{" "}
+              <ShinyText
+                text="creativity"
+                color="#06B6D4"
+                shineColor="#ffffff"
+                spread={155}
+                direction="left"
+                yoyo
+                pauseOnHover={false}
+                disabled={false}
+              />
+              ,{" "}
+              <ShinyText
+                text="community"
+                color="#06B6D4"
+                shineColor="#ffffff"
+                spread={155}
+                direction="left"
+                yoyo
+                pauseOnHover={false}
+                disabled={false}
+              />
+              , and the{" "}
+              <ShinyText
+                text="weird & wonderful"
+                color="#06B6D4"
+                shineColor="#ffffff"
+                spread={155}
+                direction="left"
+                yoyo
+                pauseOnHover={false}
+                disabled={false}
+              />{" "}
+              — from timeless classics to unexpected treasures. A never-ending
+              journey into the abyss of vintage curiosities...
+              <br />
+              <br />
+              A{" "}
+              <ShinyText
+                text="neverending"
+                color="#06B6D4"
+                shineColor="#ffffff"
+                spread={155}
+                direction="left"
+                yoyo
+                pauseOnHover={false}
+                disabled={false}
+              />{" "}
+              journey into the abyss of vintage curiosities...
+              <br />
+              <br />
             </p>
           </div>
         </div>
@@ -40,8 +129,12 @@ export function StoreActivities() {
         {/* Bottom right CTA + small meta text */}
         <div className="mt-12 flex flex-col md:flex-row items-start md:items-end justify-between gap-6">
           <div className="font-brand text-3xl md:text-6xl tracking-light text-white uppercase leading-tight">
-            <p>EXPERIENCE&nbsp;IN‑STORE&nbsp;ONLY</p>
-            <p>NO&nbsp;ONLINE&nbsp;SHOP · NO&nbsp;PHONE&nbsp;ORDERS</p>
+            <ShinyText text="EXPERIENCE" color="#06B6D4" shineColor="#ffffff" spread={155} direction="left" yoyo pauseOnHover={false} disabled={false} />&nbsp;
+            <ShinyText text="IN‑STORE" color="#06B6D4" shineColor="#ffffff" spread={155} direction="left" yoyo pauseOnHover={false} disabled={false} />&nbsp;
+            <ShinyText text="ONLY" color="#06B6D4" shineColor="#ffffff" spread={155} direction="left" yoyo pauseOnHover={false} disabled={false} />
+            <ShinyText text="NO&nbsp;ONLINE&nbsp;SHOP" color="#06B6D4" shineColor="#ffffff" spread={155} direction="left" yoyo pauseOnHover={false} disabled={false} />&nbsp;
+            <ShinyText text="·" color="#06B6D4" shineColor="#ffffff" spread={155} direction="left" yoyo pauseOnHover={false} disabled={false} />&nbsp;
+            <ShinyText text="NO&nbsp;PHONE&nbsp;ORDERS" color="#06B6D4" shineColor="#ffffff" spread={155} direction="left" yoyo pauseOnHover={false} disabled={false} />
           </div>
 
           <div className="text-right">
@@ -55,5 +148,5 @@ export function StoreActivities() {
         </div>
       </div>
     </section>
-  )
+  );
 }
