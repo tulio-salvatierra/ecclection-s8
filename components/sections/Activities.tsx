@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { useFadeAnimation } from "@/app/hooks/useFadeAnimtion";
 import React from "react";
+import ShinyText from "../ShinyText";
 
 export function StoreActivities() {
   const ref = React.useRef(null);
@@ -13,35 +14,25 @@ export function StoreActivities() {
         {/* Top oversized title */}
         <div className="mb-10">
           <h2 className=" font-brand text-3xl md:text-7xl tracking-light text-cyan-500 uppercase leading-tight">
-            MORE&nbsp;THAN&nbsp;A&nbsp;STORE
+            <ShinyText text="MORE" color="#6e9fee" shineColor="#ffffff" spread={155} direction="left" yoyo pauseOnHover={false} disabled={false} />&nbsp;
+            <ShinyText text="THAN" color="#6e9fee" shineColor="#ffffff" spread={155} direction="left" yoyo pauseOnHover={false} disabled={false} />&nbsp;
+            <ShinyText text="A" color="#6e9fee" shineColor="#ffffff" spread={155} direction="left" yoyo pauseOnHover={false} disabled={false} />&nbsp;
+            <ShinyText text="STORE" color="#6e9fee" shineColor="#ffffff" spread={155} direction="left" yoyo pauseOnHover={false} disabled={false} />
           </h2>
         </div>
 
         {/* Middle content row */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 items-start">
           {/* Left small label block */}
-          <div className="space-y-3 font-brand text-xl uppercase text-gray-400 tracking-[0.25em]">
+          <div className="space-y-4 font-brand text-xl md:text-2xl uppercase text-gray-400 tracking-[0.25em]">
             <p>VIBRANT&nbsp;VARIETY&nbsp;SHOP™</p>
             <p>PORTAGE&nbsp;PARK,&nbsp;CHICAGO</p>
           </div>
 
           {/* Main description (center column) */}
           <div className="md:col-span-2">
-            <p className="text-lg leading-relaxed text-white max-w-xl">
-              Ecclection is a neighborhood shop where families, artists &amp;
-              curious neighbors come to browse, laugh, trade, discover &amp;
-              just hang out. From our little <strong>Barter Box</strong> —
-              to the spontaneous spins of the <strong>Wheel of Good
-                Fortune</strong> offering surprise discounts, freebies or
-              glitter‑powered blessings, there’s always something unexpected
-              happening. Our playful <strong>Find Waldo</strong> hunt
-              keeps both the shop and our Instagram buzzing with hidden‑treasure
-              rewards. And of course, our <strong>Donation Drop</strong>
-              is always open for clothing, décor, art supplies &amp; other
-              goodies that help fuel our sustainability mission (gold coins &amp;
-              diamonds still optional… but appreciated). Ecclection is more
-              than a store — it’s a quirky mix of creativity, community, weird
-              &amp; wonderful finds, and everyday joy!
+            <p className="text-2xl leading-relaxed text-white max-w-xl">
+              It's a quirky mix of creativity, community, weird & wonderful, from classics to . A neverending journey into the abyss of vintage curiosities...
             </p>
           </div>
         </div>
@@ -58,7 +49,7 @@ export function StoreActivities() {
               size="lg"
               className="bg-cyan-500 hover:bg-gray-200 text-black text-xs md:text-sm px-8 py-6 font-brand tracking-[0.25em] uppercase border border-gray-400 rounded-none shadow-[4px_4px_0_0_#ffffff33] hover:translate-x-[1px] hover:translate-y-[1px] transition-all"
             >
-              COME VISIT TODAY
+              COME IN AND LOSE YOURSELF!
             </Button>
           </div>
         </div>

@@ -120,7 +120,7 @@ export default async function HomePage() {
       <Hero  />
       <Intro />
       <ArtistCarousel artists={artistsForCarousel} />
-      <DisclaimerSection />
+      
       <StoreActivities />
       <ProductsShowcase />
       <About />

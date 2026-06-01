@@ -67,7 +67,8 @@ export function Intro() {
 
             <div className="mt-20 md:mt-32 fade-in ">
               <p className="text-xl font-brand tracking-widest uppercase">
-                where community meets art, odd or forgotten treasures & good vibes
+                where community meets art, odd or forgotten treasures & good
+                vibes
               </p>
             </div>
           </div>
