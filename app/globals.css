@@ -350,7 +350,7 @@
 }
 
 .font-sans {
-  font-family: var(--font-normal, "Raleway"), system-ui, sans-serif;
+  font-family: var(--font-inter, "Raleway"), system-ui, sans-serif;
 }
 
 .font-brand {

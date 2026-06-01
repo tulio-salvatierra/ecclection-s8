@@ -263,9 +263,6 @@ gtag('config', 'G-74THRY1J4T');`}
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
         <Header />
-        <StoreHoursTicker />
-        
-
         {/* Main content area */}
         <main>
           <ClientEffects />
