@@ -1,0 +1,17 @@
+export const CAROUSEL_IMAGES = [
+  "/carousel/6E39C97E-70C8-47C9-AD07-62A7632FB4F9.jpeg.jpg",
+  "/carousel/367A8900-99C2-45B4-9447-5565867A8AB9.jpeg.jpg",
+  "/carousel/A0A31AA0-7A51-4E6D-8314-ADE3148ADA0F.jpeg.jpg",
+  "/carousel/C10538C7-C6AF-442D-A9F7-F41C9351FA91.jpeg.jpg",
+  "/carousel/IMG_1688.jpeg.jpg",
+  "/carousel/IMG_2337.jpeg.jpg",
+  "/carousel/IMG_2986.jpeg.jpg",
+  "/carousel/IMG_2987.jpeg.jpg",
+  "/carousel/IMG_3323.jpeg.jpg",
+  "/carousel/IMG_3326.jpeg.jpg",
+  "/carousel/IMG_3558.jpeg.jpg",
+  "/carousel/IMG_4032.jpeg.jpg",
+  "/carousel/IMG_4060.jpeg.jpg",
+  "/carousel/IMG_4390.jpeg.jpg",
+  "/carousel/IMG_4394.jpeg.jpg",
+] as const;

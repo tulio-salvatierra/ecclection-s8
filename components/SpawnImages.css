@@ -1,0 +1,29 @@
+.spawn-images-root {
+  position: relative;
+  overflow: hidden;
+}
+
+.spawn-images-root > img.spawn-image {
+  width: clamp(72px, 12vw, 160px);
+  height: clamp(72px, 12vw, 160px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  border-radius: 4%;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.spawn-images-root .spawn-images-preload img {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.mwg_effect020 > img.spawn-image {
+  width: 15vw;
+  height: 15vw;
+}

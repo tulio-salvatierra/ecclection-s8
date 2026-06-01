@@ -31,14 +31,6 @@ body {
     letter-spacing: -0.01em;
     font-size: 16px;
 }
-.mwg_effect020 img {
-    width: 15vw;
-    height: 15vw;
-    position: absolute;
-    object-fit: cover;
-    border-radius: 4%;
-    z-index: 5;
-}
 .mwg_effect020 .title {
     text-align: center;
     text-transform: uppercase;
@@ -51,14 +43,4 @@ body {
     text-transform: uppercase;
     max-width: 34vw;
     text-align: center;
-}
-
-.mwg_effect020 .medias img {
-    width: 1px;
-    height: 1px;
-    top: 0;
-    left: 0;
-    position: absolute;
-    visibility: hidden;
-    pointer-events: none;
 }
