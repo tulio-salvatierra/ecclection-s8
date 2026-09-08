@@ -72,7 +72,7 @@ export function Contact({
               <div>
                 <p className="sm:text-lg text-xs sm:text-md font-medium text-black font-brand">Phone</p>
                 <a
-                  href="sms:+1773951799"
+                  href="sms:+17739517992"
                   className="text-black hover:text-gray-700 transition-colors text-left text-sm sm:text-md"
                 >
                   +1 (773) 951-7992
