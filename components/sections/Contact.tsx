@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import React from "react";
 import { useFadeAnimation } from "@/app/hooks/useFadeAnimtion";
 import { renderPunkHeading } from "@/lib/punk-typography";
+import { getGroupedHoursDisplay } from "@/lib/constants";
 
 interface ContactCard {
   title: string;
@@ -45,13 +46,11 @@ export function Contact({
           </p>
           <div className="space-y-4">
             <p className="font-medium text-black font-brand text-left text-sm sm:text-md">Store Hours:</p>
-            <p className="text-black font-bold text-left text-sm sm:text-md">Monday & Tuesday: Closed</p>
-            <p className="text-black font-bold text-left text-sm sm:text-md">
-              Wednesday, Thursday, Friday: 12pm - 6pm
-            </p>
-            <p className="text-black font-bold text-left text-sm sm:text-md">
-              Saturday & Sunday: 11am - 5pm
-            </p>
+            {getGroupedHoursDisplay().map((line) => (
+              <p key={line} className="text-black font-bold text-left text-sm sm:text-md">
+                {line}
+              </p>
+            ))}
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center">
                 <svg

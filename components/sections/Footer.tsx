@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Instagram, Facebook } from "lucide-react";
-import { SOCIAL_URLS, BUSINESS_INFO } from "@/lib/constants";
+import { SOCIAL_URLS, BUSINESS_INFO, getGroupedHoursDisplay } from "@/lib/constants";
 
 // TikTok icon (not available in lucide-react)
 function TikTokIcon({ className }: { className?: string }) {
@@ -95,9 +95,9 @@ export function Footer() {
               Store Hours
             </h3>
             <ul className="space-y-1">
-              <li>Monday & Tuesday: Closed</li>
-              <li>Wednesday - Sunday: 11am - 5pm</li>
-              <li></li>
+              {getGroupedHoursDisplay().map((line) => (
+                <li key={line}>{line}</li>
+              ))}
             </ul>
           </div>
         </div>
