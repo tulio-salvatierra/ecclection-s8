@@ -11,7 +11,6 @@ const Intro = dynamic(() => import("@/components/sections/Intro").then(mod => ({
 const DisclaimerSection = dynamic(() => import("@/components/sections/Disclaimer").then(mod => ({ default: mod.default })), { ssr: true });
 const StoreActivities = dynamic(() => import("@/components/sections/Activities").then(mod => ({ default: mod.StoreActivities })), { ssr: true });
 const ProductsShowcase = dynamic(() => import("@/components/sections/Products").then(mod => ({ default: mod.ProductsShowcase })), { ssr: true });
-const About = dynamic(() => import("@/components/sections/About").then(mod => ({ default: mod.About })), { ssr: true });
 const Review = dynamic(() => import("@/components/sections/Review").then(mod => ({ default: mod.Review })), { ssr: true });
 const Influencers = dynamic(() => import("@/components/sections/Influencers"), { ssr: true });
 const Contact = dynamic(() => import("@/components/sections/Contact").then(mod => ({ default: mod.Contact })), { ssr: true });
@@ -123,7 +122,6 @@ export default async function HomePage() {
       
       <StoreActivities />
       <ProductsShowcase />
-      <About />
       <Review />
       <Influencers />
       <Contact heading="Come Find Us!" cards={[]} />
