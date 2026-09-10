@@ -1,0 +1,6 @@
+import { login } from "./actions";
+
+export default function AdminLoginPage({ searchParams }: { searchParams: { error?: string; redirect?: string } }) {
+  const redirectTo = searchParams.redirect || "/admin/edit/about";
+  return <div className="min-h-screen flex items-center justify-center bg-black px-4"><form action={login} className="bg-neutral-900 p-8 rounded-lg border border-neutral-800 w-full max-w-sm"><h1 className="text-white text-xl font-brand mb-6">Ecclection content editor</h1><input type="hidden" name="redirect" value={redirectTo} /><label className="block text-neutral-400 text-sm mb-2" htmlFor="password">Password</label><input id="password" name="password" type="password" autoFocus required className="w-full mb-4 px-3 py-2 rounded bg-neutral-800 text-white border border-neutral-700 focus:border-cyan-500 outline-none" />{searchParams.error && <p className="text-red-400 text-sm mb-4">Wrong password. Try again.</p>}<button type="submit" className="w-full bg-cyan-600 text-black font-brand py-2 rounded hover:bg-cyan-500 transition-colors">Sign in</button></form></div>;
+}
